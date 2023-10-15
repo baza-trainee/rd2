@@ -1,7 +1,3 @@
-const Demining = () => {
-	return <>
-	Demining
-	</>;
+export const Demining = () => {
+  return <>Demining</>;
 };
-
-export default Demining;

@@ -1,5 +1,3 @@
-const Contacts = () => {
+export const Contacts = () => {
   return <>Contacts</>;
 };
-
-export default Contacts;

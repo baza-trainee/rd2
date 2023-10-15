@@ -1,7 +1,3 @@
-const Activity = () => {
-	return <>
-	Activity
-	</>;
+export const Activity = () => {
+  return <>Activity</>;
 };
-
-export default Activity;
