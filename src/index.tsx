@@ -5,8 +5,6 @@ import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "reportWebVitals";
 import { AppNavigation } from "routes/AppNavigation";
 
-import "./index.css";
-
 const root = document.getElementById("root") as HTMLDivElement;
 
 ReactDOM.createRoot(root).render(
