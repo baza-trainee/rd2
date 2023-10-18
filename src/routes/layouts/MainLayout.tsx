@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import { App } from "components/App";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
-import { Test } from "components/Test/Test";
 
 export const MainLayout: FC = () => {
   return (
@@ -16,8 +15,6 @@ export const MainLayout: FC = () => {
       </main>
 
       <Footer />
-
-      <Test />
     </App>
   );
 };
