@@ -1,3 +1,7 @@
+import MainTasks from "components/About/MainTasks/MainTasks";
+
 export const About = () => {
-  return <>About</>;
+  return <>
+    <MainTasks />
+  </>;
 };
