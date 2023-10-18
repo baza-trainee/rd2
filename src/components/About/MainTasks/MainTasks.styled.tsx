@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
-import bgMob from "../../../assets/images/task-bg-mob.png";
-import bgTab1 from "../../../assets/images/task-bg-tab1.png";
-import bgDesk from "../../../assets/images/task-bg-desk.png";
+import bgMob from "../../../assets/images/tasks/task-bg-mob.png";
+import bgTab1 from "../../../assets/images/tasks/task-bg-tab1.png";
+import bgDesk from "../../../assets/images/tasks/task-bg-desk.png";
 
 const Container = styled.section`
 position: relative;
