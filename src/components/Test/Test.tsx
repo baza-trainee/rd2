@@ -19,7 +19,7 @@ export const Test = () => {
         </Grid>
 
         <Grid item md={4} xs={12}>
-          <Typography variant="h2" component="h1">
+          <Typography variant="h2" component="h1" align="center">
                         h1. Heading
           </Typography>
           <p>md=4 xs=12</p>
@@ -28,7 +28,7 @@ export const Test = () => {
         </Grid>
 
         <Grid item md={4} xs={12}>
-          <Typography variant="h2" component="h2">
+          <Typography variant="h2" component="h2" align="right">
                         h2. Heading
           </Typography>
           <p>md=4 xs=12</p>
