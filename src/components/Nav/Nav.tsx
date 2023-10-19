@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
-import { ROUTES_ENUM } from "types/enums/routes.enum";
-import { navNames } from "data/common/nav.json";
+import data from "data/common/nav.json";
 
-export const Nav: React.FC = () => {
+interface NavProps {
+ className?: string;
+}
+
+export const Nav: React.FC<NavProps> = ({ className }) => {
   return (
-    <nav>
-      {navNames.map((navItem: string, index: number) => (
-        <NavLink key={index} to={ROUTES_ENUM[navItem as keyof typeof ROUTES_ENUM]}>
-          {navItem}
+    <nav className={className}>
+      {data.navNames.map((navItem) => (
+        <NavLink key={navItem.id} to={navItem.route}>
+          {navItem.name}
         </NavLink>
       ))}
     </nav>
