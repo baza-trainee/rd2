@@ -39,6 +39,7 @@ margin: 0 auto;
 }
 `;
 const Title = styled.h2`
+margin: 0;
 font-size: 40px;
 font-weight: 600;
 text-align: center;
