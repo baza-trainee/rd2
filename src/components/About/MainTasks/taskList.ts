@@ -1,4 +1,4 @@
-import { Task } from "types/enums/typeTask";
+import { Task } from "types/typeTask";
 
 import firstIcon from "../../../assets/icons/TaskIcons/first.svg";
 import secondIcon from "../../../assets/icons/TaskIcons/second.svg";
