@@ -7,16 +7,16 @@ import frenchLang from "translation/languages/french/french.language.json";
 import germanLang from "translation/languages/german/german.language.json";
 
 const resources: Resource = {
-  ukrainian: {
+  ua: {
     translation: ukrainianLang,
   },
-  english: {
+  en: {
     translation: englishLang,
   },
-  french: {
+  fr: {
     translation: frenchLang,
   },
-  german: {
+  gm: {
     translation: germanLang,
   },
 };
