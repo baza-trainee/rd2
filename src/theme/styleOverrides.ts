@@ -40,5 +40,5 @@ const globalOverrides = `
               font-style: normal;
               font-display: swap;
             }
-        `
-export {globalOverrides}
+        `;
+export {globalOverrides};
