@@ -34,6 +34,30 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: globalOverrides,
     },
+
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          "@media (min-width:576px)": {
+            paddingLeft: "32px",
+            paddingRight: "32px",
+          },
+          "@media (min-width:768px)": {
+            paddingLeft: "40px",
+            paddingRight: "40px",
+          },
+        },
+      },
+    },
+
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          boxShadow: "none",
+          borderRadius: "0",
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         sizeMedium: {

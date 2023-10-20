@@ -9,6 +9,9 @@ const globalOverrides = `
              a {
                 text-decoration: none;
             } 
+            a: active {
+                color: inherit;
+            }
             p {
                 margin: 0
             }
