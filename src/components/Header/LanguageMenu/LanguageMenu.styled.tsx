@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import {boolean} from "yup";
 
 interface LanguageMenuWrapProp {
     opened: boolean
@@ -16,6 +15,6 @@ const LanguageMenuWrap = styled.div<LanguageMenuWrapProp>`
         transition: transform 300ms
       }
     }
-`
+`;
 
-export {LanguageMenuWrap}
+export {LanguageMenuWrap};

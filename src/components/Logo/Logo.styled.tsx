@@ -8,10 +8,12 @@ const TextLogo = styled.a`
   & > h6 {
    font-weight: 800;
   }
+  & span {
+    display: none;
+    @media (min-width: 1440px) {
+      display: inline;
+    }
+  }
 `;
 
-const LogoH6 = styled(Typography)`
-  font-weight: 800;
-`
-
-export {TextLogo}
+export {TextLogo};
