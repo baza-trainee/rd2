@@ -1,10 +1,10 @@
 import React from "react";
 
-import Typography from "@mui/material/Typography";
+// import Typography from "@mui/material/Typography";
 
 import advantageList from "./advantageList";
 import {
-  Container, DescWrap, Divider, Desc, /*Title,*/ AdvantageList, AdvantageDescBox,
+  Container, DescWrap, Divider, Desc, Title, AdvantageList, AdvantageDescBox,
   AdvantageCard, AdvantageImgBox, AdvantageImg, AdvantageTitle, SectionWrapper,
 } from "./Advantages.styled";
 
@@ -12,10 +12,10 @@ const Advantages: React.FC = () => {
   return <Container>
     <SectionWrapper>
       <DescWrap>
-        <Typography variant="h3" component="h3">
+        {/* <Typography variant="h3" component="h3">
           Переваги проєкту
-        </Typography>
-        {/* <Title>Переваги проєкту</Title> */}
+        </Typography> */}
+        <Title>Переваги проєкту</Title>
         <Divider></Divider>
         <Desc>Територія може бути забруднена мінами, встановленими вручну, або розтяжками з
           вибуховими предметами. В такому випадку їх виявляють і знешкоджують вручну. Ми пропонуємо
