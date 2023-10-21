@@ -1,8 +1,7 @@
-import {createTheme} from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
-import {themeHeaders} from "./typography";
-import {globalOverrides} from "./styleOverrides";
-
+import { themeHeaders } from "./typography";
+import { globalOverrides } from "./styleOverrides";
 
 const theme = createTheme({
   breakpoints: {
@@ -18,15 +17,16 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#4285F4",
+      light: "#ffffff",
     },
     secondary: {
       main: "#f5f5f5",
+      light: "#ababab",
     },
   },
 
   typography: {
-    fontFamily: ["OpenSans, Roboto, sans-serif",
-    ].join(","),
+    fontFamily: ["OpenSans, Roboto, sans-serif"].join(","),
     ...themeHeaders,
   },
 
@@ -72,11 +72,11 @@ const theme = createTheme({
           fontSize: "1.25rem",
           color: "#f5f5f5",
           boxShadow: "none",
-          ":hover": {boxShadow: "none"},
+          ":hover": { boxShadow: "none" },
         },
       },
     },
   },
 });
 
-export {theme};
+export { theme };
