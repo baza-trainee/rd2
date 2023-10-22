@@ -7,7 +7,7 @@ const NavContainer = styled.div`
   @media (min-width: 1440px) {
     display: flex;
   }
-`
+`;
 
 const NavStyled = styled(Nav)`
   display: flex;
@@ -18,6 +18,6 @@ const NavStyled = styled(Nav)`
     font-weight: 600;
     color: #151515;
   }
-`
+`;
 
-export {NavContainer, NavStyled}
+export {NavContainer, NavStyled};

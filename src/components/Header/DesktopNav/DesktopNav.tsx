@@ -4,9 +4,9 @@ import {NavStyled, NavContainer} from "./DesktopNav.styled";
 
 
 export const DesktopNav = () => {
-    return (
-        <NavContainer>
-            <NavStyled />
-        </NavContainer>
-    )
-}
+  return (
+    <NavContainer>
+      <NavStyled />
+    </NavContainer>
+  );
+};
