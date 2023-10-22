@@ -6,7 +6,7 @@ const HeaderToolbar = styled.div`
   align-items: center;
   justify-content: space-between;
   
-  padding: 20px 0;
+  padding: 24px 0;
 `;
 
 export {HeaderToolbar};
