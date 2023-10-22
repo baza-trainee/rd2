@@ -1,3 +1,5 @@
+import { ScientificActivity } from "components/ScientificActivity/ScientificActivity";
+
 export const Activity = () => {
-  return <>Activity</>;
+  return <ScientificActivity />;
 };
