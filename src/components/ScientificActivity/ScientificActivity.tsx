@@ -13,7 +13,6 @@ import {
   CardTextWrap,
   Cards,
   CardWrapper,
-  CardItemWrapper,
 } from "./ScientificActivity.styled";
 
 export const ScientificActivity: React.FC = () => {
@@ -56,10 +55,8 @@ export const ScientificActivity: React.FC = () => {
                       {id % 2 === 0 ? (
                         <>
                           <CardTextWrap>
-                            <CardItemWrapper>
-                              <CardTitle>{title}</CardTitle>
-                              <p>{text}</p>
-                            </CardItemWrapper>
+                            <CardTitle>{title}</CardTitle>
+                            <p>{text}</p>
                           </CardTextWrap>
 
                           <ActivityImg src={img} alt={title} />
@@ -69,10 +66,8 @@ export const ScientificActivity: React.FC = () => {
                           <ActivityImg src={img} alt={title} />
 
                           <CardTextWrap>
-                            <CardItemWrapper>
-                              <CardTitle>{title}</CardTitle>
-                              <p>{text}</p>
-                            </CardItemWrapper>
+                            <CardTitle>{title}</CardTitle>
+                            <p>{text}</p>
                           </CardTextWrap>
                         </>
                       )}

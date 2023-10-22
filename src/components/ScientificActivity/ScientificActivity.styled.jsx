@@ -103,10 +103,6 @@ height: 277px;
 padding: 24px;
 
    @media (min-width: 768px) {
-
-
-    overflow: scroll;
-    overflow-x: hidden;
     
     width: 340px;
     height: 289px;
@@ -116,11 +112,11 @@ padding: 24px;
     width: 668px;
     height: 560px;
 
-  }
-`;
-const CardItemWrapper = styled.div`
-  @media (min-width: 1440px) {
-    margin-top: 25%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+
   }
 `;
 
@@ -163,5 +159,4 @@ export {
   CardTextWrap,
   Cards,
   CardWrapper,
-  CardItemWrapper,
 };
