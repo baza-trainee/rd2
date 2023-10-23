@@ -12,6 +12,17 @@ const globalOverrides = `
             a: active {
                 color: inherit;
             }
+            h2, h3, h4 {
+                margin: 0;
+                font-weight: 600;
+            }
+            h1 {
+                margin: 0;
+                font-weight: 700;
+            }
+            h2 {
+                font-size: 2rem;
+            }
             p {
                 margin: 0
             }
@@ -39,6 +50,20 @@ const globalOverrides = `
               font-weight: 700;
               font-style: normal;
               font-display: swap;
+            }
+            @media (min-width:768px) {
+                h1 {
+                    font-size: 4rem;
+                }
+                h2 {
+                   font-size: 2.5rem;
+                }
+                h3 {
+                   font-size: 2rem;
+                }
+                h4 {
+                   font-size: 1.5rem;     
+                }
             }
         `;
 export {globalOverrides};
