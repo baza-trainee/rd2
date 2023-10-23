@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import {Divider, Menu, MenuItem} from "@mui/material";
+import {Menu, MenuItem} from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -14,7 +14,6 @@ export const LanguageMenu = () => {
   const open = Boolean(menuButton);
   const onClickMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     setMenuButton(e.currentTarget);
-    console.log(e.currentTarget.innerText);
   };
 
   const onCloseMenu = () => {
@@ -45,32 +44,37 @@ export const LanguageMenu = () => {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        sx={{
+          "& ul": {
+            padding: "0",
+          },
+          "& .MuiPaper-root": {
+            borderRadius: "0 0 5px 5px",
+          },
+        }}
       >
         <MenuItem onClick={onClickMenuItem}
           sx={{
-            paddingRight: "30px",
-            paddingLeft: "30px",
+            padding: "10px 30px",
+            borderBottom: "1px solid #E3E3E3",
           }}
         >UA</MenuItem>
-        <Divider />
         <MenuItem onClick={onClickMenuItem}
           sx={{
-            paddingRight: "30px",
-            paddingLeft: "30px",
+            padding: "10px 30px",
+            borderBottom: "1px solid #E3E3E3",
           }}
         >EN</MenuItem>
-        <Divider />
         <MenuItem onClick={onClickMenuItem}
           sx={{
-            paddingRight: "30px",
-            paddingLeft: "30px",
+            padding: "10px 30px",
+            borderBottom: "1px solid #E3E3E3",
           }}
         >FR</MenuItem>
-        <Divider />
         <MenuItem onClick={onClickMenuItem}
           sx={{
-            paddingRight: "30px",
-            paddingLeft: "30px",
+            padding: "10px 30px",
+            borderBottom: "1px solid #E3E3E3",
           }}
         >DE</MenuItem>
       </Menu>
