@@ -51,7 +51,7 @@ const globalOverrides = `
               font-style: normal;
               font-display: swap;
             }
-            @media (min-width:768px) {
+            @media (min-width: 1280px) {
                 h1 {
                     font-size: 4rem;
                 }

@@ -21,7 +21,7 @@ const themeHeaders = {
     "@media (min-width:468px)": {
       fontSize: "1.5rem",
     },
-    "@media (min-width:768px)": {
+    "@media (min-width:1280px)": {
       fontSize: "2rem",
     },
   },
