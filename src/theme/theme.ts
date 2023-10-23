@@ -7,9 +7,9 @@ const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 576,
+      sm: 468,// here was 576
       md: 768,
-      lg: 992,
+      lg: 1280,// here was 992
       xl: 1440,
     },
   },
@@ -38,7 +38,7 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          "@media (min-width:576px)": {
+          "@media (min-width:428px)": {
             paddingLeft: "32px",
             paddingRight: "32px",
           },

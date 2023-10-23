@@ -44,7 +44,9 @@ export const Test = () => {
             h3. Heading
           </Typography>
           <p>md=6 sm=12</p>
-          <Button variant="contained" size="small" fullWidth={true}></Button>
+          <Button variant="contained" size="small" fullWidth={true}>
+            gfgf
+          </Button>
         </Grid>
 
         <Grid item md={6} sm={12}>
@@ -52,7 +54,9 @@ export const Test = () => {
             h4. Heading
           </Typography>
           <p>md=6 sm=12</p>
-          <Button variant="contained" fullWidth={true}></Button>
+          <Button variant="contained" fullWidth={true}>
+            fdf
+          </Button>
         </Grid>
       </Grid>
 
