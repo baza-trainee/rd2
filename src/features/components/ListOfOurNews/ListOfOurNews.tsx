@@ -1,15 +1,16 @@
 import { Grid, useMediaQuery } from "@mui/material";
 import { theme } from "theme/theme";
-
-import { New } from "features/components/New/New";
-
 import { ListNews } from "components/About/OurNews/listNews";
+
+import { NewOfOurNews } from "features/components/NewOfOurNews/NewOfOurNews";
+
+import { MoreInfoOfNews } from "features/components/MoreInfoOfNews/MoreInfoOfNews";
 
 interface Props {
   list: ListNews[];
 }
 
-export const ListOfNews = ({ list }: Props): JSX.Element => {
+export const ListOfOurNews = ({ list }: Props): JSX.Element => {
   const isXl = useMediaQuery(theme.breakpoints.up("xl"));
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
   const isSm = useMediaQuery(theme.breakpoints.up("sm"));
@@ -27,14 +28,9 @@ export const ListOfNews = ({ list }: Props): JSX.Element => {
   return (
     <Grid container columnSpacing={3} flexGrow={1}>
       {list.slice(0, numToDisplay).map(({ id, image, title, description, date }) => (
-        <New
-          image={image}
-          title={title}
-          description={description}
-          button="Детальніше"
-          date={date}
-          key={id}
-        />
+        <NewOfOurNews imageSrc={image} title={title} description={description} key={id}>
+          <MoreInfoOfNews buttonText="Детальніше" date={date} />
+        </NewOfOurNews>
       ))}
     </Grid>
   );
