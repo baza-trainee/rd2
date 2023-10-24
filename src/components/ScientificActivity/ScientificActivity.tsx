@@ -38,12 +38,12 @@ export const ScientificActivity: React.FC = () => {
             </TitleText>
           </TitleWrap>
           <CardWrapper>
-            {ScientificActivityList.map(({ id, title, text, img }) => {
+            {ScientificActivityList.map(({ id, title, text, img, retinaImg }) => {
               return (
                 <Cards key={id}>
                   {windowWidth < 768 ? (
                     <>
-                      <ActivityImg src={img} alt={title} />
+                      <ActivityImg src={img} srcSet={`${retinaImg} 2x`} alt={title} />
 
                       <CardTextWrap>
                         <CardTitle>{title}</CardTitle>
@@ -59,11 +59,11 @@ export const ScientificActivity: React.FC = () => {
                             <p>{text}</p>
                           </CardTextWrap>
 
-                          <ActivityImg src={img} alt={title} />
+                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={title} />
                         </>
                       ) : (
                         <>
-                          <ActivityImg src={img} alt={title} />
+                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={title} />
 
                           <CardTextWrap>
                             <CardTitle>{title}</CardTitle>
