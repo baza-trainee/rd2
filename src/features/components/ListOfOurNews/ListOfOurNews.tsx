@@ -27,11 +27,19 @@ export const ListOfOurNews = ({ list }: Props): JSX.Element => {
 
   return (
     <Grid container columnSpacing={3} flexGrow={1}>
-      {list.slice(0, numToDisplay).map(({ id, image, title, description, date }) => (
-        <NewOfOurNews imageSrc={image} title={title} description={description} key={id}>
-          <MoreInfoOfNews buttonText="Детальніше" date={date} />
-        </NewOfOurNews>
-      ))}
+      {list
+        .slice(0, numToDisplay)
+        .map(({ id, image, retinaImg, title, description, date }) => (
+          <NewOfOurNews
+            imageSrc={image}
+            retinaImageSrc={retinaImg}
+            title={title}
+            description={description}
+            key={id}
+          >
+            <MoreInfoOfNews buttonText="Детальніше" date={date} />
+          </NewOfOurNews>
+        ))}
     </Grid>
   );
 };

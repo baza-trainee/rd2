@@ -3,12 +3,19 @@ import { Box, Grid, Typography, useTheme } from "@mui/material";
 
 interface Props {
   imageSrc: string;
+  retinaImageSrc: string;
   title: string;
   description: string;
   children: ReactNode;
 }
 
-export const NewOfOurNews = ({ children, imageSrc, title, description }: Props) => {
+export const NewOfOurNews = ({
+  children,
+  imageSrc,
+  retinaImageSrc,
+  title,
+  description,
+}: Props) => {
   const { palette } = useTheme();
 
   return (
@@ -17,7 +24,12 @@ export const NewOfOurNews = ({ children, imageSrc, title, description }: Props) 
         <Grid item>
           <Box height="100%" display="flex" flexDirection="column">
             <Box flexGrow={0}>
-              <img src={imageSrc} style={{ width: "100%" }} alt={imageSrc} />
+              <img
+                width="100%"
+                src={imageSrc}
+                srcSet={`${imageSrc} x1, ${retinaImageSrc} x2`}
+                alt={title}
+              />
             </Box>
             <Box flexGrow={1} paddingInline="24px" marginTop="12px">
               <Typography variant="h4" component="h4">
