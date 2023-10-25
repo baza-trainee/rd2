@@ -18,7 +18,7 @@ export const TabletNav = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "flex", xl: "none" } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
       <IconButton
         size="large"
         aria-label="account of current user"
@@ -39,7 +39,7 @@ export const TabletNav = () => {
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
         sx={{
-          display: { xs: "block", xl: "none" },
+          display: { xs: "block", lg: "none" },
         }}
       >
         <p>Тут має бути бокове меню, як на макеті</p>

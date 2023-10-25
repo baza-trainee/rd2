@@ -53,8 +53,8 @@ const theme = createTheme({
     MuiMenu: {
       styleOverrides: {
         paper: {
-          boxShadow: "none",
-          borderRadius: "0",
+          //boxShadow: "none",
+          borderRadius: "5px 5px 0 0",
         },
       },
     },
