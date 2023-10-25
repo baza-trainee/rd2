@@ -36,8 +36,6 @@ export const Carousel = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper:any) => console.log(swiper)}
       >
 
         {SlideList}
