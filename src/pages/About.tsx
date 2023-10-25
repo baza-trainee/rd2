@@ -9,13 +9,15 @@ import ContactFormSection from "components/commonComponents/ContactFormSection/C
 
 export const About = () => {
 
-  return 
-    <>
-      <Carousel />
-      <MainTasks />
-      <Advantages />
-      <OurNews />
-      <Partners />
-      <ContactFormSection />
-    </>
+  return (
+      <>
+        <Carousel />
+        <MainTasks />
+        <Advantages />
+        <OurNews />
+        <Partners />
+        <ContactFormSection />
+      </>
+  )
+
 };
