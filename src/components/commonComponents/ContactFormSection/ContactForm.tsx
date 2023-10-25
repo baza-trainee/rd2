@@ -4,11 +4,11 @@ import { Button } from "@mui/material";
 
 import contactSchema from "helpers/contactFormValidationSchema";
 import { ContactFormProps } from "types/interfaceContactFormProps";
-import { initialValuesType } from "types/typeContactInitialValues";
+import { contactValuesType } from "types/typeContactInitialValues";
 
 import { FormEl, FieldContainer, FieldLabel, Input, Textarea, FormError } from "./Form.styled";
 
-const initialValues: initialValuesType = {
+const initialValues: contactValuesType = {
   name: "",
   phone: "",
   email: "",

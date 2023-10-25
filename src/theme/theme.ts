@@ -1,16 +1,15 @@
-import {createTheme} from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
-import {themeHeaders} from "./typography";
-import {globalOverrides} from "./styleOverrides";
-
+import { themeHeaders } from "./typography";
+import { globalOverrides } from "./styleOverrides";
 
 const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 576,
+      sm: 468,// here was 576
       md: 768,
-      lg: 992,
+      lg: 1280,// here was 992
       xl: 1440,
     },
   },
@@ -18,15 +17,16 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#4285F4",
+      light: "#ffffff",
     },
     secondary: {
       main: "#f5f5f5",
+      light: "#ababab",
     },
   },
 
   typography: {
-    fontFamily: ["OpenSans, Roboto, sans-serif",
-    ].join(","),
+    fontFamily: ["OpenSans, Roboto, sans-serif"].join(","),
     ...themeHeaders,
   },
 
@@ -38,7 +38,7 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          "@media (min-width:576px)": {
+          "@media (min-width:428px)": {
             paddingLeft: "32px",
             paddingRight: "32px",
           },
@@ -72,11 +72,11 @@ const theme = createTheme({
           fontSize: "1.25rem",
           color: "#f5f5f5",
           boxShadow: "none",
-          ":hover": {boxShadow: "none"},
+          ":hover": { boxShadow: "none" },
         },
       },
     },
   },
 });
 
-export {theme};
+export { theme };

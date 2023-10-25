@@ -1,16 +1,14 @@
 import styled from "@emotion/styled";
-import Typography from "@mui/material/Typography";
 
-const TextLogo = styled.a`
+const TextLogo = styled.div`
   color: #151515;
   max-width: 300px;
-  display: block;
   & > h6 {
    font-weight: 800;
   }
   & span {
     display: none;
-    @media (min-width: 1440px) {
+    @media (min-width: 992px) {
       display: inline;
     }
   }

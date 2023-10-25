@@ -1,4 +1,4 @@
-export type initialValuesType = {
+export type contactValuesType = {
     name: string,
     phone: string,
     email: string,
