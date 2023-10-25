@@ -8,11 +8,22 @@ import "swiper/css/pagination";
 
 import {Container} from "@mui/material";
 
-import Typography from "@mui/material/Typography";
+import {CarouselWrap, SlideContainer} from "./Carousel.styled";
+import { CarouselSlideList } from "./CarouselSlideList";
 
-import Button from "@mui/material/Button";
+import {SlideInfo} from "./SlideInfo";
 
-import {CarouselWrap, SlideContainer, SlideContent} from "./Carousel.styled";
+const SlideList = CarouselSlideList.map((slide, index) => (
+  <SwiperSlide key={slide.title+index}>
+
+    <SlideContainer src={slide.imgSrc} retinaSrc={slide.retinaImgSrc}>
+      <Container maxWidth="xl">
+        <SlideInfo title={slide.title} description={slide.description}/>
+      </Container>
+    </SlideContainer>
+
+  </SwiperSlide>
+));
 
 
 export const Carousel = () => {
@@ -26,56 +37,11 @@ export const Carousel = () => {
         navigation
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper:any) => console.log(swiper)}// !!!!!!!!!!!!!!!!!!!!!! type Any
+        onSwiper={(swiper:any) => console.log(swiper)}
       >
-        <SwiperSlide >
-          <SlideContainer>
-            <Container maxWidth="xl">
-              <SlideContent>
 
+        {SlideList}
 
-                <Typography variant="h2"
-                  component="h2"
-                  color="secondary"
-                  gutterBottom
-                >
-                                    Напрямки роботи ДП
-                </Typography>
-
-                <Typography variant="body1"
-                  color="secondary"
-                >
-                                    Отримайте всі переваги членства в нашій організації -
-                                    від інформації про заходи до швидкого рецензування
-                                    наукових робіт
-                </Typography>
-
-                <Button variant="contained">підтримати</Button>
-
-
-              </SlideContent>
-            </Container>
-          </SlideContainer>
-
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={{backgroundColor: "red"}}>
-            <Container maxWidth="xl">
-              <div style={{border: "5px solid blue"}}>
-                                Slide 2
-              </div>
-            </Container>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={{backgroundColor: "grey"}}>
-            <Container maxWidth="xl">
-              <div style={{border: "5px solid blue"}}>
-                                Slide 3
-              </div>
-            </Container>
-          </div>
-        </SwiperSlide>
       </Swiper>
 
     </CarouselWrap>
