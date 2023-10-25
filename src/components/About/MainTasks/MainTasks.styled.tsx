@@ -17,7 +17,7 @@ background-size: auto 100%;
 
 }
 @media (min-width: 1440px) {
-	background: url(${bgDesk}) no-repeat;
+	background: #6C7D8D url(${bgDesk}) no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
