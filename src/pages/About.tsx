@@ -8,12 +8,14 @@ import { Partners } from "components/About/Partners/Partners";
 import ContactFormSection from "components/commonComponents/ContactFormSection/ContactFormSection";
 
 export const About = () => {
-  return <>
-    <Carousel />
-    <MainTasks />
-    <Advantages />
-    <OurNews />
-    <Partners />
-    <ContactFormSection />
+
+  return 
+    <>
+      <Carousel />
+      <MainTasks />
+      <Advantages />
+      <OurNews />
+      <Partners />
+      <ContactFormSection />
     </>
 };
