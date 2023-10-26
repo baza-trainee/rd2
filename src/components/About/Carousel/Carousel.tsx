@@ -18,7 +18,7 @@ const SlideList = carouselSlideList.map((slide, index) => (
 
     <SlideContainer //imgSrc={slide.imgSrc}
                     //retinaImgSrc={slide.retinaImgSrc}
-                    style={{backgroundImage: `url(${slide.imgSrc})`}}
+                    //style={{backgroundImage: `url(${slide.imgSrc})`}}
     >
       <Container maxWidth="xl">
         <SlideInfo title={slide.title} description={slide.description}/>
