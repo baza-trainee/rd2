@@ -13,7 +13,7 @@ export const SlideInfo = ({ title, description }: SlideInfoProps) => {
     <SlideContent>
 
       <Typography variant="h2"
-        component="h2"
+        component="h1"
         color="secondary"
         gutterBottom
       >

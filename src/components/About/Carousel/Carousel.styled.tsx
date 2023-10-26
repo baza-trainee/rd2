@@ -108,7 +108,7 @@ const SlideContent = styled.div`
   margin-left: 0;
   width: 100%; 
   
-  h2 {
+  h1 {
     width: 230px;
   }
   
@@ -129,7 +129,7 @@ const SlideContent = styled.div`
     padding-top: 20%;
     width: 425px;
 
-    h2 {
+    h1 {
       width: auto;
     }
   }
