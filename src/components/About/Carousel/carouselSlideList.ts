@@ -9,7 +9,7 @@ import slide3Img from "../../../assets/images/carousel/flying-drone-background3.
 import slide3ImgRet from "../../../assets/images/carousel/flying-drone-background3@2x.jpg";
 
 
-const CarouselSlideList: CarouselSlide[] = [
+const carouselSlideList: CarouselSlide[] = [
   {
     title: "Напрямки роботи ДП",
     description: "Отримайте всі переваги членства в нашій організації - від інформації про заходи до швидкого рецензування наукових робіт",
@@ -30,4 +30,4 @@ const CarouselSlideList: CarouselSlide[] = [
   },
 ];
 
-export {CarouselSlideList};
+export {carouselSlideList};
