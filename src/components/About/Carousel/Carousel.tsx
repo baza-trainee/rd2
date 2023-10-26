@@ -2,13 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
-import slide1Img from "assets/images/carousel/flying-drone-background1.jpg";
-import slide1ImgRet from "assets/images/carousel/flying-drone-background1@2x.jpg";
-import slide2Img from "assets/images/carousel/flying-drone-background2.jpg";
-import slide2ImgRet from "assets/images/carousel/flying-drone-background2@2x.jpg";
-import slide3Img from "assets/images/carousel/flying-drone-background3.jpg";
-import slide3ImgRet from "assets/images/carousel/flying-drone-background3@2x.jpg";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -23,9 +16,9 @@ import {SlideInfo} from "./SlideInfo";
 const SlideList = carouselSlideList.map((slide, index) => (
   <SwiperSlide key={slide.title+index}>
 
-    <SlideContainer imgSrc={slide.imgSrc}
-                    retinaImgSrc={slide.retinaImgSrc}
-                    //style={{backgroundImage: `url(${slide.imgSrc})`}}
+    <SlideContainer //imgSrc={slide.imgSrc}
+                    //retinaImgSrc={slide.retinaImgSrc}
+                    style={{backgroundImage: `url(${slide.imgSrc})`}}
     >
       <Container maxWidth="xl">
         <SlideInfo title={slide.title} description={slide.description}/>

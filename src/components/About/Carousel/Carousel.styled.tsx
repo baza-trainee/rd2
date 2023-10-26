@@ -63,8 +63,8 @@ const CarouselWrap = styled.div`
 `;
 
 type SlideContainerProps = {
-    imgSrc: string
-    retinaImgSrc: string
+    imgSrc?: string
+    retinaImgSrc?: string
 }
 const SlideContainer = styled.div<SlideContainerProps>`
   position: relative;
@@ -73,7 +73,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  //background-image: url(${props => props.imgSrc});
+  //background-image: //url(//$//{props => props.imgSrc});
 
   & .MuiButton-root {
     position: absolute;
@@ -83,7 +83,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   };
   
   @media (min-resolution: 2dppx) {
-    //background-image: url(${props => props.retinaImgSrc});
+    //background-image: //url(//$//{props => props.//{retinaImgSrc}});
   }
 
   @media (min-width: 468px) {
