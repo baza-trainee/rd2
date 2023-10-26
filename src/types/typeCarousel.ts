@@ -4,3 +4,4 @@ export interface CarouselSlide {
     imgSrc: string,
     //retinaImgSrc: string
 }
+
