@@ -1,8 +1,10 @@
+
 import styled from "@emotion/styled";
 
 import {theme} from "../../../theme/theme";
 
 const arrowColor = theme.palette.secondary.main;
+
 
 const CarouselWrap = styled.div`
     & .swiper-pagination {
@@ -61,8 +63,8 @@ const CarouselWrap = styled.div`
 `;
 
 type SlideContainerProps = {
-    src: string
-    retinaSrc: string
+    imgSrc?: string
+    retinaImgSrc?: string
 }
 const SlideContainer = styled.div<SlideContainerProps>`
   position: relative;
@@ -71,7 +73,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(${props => props.src});
+  //background-image: //url(//$//{props => props.imgSrc});
 
   & .MuiButton-root {
     position: absolute;
@@ -81,7 +83,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   };
   
   @media (min-resolution: 2dppx) {
-    background-image: url(${props => props.retinaSrc});
+    //background-image: //url(//$//{props => props.//{retinaImgSrc}});
   }
 
   @media (min-width: 468px) {
@@ -108,7 +110,7 @@ const SlideContent = styled.div`
   margin-left: 0;
   width: 100%; 
   
-  h2 {
+  h1 {
     width: 230px;
   }
   
@@ -129,7 +131,7 @@ const SlideContent = styled.div`
     padding-top: 20%;
     width: 425px;
 
-    h2 {
+    h1 {
       width: auto;
     }
   }

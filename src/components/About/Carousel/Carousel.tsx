@@ -9,14 +9,17 @@ import "swiper/css/pagination";
 import {Container} from "@mui/material";
 
 import {CarouselWrap, SlideContainer} from "./Carousel.styled";
-import { CarouselSlideList } from "./CarouselSlideList";
+import { carouselSlideList } from "./carouselSlideList";
 
 import {SlideInfo} from "./SlideInfo";
 
-const SlideList = CarouselSlideList.map((slide, index) => (
+const SlideList = carouselSlideList.map((slide, index) => (
   <SwiperSlide key={slide.title+index}>
 
-    <SlideContainer src={slide.imgSrc} retinaSrc={slide.retinaImgSrc}>
+    <SlideContainer //imgSrc={slide.imgSrc}
+                    //retinaImgSrc={slide.retinaImgSrc}
+                    //style={{backgroundImage: `url(${slide.imgSrc})`}}
+    >
       <Container maxWidth="xl">
         <SlideInfo title={slide.title} description={slide.description}/>
       </Container>
