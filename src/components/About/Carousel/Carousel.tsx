@@ -16,9 +16,10 @@ import {SlideInfo} from "./SlideInfo";
 const SlideList = carouselSlideList.map((slide, index) => (
   <SwiperSlide key={slide.title+index}>
 
-    <SlideContainer //imgSrc={slide.imgSrc}
-                    //retinaImgSrc={slide.retinaImgSrc}
-                    //style={{backgroundImage: `url(${slide.imgSrc})`}}
+    <SlideContainer
+      imgSrc={slide.imgSrc}
+      retinaImgSrc={slide.retinaImgSrc}
+      //style={{backgroundImage: `url(${slide.imgSrc})`}}
     >
       <Container maxWidth="xl">
         <SlideInfo title={slide.title} description={slide.description}/>
