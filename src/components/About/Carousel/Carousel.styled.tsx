@@ -1,9 +1,3 @@
-import slide1Img from "assets/images/carousel/flying-drone-background1.jpg";
-import slide1ImgRet from "assets/images/carousel/flying-drone-background1@2x.jpg";
-import slide2Img from "assets/images/carousel/flying-drone-background2.jpg";
-import slide2ImgRet from "assets/images/carousel/flying-drone-background2@2x.jpg";
-import slide3Img from "assets/images/carousel/flying-drone-background3.jpg";
-import slide3ImgRet from "assets/images/carousel/flying-drone-background3@2x.jpg";
 
 import styled from "@emotion/styled";
 
@@ -79,7 +73,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(${props => props.imgSrc});
+  //background-image: url(${props => props.imgSrc});
 
   & .MuiButton-root {
     position: absolute;
@@ -89,7 +83,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   };
   
   @media (min-resolution: 2dppx) {
-    background-image: url(${props => props.retinaImgSrc});
+    //background-image: url(${props => props.retinaImgSrc});
   }
 
   @media (min-width: 468px) {
