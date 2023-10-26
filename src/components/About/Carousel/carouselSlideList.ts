@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
-import {CarouselSlide} from "../../../types/typeCarousel";
+import slide1Img from "assets/images/carousel/flying-drone-background1.jpg";
+import slide1ImgRet from "assets/images/carousel/flying-drone-background1@2x.jpg";
+import slide2Img from "assets/images/carousel/flying-drone-background2.jpg";
+import slide2ImgRet from "assets/images/carousel/flying-drone-background2@2x.jpg";
+import slide3Img from "assets/images/carousel/flying-drone-background3.jpg";
+import slide3ImgRet from "assets/images/carousel/flying-drone-background3@2x.jpg";
 
-import slide1Img from "../../../assets/images/carousel/flying-drone-background1.jpg";
-import slide1ImgRet from "../../../assets/images/carousel/flying-drone-background1@2x.jpg";
-import slide2Img from "../../../assets/images/carousel/flying-drone-background2.jpg";
-import slide2ImgRet from "../../../assets/images/carousel/flying-drone-background2@2x.jpg";
-import slide3Img from "../../../assets/images/carousel/flying-drone-background3.jpg";
-import slide3ImgRet from "../../../assets/images/carousel/flying-drone-background3@2x.jpg";
+import {CarouselSlide} from "../../../types/typeCarousel";
 
 
 const carouselSlideList: CarouselSlide[] = [
