@@ -6,9 +6,9 @@
 
 //import slide3ImgRet from "assets/images/carousel/flying-drone-background3@2x.jpg";
 
-import slideOneImg from "../../../assets/images/carousel/drone-background-1.jpg";
-import slideTwoImg from "../../../assets/images/carousel/drone-background-2.jpg";
-import slideThreeImg from "../../../assets/images/carousel/drone-background-3.jpg";
+import slideOneImg from "assets/images/carousel/drone-background-1.jpg";
+import slideTwoImg from "assets/images/carousel/drone-background-2.jpg";
+import slideThreeImg from "assets/images/carousel/drone-background-3.jpg";
 
 import {CarouselSlide} from "../../../types/typeCarousel";
 
