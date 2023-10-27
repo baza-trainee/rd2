@@ -20,6 +20,7 @@ const SectionWrapper = styled.div`
 `;
 
 const Title = styled.h1`
+  font-family: Open Sans;
   width: 328px;
   font-size: 40px;
   font-weight: 600;
@@ -66,6 +67,7 @@ const Divider = styled.span`
 `;
 
 const TitleText = styled.p`
+  font-family: Open Sans;
   width: 328px;
   @media (min-width: 768px) {
     width: 420px;
@@ -107,6 +109,10 @@ padding: 24px;
     width: 340px;
     height: 289px;
   }
+  @media (min-width: 768px) and (max-width: 1439px) {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
   @media (min-width: 1440px) {
   
     width: 668px;
@@ -121,13 +127,19 @@ padding: 24px;
 `;
 
 const CardTitle = styled.h2`
+  font-family: Open Sans;
   font-weight: 600;
   margin-bottom: 16px;
   margin-top: 0px;
+  font-size: 16px;
 
   @media (min-width: 1440px) {
     font-size: 32px;
   }
+`;
+
+const CardText = styled.p`
+  font-family: Open Sans;
 `;
 
 const ActivityImg = styled.img`
@@ -159,4 +171,5 @@ export {
   CardTextWrap,
   Cards,
   CardWrapper,
+  CardText,
 };
