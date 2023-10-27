@@ -38,7 +38,7 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          "@media (min-width:428px)": {
+          "@media (min-width:468px)": {
             paddingLeft: "32px",
             paddingRight: "32px",
           },
