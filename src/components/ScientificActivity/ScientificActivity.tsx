@@ -13,6 +13,7 @@ import {
   CardTextWrap,
   Cards,
   CardWrapper,
+  CardText,
 } from "./ScientificActivity.styled";
 
 export const ScientificActivity: React.FC = () => {
@@ -47,7 +48,7 @@ export const ScientificActivity: React.FC = () => {
 
                       <CardTextWrap>
                         <CardTitle>{title}</CardTitle>
-                        <p>{text}</p>
+                        <CardText>{text}</CardText>
                       </CardTextWrap>
                     </>
                   ) : (
@@ -56,7 +57,7 @@ export const ScientificActivity: React.FC = () => {
                         <>
                           <CardTextWrap>
                             <CardTitle>{title}</CardTitle>
-                            <p>{text}</p>
+                            <CardText>{text}</CardText>
                           </CardTextWrap>
 
                           <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={title} />
@@ -67,7 +68,7 @@ export const ScientificActivity: React.FC = () => {
 
                           <CardTextWrap>
                             <CardTitle>{title}</CardTitle>
-                            <p>{text}</p>
+                            <CardText>{text}</CardText>
                           </CardTextWrap>
                         </>
                       )}
