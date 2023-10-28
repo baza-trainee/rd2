@@ -1,13 +1,14 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useMediaQuery } from "@mui/material";
+import { theme } from "theme/theme";
 
 import prevIcon from "assets/images/partners/Icon.png";
 import nextIcon from "assets/images/partners/Icon-2.png";
 
 import { IPartners } from "components/About/Partners/partnersList";
-import { useSlideQuantity } from "features/hooks/useSlideQuantity";
-import { useResize } from "features/hooks/useResize";
+import { handleResize } from "features/helpers/handleResize";
 
 import { SwiperButtonNav } from "../PartnersButtonNav/PartnersButtonNav";
 import { PartnersCard } from "../PartnersCard/PartnersCard";
@@ -20,27 +21,32 @@ interface Props {
 }
 
 export const PartnersSlider: FC<Props> = ({ partnersList }) => {
-  const { quantity } = useSlideQuantity({ type: "partners" });
-  const { size } = useResize();
+  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isMd = useMediaQuery(theme.breakpoints.up("md"));
+  const isSm = useMediaQuery(theme.breakpoints.up("sm"));
 
-  const showButton = size !== "sm";
-  const prevButton = showButton && <SwiperButtonNav imageSrc={prevIcon} prev />;
-  const nextButton = showButton && <SwiperButtonNav imageSrc={nextIcon} next />;
+  useEffect(() => {
+    handleResize(isSm, isMd, isXl);
+  }, [isSm, isMd, isXl]);
+
+  const prevButton = (isMd || isXl) && <SwiperButtonNav imageSrc={prevIcon} prev />;
+  const nextButton = (isMd || isMd) && <SwiperButtonNav imageSrc={nextIcon} next />;
 
   return (
     <SwiperContainer>
       {prevButton}
       <Swiper
+        direction="horizontal"
         modules={[Navigation]}
         spaceBetween={16}
-        slidesPerView={quantity}
+        slidesPerView={handleResize(isXl, isMd, isSm)}
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
         }}
       >
         {partnersList.map(({ id, imageSrc, retinaImageSrc }) => (
-          <SwiperSlide key={id}>
+          <SwiperSlide style={{ maxWidth: "fit-content" }} key={id}>
             <PartnersCard imageSrc={imageSrc} retinaImageSrc={retinaImageSrc} />
           </SwiperSlide>
         ))}
