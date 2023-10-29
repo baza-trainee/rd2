@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
@@ -8,7 +8,6 @@ import prevIcon from "assets/images/partners/Icon.png";
 import nextIcon from "assets/images/partners/Icon-2.png";
 
 import { IPartners } from "components/About/Partners/partnersList";
-import { handleResize } from "features/helpers/handleResize";
 
 import { SwiperButtonNav } from "../PartnersButtonNav/PartnersButtonNav";
 import { PartnersCard } from "../PartnersCard/PartnersCard";
@@ -25,13 +24,18 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
   const isSm = useMediaQuery(theme.breakpoints.up("sm"));
 
-  useEffect(() => {
-    handleResize(isSm, isMd, isXl);
-  }, [isSm, isMd, isXl]);
+  let numToDisplay = 1.5;
+
+  if (isXl) {
+    numToDisplay = 5.5;
+  } else if (isMd) {
+    numToDisplay = 2.8;
+  } else if (isSm) {
+    numToDisplay = 1.5;
+  }
 
   const prevButton = (isMd || isXl) && <SwiperButtonNav imageSrc={prevIcon} prev />;
   const nextButton = (isMd || isMd) && <SwiperButtonNav imageSrc={nextIcon} next />;
-
   return (
     <SwiperContainer>
       {prevButton}
@@ -39,7 +43,7 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
         direction="horizontal"
         modules={[Navigation]}
         spaceBetween={16}
-        slidesPerView={handleResize(isXl, isMd, isSm)}
+        slidesPerView={numToDisplay}
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
