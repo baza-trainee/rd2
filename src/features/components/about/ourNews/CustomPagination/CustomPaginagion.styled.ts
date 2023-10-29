@@ -13,6 +13,7 @@ export const Pagination = styled.nav`
     height: 14px;
     background-color: inherit;
     border: 2px solid #fff;
+    opacity: 1;
     cursor: pointer;
   }
 
