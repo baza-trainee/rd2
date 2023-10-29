@@ -11,8 +11,9 @@ export const MoreInfoOfNews = ({ buttonText, date }: Props) => {
   const { palette } = useTheme();
 
   return (
-    <Box flexGrow={0} paddingInline="24px" marginBottom="24px">
+    <Box paddingInline="24px" marginBottom="24px">
       <Button
+        sx={{ fontWeight: 600 }}
         fullWidth
         variant="contained"
         LinkComponent="a"
