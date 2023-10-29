@@ -5,7 +5,7 @@ export const Pagination = styled.nav`
   height: fit-content;
   display: flex;
   flex-direction: row;
-  column-gap: 8px;
+  column-gap: 6px;
   justify-content: center;
 
   & .swiper-pagination-bullet {
