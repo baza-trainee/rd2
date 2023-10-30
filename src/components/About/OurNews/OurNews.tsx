@@ -1,4 +1,4 @@
-import { ListOfOurNews } from "features/components/ListOfOurNews/ListOfOurNews";
+import { ListOfOurNews } from "features/components/about/ourNews/ListOfOurNews/ListOfOurNews";
 import { list } from "components/About/OurNews/listNews";
 import { SectionContainer } from "features/components/SectionContainer/SectionContainer";
 import { SectionHeader } from "features/components/SectionHeader/SectionHeader";

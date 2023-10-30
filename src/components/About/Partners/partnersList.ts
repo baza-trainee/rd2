@@ -15,6 +15,4 @@ export const partners: IPartners[] = [
   { id: 4, imageSrc: partnerBlockImg, retinaImageSrc: partnerBlockImg },
   { id: 5, imageSrc: partnerBlockImg, retinaImageSrc: partnerBlockImg },
   { id: 6, imageSrc: partnerBlockImg, retinaImageSrc: partnerBlockImg },
-  { id: 7, imageSrc: partnerBlockImg, retinaImageSrc: partnerBlockImg },
-  { id: 9, imageSrc: partnerBlockImg, retinaImageSrc: partnerBlockImg },
 ];
