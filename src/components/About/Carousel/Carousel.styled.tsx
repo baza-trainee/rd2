@@ -46,10 +46,10 @@ const CarouselWrap = styled.div`
   
   @media (min-width: 768px) {
     & .swiper-button-prev {
-      left: 40px
+      left: 32px
     }
     & .swiper-button-next {
-      right: 40px
+      right: 32px
     }
     & .swiper-button-prev:after,
     & .swiper-button-next:after
@@ -57,6 +57,16 @@ const CarouselWrap = styled.div`
       font-size: 44px;
     }
   }
+
+  @media (min-width: 1280px) {
+    & .swiper-button-prev {
+      left: 40px
+    }
+    & .swiper-button-next {
+      right: 40px
+    }
+  }
+  
   & .swiper-button-disabled {
     display: none;
   }

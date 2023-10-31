@@ -1,50 +1,82 @@
 import React from "react";
 
-import {Box, IconButton} from "@mui/material";
+import {IconButton} from "@mui/material";
+
+import CloseIcon from "@mui/icons-material/Close";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
-import {Menu} from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+
+import {
+  DonateButtonStyled,
+  LanguageMenuStyled,
+  NavStyled,
+  TabletContainer,
+  WrapBlock,
+} from "./TabletNav.styled";
 
 export const TabletNav = () => {
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [state, setState] = React.useState({right: false});
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  const toggleDrawer = (open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+                    ((event as React.KeyboardEvent).key === "Tab" ||
+                        (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+      setState({ right: open });
+    };
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
+    <TabletContainer>
       <IconButton
-        size="large"
         aria-label="account of current user"
         aria-controls="menu-appbar"
         aria-haspopup="true"
-        onClick={handleOpenNavMenu}
+        onClick={toggleDrawer(true)}
         color="inherit"
       >
         <MenuIcon />
       </IconButton>
 
-      <Menu
-        id="menu-appbar"
-        anchorEl={anchorElNav}
-
-        keepMounted
-
-        open={Boolean(anchorElNav)}
-        onClose={handleCloseNavMenu}
+      <Drawer anchor="right"
+        open={state.right}
+        onClose={toggleDrawer(false)}
         sx={{
-          display: { xs: "block", lg: "none" },
+          "& .MuiDrawer-paper": {
+            width: "100%",
+            "@media (min-width: 468px)": {
+              width: "360px",
+            },
+          },
         }}
       >
-        <p>Тут має бути бокове меню, як на макеті</p>
-      </Menu>
+        <WrapBlock>
 
-    </Box>
+          <IconButton
+            aria-label="close"
+            onClick={toggleDrawer(false)}
+          >
+            <CloseIcon />
+          </IconButton>
+
+          <DonateButtonStyled />
+
+          <NavStyled
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}/>
+
+          <LanguageMenuStyled />
+
+        </WrapBlock>
+
+      </Drawer>
+
+    </TabletContainer>
   );
 };

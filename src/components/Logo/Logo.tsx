@@ -9,7 +9,8 @@ export const Logo = () => {
       <Typography variant="h6"
         component="h6"
       >
-        НАН України
+        <span>НАН України</span>
+        <span>НАНУ</span>
       </Typography>
       <p>ДП НДЦ  <span>проблем надрокористування </span>«Георесурс»</p>
     </TextLogo>
