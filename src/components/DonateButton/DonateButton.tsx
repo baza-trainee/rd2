@@ -3,9 +3,12 @@ import Button from "@mui/material/Button";
 
 import {DonateModal} from "../DonateModal/DonateModal";
 
+interface DonateButtonProps {
+    className?: string
+}
 
 
-export const DonateButton = () => {
+export const DonateButton = ({className}: DonateButtonProps) => {
 
   const [open, setOpen] = React.useState(false);
   const onClickOpen = () => {
@@ -20,6 +23,7 @@ export const DonateButton = () => {
     <>
       <Button variant="contained"
         onClick={onClickOpen}
+        className={className}
       >підтримати</Button>
 
       <DonateModal

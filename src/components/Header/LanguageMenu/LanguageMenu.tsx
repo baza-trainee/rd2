@@ -6,7 +6,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import {LanguageMenuWrap} from "./LanguageMenu.styled";
 
-export const LanguageMenu = () => {
+interface LanguageMenuProps {
+    className?: string
+}
+
+export const LanguageMenu = ({ className }: LanguageMenuProps) => {
 
   const [menuLang, setMenuLang] = React.useState("UA");
 
@@ -25,7 +29,7 @@ export const LanguageMenu = () => {
   };
 
   return (
-    <LanguageMenuWrap opened ={open}>
+    <LanguageMenuWrap opened ={open} className={className}>
       <Button
         id="basic-button"
         aria-controls={open ? "lang-menu" : undefined}
