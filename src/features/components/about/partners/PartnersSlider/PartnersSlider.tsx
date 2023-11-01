@@ -7,6 +7,8 @@ import { theme } from "theme/theme";
 import prevIcon from "assets/images/partners/Icon.png";
 import nextIcon from "assets/images/partners/Icon-2.png";
 
+import { handleSlideToDisplay } from "features/helpers/handleSlideToDisplay";
+
 import { IPartners } from "components/About/Partners/partnersList";
 
 import { SwiperButtonNav } from "../PartnersButtonNav/PartnersButtonNav";
@@ -24,15 +26,7 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
   const isSm = useMediaQuery(theme.breakpoints.up("sm"));
 
-  let numToDisplay = 1.5;
-
-  if (isXl) {
-    numToDisplay = 5.5;
-  } else if (isMd) {
-    numToDisplay = 2.8;
-  } else if (isSm) {
-    numToDisplay = 1.5;
-  }
+  const numToDisplay = handleSlideToDisplay(isSm, isMd, isXl);
 
   const prevButton = (isMd || isXl) && <SwiperButtonNav imageSrc={prevIcon} prev />;
   const nextButton = (isMd || isMd) && <SwiperButtonNav imageSrc={nextIcon} next />;
@@ -40,7 +34,6 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
     <SwiperContainer>
       {prevButton}
       <Swiper
-        direction="horizontal"
         modules={[Navigation]}
         spaceBetween={16}
         slidesPerView={numToDisplay}
@@ -50,7 +43,7 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
         }}
       >
         {partnersList.map(({ id, imageSrc, retinaImageSrc }) => (
-          <SwiperSlide style={{ maxWidth: "fit-content" }} key={id}>
+          <SwiperSlide key={id}>
             <PartnersCard imageSrc={imageSrc} retinaImageSrc={retinaImageSrc} />
           </SwiperSlide>
         ))}

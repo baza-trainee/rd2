@@ -5,4 +5,8 @@ export const SwiperContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  & .swiper-slide {
+    max-width: fit-content;
+  }
 `;
