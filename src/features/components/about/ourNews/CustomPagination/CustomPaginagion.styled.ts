@@ -12,12 +12,12 @@ export const Pagination = styled.nav`
     width: 14px;
     height: 14px;
     background-color: inherit;
-    border: 2px solid #fff;
+    border: 2px solid #4285f4;
     opacity: 1;
     cursor: pointer;
   }
 
   & .swiper-pagination-bullet-active {
-    background: #fff;
+    background-color: #4285f4;
   }
 `;
