@@ -89,14 +89,18 @@ border-radius: 24px;
         margin-bottom: 40px;
     }
 }    
-@media (min-width: 768px) and (max-width: 1440px){
+@media (min-width: 768px){
     display: flex;
     &:not(:last-child){
         margin-bottom: 16px;
     }
 }
 @media (min-width: 1440px) {
+    display: block;
     width: calc((100% - 32px)/3);
+    &:not(:last-child){
+        margin-bottom: 0px;
+    }
 }
 
 `;
@@ -104,7 +108,7 @@ const AdvantageImgBox = styled.div`
 display: flex;
 justify-content: center;
 overflow: hidden;
-@media (min-width: 768px) and (max-width: 1440px){
+@media (min-width: 768px) and (max-width: 1439.5px){
     width: 340px;
     height: 240px;
 }
