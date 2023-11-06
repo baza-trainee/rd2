@@ -4,8 +4,8 @@ import React from "react";
 
 import {theme} from "../../../theme/theme";
 
-import {DonateButton} from "../../DonateButton/DonateButton";
-import {Nav} from "../../Nav/Nav";
+import {DonateButton} from "../../commonComponents/DonateButton/DonateButton";
+import {Nav} from "../../commonComponents/Nav/Nav";
 import {LanguageMenu} from "../LanguageMenu/LanguageMenu";
 
 const deliverColor = theme.palette.grey[300];

@@ -77,7 +77,7 @@ background: #FFF;
     width: 446px;
     height: 202px;
 }
-`
+`;
 const CloseBtn = styled.button`
 position: absolute;
 top: 16px;

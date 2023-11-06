@@ -5,7 +5,7 @@ import ModalSuccessSent from "./ModalSuccessSent";
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
 
 const ContactFormSection: React.FC = () => {
-    const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return <Container>
     <SectionWrapper>
       <Desc> Якщо у вас є питання, зауваження або пропозиції, просимо заповнити

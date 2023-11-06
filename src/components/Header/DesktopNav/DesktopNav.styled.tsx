@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 
-import { Nav } from "../../Nav/Nav";
+import {Nav} from "../../commonComponents/Nav/Nav";
 
-import { theme } from "../../../theme/theme";
+import {theme} from "../../../theme/theme";
 
 const hoverLinkColor = theme.palette.primary.dark;
 const linkColor = theme.palette.primary.main;
 
 const NavContainer = styled.div`
-  display: none;
+    display: none;
   @media (min-width: 1280px) {
     display: flex;
   }
@@ -18,7 +18,7 @@ const NavStyled = styled(Nav)`
   display: flex;
   width: 600px;
   justify-content: space-between;
-
+  
   a {
     font-weight: 600;
     color: #151515;
@@ -29,7 +29,7 @@ const NavStyled = styled(Nav)`
   a.active {
     color: ${linkColor};
   }
-
+  
   a:hover {
     color: ${hoverLinkColor};
   }
@@ -39,4 +39,4 @@ const NavStyled = styled(Nav)`
   }
 `;
 
-export { NavContainer, NavStyled };
+export {NavContainer, NavStyled};

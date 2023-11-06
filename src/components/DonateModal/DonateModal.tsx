@@ -1,41 +1,44 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import {Dialog} from "@mui/material";
 
-const ModalContent = () => {
-  return (
-    <div>
-      <p>Dialog - обгортка для контента модалки.</p>
-      <Typography variant="h3" component="h3" >
-                h3. Heading
-      </Typography>
+import {IconButton} from "@mui/material";
 
-      <p>bghjgj bjgkjgj bjbgjkhkj</p>
+import CloseIcon from "@mui/icons-material/Close";
 
-      <Button variant="contained"
-        size="large"
-        fullWidth={true}>
-                Оплатити
-      </Button>
+import {DialogStyled, ModalContent} from "./DonateModal.styled";
 
-    </div>
-  );
-};
+import {DonateContent} from "./DonateContent/DonateContent";
+
+import {SuccessContent} from "./SuccessContent/SuccessContent";
 
 interface DonateModalProps {
     open: boolean;
+    successPayment: boolean
     onCloseModal: () => void;
+    onSuccess: () => void;
 }
 
-export function DonateModal(props: DonateModalProps) {
-  const { onCloseModal, open } = props;
+export function DonateModal({ onCloseModal, open, onSuccess, successPayment }: DonateModalProps) {
 
   return (
-    <Dialog onClose={onCloseModal} open={open}>
+    <DialogStyled
+      fullWidth={true}
+      onClose={onCloseModal}
+      open={open}
+    >
+      <IconButton
+        aria-label="close"
+        onClick={onCloseModal}
+      >
+        <CloseIcon />
+      </IconButton>
 
-      <ModalContent />
+      <ModalContent>
+        {successPayment
+          ? <SuccessContent />
+          : <DonateContent onChangeSuccess={onSuccess}/>
+        }
+      </ModalContent>
 
-    </Dialog>
+    </DialogStyled>
   );
 }
