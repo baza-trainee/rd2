@@ -16,7 +16,7 @@ const FormStyled = styled.form`
   flex-direction: column;
   
   height: 100%;
-`
+`;
 
 const ButtonsWrap = styled.div`
   position: relative;
@@ -24,7 +24,7 @@ const ButtonsWrap = styled.div`
   justify-content: space-between;
   
   margin-bottom: 24px;
-`
+`;
 
 const ButtonStyled = styled(Button)`
   min-width: 85px;
@@ -54,7 +54,7 @@ const ButtonStyled = styled(Button)`
   
   & img {
     margin-right: 5px;
-    height: 20px;
+    height: 16px;
     width: auto;
   }
 
@@ -67,7 +67,7 @@ const ButtonStyled = styled(Button)`
     font-size: 1.25rem;
 
     & img {
-      //height: auto;
+      height: 20px;
     }
   }
 
@@ -81,17 +81,17 @@ const ButtonStyled = styled(Button)`
       height: auto;
     }
   }
-`
+`;
 
 const BottomContainer = styled.div`
   display: flex;
   flex-grow: 1;
   align-items: flex-end;
-`
+`;
 
 const TypographyStyled = styled(Typography)`
 margin-bottom: 32px;
-`
+`;
 
 const InputStyled = styled(Input)`
   height: 56px;
@@ -117,19 +117,19 @@ const InputStyled = styled(Input)`
   @media (min-width: 1280px) {
     height: 64px;
   }
-`
+`;
 
 const RelativeBlock = styled.div`
   margin-bottom: 40px;
     position: relative;
-`
+`;
 const ErrorMes = styled.p`
   position: absolute;
   bottom: -30px;
   color: red;
-`
+`;
 
 export {ButtonsWrap, ButtonStyled, TypographyStyled,
-    InputStyled, BottomContainer, FormStyled, RelativeBlock,
-    ErrorMes,
-}
+  InputStyled, BottomContainer, FormStyled, RelativeBlock,
+  ErrorMes,
+};

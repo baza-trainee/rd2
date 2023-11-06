@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import {Nav} from "../../Nav/Nav";
+import {Nav} from "../../commonComponents/Nav/Nav";
 
 import {theme} from "../../../theme/theme";
 

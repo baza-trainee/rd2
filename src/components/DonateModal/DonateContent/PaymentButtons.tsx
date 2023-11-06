@@ -11,47 +11,47 @@ type PaymentBtnsProps = {
 }
 
 const PaymentAmountBtns = ( {onClick, btnInfo}:PaymentBtnsProps ) => {
-    return (
-        <ButtonsWrap >
+  return (
+    <ButtonsWrap >
 
-            {totalSum.map((item) => (
-                <ButtonStyled variant="contained"
-                              key={item}
-                              id={item}
-                              className={( item === btnInfo)? "active" : ""}
-                              onClick={onClick}
-                >
-                    {item} UAH
-                </ButtonStyled>
-            ))}
+      {totalSum.map((item) => (
+        <ButtonStyled variant="contained"
+          key={item}
+          id={item}
+          className={( item === btnInfo)? "active" : ""}
+          onClick={onClick}
+        >
+          {item} UAH
+        </ButtonStyled>
+      ))}
 
-        </ButtonsWrap>
-    )
-}
+    </ButtonsWrap>
+  );
+};
 
 const PaymentInfoBtns = ( {onClick, btnInfo, errorMes}:PaymentBtnsProps ) => {
-    return (
-        <ButtonsWrap >
+  return (
+    <ButtonsWrap >
 
-            {paymentInfo.map((info) => (
-                <ButtonStyled
-                    variant="contained"
-                    className={(info.id === btnInfo)? "active" : ""}
-                    key={info.id}
-                    id={info.id}
-                    onClick={onClick}
-                >
+      {paymentInfo.map((info) => (
+        <ButtonStyled
+          variant="contained"
+          className={(info.id === btnInfo)? "active" : ""}
+          key={info.id}
+          id={info.id}
+          onClick={onClick}
+        >
 
-                    <img src={info.imgSrcMain} alt="payment method"/>
-                    {info.text ? <span>{info.text}</span> : null}
-                    {info.imgSrcSecond ? <img src={info.imgSrcSecond} alt="payment method"/> : null}
-                </ButtonStyled>
-            ))}
+          <img src={info.imgSrcMain} alt="payment method"/>
+          {info.text ? <span>{info.text}</span> : null}
+          {info.imgSrcSecond ? <img src={info.imgSrcSecond} alt="payment method"/> : null}
+        </ButtonStyled>
+      ))}
 
-            { errorMes && <ErrorMes>{errorMes}</ErrorMes> }
+      { errorMes && <ErrorMes>{errorMes}</ErrorMes> }
 
-        </ButtonsWrap>
-    )
-}
+    </ButtonsWrap>
+  );
+};
 
-export { PaymentAmountBtns, PaymentInfoBtns }
+export { PaymentAmountBtns, PaymentInfoBtns };

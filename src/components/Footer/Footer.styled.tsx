@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Nav } from "components/Nav/Nav";
+import { Nav } from "components/commonComponents/Nav/Nav";
 
 export const FooterSection = styled.footer`
   padding: 40px 0;

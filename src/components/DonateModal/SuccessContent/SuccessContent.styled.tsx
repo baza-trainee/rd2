@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import bgImage from "../../../assets/images/successModal/drone.png";
+import bgImageRetina from "../../../assets/images/successModal/drone@2x.png";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -11,6 +12,10 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   
   background-image: url(${bgImage});
+  
+  & h2 {
+    margin-bottom: 1.5rem;
+  }
 
   @media (min-width: 468px) {
     background-size: 80%;
@@ -22,9 +27,12 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1280px) {
-    padding-top: 400px;
     background-size: 80%;
   }
-`
 
-export {Wrapper}
+  @media (min-resolution: 2dppx) {
+    background-image: url(${bgImageRetina});
+  }
+`;
+
+export {Wrapper};

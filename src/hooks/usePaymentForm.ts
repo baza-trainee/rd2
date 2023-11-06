@@ -7,51 +7,53 @@ type PaymentProps = {
     methodError?: string,
 }
 
-const usePaymentForm = () => {
+const usePaymentForm = (func:() => void) => {
 
-    const initialState:PaymentProps = {
-        amount: 0,
-        method: "",
+  const initialState:PaymentProps = {
+    amount: 0,
+    method: "",
+  };
+
+  const [payment, setPayment] = useState(initialState);
+  const [inputValue, setInputValue] = useState< number | string>("");
+
+  const onClickPayment = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setPayment({...payment, method: e.currentTarget.id, methodError: ""});
+  };
+
+  const onClickSum = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setPayment({...payment, amount: +e.currentTarget.id, amountError: ""});
+    setInputValue(+e.currentTarget.id);
+  };
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.currentTarget.value.trim();
+    setInputValue(value);
+    setPayment({...payment, amount: +value, amountError: ""});
+  };
+
+  const onSubmitForm = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!payment.amount || !payment.method.length) {
+      let errorMesAmount="";
+      let errorMesMethod="";
+
+      if (!payment.amount) errorMesAmount = "Вкажіть сумму";
+
+      if (!payment.method) errorMesMethod = "Вкажіть метод оплати";
+
+      setPayment({...payment, amountError: errorMesAmount, methodError: errorMesMethod});
+      return;
     }
 
-    const [payment, setPayment] = useState(initialState);
-    const [inputValue, setInputValue] = useState< number | string>("")
+    func();
 
-    const onClickPayment = (e: React.MouseEvent<HTMLButtonElement>) => {
-        setPayment({...payment, method: e.currentTarget.id, methodError: ""});
-    }
+    console.log(payment);
+  };
 
-    const onClickSum = (e: React.MouseEvent<HTMLButtonElement>) => {
-        setPayment({...payment, amount: +e.currentTarget.id, amountError: ""});
-        setInputValue(+e.currentTarget.id)
-    }
+  return {payment, onClickPayment, inputValue, onClickSum, onChangeValue, onSubmitForm};
 
-    const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.currentTarget.value.trim();
-        setInputValue(value);
-        setPayment({...payment, amount: +value, amountError: ""});
-    }
+};
 
-    const onSubmitForm = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!payment.amount || !payment.method.length) {
-            let errorMesAmount="";
-            let errorMesMethod="";
-
-          if (!payment.amount) errorMesAmount = "Вкажіть сумму";
-
-          if (!payment.method) errorMesMethod = "Вкажіть метод оплати";
-
-          setPayment({...payment, amountError: errorMesAmount, methodError: errorMesMethod});
-          return;
-        }
-
-        console.log(payment);
-    }
-
-    return {payment, onClickPayment, inputValue, onClickSum, onChangeValue, onSubmitForm}
-
-}
-
-export {usePaymentForm}
+export {usePaymentForm};

@@ -10,14 +10,26 @@ const DialogStyled = styled(Dialog)`
   & .MuiPaper-root {
     max-width: 520px;
      border-radius: 24px;
+    
+    & > button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
 
+  @media (min-width: 468px) {
+    & > button {
+      top: 20px;
+      right: 20px;
+    }
+  }
   @media (min-width: 1280px) {
     & .MuiPaper-root {
       max-width: 768px;
     }
   }
-`
+`;
 const ModalContent = styled.div`
   height: 550px;
   padding: 40px 15px;
@@ -30,6 +42,6 @@ const ModalContent = styled.div`
   @media (min-width: 1280px) {
     height: 734px;
   }
-`
+`;
 
-export {ModalContent, DialogStyled}
+export {ModalContent, DialogStyled};
