@@ -1,11 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "theme/theme";
 import { ListNews } from "components/About/OurNews/listNews";
-import { handleSlideVisibility } from "features/helpers/handleSlideVisibility";
-import { handleShowPagination } from "features/helpers/handleShowPagination";
+import { getSlideCount } from "features/helpers/getSlideCount";
 
 import { NewOfOurNews } from "../NewOfOurNews/NewOfOurNews";
 import { MoreInfoOfNews } from "../MoreInfoOfNews/MoreInfoOfNews";
@@ -20,17 +19,10 @@ interface Props {
 }
 
 export const ListOfOurNews: FC<Props> = ({ list }) => {
-  const [numToDisplay, setNumToDisplay] = useState<number>(1);
-  const [isVisible, setIsvisible] = useState<boolean>(true);
+  const isAboveXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
 
-  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
-  const isMd = useMediaQuery(theme.breakpoints.up("md"));
-  const isSm = useMediaQuery(theme.breakpoints.up("sm"));
-
-  useEffect(() => {
-    setNumToDisplay(handleSlideVisibility(isSm, isMd, isXl));
-    setIsvisible(handleShowPagination(isMd, isXl));
-  }, [isSm, isMd, isXl]);
+  const slidesCount = getSlideCount(isAboveMd, isAboveXl);
 
   return (
     <Wrapper>
@@ -42,7 +34,7 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
           type: "bullets",
         }}
         spaceBetween={24}
-        slidesPerView={numToDisplay}
+        slidesPerView={slidesCount}
       >
         {list.map(({ id, description, date, image, retinaImg, title }) => (
           <SwiperSlide key={id}>
@@ -56,7 +48,8 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
             </NewOfOurNews>
           </SwiperSlide>
         ))}
-        {isVisible && <CustomPagination />}
+
+        {!isAboveMd && <CustomPagination />}
       </Swiper>
     </Wrapper>
   );

@@ -28,8 +28,8 @@ export const PartnersSlider: FC<Props> = ({ partnersList }) => {
 
   const numToDisplay = handleSlideToDisplay(isSm, isMd, isXl);
 
-  const prevButton = (isMd || isXl) && <SwiperButtonNav imageSrc={prevIcon} prev />;
-  const nextButton = (isMd || isMd) && <SwiperButtonNav imageSrc={nextIcon} next />;
+  const prevButton = isMd && <SwiperButtonNav imageSrc={prevIcon} prev />;
+  const nextButton = isMd && <SwiperButtonNav imageSrc={nextIcon} next />;
   return (
     <SwiperContainer>
       {prevButton}
