@@ -1,41 +1,31 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import {Dialog} from "@mui/material";
+import React, {useState} from "react";
 
-const ModalContent = () => {
-  return (
-    <div>
-      <p>Dialog - обгортка для контента модалки.</p>
-      <Typography variant="h3" component="h3" >
-                h3. Heading
-      </Typography>
+import {DialogStyled, ModalContent} from "./DonateModal.styled";
 
-      <p>bghjgj bjgkjgj bjbgjkhkj</p>
-
-      <Button variant="contained"
-        size="large"
-        fullWidth={true}>
-                Оплатити
-      </Button>
-
-    </div>
-  );
-};
+import {DonateContent} from "./DonateContent/DonateContent";
+import {SuccessContent} from "./SuccessContent/SuccessContent";
 
 interface DonateModalProps {
     open: boolean;
     onCloseModal: () => void;
 }
 
-export function DonateModal(props: DonateModalProps) {
-  const { onCloseModal, open } = props;
+export function DonateModal({ onCloseModal, open }: DonateModalProps) {
+  //const { onCloseModal, open } = props;
+    const [successPayment, setSuccessPayment] = useState(true)
+
 
   return (
-    <Dialog onClose={onCloseModal} open={open}>
+    <DialogStyled
+        fullWidth={true}
+        onClose={onCloseModal}
+        open={open}
+    >
 
-      <ModalContent />
+        <ModalContent>
+            {successPayment ? <SuccessContent /> : <DonateContent />}
+        </ModalContent>
 
-    </Dialog>
+    </DialogStyled>
   );
 }
