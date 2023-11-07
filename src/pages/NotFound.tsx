@@ -1,3 +1,5 @@
+import { NotFoundPage } from "components/Not-Found/NotFoundPage";
+
 export const NotFound = () => {
-  return <>Page not found. Please, go back to the homepage</>;
+  return <NotFoundPage />;
 };
