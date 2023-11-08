@@ -7,12 +7,12 @@ import {
   LanguageMenuStyled,
   LinkStyled,
   Wrapper,
-} from "components/Admin/AdminHeader/AdminHeader.styled";
+} from "components/Auth/AuthHeader/AuthHeader.styled";
 
 import { DonateButton } from "components/commonComponents/DonateButton/DonateButton";
 import { Logo } from "components/Header/Logo/Logo";
 
-export const AdminHeader = () => {
+export const AuthHeader = () => {
   return (
     <header>
       <Container maxWidth="xl">

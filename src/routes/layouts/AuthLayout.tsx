@@ -2,12 +2,12 @@ import { useEffect } from "react";
 
 import { Outlet, useNavigate } from "react-router-dom";
 
-import { AdminHeader } from "components/Admin/AdminHeader/AdminHeader";
+import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { App } from "components/App";
 
 import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
 
-export const AdminLayout = () => {
+export const AuthLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const AdminLayout = () => {
 
   return (
     <App>
-      <AdminHeader />
+      <AuthHeader />
 
       <AuthContainer>
         <Outlet />
