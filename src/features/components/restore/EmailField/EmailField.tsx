@@ -3,7 +3,7 @@ import { ErrorMessage, Field } from "formik";
 
 import { BoxStyles, InputStyles } from "./EmailField.classes";
 
-export const UsernameField = () => {
+export const EmailField = () => {
   return (
     <Box sx={BoxStyles}>
       <Typography variant="h6" component="label" htmlFor="email">
