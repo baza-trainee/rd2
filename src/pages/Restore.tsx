@@ -7,10 +7,11 @@ import { Description } from "features/components/restore/Description/Description
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
 import { EmailField } from "features/components/restore/EmailField/EmailField";
 import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
+import { FormContainer } from "features/components/restore/FormContainer/FormContainer";
 
 export const Restore = (): JSX.Element => {
   const validationSchema = Yup.object({
-    email: Yup.string().email("введіть вірний email").required("Required"),
+    email: Yup.string().email("введіть вірний email").required("введіть вшрний email"),
   });
 
   const handleSubmit = (
@@ -29,9 +30,11 @@ export const Restore = (): JSX.Element => {
       </Description>
 
       <RestoreForm handleSubmit={handleSubmit} validationSchema={validationSchema}>
-        <EmailField />
+        <FormContainer>
+          <EmailField />
 
-        <SubmitButton>Надіслати</SubmitButton>
+          <SubmitButton>Надіслати</SubmitButton>
+        </FormContainer>
       </RestoreForm>
     </AuthContainer>
   );
