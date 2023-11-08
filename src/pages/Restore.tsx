@@ -1,3 +1,5 @@
-export const Restore = () => {
-  return <h1>Restore page</h1>;
+import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
+
+export const Restore = (): JSX.Element => {
+  return <AuthContainer></AuthContainer>;
 };
