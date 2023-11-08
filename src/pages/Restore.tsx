@@ -1,9 +1,16 @@
+import * as Yup from "yup";
+import { FormikHelpers } from "formik";
+
 import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
 import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
 
 export const Restore = (): JSX.Element => {
+  const validationSchema = Yup.object({
+    email: Yup.string().email("введіть вірний email").required("Required"),
+  });
+
   return (
     <AuthContainer>
       <AuthTitle>Відновити пароль</AuthTitle>
@@ -13,7 +20,10 @@ export const Restore = (): JSX.Element => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm></RestoreForm>
+      <RestoreForm
+        handleSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      ></RestoreForm>
     </AuthContainer>
   );
 };
