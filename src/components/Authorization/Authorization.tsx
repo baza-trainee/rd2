@@ -2,7 +2,6 @@ import { FormikHelpers } from "formik";
 import * as Yup from "yup";
 
 import { FormValues } from "types/formValues";
-import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
 import { AuthForm } from "features/components/auth/AuthForm/AuthForm";
 import { UsernameField } from "features/components/auth/UsernameField/UsernameField";
 import { PasswordField } from "features/components/auth/PasswordField/PasswordField";
@@ -21,7 +20,7 @@ export const Authorization = () => {
   };
 
   return (
-    <AuthContainer>
+    <>
       <AuthTitle>Вхід</AuthTitle>
 
       <AuthForm validationSchema={validationSchema} handleSubmit={handleSubmit}>
@@ -33,6 +32,6 @@ export const Authorization = () => {
 
         <SubmitButton>Вхід</SubmitButton>
       </AuthForm>
-    </AuthContainer>
+    </>
   );
 };
