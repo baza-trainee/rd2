@@ -4,7 +4,6 @@ import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm
 import { EmailField } from "features/components/restore/EmailField/EmailField";
 import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 import { FormContainer } from "features/components/restore/FormContainer/FormContainer";
-
 import { handleSubmitRestoreEmail } from "helpers/handleSubmitRestoreEmail";
 
 import { validationEmailSchema } from "./validationEmailShema";
