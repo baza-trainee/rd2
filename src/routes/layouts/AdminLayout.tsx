@@ -5,6 +5,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { AdminHeader } from "components/Admin/AdminHeader/AdminHeader";
 import { App } from "components/App";
 
+import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
+
 export const AdminLayout = () => {
   const navigate = useNavigate();
 
@@ -16,7 +18,9 @@ export const AdminLayout = () => {
     <App>
       <AdminHeader />
 
-      <Outlet />
+      <AuthContainer>
+        <Outlet />
+      </AuthContainer>
     </App>
   );
 };
