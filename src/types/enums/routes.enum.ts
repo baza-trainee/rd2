@@ -3,5 +3,8 @@ export enum ROUTES_ENUM {
   ACTIVITY = "/activity",
   CONTACTS = "/contacts",
   DEMINING = "/demining",
+  ADMIN = "/admin/",
+  AUTH = "auth",
+  RESTORE = "restore",
   NOT_FOUND = "/*",
 }
