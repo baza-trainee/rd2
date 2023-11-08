@@ -6,6 +6,7 @@ import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
 import { EmailField } from "features/components/restore/EmailField/EmailField";
+import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 
 export const Restore = (): JSX.Element => {
   const validationSchema = Yup.object({
@@ -29,6 +30,8 @@ export const Restore = (): JSX.Element => {
 
       <RestoreForm handleSubmit={handleSubmit} validationSchema={validationSchema}>
         <EmailField />
+
+        <SubmitButton>Надіслати</SubmitButton>
       </RestoreForm>
     </AuthContainer>
   );
