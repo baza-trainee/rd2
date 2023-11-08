@@ -5,7 +5,6 @@ export const Demining = () => {
   return (
     <>
       <SocratProject />
-
       <ContactFormSection />
     </>
   );

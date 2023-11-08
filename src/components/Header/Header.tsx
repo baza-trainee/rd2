@@ -4,9 +4,10 @@ import Container from "@mui/material/Container";
 
 import {ROUTES_ENUM} from "../../types/enums/routes.enum";
 
-import {Logo} from "../Logo/Logo";
+import {DonateButton} from "../commonComponents/DonateButton/DonateButton";
 
-import {DonateButton} from "../DonateButton/DonateButton";
+import {Logo} from "./Logo/Logo";
+
 
 import {TabletNav} from "./TabletNav/TabletNav";
 

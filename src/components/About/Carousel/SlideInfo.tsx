@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-import Button from "@mui/material/Button";
+import {DonateButton} from "../../commonComponents/DonateButton/DonateButton";
 
 import {SlideContent} from "./Carousel.styled";
 
@@ -26,7 +26,7 @@ export const SlideInfo = ({ title, description }: SlideInfoProps) => {
         {description}
       </Typography>
 
-      <Button variant="contained">підтримати</Button>
+      <DonateButton></DonateButton>
 
     </SlideContent>
   );

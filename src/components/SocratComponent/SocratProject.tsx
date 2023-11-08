@@ -43,7 +43,7 @@ export const SocratProject: React.FC = () => {
     <div>
       <Container>
         <SocrstHeader>Проект SOCRAT</SocrstHeader>
-        <TitleText>Дистанційне знаходження вибухонебезпечних предметів</TitleText>
+        <TitleText>Дистанційне знешкодження вибухонебезпечних предметів</TitleText>
         <Picture>
           <source
             srcSet={`${DronImgDesk} 1x, ${DronImgDesk2x} 2x`}

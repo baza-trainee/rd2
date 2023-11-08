@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@mui/material/Button";
 
-import {DonateModal} from "../DonateModal/DonateModal";
+import {DonateModal} from "../../DonateModal/DonateModal";
 
 interface DonateButtonProps {
     className?: string
@@ -11,8 +11,14 @@ interface DonateButtonProps {
 export const DonateButton = ({className}: DonateButtonProps) => {
 
   const [open, setOpen] = React.useState(false);
+
+  const [successPayment, setSuccessPayment] = useState(false);
+  const onSuccess = () => {
+    setSuccessPayment(true);
+  };
   const onClickOpen = () => {
     setOpen(true);
+    setSuccessPayment(false);
   };
 
   const onClose = () => {
@@ -28,7 +34,9 @@ export const DonateButton = ({className}: DonateButtonProps) => {
 
       <DonateModal
         open={open}
+        successPayment={successPayment}
         onCloseModal={onClose}
+        onSuccess={onSuccess}
       />
 
     </>
