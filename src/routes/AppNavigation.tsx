@@ -8,8 +8,9 @@ import { Demining } from "pages/Demining";
 import { Contacts } from "pages/Contacts";
 import { NotFound } from "pages/NotFound";
 import { Auth } from "pages/Auth";
+import { Restore } from "pages/Restore";
 
-import { AdminLayout } from "./layouts/AdminLayout";
+import { AuthLayout } from "./layouts/AuthLayout";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
@@ -22,8 +23,9 @@ export const AppNavigation = createBrowserRouter(
         <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
       </Route>
       ,
-      <Route path={ROUTES_ENUM.ADMIN} element={<AdminLayout />}>
+      <Route path={ROUTES_ENUM.ADMIN} element={<AuthLayout />}>
         <Route path={ROUTES_ENUM.AUTH} element={<Auth />} />,
+        <Route path={ROUTES_ENUM.RESTORE} element={<Restore />} />
       </Route>
     </Route>,
   ),
