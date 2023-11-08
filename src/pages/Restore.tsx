@@ -11,6 +11,12 @@ export const Restore = (): JSX.Element => {
     email: Yup.string().email("введіть вірний email").required("Required"),
   });
 
+  const handleSubmit = (
+    values: { email: string },
+    formikHelpers: FormikHelpers<{ email: string }>,
+  ) => {
+    formikHelpers.resetForm();
+  };
   return (
     <AuthContainer>
       <AuthTitle>Відновити пароль</AuthTitle>
