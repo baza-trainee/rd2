@@ -13,11 +13,17 @@ export const About = () => {
   return (
     <>
       <Carousel />
+
       <Introduce />
+
       <MainTasks />
+
       <Advantages />
+
       <OurNews />
+
       <Partners />
+
       <ContactFormSection />
     </>
   );

@@ -7,15 +7,24 @@ import { Activity } from "pages/Activity";
 import { Demining } from "pages/Demining";
 import { Contacts } from "pages/Contacts";
 import { NotFound } from "pages/NotFound";
+import { Auth } from "pages/Auth";
+
+import { AdminLayout } from "./layouts/AdminLayout";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<MainLayout />}>
-      <Route path={ROUTES_ENUM.HOME} element={<About />} />
-      <Route path={ROUTES_ENUM.ACTIVITY} element={<Activity />} />
-      <Route path={ROUTES_ENUM.DEMINING} element={<Demining />} />
-      <Route path={ROUTES_ENUM.CONTACTS} element={<Contacts />} />
-      <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
+    <Route>
+      <Route element={<MainLayout />}>
+        <Route path={ROUTES_ENUM.HOME} element={<About />} />
+        <Route path={ROUTES_ENUM.ACTIVITY} element={<Activity />} />
+        <Route path={ROUTES_ENUM.DEMINING} element={<Demining />} />
+        <Route path={ROUTES_ENUM.CONTACTS} element={<Contacts />} />
+        <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
+      </Route>
+      ,
+      <Route path={ROUTES_ENUM.ADMIN} element={<AdminLayout />}>
+        <Route path={ROUTES_ENUM.AUTH} element={<Auth />} />,
+      </Route>
     </Route>,
   ),
 );
