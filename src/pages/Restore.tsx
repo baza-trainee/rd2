@@ -21,7 +21,7 @@ export const Restore = (): JSX.Element => {
     formikHelpers.resetForm();
   };
   return (
-    <AuthContainer>
+    <>
       <AuthTitle>Відновити пароль</AuthTitle>
 
       <Description>
@@ -36,6 +36,6 @@ export const Restore = (): JSX.Element => {
           <SubmitButton>Надіслати</SubmitButton>
         </FormContainer>
       </RestoreForm>
-    </AuthContainer>
+    </>
   );
 };
