@@ -1,7 +1,3 @@
-import * as Yup from "yup";
-import { FormikHelpers } from "formik";
-
-import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
 import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
@@ -9,17 +5,11 @@ import { EmailField } from "features/components/restore/EmailField/EmailField";
 import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 import { FormContainer } from "features/components/restore/FormContainer/FormContainer";
 
-export const RestorePassword = (): JSX.Element => {
-  const validationSchema = Yup.object({
-    email: Yup.string().email("введіть вірний email").required("введіть вшрний email"),
-  });
+import { handleSubmitRestoreEmail } from "helpers/handleSubmitRestoreEmail";
 
-  const handleSubmit = (
-    values: { email: string },
-    formikHelpers: FormikHelpers<{ email: string }>,
-  ) => {
-    formikHelpers.resetForm();
-  };
+import { validationEmailSchema } from "./validationEmailShema";
+
+export const RestorePassword = (): JSX.Element => {
   return (
     <>
       <AuthTitle>Відновити пароль</AuthTitle>
@@ -29,7 +19,10 @@ export const RestorePassword = (): JSX.Element => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm handleSubmit={handleSubmit} validationSchema={validationSchema}>
+      <RestoreForm
+        handleSubmit={handleSubmitRestoreEmail}
+        validationSchema={validationEmailSchema}
+      >
         <FormContainer>
           <EmailField />
 
