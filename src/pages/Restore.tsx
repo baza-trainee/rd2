@@ -5,6 +5,7 @@ import { AuthContainer } from "features/components/auth/AuthContainer/AuthContai
 import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
+import { EmailField } from "features/components/restore/EmailField/EmailField";
 
 export const Restore = (): JSX.Element => {
   const validationSchema = Yup.object({
@@ -26,10 +27,9 @@ export const Restore = (): JSX.Element => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm
-        handleSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      ></RestoreForm>
+      <RestoreForm handleSubmit={handleSubmit} validationSchema={validationSchema}>
+        <EmailField />
+      </RestoreForm>
     </AuthContainer>
   );
 };
