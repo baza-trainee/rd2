@@ -7,8 +7,9 @@ import { Activity } from "pages/Activity";
 import { Demining } from "pages/Demining";
 import { Contacts } from "pages/Contacts";
 import { NotFound } from "pages/NotFound";
-import { Auth } from "pages/Auth";
-import { Restore } from "pages/Restore";
+import { Auth } from "pages/auth/Auth";
+import { Restore } from "pages/auth/Restore";
+import { NewPassword } from "pages/auth/NewPassword";
 
 import { AuthLayout } from "./layouts/AuthLayout";
 
@@ -26,6 +27,7 @@ export const AppNavigation = createBrowserRouter(
       <Route path={ROUTES_ENUM.ADMIN} element={<AuthLayout />}>
         <Route path={ROUTES_ENUM.AUTH} element={<Auth />} />,
         <Route path={ROUTES_ENUM.RESTORE} element={<Restore />} />
+        <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<NewPassword />} />
       </Route>
     </Route>,
   ),
