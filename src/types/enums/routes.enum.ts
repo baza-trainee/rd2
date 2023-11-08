@@ -5,6 +5,6 @@ export enum ROUTES_ENUM {
   DEMINING = "/demining",
   ADMIN = "/admin/",
   AUTH = "auth",
-  RESTORE = "restore",
+  RESTORE = "/admin/restore",
   NOT_FOUND = "/*",
 }
