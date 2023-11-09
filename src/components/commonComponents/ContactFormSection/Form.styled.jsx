@@ -47,7 +47,6 @@ const FieldLabel = styled.label`
 position: absolute;
 top: -38px;
 left: 0;
-font-size: 14px;
 font-weight: 600;
 color: #151515;
 line-height: 30px;

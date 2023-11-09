@@ -9,12 +9,12 @@ type ContactItemProps = {
 }
 
 const ContactItem = ( {icon,alt,desc}: ContactItemProps) => {
-    return (
-        <AddressItem >
-            <img src={icon} width={24} height={24} alt={alt} />
-            <span>{desc}</span>
-        </AddressItem>
-    )
-}
+  return (
+    <AddressItem >
+      <img src={icon} width={24} height={24} alt={alt} />
+      <span>{desc}</span>
+    </AddressItem>
+  );
+};
 
-export {ContactItem}
+export {ContactItem};

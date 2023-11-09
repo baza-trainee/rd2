@@ -7,4 +7,4 @@ const AddressItem = styled.p`
   text-transform: none;
 `;
 
-export {AddressItem}
+export {AddressItem};

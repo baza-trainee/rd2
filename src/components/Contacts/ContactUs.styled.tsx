@@ -15,7 +15,7 @@ const PageWrapper = styled.div`
   @media (min-width: 768px) {
   padding: 120px 0;
 }
-`
+`;
 
 const ContentWrapper = styled.div`
     display: flex;
@@ -28,7 +28,7 @@ const ContentWrapper = styled.div`
   @media (min-width: 1280px) {
     max-width: 100%;
   }
-`
+`;
 
 const ContactFormBlock = styled.div`
     padding: 0 40px;
@@ -71,10 +71,10 @@ const ContactFormBlock = styled.div`
     width: 650px;
     margin-bottom: 0;
   }
-`
+`;
 const FormTitleStyled = styled(Typography)`
   margin-bottom: 24px;
-`
+`;
 
 const OurContactsBlock = styled.div`
   width: 100%;
@@ -87,26 +87,26 @@ const OurContactsBlock = styled.div`
   @media (min-width: 1280px) {
     width: 41%;
   }
-`
+`;
 
 const ContactsTitleStyled = styled(Typography)`
   margin-bottom: 40px;
-`
+`;
 const BlockItem = styled.div`
 margin-bottom: 40px;
-`
+`;
 const ItemTitle = styled.h5`
   margin-bottom: 1rem;
   font-size: 1.125rem;
   text-transform: uppercase;
-`
+`;
 
 export {PageWrapper,
-    ContentWrapper,
-    OurContactsBlock,
-    ContactFormBlock,
-    ItemTitle,
-    ContactsTitleStyled,
-    FormTitleStyled,
-    BlockItem,
-}
+  ContentWrapper,
+  OurContactsBlock,
+  ContactFormBlock,
+  ItemTitle,
+  ContactsTitleStyled,
+  FormTitleStyled,
+  BlockItem,
+};

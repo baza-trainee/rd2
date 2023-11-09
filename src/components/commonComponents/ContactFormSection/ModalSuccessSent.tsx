@@ -14,20 +14,20 @@ interface ModalProps {
 
 const ModalSuccessSent: React.FC<ModalProps> = ({open, onCloseModal}) => {
   return (
-      <Dialog
-          onClose={onCloseModal}
-          open={open}>
-        <Modal>
-          <IconButton
-              aria-label="close"
-              onClick={onCloseModal}
-          >
-            <CloseIcon />
-          </IconButton>
+    <Dialog
+      onClose={onCloseModal}
+      open={open}>
+      <Modal>
+        <IconButton
+          aria-label="close"
+          onClick={onCloseModal}
+        >
+          <CloseIcon />
+        </IconButton>
 
-          <ModalText>Повідомлення успішно відправлено</ModalText>
-        </Modal>
-      </Dialog>
-  )
+        <ModalText>Повідомлення успішно відправлено</ModalText>
+      </Modal>
+    </Dialog>
+  );
 };
 export default ModalSuccessSent;

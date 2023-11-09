@@ -50,18 +50,18 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
         value={values.name}
         onBlur={handleBlur}
         className={touched.name && errors.name ? "error" : ""}
-        />
+      />
       {errors.name && touched.name && <FormError>{errors.name}</FormError>}
     </FieldContainer>
     <FieldContainer>
       <FieldLabel>Фамілія</FieldLabel>
       <Input type="text"
-             name="surname"
-             onChange={handleChange}
-             value={values.surname}
-             onBlur={handleBlur}
-             className={errors.surname && touched.surname ? "error" : ""}
-             />
+        name="surname"
+        onChange={handleChange}
+        value={values.surname}
+        onBlur={handleBlur}
+        className={errors.surname && touched.surname ? "error" : ""}
+      />
       {errors.surname && touched.surname && <FormError>{errors.surname}</FormError>}
     </FieldContainer>
     <FieldContainer>
@@ -72,7 +72,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
         value={values.phone}
         onBlur={handleBlur}
         className={errors.phone && touched.phone ? "error" : ""}
-        />
+      />
       {errors.phone && touched.phone && <FormError>{errors.phone}</FormError>}
     </FieldContainer>
     <FieldContainer>
@@ -82,8 +82,8 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
         onChange={handleChange}
         value={values.email}
         onBlur={handleBlur}
-             className={errors.email && touched.email ? "error" : ""}
-        />
+        className={errors.email && touched.email ? "error" : ""}
+      />
       {errors.email && touched.email && <FormError>{errors.email}</FormError>}
     </FieldContainer>
     <FieldContainer>

@@ -5,7 +5,7 @@ import ModalSuccessSent from "./ModalSuccessSent";
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
 
 const ContactFormSection: React.FC = () => {
-  const [open, setOpenModal] = React.useState(false);
+  const [open, setOpenModal] = useState(false);
 
   const onOpenModal = () => {
     setOpenModal(true);
@@ -24,8 +24,8 @@ const ContactFormSection: React.FC = () => {
     </SectionWrapper>
 
     <ModalSuccessSent
-        open={open}
-        onCloseModal={onCloseModal}
+      open={open}
+      onCloseModal={onCloseModal}
     />
   </Container>;
 };

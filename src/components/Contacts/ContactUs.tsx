@@ -11,13 +11,13 @@ import {ContactItem} from "../commonComponents/ContactItem/ContactItem";
 import ModalSuccessSent from "../commonComponents/ContactFormSection/ModalSuccessSent";
 
 import {
-    BlockItem,
-    ContactFormBlock,
-    ContactsTitleStyled,
-    ContentWrapper, FormTitleStyled,
-    ItemTitle,
-    OurContactsBlock,
-    PageWrapper,
+  BlockItem,
+  ContactFormBlock,
+  ContactsTitleStyled,
+  ContentWrapper, FormTitleStyled,
+  ItemTitle,
+  OurContactsBlock,
+  PageWrapper,
 } from "./ContactUs.styled";
 
 import {contactsUsList} from "./contactsUsList";
@@ -27,65 +27,65 @@ import {contactsUsList} from "./contactsUsList";
 
 const ContactUs = () => {
 
-    const [open, setOpenModal] = React.useState(false);
+  const [open, setOpenModal] = useState(false);
 
-    const onOpenModal = () => {
-        setOpenModal(true);
-    };
+  const onOpenModal = () => {
+    setOpenModal(true);
+  };
 
-    const onCloseModal = () => {
-        setOpenModal(false);
-    };
+  const onCloseModal = () => {
+    setOpenModal(false);
+  };
 
-    return (
-        <PageWrapper>
-            <Container maxWidth="xl">
-                <ContentWrapper>
+  return (
+    <PageWrapper>
+      <Container maxWidth="xl">
+        <ContentWrapper>
 
-                    <ContactFormBlock>
-                        <FormTitleStyled variant="h4" align="center">
+          <ContactFormBlock>
+            <FormTitleStyled variant="h4" align="center">
                             Зворотний зв’язок
-                        </FormTitleStyled>
+            </FormTitleStyled>
 
-                        <Typography align="center">
+            <Typography align="center">
                             Ваші відгуки та пропозиції будуть корисними для нас.
-                        </Typography>
+            </Typography>
 
-                        <ContactForm  openModal={onOpenModal}/>
-                    </ContactFormBlock>
+            <ContactForm  openModal={onOpenModal}/>
+          </ContactFormBlock>
 
-                    <OurContactsBlock>
-                        <ContactsTitleStyled variant="h4" align="center">
+          <OurContactsBlock>
+            <ContactsTitleStyled variant="h4" align="center">
                             Контактні дані
-                        </ContactsTitleStyled>
+            </ContactsTitleStyled>
 
-                        {contactsUsList.map((item) => {
-                            return (
-                                <BlockItem key={item.info.alt + item.info.id}>
-                                    <ItemTitle>
-                                        {item.title}
-                                    </ItemTitle>
+            {contactsUsList.map((item) => {
+              return (
+                <BlockItem key={item.info.alt + item.info.id}>
+                  <ItemTitle>
+                    {item.title}
+                  </ItemTitle>
 
-                                    <ContactItem
-                                        icon={item.info.icon}
-                                        alt={item.info.alt}
-                                        desc={item.info.desc}/>
-                                </BlockItem>
-                            )
-                        })}
+                  <ContactItem
+                    icon={item.info.icon}
+                    alt={item.info.alt}
+                    desc={item.info.desc}/>
+                </BlockItem>
+              );
+            })}
 
 
-                    </OurContactsBlock>
+          </OurContactsBlock>
 
-                    <ModalSuccessSent
-                        open={open}
-                        onCloseModal={onCloseModal}
-                    />
+          <ModalSuccessSent
+            open={open}
+            onCloseModal={onCloseModal}
+          />
 
-                </ContentWrapper>
-            </Container>
-        </PageWrapper>
-    )
-}
+        </ContentWrapper>
+      </Container>
+    </PageWrapper>
+  );
+};
 
-export {ContactUs}
+export {ContactUs};

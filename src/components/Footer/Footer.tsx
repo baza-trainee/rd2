@@ -55,11 +55,11 @@ export const Footer: React.FC = () => {
             </NavWrapper>
             <Address>
               {contactsList.map(({ id, icon, alt, desc }) => (
-                  <ContactItem key={id}
-                               icon={icon}
-                               alt={alt}
-                               desc={desc}
-                  />
+                <ContactItem key={id}
+                  icon={icon}
+                  alt={alt}
+                  desc={desc}
+                />
               ))}
             </Address>
           </FooterNav>
