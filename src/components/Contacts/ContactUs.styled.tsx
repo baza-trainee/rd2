@@ -9,20 +9,37 @@ import imgUrl from "../../assets/images/contactPage/bgDron.jpg";
 const bgColor = theme.palette.secondary.main;
 
 const PageWrapper = styled.div`
+  padding: 50px 0 20px;
+  background-color: ${bgColor};
+
+  @media (min-width: 768px) {
   padding: 120px 0;
-  background-color: ${bgColor} 
+}
 `
 
 const ContentWrapper = styled.div`
     display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  margin: auto;
+  max-width: 900px;
+
+  @media (min-width: 1280px) {
+    max-width: 100%;
+  }
 `
 
 const ContactFormBlock = styled.div`
     padding: 0 40px;
-  width: 650px;
+  margin-bottom: 50px;
+  width: 100%;
   
   & form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
     width: auto;
     padding: 60px 0 0;
     background: transparent;
@@ -38,6 +55,21 @@ const ContactFormBlock = styled.div`
     & label {
       font-size: 1.125rem;
     }
+
+    & > div {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    & > div:nth-of-type(3), & > div:nth-of-type(4) {
+      width: 48%;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    width: 650px;
+    margin-bottom: 0;
   }
 `
 const FormTitleStyled = styled(Typography)`
@@ -45,12 +77,16 @@ const FormTitleStyled = styled(Typography)`
 `
 
 const OurContactsBlock = styled.div`
-  width: 41%;//560px;
+  width: 100%;
   height: 805px;
   
   padding: 40px;
   border-radius: 24px;
   background: center / cover no-repeat url(${imgUrl});
+
+  @media (min-width: 1280px) {
+    width: 41%;
+  }
 `
 
 const ContactsTitleStyled = styled(Typography)`

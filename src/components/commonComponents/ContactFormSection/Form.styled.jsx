@@ -38,6 +38,9 @@ border-radius: 5px;
 background-color: #F5F5F5;
 padding: 16px;
 outline: none; 
+  &.error {
+    border: 2px solid #D60A0A;
+  }
 `;
 
 const FieldLabel = styled.label`
@@ -62,10 +65,13 @@ border:1px solid #F5F5F5;
 border-radius: 5px;
 background-color: #F5F5F5;
 padding: 16px;
-height: 300px;
+height: 190px;
 outline: none;
 width: 100%;
 resize: none;
+  &.error {
+    border: 2px solid #D60A0A;
+  }
 `;
 
 const FormError = styled.span`

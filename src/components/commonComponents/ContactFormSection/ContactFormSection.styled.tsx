@@ -61,10 +61,6 @@ margin-bottom: 32px;
 }
 `;
 const Modal = styled.div`
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
 width: 328px;
 height: 160px;
 display: flex;
@@ -73,20 +69,19 @@ align-items: center;
 border-radius: 5px;
 border: 1px solid #1B3969;
 background: #FFF;
+
+  & > button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  
 @media (min-width: 768px) {
     width: 446px;
     height: 202px;
 }
 `;
-const CloseBtn = styled.button`
-position: absolute;
-top: 16px;
-right: 16px;
-background: transparent;
-border: none;
-outline: none;
-cursor: pointer;
-`;
+
 const ModalText = styled.p`
 font-size: 14px;
 line-height: 150%;
@@ -95,4 +90,4 @@ line-height: 150%;
 }
 `;
 
-export { Container, SectionWrapper, Desc, Modal, CloseBtn, ModalText };
+export { Container, SectionWrapper, Desc, Modal, ModalText };

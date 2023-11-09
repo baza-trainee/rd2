@@ -8,6 +8,8 @@ import ContactForm from "../commonComponents/ContactFormSection/ContactForm";
 
 import {ContactItem} from "../commonComponents/ContactItem/ContactItem";
 
+import ModalSuccessSent from "../commonComponents/ContactFormSection/ModalSuccessSent";
+
 import {
     BlockItem,
     ContactFormBlock,
@@ -17,13 +19,23 @@ import {
     OurContactsBlock,
     PageWrapper,
 } from "./ContactUs.styled";
+
 import {contactsUsList} from "./contactsUsList";
+
 
 
 
 const ContactUs = () => {
 
-    const [isOpenModal, setIsOpenModal] = useState(false);
+    const [open, setOpenModal] = React.useState(false);
+
+    const onOpenModal = () => {
+        setOpenModal(true);
+    };
+
+    const onCloseModal = () => {
+        setOpenModal(false);
+    };
 
     return (
         <PageWrapper>
@@ -39,7 +51,7 @@ const ContactUs = () => {
                             Ваші відгуки та пропозиції будуть корисними для нас.
                         </Typography>
 
-                        <ContactForm  setModal={setIsOpenModal}/>
+                        <ContactForm  openModal={onOpenModal}/>
                     </ContactFormBlock>
 
                     <OurContactsBlock>
@@ -64,6 +76,11 @@ const ContactUs = () => {
 
 
                     </OurContactsBlock>
+
+                    <ModalSuccessSent
+                        open={open}
+                        onCloseModal={onCloseModal}
+                    />
 
                 </ContentWrapper>
             </Container>
