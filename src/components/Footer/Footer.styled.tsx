@@ -88,11 +88,7 @@ export const Address = styled.address`
     width: 346px;
   }
 `;
-export const AddressItem = styled.p`
-  display: flex;
-  gap: 4px;
-  text-transform: none;
-`;
+
 export const Rights = styled.p`
   margin-top: 40px;
   font-size: 12px;

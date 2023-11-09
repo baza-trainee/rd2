@@ -1,7 +1,8 @@
 import React from "react";
 
+import { logoImg } from "../footerList";
+
 import { LogoLink } from "./FooterLogo.styled";
-import { logoImg } from "./../footerList";
 
 export const FooterLogo: React.FC = () => {
   return (

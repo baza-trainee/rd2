@@ -33,6 +33,11 @@ const themeHeaders = {
       fontSize: "1.5rem",
     },
   },
+  h5: {
+    fontSize: "1.125rem",
+    fontWeight: 600,
+    margin: 0,
+  },
 };
 
 export {themeHeaders};
