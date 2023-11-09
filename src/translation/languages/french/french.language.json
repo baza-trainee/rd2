@@ -1,3 +1,165 @@
 {
+ "nav": {
+  "about_us": "",
+  "activity": "",
+  "demining": "",
+  "contacts": ""
+ },
+ "buttons": {
+  "donate": "",
+  "more_info": "",
+  "send": ""
+ },
+ "contact_form": {
+  "name": "",
+  "surname": "",
+  "phone": "",
+  "email": "",
+  "message": ""
+ },
+ "introduce_block": {
+  "item_1_text": "",
+  "item_2_text": ""
+ },
+ "main_tasks_block": {
+  "title": "",
+  "desc": [
+   "Впровадження принципово нового підходу, що дозволяє дистанційно, з використанням БПЛА, проводити дослідження по виявленню локацій вибухонебезпечних предметів.",
+   "Використання технологій, заснованих на методі сканування (ПЕМЗ) – зондування території разом із аналізом випромінювань аномалій пошукових об'єктів.",
+   "Проведення тестових польових робіт в реальних умовах.",
+   "Очищення території України, оскільки 30% території країни наразі забруднено мінами і вибухонебезпечними предметами.",
+   "Складання карт забруднених територій та об’єктів в Україні.",
+   "Впровадження новітніх методів розмінування, так як при сьогоднішніх технологіях на розмінування території України знадобиться більше 750 років."
+  ]
+ },
+ "advantages_block": {
+  "title": "",
+  "about": "",
+  "items": [
+   {
+    "title": "title1",
+    "desc": "desc1"
+   },
+   {
+    "title": "title2",
+    "desc": "desc2"
+   },
+   {
+    "title": "title3",
+    "desc": "desc3"
+   }
+  ]
+ },
+ "our_news_block": {
+  "title": "",
+  "about": "",
+  "items": [
+   {
+    "title": "title1",
+    "desc": "desc1"
+   },
+   {
+    "title": "title2",
+    "desc": "desc2"
+   },
+   {
+    "title": "title3",
+    "desc": "desc3"
+   }
+  ]
+ },
+ "partners_block": {
+  "title": "",
+  "about": ""
+ },
+ "about_socrat_block": {
+  "title": "",
+  "about": "",
+  "items": [
+   {
+    "title": "title1",
+    "desc": "desc1"
+   },
+   {
+    "title": "title2",
+    "desc": "desc2"
+   },
+   {
+    "title": "title3",
+    "desc": "desc3"
+   }
+  ]
+ },
+ "socrat_questions_block": [
+  {
+   "title": "title1",
+   "desc": "desc3"
+  },
+  {
+   "title": "title2",
+   "desc": "desc3"
+  },
+  {
+   "title": "title3",
+   "desc": "desc3"
+  },
+  {
+   "title": "title4",
+   "desc": "desc3"
+  },
+  {
+   "title": "title5",
+   "desc": "desc3"
+  },
+  {
+   "title": "title6",
+   "desc": "desc3"
+  }
+ ],
+ "activity_block": {
+  "title": "",
+  "about": "",
+  "items": [
+   {
+    "title": "title1",
+    "desc": "desc1"
+   },
+   {
+    "title": "title2",
+    "desc": "desc2"
+   },
+   {
+    "title": "title3",
+    "desc": "desc3"
+   },
+   {
+    "title": "title2",
+    "desc": "desc2"
+   },
+   {
+    "title": "title3",
+    "desc": "desc3"
+   },
+   {
+    "title": "title4",
+    "desc": "desc4"
+   },
+   {
+    "title": "title5",
+    "desc": "desc5"
+   }
+  ]
+ },
+ "our_contacts": {
+  "address": "",
+  "email": "",
+  "phone": ""
+ },
+ "our_rules": {
+  "privacy_policy": "",
+  "using_site": "",
+  "publicity": ""
+ },
+ "developer": "Розробка Baza Trainee Ukraine 2023 © Всі права захищені",
  "hello": "Bonjour le monde"
 }
