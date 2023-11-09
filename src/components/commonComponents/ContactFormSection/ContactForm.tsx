@@ -3,27 +3,33 @@ import { useFormik } from "formik";
 import { Button } from "@mui/material";
 
 import contactSchema from "helpers/contactFormValidationSchema";
-import { ContactFormProps } from "types/interfaceContactFormProps";
+
 import { contactValuesType } from "types/typeContactInitialValues";
 
 import { FormEl, FieldContainer, FieldLabel, Input, Textarea, FormError } from "./Form.styled";
 
+interface ContactFormProps {
+  openModal: () => void;
+}
+
 const initialValues: contactValuesType = {
   name: "",
+  surname: "",
   phone: "",
   email: "",
   message: "",
 };
 
-const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
+const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
 
   const {values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm} = useFormik({
     initialValues: initialValues,
     validationSchema: contactSchema,
-    onSubmit: ({ name, phone, email, message }) => {
+    onSubmit: ({ name, surname, phone, email, message }) => {
       // send to email
       const emailData = {
         name,
+        surname,
         phone,
         email,
         message,
@@ -32,7 +38,7 @@ const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
       console.log(emailData);
       // await sendEmail(emailData);
       resetForm();
-      setModal(true);
+      openModal();
     },
   });
   return <FormEl onSubmit={handleSubmit}>
@@ -43,12 +49,20 @@ const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
         onChange={handleChange}
         value={values.name}
         onBlur={handleBlur}
-        style={{
-          border: errors.name && touched.name
-            ? "2px solid #D60A0A"
-            : "1px solid #F5F5F5",
-        }}/>
+        className={touched.name && errors.name ? "error" : ""}
+      />
       {errors.name && touched.name && <FormError>{errors.name}</FormError>}
+    </FieldContainer>
+    <FieldContainer>
+      <FieldLabel>Фамілія</FieldLabel>
+      <Input type="text"
+        name="surname"
+        onChange={handleChange}
+        value={values.surname}
+        onBlur={handleBlur}
+        className={errors.surname && touched.surname ? "error" : ""}
+      />
+      {errors.surname && touched.surname && <FormError>{errors.surname}</FormError>}
     </FieldContainer>
     <FieldContainer>
       <FieldLabel>Телефон</FieldLabel>
@@ -57,11 +71,8 @@ const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
         onChange={handleChange}
         value={values.phone}
         onBlur={handleBlur}
-        style={{
-          border: errors.phone && touched.phone
-            ? "2px solid #D60A0A"
-            : "1px solid #F5F5F5",
-        }}/>
+        className={errors.phone && touched.phone ? "error" : ""}
+      />
       {errors.phone && touched.phone && <FormError>{errors.phone}</FormError>}
     </FieldContainer>
     <FieldContainer>
@@ -71,11 +82,8 @@ const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
         onChange={handleChange}
         value={values.email}
         onBlur={handleBlur}
-        style={{
-          border: errors.email && touched.email
-            ? "2px solid #D60A0A"
-            : "1px solid #F5F5F5",
-        }}/>
+        className={errors.email && touched.email ? "error" : ""}
+      />
       {errors.email && touched.email && <FormError>{errors.email}</FormError>}
     </FieldContainer>
     <FieldContainer>
@@ -84,11 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({setModal}) => {
         onChange={handleChange}
         value={values.message}
         onBlur={handleBlur}
-        style={{
-          border: errors.message && touched.message
-            ? "2px solid #D60A0A"
-            : "1px solid #F5F5F5",
-        }}
+        className={errors.message && touched.message ? "error" : ""}
       />
       {errors.message && touched.message && <FormError>{errors.message}</FormError>}
     </FieldContainer>

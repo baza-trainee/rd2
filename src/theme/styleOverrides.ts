@@ -12,7 +12,7 @@ const globalOverrides = `
             a: active {
                 color: inherit;
             }
-            h2, h3, h4 {
+            h2, h3, h4, h5 {
                 margin: 0;
                 font-weight: 600;
             }

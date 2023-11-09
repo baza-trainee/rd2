@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import {IconButton} from "@mui/material";
 
@@ -18,7 +18,7 @@ import {
 
 export const TabletNav = () => {
 
-  const [state, setState] = React.useState({right: false});
+  const [state, setState] = useState({right: false});
 
   const toggleDrawer = (open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {

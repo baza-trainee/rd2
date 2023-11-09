@@ -1,5 +1,12 @@
 import React, { useState } from "react";
+
 import Container from "@mui/material/Container";
+
+import {contactsList} from "../commonComponents/ContactItem/contactsList";
+
+import {ContactItem} from "../commonComponents/ContactItem/ContactItem";
+
+import { rulesList } from "./footerList";
 
 import {
   FooterSection,
@@ -10,12 +17,14 @@ import {
   RulesList,
   RulesItem,
   Address,
-  AddressItem,
   Rights,
 } from "./Footer.styled";
+
 import { FooterLogo } from "./FooterLogo/FooterLogo";
 import { FooterModal } from "./FooterModal/FooterModal";
-import { rulesList, contactsList } from "./footerList";
+
+
+
 
 export const Footer: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,10 +55,11 @@ export const Footer: React.FC = () => {
             </NavWrapper>
             <Address>
               {contactsList.map(({ id, icon, alt, desc }) => (
-                <AddressItem key={id}>
-                  <img src={icon} width={24} height={24} alt={alt} />
-                  <span>{desc}</span>
-                </AddressItem>
+                <ContactItem key={id}
+                  icon={icon}
+                  alt={alt}
+                  desc={desc}
+                />
               ))}
             </Address>
           </FooterNav>
