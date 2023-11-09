@@ -62,8 +62,10 @@ const ContactFormBlock = styled.div`
   }
   
   @media (min-width: 768px) {
-    & > div:nth-of-type(3), & > div:nth-of-type(4) {
-      width: 48%;
+    form {
+      & > div:nth-of-type(3), & > div:nth-of-type(4) {
+        width: 48%;
+      }
     }
   }
   
