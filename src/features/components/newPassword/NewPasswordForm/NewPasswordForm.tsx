@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
 
 import { Form, Formik, FormikHelpers } from "formik";
-import * as Yup from "yup";
+import { ObjectSchema } from "yup";
+
+import { FormPasswords } from "types/formPasswords";
 
 interface Props {
   children: ReactNode;
-  validationSchema: Yup.ObjectSchema<{}>;
+  validationSchema: ObjectSchema<{}>;
   handleSubmit: (
-    values: { password: string; passwordRepeat: string },
-    formikHelpers: FormikHelpers<{ password: string; passwordRepeat: string }>,
+    values: FormPasswords,
+    formikHelpers: FormikHelpers<FormPasswords>,
   ) => void;
 }
 
