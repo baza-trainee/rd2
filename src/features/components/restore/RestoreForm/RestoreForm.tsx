@@ -1,16 +1,14 @@
 import { ReactNode } from "react";
 
 import { Form, Formik, FormikHelpers } from "formik";
+import { ObjectSchema } from "yup";
 
-import * as Yup from "yup";
+import { FormEmail } from "types/formEmail";
 
 interface Props {
   children: ReactNode;
-  validationSchema: Yup.ObjectSchema<{}>;
-  handleSubmit: (
-    values: { email: string },
-    formikHelpers: FormikHelpers<{ email: string }>,
-  ) => void;
+  validationSchema: ObjectSchema<{}>;
+  handleSubmit: (values: FormEmail, formikHelpers: FormikHelpers<FormEmail>) => void;
 }
 
 export const RestoreForm = ({ children, validationSchema, handleSubmit }: Props) => {

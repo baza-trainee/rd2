@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { FormikHelpers } from "formik";
 
+import { FormEmail } from "types/formEmail";
 import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
@@ -20,8 +21,8 @@ export const RestorePassword = (): JSX.Element => {
   };
 
   const handleSubmitRestoreEmail = (
-    values: { email: string },
-    formikHelpers: FormikHelpers<{ email: string }>,
+    values: FormEmail,
+    formikHelpers: FormikHelpers<FormEmail>,
   ) => {
     formikHelpers.resetForm();
     handleOpenModal();

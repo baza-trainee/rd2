@@ -7,5 +7,5 @@ export type TypeSocratAbout = {
 export type TypeSocratQuestion = {
   id: number;
   title: string;
-  text: string | [string, string, string, string, string];
+  text: string | string[];
 };

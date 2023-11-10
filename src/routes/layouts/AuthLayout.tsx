@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom";
 import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { App } from "components/App";
 
-import { AuthContainer } from "features/components/auth/AuthContainer/AuthContainer";
+import { AuthContainer } from "components/Auth/AuthContainer/AuthContainer";
+import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
 
 export const AuthLayout = () => {
   return (
@@ -11,7 +12,9 @@ export const AuthLayout = () => {
       <AuthHeader />
 
       <AuthContainer>
-        <Outlet />
+        <PaperContainer>
+          <Outlet />
+        </PaperContainer>
       </AuthContainer>
     </App>
   );
