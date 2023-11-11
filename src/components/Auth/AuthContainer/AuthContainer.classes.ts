@@ -1,5 +1,10 @@
 import { SxProps } from "@mui/material";
 
+const BoxStyles: SxProps = {
+  width: "100%",
+  bgcolor: "#f5f5f5",
+};
+
 const ContainerStyles: SxProps = {
   display: "flex",
   alignItems: "center",
@@ -10,4 +15,4 @@ const ContainerStyles: SxProps = {
   color: "#151515",
 };
 
-export { ContainerStyles };
+export { BoxStyles, ContainerStyles };

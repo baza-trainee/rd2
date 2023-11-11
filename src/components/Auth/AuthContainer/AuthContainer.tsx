@@ -1,13 +1,15 @@
 import { PropsWithChildren } from "react";
 
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
-import { ContainerStyles } from "./AuthContainer.classes";
+import { BoxStyles, ContainerStyles } from "./AuthContainer.classes";
 
 export const AuthContainer = ({ children }: PropsWithChildren) => {
   return (
-    <Container sx={ContainerStyles} maxWidth="xl">
-      {children}
-    </Container>
+    <Box sx={BoxStyles}>
+      <Container sx={ContainerStyles} maxWidth="xl">
+        {children}
+      </Container>
+    </Box>
   );
 };
