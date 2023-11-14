@@ -43,8 +43,7 @@ const Pictures = styled.div`
   }
 `;
 const Text = styled.p`
-  color: var(--Black, #151515);
-  font-family: Open Sans;
+  color: #151515;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -56,8 +55,7 @@ const Text = styled.p`
   }
 `;
 const Text2 = styled.p`
-  color: var(--Black, #151515);
-  font-family: Open Sans;
+  color: #151515;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
