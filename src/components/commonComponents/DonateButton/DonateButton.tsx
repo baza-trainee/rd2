@@ -1,4 +1,7 @@
 import React, {useState} from "react";
+
+import {useTranslation} from "react-i18next";
+
 import Button from "@mui/material/Button";
 
 import {DonateModal} from "../../DonateModal/DonateModal";
@@ -10,7 +13,9 @@ interface DonateButtonProps {
 
 export const DonateButton = ({className}: DonateButtonProps) => {
 
-  const [open, setOpen] = React.useState(false);
+    const { t } = useTranslation();
+
+  const [open, setOpen] = useState(false);
 
   const [successPayment, setSuccessPayment] = useState(false);
   const onSuccess = () => {
@@ -30,7 +35,9 @@ export const DonateButton = ({className}: DonateButtonProps) => {
       <Button variant="contained"
         onClick={onClickOpen}
         className={className}
-      >підтримати</Button>
+      >
+          {t("buttons.donate")}
+      </Button>
 
       <DonateModal
         open={open}

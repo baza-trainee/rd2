@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import {useTranslation} from "react-i18next";
+
 import Container from "@mui/material/Container";
 
 import Typography from "@mui/material/Typography";
@@ -22,10 +24,9 @@ import {
 
 import {contactsUsList} from "./contactsUsList";
 
-
-
-
 const ContactUs = () => {
+
+  const { t } = useTranslation();
 
   const [open, setOpenModal] = useState(false);
 
@@ -44,11 +45,11 @@ const ContactUs = () => {
 
           <ContactFormBlock>
             <FormTitleStyled variant="h4" align="center">
-                            Зворотний зв’язок
+              { t("contacts_block.contact_page_title")}
             </FormTitleStyled>
 
             <Typography align="center">
-                            Ваші відгуки та пропозиції будуть корисними для нас.
+              { t("contacts_block.contact_page_desc")}
             </Typography>
 
             <ContactForm  openModal={onOpenModal}/>
@@ -56,20 +57,17 @@ const ContactUs = () => {
 
           <OurContactsBlock>
             <ContactsTitleStyled variant="h4" align="center">
-                            Контактні дані
+              { t("our_contacts.title")}
             </ContactsTitleStyled>
 
             {contactsUsList.map((item) => {
               return (
                 <BlockItem key={item.info.alt + item.info.id}>
                   <ItemTitle>
-                    {item.title}
+                    { t(item.title) }
                   </ItemTitle>
 
-                  <ContactItem
-                    icon={item.info.icon}
-                    alt={item.info.alt}
-                    desc={item.info.desc}/>
+                  <ContactItem {...item.info}/>
                 </BlockItem>
               );
             })}

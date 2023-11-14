@@ -15,20 +15,20 @@ import {CarouselSlide} from "../../../types/typeCarousel";
 
 const carouselSlideList: CarouselSlide[] = [
   {
-    title: "Напрямки роботи ДП",
-    description: "Отримайте всі переваги членства в нашій організації - від інформації про заходи до швидкого рецензування наукових робіт",
+    titleKey: "about_us_carousel.0.title",
+    descriptionKey: "about_us_carousel.0.desc",
     imgSrc: slide1Img,
     retinaImgSrc: slide1ImgRet,
   },
   {
-    title: "Напрямки роботи ДП",
-    description: "Отримайте всі переваги членства в нашій організації - від інформації про заходи до швидкого рецензування наукових робіт",
+    titleKey: "about_us_carousel.1.title",
+    descriptionKey: "about_us_carousel.1.desc",
     imgSrc: slide2Img,
     retinaImgSrc: slide2ImgRet,
   },
   {
-    title: "Напрямки роботи ДП",
-    description: "Отримайте всі переваги членства в нашій організації - від інформації про заходи до швидкого рецензування наукових робіт",
+    titleKey: "about_us_carousel.2.title",
+    descriptionKey: "about_us_carousel.2.desc",
     imgSrc: slide3Img,
     retinaImgSrc: slide3ImgRet,
   },

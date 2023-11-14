@@ -3,7 +3,7 @@ import Advantages from "components/About/Advantages/Advantages";
 
 import {Carousel} from "components/About/Carousel/Carousel";
 
-import { Introduce } from "components/Introduce/Introduce";
+import { Introduce } from "components/About/Introduce/Introduce";
 
 import { OurNews } from "components/About/OurNews/OurNews";
 import { Partners } from "components/About/Partners/Partners";

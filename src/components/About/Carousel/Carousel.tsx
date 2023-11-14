@@ -8,28 +8,42 @@ import "swiper/css/pagination";
 
 import {Container} from "@mui/material";
 
+import {useTranslation} from "react-i18next";
+
+
 import {CarouselWrap, SlideContainer} from "./Carousel.styled";
 import { carouselSlideList } from "./carouselSlideList";
 
 import {SlideInfo} from "./SlideInfo";
 
-const SlideList = carouselSlideList.map((slide, index) => (
-  <SwiperSlide key={slide.title+index}>
+type SlideItemProps = {
+  title: string,
+  desc: string,
+  imgSrc: string,
+  retinaImgSrc: string
+}
 
-    <SlideContainer
-      imgSrc={slide.imgSrc}
-      retinaImgSrc={slide.retinaImgSrc}
-    >
-      <Container maxWidth="xl">
-        <SlideInfo title={slide.title} description={slide.description}/>
-      </Container>
-    </SlideContainer>
+const SlideItem = ({title, desc, imgSrc, retinaImgSrc}: SlideItemProps) => (
 
-  </SwiperSlide>
-));
+            <SlideContainer
+                imgSrc={imgSrc}
+                retinaImgSrc={retinaImgSrc}
+            >
+                <Container maxWidth="xl">
+                    <SlideInfo
+                        title={title}
+                        description={desc}
+                    />
+                </Container>
+            </SlideContainer>
+
+)
 
 
 export const Carousel = () => {
+
+  const { t } = useTranslation();
+
   return (
     <CarouselWrap>
 
@@ -41,7 +55,21 @@ export const Carousel = () => {
         pagination={{ clickable: true }}
       >
 
-        {SlideList}
+          {
+              carouselSlideList.map((slide, index) => (
+                <SwiperSlide key={slide.titleKey+index}>
+
+                  <SlideItem
+                     title={ t(slide.titleKey) }
+                     desc={ t(slide.descriptionKey) }
+                     imgSrc={slide.imgSrc}
+                     retinaImgSrc={slide.retinaImgSrc}
+                  />
+
+                </SwiperSlide>
+
+              ))
+          }
 
       </Swiper>
 

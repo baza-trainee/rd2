@@ -1,36 +1,38 @@
 {
   "nav": {
-    "about_us": "",
-    "activity": "",
-    "demining": "",
-    "contacts": ""
+    "about_us": "About Us",
+    "activity": "Research Activities",
+    "demining": "Demining",
+    "contacts": "Contacts"
   },
   "buttons": {
-    "donate": "",
-    "more_info": "",
-    "send": ""
+    "donate": "donate",
+    "more_info": "more info",
+    "send": "send",
+    "pay": "pay",
+    "return_to_home_page": "return to the home page"
   },
   "contact_form": {
-    "name": "",
-    "surname": "",
-    "phone": "",
-    "email": "",
-    "message": ""
+    "name": "name",
+    "surname": "surname",
+    "phone": "phone",
+    "email": "email",
+    "message": "message"
   },
   "introduce_block": {
     "item_1_text": "",
     "item_2_text": ""
   },
   "main_tasks_block": {
-    "title": "",
-    "desc": [
-      "Впровадження принципово нового підходу, що дозволяє дистанційно, з використанням БПЛА, проводити дослідження по виявленню локацій вибухонебезпечних предметів.",
-      "Використання технологій, заснованих на методі сканування (ПЕМЗ) – зондування території разом із аналізом випромінювань аномалій пошукових об'єктів.",
-      "Проведення тестових польових робіт в реальних умовах.",
-      "Очищення території України, оскільки 30% території країни наразі забруднено мінами і вибухонебезпечними предметами.",
-      "Складання карт забруднених територій та об’єктів в Україні.",
-      "Впровадження новітніх методів розмінування, так як при сьогоднішніх технологіях на розмінування території України знадобиться більше 750 років."
-    ]
+    "title": "Main tasks",
+    "desc": {
+      "item_1": "",
+      "item_2": "",
+      "item_3": "",
+      "item_4": "",
+      "item_5": "",
+      "item_6": ""
+    }
   },
   "advantages_block": {
     "title": "",
@@ -113,7 +115,13 @@
     },
     {
       "title": "title6",
-      "desc": "desc3"
+      "desc": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     }
   ],
   "activity_block": {
@@ -150,16 +158,45 @@
       }
     ]
   },
+  "contacts_block": {
+    "main_page_title": "If you have questions, comments, or suggestions, please, contact us",
+    "contact_page_title": "",
+    "contact_page_desc": ""
+  },
   "our_contacts": {
-    "address": "",
-    "email": "",
-    "phone": ""
+    "title": "Our contacts",
+    "address_title": "Our address",
+    "phone_title": "Our phone",
+    "email_title": "Our email",
+    "address": "Olesia Honchara St, 55Б, Kyiv, 01601"
   },
   "our_rules": {
-    "privacy_policy": "",
-    "using_site": "",
-    "publicity": ""
+    "privacy_policy": "Privacy policy",
+    "using_site": "Rules of use of the site",
+    "publicity": "Publicity"
   },
-  "developer": "Розробка Baza Trainee Ukraine 2023 © Всі права захищені",
-  "hello": "Hello World"
+  "developers": "Develop by Baza Trainee Ukraine 2023 © All rights reserved",
+  "page_404": {
+    "item_text_1": "Page not found",
+    "item_text_2": ""
+  },
+  "donate_modal": {
+    "payment_amount": "Choose a payment amount",
+    "payment_method": "Choose a payment method",
+    "another_amount": "Another payment amount"
+  },
+  "about_us_carousel": [
+    {
+      "title": "Title1",
+      "desc": "description1"
+    },
+    {
+      "title": "Title2",
+      "desc": "description2"
+    },
+    {
+      "title": "Title3",
+      "desc": "description3"
+    }
+  ]
 }

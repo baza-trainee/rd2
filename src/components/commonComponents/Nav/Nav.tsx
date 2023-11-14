@@ -1,7 +1,10 @@
-import data from "data/common/nav.json";
 import React from "react";
 
+import {useTranslation} from "react-i18next";
+
 import { NavigationLink } from "./Nav.styled";
+
+import {navNames} from "./navlist";
 
 interface NavProps {
  className?: string;
@@ -10,13 +13,18 @@ interface NavProps {
 }
 
 export const Nav: React.FC<NavProps> = ({ className,onClick, onKeyDown}) => {
-  return (
+
+    const { t } = useTranslation();
+
+    return (
     <nav className={className} onClick={onClick} onKeyDown={onKeyDown}>
-      {data.navNames.map((navItem) => (
+
+      {navNames.map((navItem) => (
         <NavigationLink key={navItem.id} to={navItem.route}>
-          {navItem.name}
+            {t(navItem.nameKey)}
         </NavigationLink>
       ))}
+
     </nav>
   );
 };

@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
+import {useTranslation} from "react-i18next";
+
 import ContactForm from "./ContactForm";
 import ModalSuccessSent from "./ModalSuccessSent";
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
 
 const ContactFormSection: React.FC = () => {
+
+  const { t } = useTranslation();
+
   const [open, setOpenModal] = useState(false);
 
   const onOpenModal = () => {
@@ -16,10 +21,9 @@ const ContactFormSection: React.FC = () => {
   };
 
   return <Container>
+
     <SectionWrapper>
-      <Desc> Якщо у вас є питання, зауваження або пропозиції, просимо заповнити
-        форму зворотного зв’язку
-      </Desc>
+      <Desc>{t("contacts_block.main_page_title")}</Desc>
       <ContactForm openModal={onOpenModal} />
     </SectionWrapper>
 

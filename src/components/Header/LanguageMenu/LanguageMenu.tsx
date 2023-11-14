@@ -2,9 +2,12 @@ import React from "react";
 import Button from "@mui/material/Button";
 import {Menu, MenuItem} from "@mui/material";
 
+import {changeLanguage} from "i18next";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import {LanguageMenuWrap} from "./LanguageMenu.styled";
+
 
 interface LanguageMenuProps {
     className?: string
@@ -25,6 +28,7 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
   };
   const onClickMenuItem = (e: React.MouseEvent<HTMLElement>) => {
     onCloseMenu();
+
     setMenuLang(e.currentTarget.innerText);
   };
 
@@ -57,13 +61,17 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
           },
         }}
       >
-        <MenuItem onClick={onClickMenuItem}
+        <MenuItem
+            //onClick={() => changeLanguage("ua")}
+            onClick={onClickMenuItem}
           sx={{
             padding: "10px 30px",
             borderBottom: "1px solid #E3E3E3",
           }}
         >UA</MenuItem>
-        <MenuItem onClick={onClickMenuItem}
+        <MenuItem
+            //onClick={() => changeLanguage("en")}
+             onClick={onClickMenuItem}
           sx={{
             padding: "10px 30px",
             borderBottom: "1px solid #E3E3E3",

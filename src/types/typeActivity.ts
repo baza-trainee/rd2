@@ -1,7 +1,7 @@
 export type TypeScientificActivity = {
   id: number;
-  title: string;
-  text: string;
+  titleKey: string;
+  textKey: string;
   img: string;
   retinaImg: string;
 };

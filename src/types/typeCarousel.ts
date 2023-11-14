@@ -1,6 +1,6 @@
 export interface CarouselSlide {
-    title: string,
-    description: string,
+    titleKey: string,
+    descriptionKey: string,
     imgSrc: string,
     retinaImgSrc: string
 }

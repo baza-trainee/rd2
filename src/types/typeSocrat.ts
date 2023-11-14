@@ -1,11 +1,11 @@
 export type TypeSocratAbout = {
   id: number;
-  title: string;
-  text: string;
+  titleKey: string;
+  textKey: string;
 };
 
 export type TypeSocratQuestion = {
   id: number;
-  title: string;
-  text: string | [string, string, string, string, string];
+  titleKey: string;
+  textKey: string;
 };

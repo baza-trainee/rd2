@@ -2,9 +2,9 @@ import {contactsList} from "../commonComponents/ContactItem/contactsList";
 import {Contacts} from "../../types/typeFooter";
 
 const titleList:string[] = [
-  "Наше розташування",
-  "Телефонуйте до нас",
-  "Напишіть нам",
+  "our_contacts.address_title",
+  "our_contacts.phone_title",
+  "our_contacts.email_title",
 ];
 type contactsUsListProps = {
     title: string,

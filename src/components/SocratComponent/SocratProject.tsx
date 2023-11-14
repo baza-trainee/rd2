@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 
+import {useTranslation} from "react-i18next";
+
 import openImg from "../../assets/icons/SocratIcons/Open Question.svg";
 import closeImg from "../../assets/icons/SocratIcons/Closed Question.svg";
 import DronImgMob from "../../assets/images/socrat/Drone_mob-min.png";
@@ -31,6 +33,9 @@ import {
 } from "./Socrat.styled";
 
 export const SocratProject: React.FC = () => {
+
+  const { t } = useTranslation();
+
   const [openId, setId] = useState<null | number>(null);
 
   const itemRef = useRef<HTMLDivElement>(null!);
@@ -41,9 +46,13 @@ export const SocratProject: React.FC = () => {
   };
   return (
     <div>
+
       <Container>
-        <SocrstHeader>Проект SOCRAT</SocrstHeader>
-        <TitleText>Дистанційне знешкодження вибухонебезпечних предметів</TitleText>
+
+        <SocrstHeader>{ t("about_socrat_block.title") }</SocrstHeader>
+
+        <TitleText>{ t("about_socrat_block.about") }</TitleText>
+
         <Picture>
           <source
             srcSet={`${DronImgDesk} 1x, ${DronImgDesk2x} 2x`}
@@ -56,23 +65,29 @@ export const SocratProject: React.FC = () => {
 
           <img src={DronImgMob} srcSet={`${DronImgMob2x} 2x`} alt="dron" />
         </Picture>
+
         <SocratAboutWrapper>
-          {SocratListAbout.map(({ id, title, text }) => {
+          {SocratListAbout.map(({ id, titleKey, textKey }) => {
             return (
               <SocratAboutItem key={id}>
-                <SocratAboutTitle>{title}</SocratAboutTitle>
-                <SocratAboutText>{text}</SocratAboutText>
+                <SocratAboutTitle>{t(titleKey)}</SocratAboutTitle>
+                <SocratAboutText>{t(textKey)}</SocratAboutText>
               </SocratAboutItem>
             );
           })}
         </SocratAboutWrapper>
+
       </Container>
+
       <Accordion>
-        {SocratListQuestion.map(({ id, title, text }) => {
+        {SocratListQuestion.map(({ id, titleKey, textKey }) => {
+
+          const itemText = t(textKey, {returnObjects: true});
+
           return (
             <AccordionItem key={id}>
               <AccordionHeaderWrapper>
-                <AccordionHeader>{title}</AccordionHeader>
+                <AccordionHeader>{ t(titleKey) }</AccordionHeader>
                 <AccordionButton
                   onClick={() => {
                     clickHandler(id);
@@ -89,13 +104,16 @@ export const SocratProject: React.FC = () => {
                 }
               >
                 <AccordionBody ref={itemRef}>
-                  {typeof text === "string" ? (
-                    <p>{text}</p>
-                  ) : (
-                    text.map((item, index) => {
-                      return <li key={index}>{item}</li>;
-                    })
-                  )}
+
+                  { (typeof itemText === "string")
+                      ? ( <p>{ itemText }</p> )
+                      : (
+                          itemText.map((item:string, index:number) => {
+                            return <li key={index}>{item}</li>;
+                          })
+                        )
+                  }
+
                 </AccordionBody>
               </AccordionCollapse>
             </AccordionItem>

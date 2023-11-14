@@ -1,5 +1,7 @@
 import React from "react";
 
+import {useTranslation} from "react-i18next";
+
 import Button from "@mui/material/Button";
 
 import {usePaymentForm} from "../../../hooks/usePaymentForm";
@@ -18,6 +20,8 @@ type DonateContentProps = {
 
 const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
 
+    const { t } = useTranslation();
+
   const {payment, onClickPayment,
     inputValue, onClickSum, onChangeValue,
     onSubmitForm} = usePaymentForm(onChangeSuccess);
@@ -25,7 +29,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
   return (
     <FormStyled onSubmit={onSubmitForm}>
       <TypographyStyled variant="h3" align="center">
-                Оберіть суму внеску
+          { t("donate_modal.payment_amount") }
       </TypographyStyled>
 
       <PaymentAmountBtns
@@ -35,7 +39,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
 
       <RelativeBlock>
         <InputStyled
-          placeholder="Інша сумма"
+          placeholder={ t("donate_modal.another_amount") }
           type="number"
           className={payment.amountError ? "error" : ""}
           value={inputValue}
@@ -47,7 +51,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
       </RelativeBlock>
 
       <TypographyStyled variant="h3"  align="center">
-                Оберіть спосіб оплати
+          { t("donate_modal.payment_method") }
       </TypographyStyled>
 
       <PaymentInfoBtns
@@ -63,7 +67,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
           fullWidth={true}
           type="submit"
         >
-                    оплатити
+            { t("buttons.pay") }
         </Button>
       </BottomContainer>
     </FormStyled>
