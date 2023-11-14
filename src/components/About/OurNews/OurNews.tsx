@@ -2,16 +2,20 @@ import { ListOfOurNews } from "features/components/about/ourNews/ListOfOurNews/L
 import { list } from "components/About/OurNews/listNews";
 import { SectionContainer } from "features/components/SectionContainer/SectionContainer";
 import { SectionHeader } from "features/components/SectionHeader/SectionHeader";
+import {useTranslation} from "react-i18next";
 
 export const OurNews = () => {
+
+    const { t } = useTranslation();
+
   return (
+
     <SectionContainer>
-      <SectionHeader title="Наші новини">
-        Ми також надаємо корисні поради щодо вибору дрона, використання його можливостей
-        та правил безпеки. Наша команда експертів завжди готова надати вам консультацію та
-        допомогти з будь-якими питаннями, пов'язаними з дронами.
+      <SectionHeader title={t("our_news_block.title")}>
+          {t("our_news_block.about")}
       </SectionHeader>
       <ListOfOurNews list={list} />
     </SectionContainer>
+
   );
 };

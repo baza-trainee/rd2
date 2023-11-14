@@ -11,20 +11,23 @@ const MainTasks: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const tasksDescArr = t("main_tasks_block.desc", { returnObjects: true });
-
   return <Container>
+
     <SectionWrapper>
-      <Title>Основні завдання</Title>
+
+      <Title>{t("main_tasks_block.title")}</Title>
+
       <TaskList>
-        {taskList.map(({ id, icon, desc }, index) => {
+        {taskList.map(({ id, icon, descKey}) => {
           return <Task key={id}>
             <TaskIcon src={icon} alt="task icon" />
-            <TaskDesc>{tasksDescArr[index]}</TaskDesc>
+            <TaskDesc>{t(descKey)}</TaskDesc>
           </Task>;
         })}
       </TaskList>
+
     </SectionWrapper>
+
   </Container>;
 };
 export default MainTasks;

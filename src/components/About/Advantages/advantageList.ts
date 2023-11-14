@@ -7,25 +7,20 @@ import thirdAdvImg from "../../../assets/images/advantages/explosive-objects.png
 const advantageList: Advantage[] = [
   {
     id: 123,
-    title: "Унікальні технології",
-    desc: `Україна зацікавлена в розвитку технологій для власного виживання, відбудовування
-         і розвитку. Наразі ми в стані впевнено зайняти перше місце в світі по унікальності
-         технологій, випробуваних в польових умовах.`,
+    "titleKey": "advantages_block.items.0.title",
+    "descKey": "advantages_block.items.0.desc",
     img: firstAdvImg,
   },
   {
     id: 124,
-    title: "Бригади розміновування",
-    desc: `Більш ніж 500 бригад саперів, які щоденно ризикують життям, знадобиться, щоб
-         розмінувати забруднені території. Ми пропонуємо розмінування без участі людини
-          - виключно дистанційно.`,
+    "titleKey": "advantages_block.items.1.title",
+    "descKey": "advantages_block.items.1.desc",
     img: secondAdvImg,
   },
   {
     id: 125,
-    title: "Вибухонебезпечні предмети",
-    desc: `Наша методологія дозволяє визначити і знешкодити міни, які внаслідок часу опустились
-         в землю і не помітні наочно. Шукати їх вручну вкрай небезпечно. `,
+    "titleKey": "advantages_block.items.2.title",
+    "descKey": "advantages_block.items.2.desc",
     img: thirdAdvImg,
   },
 ];

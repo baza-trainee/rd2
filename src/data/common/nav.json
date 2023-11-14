@@ -1,8 +1,0 @@
-{
- "navNames": [
-  { "id": 1, "name": "Про нас", "route": "/" },
-  { "id": 2, "name": "Наукова діяльність", "route": "/activity" },
-  { "id": 3, "name": "Дистанційне розмінування", "route": "/demining" },
-  { "id": 4, "name": "Контакти", "route": "/contacts" }
- ]
-}

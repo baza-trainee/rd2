@@ -1,6 +1,6 @@
 export type Advantage = {
     id: number,
-    title: string,
-    desc: string,
+    "titleKey": string,
+    "descKey": string;
     img: string
 }

@@ -6,22 +6,27 @@ import {Contacts} from "../../../types/typeFooter";
 
 export const contactsList: Contacts[] = [
   {
-    id: 1,
+    type: "text",
+    id: "email",
     icon: emailIcon,
     alt: "Іконка листа",
     desc: "2021snp@ukr.net",
   },
   {
-    id: 2,
+    type: "link",
+    id: "phone",
     icon: phoneIcon,
     alt: "Іконка телефону",
     desc: "+38 (044) 209 5302",
+    href: "tel:+380442095302",
   },
   {
-    id: 3,
+    type: "translatedLink",
+    id: "onMap",
     icon: markerIcon,
     alt: "Іконка маркеру на карті",
-    desc: "вул. Олеся Гончара 55 б, Київ, Україна 01601",
+    descKey: "our_contacts.address",
+    href: "https://maps.app.goo.gl/JRZd6hs3MxNwZrzE8",
   },
 ];
 

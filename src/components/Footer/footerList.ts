@@ -10,15 +10,15 @@ export const logoImg: Logo = {
 export const rulesList: Rules[] = [
   {
     id: 1,
-    desc: "Політика конфіденційності",
+    descKey: "our_rules.privacy_policy",
   },
   {
     id: 2,
-    desc: "Правила користування сайтом",
+    descKey: "our_rules.using_site",
   },
   {
     id: 3,
-    desc: "Звітність",
+    descKey: "our_rules.publicity",
   },
 ];
 

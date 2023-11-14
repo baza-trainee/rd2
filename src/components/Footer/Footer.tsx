@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import {useTranslation} from "react-i18next";
+
 import Container from "@mui/material/Container";
 
 import {contactsList} from "../commonComponents/ContactItem/contactsList";
@@ -23,10 +25,10 @@ import {
 import { FooterLogo } from "./FooterLogo/FooterLogo";
 import { FooterModal } from "./FooterModal/FooterModal";
 
-
-
-
 export const Footer: React.FC = () => {
+
+  const { t } = useTranslation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -46,27 +48,27 @@ export const Footer: React.FC = () => {
             <NavWrapper>
               <FooterNavigation className="custom-nav-class" />
               <RulesList>
-                {rulesList.map(({ id, desc }) => (
+                {rulesList.map(({ id, descKey }) => (
                   <RulesItem key={id} onClick={openModal}>
-                    {desc}
+                    { t(descKey) }
                   </RulesItem>
                 ))}
               </RulesList>
             </NavWrapper>
             <Address>
-              {contactsList.map(({ id, icon, alt, desc }) => (
-                <ContactItem key={id}
-                  icon={icon}
-                  alt={alt}
-                  desc={desc}
+              {contactsList.map((item) => (
+                <ContactItem key={item.id}
+                             {...item}
                 />
               ))}
             </Address>
           </FooterNav>
         </Content>
+
         <Rights>
-          Розробка Baza Trainee Ukraine 2023 © Всі права захищені
+          { t("developers") }
         </Rights>
+
       </Container>
       <FooterModal onCloseModal={closeModal} open={isModalOpen} />
     </FooterSection>

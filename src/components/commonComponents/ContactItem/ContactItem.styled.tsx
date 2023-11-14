@@ -7,4 +7,8 @@ const AddressItem = styled.p`
   text-transform: none;
 `;
 
-export {AddressItem};
+const StyledLink = styled.a`
+    color: inherit;
+`
+
+export {AddressItem, StyledLink};

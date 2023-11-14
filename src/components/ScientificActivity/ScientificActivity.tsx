@@ -1,6 +1,9 @@
 import React from "react";
 
+import {useTranslation} from "react-i18next";
+
 import { ScientificActivityList } from "./ScientificActivityList";
+
 import {
   Container,
   Divider,
@@ -17,6 +20,9 @@ import {
 } from "./ScientificActivity.styled";
 
 export const ScientificActivity: React.FC = () => {
+
+  const { t } = useTranslation();
+
   const [windowWidth, setWindowWidth] = React.useState(window.screen.width);
 
   React.useEffect(() => {
@@ -30,25 +36,30 @@ export const ScientificActivity: React.FC = () => {
       <Container>
         <SectionWrapper>
           <TitleWrap>
-            <Title>Наукова діяльність</Title>
+
+            <Title>
+              { t("activity_block.title") }
+            </Title>
+
             <Divider></Divider>
+
             <TitleText>
-              Ми також надаємо корисні поради щодо вибору дрона, використання його
-              можливостей та правил безпеки. Наша команда експертів завжди готова надати
-              вам консультацію та допомогти з будь-якими питаннями, пов'язаними з дронами.
+              { t("activity_block.about") }
             </TitleText>
+
           </TitleWrap>
+
           <CardWrapper>
-            {ScientificActivityList.map(({ id, title, text, img, retinaImg }) => {
+            {ScientificActivityList.map(({ id, titleKey, textKey, img, retinaImg }) => {
               return (
                 <Cards key={id}>
                   {windowWidth < 768 ? (
                     <>
-                      <ActivityImg src={img} srcSet={`${retinaImg} 2x`} alt={title} />
+                      <ActivityImg src={img} srcSet={`${retinaImg} 2x`} alt={ t(titleKey) } />
 
                       <CardTextWrap>
-                        <CardTitle>{title}</CardTitle>
-                        <CardText>{text}</CardText>
+                        <CardTitle> { t(titleKey) } </CardTitle>
+                        <CardText> { t(textKey) } </CardText>
                       </CardTextWrap>
                     </>
                   ) : (
@@ -56,19 +67,19 @@ export const ScientificActivity: React.FC = () => {
                       {id % 2 === 0 ? (
                         <>
                           <CardTextWrap>
-                            <CardTitle>{title}</CardTitle>
-                            <CardText>{text}</CardText>
+                            <CardTitle> { t(titleKey) } </CardTitle>
+                            <CardText> { t(textKey) } </CardText>
                           </CardTextWrap>
 
-                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={title} />
+                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={ t(titleKey) } />
                         </>
                       ) : (
                         <>
-                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={title} />
+                          <ActivityImg srcSet={`${retinaImg} 2x`} src={img} alt={ t(titleKey) } />
 
                           <CardTextWrap>
-                            <CardTitle>{title}</CardTitle>
-                            <CardText>{text}</CardText>
+                            <CardTitle> { t(titleKey) } </CardTitle>
+                            <CardText> { t(textKey) } </CardText>
                           </CardTextWrap>
                         </>
                       )}

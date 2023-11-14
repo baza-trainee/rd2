@@ -6,6 +6,8 @@ import contactSchema from "helpers/contactFormValidationSchema";
 
 import { contactValuesType } from "types/typeContactInitialValues";
 
+import {useTranslation} from "react-i18next";
+
 import { FormEl, FieldContainer, FieldLabel, Input, Textarea, FormError } from "./Form.styled";
 
 interface ContactFormProps {
@@ -21,6 +23,8 @@ const initialValues: contactValuesType = {
 };
 
 const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
+
+  const { t } = useTranslation();
 
   const {values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm} = useFormik({
     initialValues: initialValues,
@@ -43,7 +47,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
   });
   return <FormEl onSubmit={handleSubmit}>
     <FieldContainer>
-      <FieldLabel>Ім’я</FieldLabel>
+      <FieldLabel>{t("contact_form.name")}</FieldLabel>
       <Input type="text"
         name="name"
         onChange={handleChange}
@@ -54,7 +58,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
       {errors.name && touched.name && <FormError>{errors.name}</FormError>}
     </FieldContainer>
     <FieldContainer>
-      <FieldLabel>Фамілія</FieldLabel>
+      <FieldLabel>{t("contact_form.surname")}</FieldLabel>
       <Input type="text"
         name="surname"
         onChange={handleChange}
@@ -65,7 +69,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
       {errors.surname && touched.surname && <FormError>{errors.surname}</FormError>}
     </FieldContainer>
     <FieldContainer>
-      <FieldLabel>Телефон</FieldLabel>
+      <FieldLabel>{t("contact_form.phone")}</FieldLabel>
       <Input type="tel"
         name="phone"
         onChange={handleChange}
@@ -76,7 +80,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
       {errors.phone && touched.phone && <FormError>{errors.phone}</FormError>}
     </FieldContainer>
     <FieldContainer>
-      <FieldLabel>E-mail</FieldLabel>
+      <FieldLabel>{t("contact_form.email")}</FieldLabel>
       <Input type="email"
         name="email"
         onChange={handleChange}
@@ -87,7 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
       {errors.email && touched.email && <FormError>{errors.email}</FormError>}
     </FieldContainer>
     <FieldContainer>
-      <FieldLabel>Повідомлення</FieldLabel>
+      <FieldLabel>{t("contact_form.message")}</FieldLabel>
       <Textarea name="message"
         onChange={handleChange}
         value={values.message}
@@ -97,7 +101,7 @@ const ContactForm: React.FC<ContactFormProps> = ({openModal}) => {
       {errors.message && touched.message && <FormError>{errors.message}</FormError>}
     </FieldContainer>
     <Button fullWidth variant="contained" type="submit" style={{marginTop: "32px"}}>
-        Надіслати
+      {t("buttons.send")}
     </Button>
   </FormEl>;
 };

@@ -6,6 +6,8 @@ import { theme } from "theme/theme";
 import { ListNews } from "components/About/OurNews/listNews";
 import { getSlideCount } from "features/helpers/getSlideCount";
 
+import {useTranslation} from "react-i18next";
+
 import { NewOfOurNews } from "../NewOfOurNews/NewOfOurNews";
 import { MoreInfoOfNews } from "../MoreInfoOfNews/MoreInfoOfNews";
 import { CustomPagination } from "../CustomPagination/CustomPagination";
@@ -23,6 +25,8 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
 
   const slidesCount = getSlideCount(isAboveMd, isAboveXl);
+
+    const { t } = useTranslation();
 
   return (
     <Wrapper>
@@ -44,7 +48,10 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
               title={title}
               description={description}
             >
-              <MoreInfoOfNews date={date} buttonText="Детальніше" />
+              <MoreInfoOfNews
+                  date={date}
+                  buttonText={`${t("buttons.more_info")}`}
+              />
             </NewOfOurNews>
           </SwiperSlide>
         ))}

@@ -100,7 +100,7 @@ const Cards = styled.div`
 `;
 
 const CardTextWrap = styled.div`
-width: 328px
+width: 328px;
 height: 277px;
 padding: 24px;
 
@@ -132,6 +132,7 @@ const CardTitle = styled.h2`
   margin-bottom: 16px;
   margin-top: 0px;
   font-size: 16px;
+  text-transform: uppercase;
 
   @media (min-width: 1440px) {
     font-size: 32px;

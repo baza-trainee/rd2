@@ -52,6 +52,7 @@ color: #151515;
 line-height: 30px;
 font-size: 20px;
 pointer-events: none;
+text-transform: capitalize;
 
 @media screen and (min-width: 1440px) {
   line-height: 27.24px;
