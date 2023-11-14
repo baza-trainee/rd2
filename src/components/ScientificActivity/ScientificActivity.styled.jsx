@@ -20,7 +20,6 @@ const SectionWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: Open Sans;
   width: 328px;
   font-size: 40px;
   font-weight: 600;
@@ -67,7 +66,6 @@ const Divider = styled.span`
 `;
 
 const TitleText = styled.p`
-  font-family: Open Sans;
   width: 328px;
   @media (min-width: 768px) {
     width: 420px;
@@ -100,12 +98,11 @@ const Cards = styled.div`
 `;
 
 const CardTextWrap = styled.div`
-width: 328px;
-height: 277px;
-padding: 24px;
+  width: 328px;
+  height: 277px;
+  padding: 24px;
 
-   @media (min-width: 768px) {
-    
+  @media (min-width: 768px) {
     width: 340px;
     height: 289px;
   }
@@ -114,20 +111,16 @@ padding: 24px;
     overflow-x: hidden;
   }
   @media (min-width: 1440px) {
-  
     width: 668px;
     height: 560px;
 
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-  
-
   }
 `;
 
 const CardTitle = styled.h2`
-  font-family: Open Sans;
   font-weight: 600;
   margin-bottom: 16px;
   margin-top: 0px;
@@ -139,9 +132,7 @@ const CardTitle = styled.h2`
   }
 `;
 
-const CardText = styled.p`
-  font-family: Open Sans;
-`;
+const CardText = styled.p``;
 
 const ActivityImg = styled.img`
   display: block;

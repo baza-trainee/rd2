@@ -50,7 +50,6 @@ const Picture = styled.picture`
 `;
 const SocrstHeader = styled.h1`
   color: #151515;
-  font-family: Open Sans;
   font-size: 32px;
   font-weight: 900;
 
@@ -67,7 +66,6 @@ const SocrstHeader = styled.h1`
 const TitleText = styled.p`
   width: 328px;
   color: #151515;
-  font-family: Open Sans;
   font-size: 16px;
   font-weight: 600;
 
@@ -114,7 +112,6 @@ const SocratAboutTitle = styled.h2`
   text-align: center;
 
   color: #151515;
-  font-family: Open Sans;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -126,7 +123,6 @@ const SocratAboutTitle = styled.h2`
 const SocratAboutText = styled.p`
   text-align: start;
   color: #151515;
-  font-family: Open Sans;
   font-size: 16px;
   font-weight: 400;
 `;
@@ -169,7 +165,6 @@ const AccordionItem = styled.div`
   }
 `;
 const AccordionHeader = styled.h2`
-  font-family: Open Sans;
   font-size: 16px;
   color: #151515;
   font-weight: 700;

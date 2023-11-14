@@ -62,8 +62,7 @@ const Numb = styled.img`
 `;
 
 const Text = styled.p`
-  color: var(--Black, #151515);
-  font-family: Open Sans;
+  color: #151515;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -75,8 +74,7 @@ const Text = styled.p`
   }
 `;
 const Text2 = styled.p`
-  color: var(--Black, #151515);
-  font-family: Open Sans;
+  color: #151515;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -102,7 +100,6 @@ const Button = styled.button`
   cursor: pointer;
   border: none;
 
-  font-family: Open Sans;
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
