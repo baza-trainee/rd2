@@ -15,6 +15,7 @@ const MenuItemsList = ({onClick}: MenuItemsListProps) => {
             {
                 langList.map((item) => (
                     <MenuItemsListStyled
+                        key={item}
                         id={item}
                         onClick={onClick}
                     >
