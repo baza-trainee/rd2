@@ -15,7 +15,7 @@ export const resources: Resource = {
   fr: {
     translation: frenchLang,
   },
-  gm: {
+  de: {
     translation: germanLang,
   },
 };
