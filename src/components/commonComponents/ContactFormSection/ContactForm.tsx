@@ -2,11 +2,11 @@ import React from "react";
 import { useFormik } from "formik";
 import { Button } from "@mui/material";
 
-import contactSchema from "helpers/contactFormValidationSchema";
+import {useTranslation} from "react-i18next";
 
 import { contactValuesType } from "types/typeContactInitialValues";
 
-import {useTranslation} from "react-i18next";
+import {contactSchema} from "../../../helpers/updateValidationTranslation";
 
 import { FormEl, FieldContainer, FieldLabel, Input, Textarea, FormError } from "./Form.styled";
 

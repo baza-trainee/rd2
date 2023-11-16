@@ -183,7 +183,9 @@
   "donate_modal": {
     "payment_amount": "Choose a payment amount",
     "payment_method": "Choose a payment method",
-    "another_amount": "Another payment amount"
+    "another_amount": "Another payment amount",
+    "success_title": "Thanks",
+    "success_text": "!"
   },
   "about_us_carousel": [
     {
@@ -198,5 +200,18 @@
       "title": "Title3",
       "desc": "description3"
     }
-  ]
+  ],
+  "validation": {
+    "input_max_length": "!",
+    "input_min_length": "!",
+    "only_letter": "!",
+    "required_name": "!",
+    "required_surname": "!",
+    "required_email": "!",
+    "required_phone": "!",
+    "required_field": "!",
+    "validation_error": "!",
+    "message_max_length": "!",
+    "message_mix_length": "!"
+  }
 }
