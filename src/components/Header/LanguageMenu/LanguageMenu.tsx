@@ -45,7 +45,7 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
 
     useEffect(() => {
         i18n.on("languageChanged",
-            (lng)=> setMenuLang(i18n.language))
+            ()=> setMenuLang(i18n.language))
     }, []);
 
   return (
