@@ -11,18 +11,8 @@ const HeaderToolbar = styled.div`
   
   padding: 24px 0;
   
-  & > button {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
   @media (min-width: 1280px) {
     justify-content: space-between;
-
-    & > button {
-      margin-left: 0;
-      margin-right: 0;
-    }
   }
 `;
 

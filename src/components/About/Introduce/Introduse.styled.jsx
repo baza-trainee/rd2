@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
 
+import {theme} from "../../../theme/theme";
+
+const bgColor = theme.palette.secondary.main;
+
 const Container = styled.section`
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: ${bgColor};
 `;
 
 const SectionWrapper = styled.div`
@@ -43,8 +47,6 @@ const Pictures = styled.div`
   }
 `;
 const Text = styled.p`
-  color: #151515;
-  font-size: 16px;
   font-weight: 400;
   line-height: 150%;
   @media (min-width: 768px) {
@@ -55,8 +57,6 @@ const Text = styled.p`
   }
 `;
 const Text2 = styled.p`
-  color: #151515;
-  font-size: 16px;
   font-weight: 400;
   line-height: 150%;
   @media (min-width: 768px) {
