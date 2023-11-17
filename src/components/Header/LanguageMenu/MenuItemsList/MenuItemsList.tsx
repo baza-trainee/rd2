@@ -10,7 +10,6 @@ type MenuItemsListProps = {
 
 const MenuItemsList = ({onClick}: MenuItemsListProps) => {
 
-    let disabled;
     return (
         <>
             {

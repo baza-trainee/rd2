@@ -118,7 +118,7 @@ const CardTextWrap = styled.div`
 const CardTitle = styled.h2`
   font-weight: 600;
   margin-bottom: 16px;
-  margin-top: 0px;
+  margin-top: 0;
   font-size: 16px;
   text-transform: uppercase;
 
@@ -136,7 +136,7 @@ const ActivityImg = styled.img`
   margin-bottom: 74px;
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 340px;
     height: 289px;
   }
