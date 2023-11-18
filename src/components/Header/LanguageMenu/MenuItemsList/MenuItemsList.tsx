@@ -13,15 +13,22 @@ const MenuItemsList = ({onClick}: MenuItemsListProps) => {
     return (
         <>
             {
-                langList.map((item) => (
-                    <MenuItemsListStyled
-                        key={item}
-                        id={item}
-                        onClick={onClick}
-                    >
-                        {item}
-                    </MenuItemsListStyled>
-                ))
+                langList.map((item) => {
+
+                    const disableStatus:boolean = (item === "de") ;
+
+                    return (
+                        <MenuItemsListStyled
+                            key={item}
+                            id={item}
+                            onClick={onClick}
+                            disabled={disableStatus}
+                        >
+                            {item}
+                        </MenuItemsListStyled>
+                    )
+                    },
+                )
             }
         </>
 

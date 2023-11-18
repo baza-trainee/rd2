@@ -17,7 +17,7 @@ const Container = styled.section`
 
   padding: 60px 16px 42px 16px;
 
-  max-width: auto;
+  //max-width: auto;
 
   height: auto;
 
@@ -142,83 +142,10 @@ const Accordion = styled.section`
     row-gap: 32px;
   }
 `;
-const AccordionHeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  @media (min-width: 1440px) {
-    margin-bottom: 25px;
-  }
-`;
-const AccordionItem = styled.div`
-  width: 328px;
-  padding: 12px;
-  background-color: #fff;
-  border-radius: 12px;
-  @media (min-width: 768px) {
-    width: 522px;
-    padding: 24px;
-  }
-  @media (min-width: 1440px) {
-    width: 1013px;
-    padding: 50px;
-  }
-`;
-const AccordionHeader = styled.h2`
-  font-size: 16px;
-  color: #151515;
-  font-weight: 700;
-  background-color: #fff;
-  @media (min-width: 768px) {
-    font-size: 18px;
-  }
-  @media (min-width: 1440px) {
-    font-size: 24px;
-  }
-`;
-const AccordionButton = styled.button`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  width: 24px;
-  background-color: inherit;
-  @media (min-width: 1440px) {
-    width: 50px;
-`;
-const Img = styled.img`
-  width: 24px;
-  @media (min-width: 1440px) {
-    width: 50px;
-  }
-`;
-const AccordionBody = styled.div`
-  width: 275px;
-  border-color: fff;
-  @media (min-width: 768px) {
-    width: 445px;
-  }
-  @media (min-width: 1440px) {
-    width: 858px;
-  }
-`;
-const AccordionCollapse = styled.div`
-  height: 0px;
-  overflow: hidden;
-  transition: 500ms;
-`;
 
 export {
   Container,
   Accordion,
-  AccordionItem,
-  AccordionHeader,
-  AccordionButton,
-  AccordionBody,
-  AccordionCollapse,
-  AccordionHeaderWrapper,
-  Img,
   Picture,
   SocrstHeader,
   TitleText,

@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
 
+import {theme} from "../../theme/theme";
+
+const bgColor = theme.palette.secondary.main;
+
 const Container = styled.section`
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: ${bgColor};
 `;
 
 const SectionWrapper = styled.div`
@@ -93,27 +97,18 @@ const Cards = styled.div`
     align-items: center;
     column-gap: 24px;
   }
-  @media (min-width: 1440px) {
-  }
 `;
 
 const CardTextWrap = styled.div`
   width: 328px;
-  height: 277px;
   padding: 24px;
 
   @media (min-width: 768px) {
     width: 340px;
-    height: 289px;
   }
-  @media (min-width: 768px) and (max-width: 1439px) {
-    overflow: scroll;
-    overflow-x: hidden;
-  }
+  
   @media (min-width: 1440px) {
     width: 668px;
-    height: 560px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,7 +118,7 @@ const CardTextWrap = styled.div`
 const CardTitle = styled.h2`
   font-weight: 600;
   margin-bottom: 16px;
-  margin-top: 0px;
+  margin-top: 0;
   font-size: 16px;
   text-transform: uppercase;
 
@@ -141,7 +136,7 @@ const ActivityImg = styled.img`
   margin-bottom: 74px;
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 340px;
     height: 289px;
   }
