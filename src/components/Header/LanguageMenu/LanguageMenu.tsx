@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Button from "@mui/material/Button";
 import {Menu} from "@mui/material";
 
 import {changeLanguage} from "i18next";
+
+import {useTranslation} from "react-i18next";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -15,9 +17,11 @@ interface LanguageMenuProps {
 
 export const LanguageMenu = ({ className }: LanguageMenuProps) => {
 
-  const [menuLang, setMenuLang] = React.useState("UA");
+  const {i18n} = useTranslation();
 
-  const [menuButton, setMenuButton] = React.useState<null | HTMLElement>(null);
+  const [menuLang, setMenuLang] = useState(i18n.language);
+
+  const [menuButton, setMenuButton] = useState<null | HTMLElement>(null);
 
   const open = Boolean(menuButton);
   const onClickMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -28,10 +32,15 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
     setMenuButton(null);
   };
   const onClickMenuItem = (e: React.MouseEvent<HTMLElement>) => {
-    changeLanguage(e.currentTarget.id);
-    onCloseMenu();
-    setMenuLang(e.currentTarget.innerText);
+
+    changeLanguage(e.currentTarget.id)
+        .then(() => onCloseMenu());
   };
+
+  useEffect(() => {
+    i18n.on("languageChanged",
+            ()=> setMenuLang(i18n.language))
+  }, []);
 
   return (
     <LanguageMenuWrap opened ={open} className={className}>
