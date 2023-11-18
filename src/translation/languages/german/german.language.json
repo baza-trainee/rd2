@@ -177,7 +177,9 @@
  "donate_modal": {
   "payment_amount": "",
   "payment_method": "",
-  "another_amount": ""
+  "another_amount": "",
+  "success_title": "",
+  "success_text": "!"
  },
  "about_us_carousel": [
   {
@@ -192,5 +194,18 @@
    "title": "",
    "desc": ""
   }
- ]
+ ],
+ "validation": {
+  "input_max_length": "",
+  "input_min_length": "",
+  "only_letter": "",
+  "required_name": "",
+  "required_surname": "",
+  "required_email": "",
+  "required_phone": "",
+  "required_field": "",
+  "validation_error": "",
+  "message_max_length": "",
+  "message_mix_length": ""
+ }
 }

@@ -162,8 +162,10 @@
     "payment_amount": "Choose a payment amount",
     "payment_method": "Choose a payment method",
     "another_amount": "Another payment amount",
+
     "success_title": "Thank you",
     "success_text": "for your support"
+
   },
   "about_us_carousel": [
     {
@@ -182,6 +184,7 @@
   "validation": {
     "input_max_length": "!",
     "input_min_length": "!",
+
     "only_letter": "Please, use only letters",
     "required_name": "First name is a required field",
     "required_surname": "Last name is a required field",

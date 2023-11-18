@@ -13,6 +13,7 @@ const LanguageMenuWrap = styled.div<LanguageMenuWrapProp>`
       
       font-size: 1rem;
       color: #151515;
+      text-transform: uppercase;
       background-color: ${props => (props.opened ? bgrColor : "transparent")};
       border-radius: 5px 5px 0 0;
       
