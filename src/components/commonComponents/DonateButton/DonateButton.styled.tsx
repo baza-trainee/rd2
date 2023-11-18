@@ -10,9 +10,11 @@ const ButtonStyled = styled(Button)`
   text-transform: none;
   
   @media (min-width: 468px) {
+
     margin-left: 20px;
     margin-right: 20px;
     width: 185px;
+
   }
 
   @media (min-width: 1280px) {

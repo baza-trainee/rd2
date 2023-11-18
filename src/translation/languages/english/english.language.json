@@ -1,179 +1,157 @@
 {
   "nav": {
-    "about_us": "About Us",
-    "activity": "Research Activities",
-    "demining": "Demining",
+    "about_us": "About us",
+    "activity": "Research activities",
+    "demining": "Remote demining",
     "contacts": "Contacts"
   },
   "buttons": {
-    "donate": "donate",
+    "donate": "Support us",
     "more_info": "more info",
     "send": "send",
     "pay": "pay",
     "return_to_home_page": "return to the home page"
   },
   "contact_form": {
-    "name": "name",
-    "surname": "surname",
+    "name": "First name",
+    "surname": "Last name",
     "phone": "phone",
     "email": "email",
     "message": "message"
   },
   "introduce_block": {
-    "item_1_text": "",
-    "item_2_text": ""
+    "item_1_text": "The team of the State Enterprise “Scientific Research Center for Subsoil Use Problems “Georesurs” of the National Academy of Sciences of Ukraine conducts testing of the existing development and equipment of the modern method of determining the locations of explosive objects by the method of pulsating electromagnetic sounding (PEMS).",
+    "item_2_text": "The team consists of the management, scientists (Doctors and PhDs of geological and geochemical sciences), a group of translators and has 10 years of experience in conducting similar research works. The testing of the methodology takes place in real conditions at an active training ground."
   },
   "main_tasks_block": {
     "title": "Main tasks",
     "desc": {
-      "item_1": "",
-      "item_2": "",
-      "item_3": "",
-      "item_4": "",
-      "item_5": "",
-      "item_6": ""
+      "item_1": "Implementation of a fundamentally new approach that allows remote, using UAVs, to conduct research on the detection of locations of explosive objects.",
+      "item_2": "The use of technologies based on the scanning method (PEMS): sounding of the territory together with the analysis of radiation anomalies of the search objects.",
+      "item_3": "Conducting test field work in real conditions.",
+      "item_4": "Demining Ukraine, as 30% of the country’s area is currently contaminated with mines and explosive objects.",
+      "item_5": "Building the maps of contaminated territories and objects in Ukraine.",
+      "item_6": "Implementation of innovative demining methods, as with today's technologies demining the territory of Ukraine will take more than 750 years."
     }
   },
   "advantages_block": {
-    "title": "",
-    "about": "",
+    "title": "Advantages of the project",
+    "about": "The area may be contaminated with mines installed manually or tripwire bombs. In this case, they are detected and neutralized manually. We offer a method of remote demining that doesn’t require deminer’s involvement and works for any type of contamination.",
     "items": [
       {
-        "title": "title1",
-        "desc": "desc1"
+        "title": "Unique technology",
+        "desc": "Ukraine is interested in the development of technologies for its own survival, rebuilding and development. Currently, we are able to claim we are the first in the world in terms of the uniqueness of technologies tested in field conditions."
       },
       {
-        "title": "title2",
-        "desc": "desc2"
+        "title": "Demining teams",
+        "desc": "More than 500 teams of deminers, who risk their lives every day, will be needed to clear contaminated areas. We offer the process of demining without human participation, entirely remote."
       },
       {
-        "title": "title3",
-        "desc": "desc3"
+        "title": "Explosive objects",
+        "desc": "Our methodology allows to identify and defuse mines that have sunk into the ground over time and are invisible to the naked eye. Searching for them manually is extremely dangerous."
       }
     ]
   },
   "our_news_block": {
-    "title": "",
-    "about": "",
-    "items": [
-      {
-        "title": "title1",
-        "desc": "desc1"
-      },
-      {
-        "title": "title2",
-        "desc": "desc2"
-      },
-      {
-        "title": "title3",
-        "desc": "desc3"
-      }
-    ]
+    "title": "Our news",
+    "about": "Scientists of the National Academy of Sciences of Ukraine constantly participate in conferences and forums in the field of high tech and innovations in engineering."
   },
   "partners_block": {
-    "title": "",
-    "about": ""
+    "title": "Partner organizations",
+    "about": "Organizations we constantly cooperate with"
   },
   "about_socrat_block": {
-    "title": "",
-    "about": "",
+    "title": "Socrat project",
+    "about": "Remote detection of explosive objects",
     "items": [
       {
-        "title": "title1",
-        "desc": "desc1"
+        "title": "174,000 sq km / 67,182 sq miles",
+        "desc": "A third of the territory of Ukraine is contaminated with mines and requires a thorough examination for ammunition and other explosive objects and substances."
       },
       {
-        "title": "title2",
-        "desc": "desc2"
+        "title": "64 sq km per year / 25 sq miles per year",
+        "desc": "The pace of demining is only about 64 sq km (25 sq miles) per year, most of the work is carried out by the special services of the ministries of defense and internal affairs of Ukraine with the support of international non-governmental organizations."
       },
       {
-        "title": "title3",
-        "desc": "desc3"
+        "title": "70 years",
+        "desc": "It will take about 70 years to completely clear the territories. Demining in such a long time can take many lives of both civilians and special services involved in the process."
       }
     ]
   },
   "socrat_questions_block": [
     {
-      "title": "title1",
-      "desc": "desc3"
+      "title": "How is demining done?",
+      "desc": "The standard demining procedure is relevant where fighting took place, which is approximately 30% of the country's territories. In order to do this, special forces must maintain personnel, machinery and equipment. Sokrat technology makes the process of cleaning contaminated land many times faster as well as significantly reduces the need to involve technology in the process."
     },
     {
-      "title": "title2",
-      "desc": "desc3"
+      "title": "What are the demining options?",
+      "desc": "Cleaning the territory can be complicated depending on the type of soil, whether it’s wooded or swampy area, village or city, and future use of the site. An important point is informing the population of contaminated areas about the danger and the importance of paying attention if you are a resident. In case of Socrat remote demining, this difficulty is eliminated."
     },
     {
-      "title": "title3",
-      "desc": "desc3"
+      "title": "How is the process of cleaning the territory organized?",
+      "desc": "For demining, it is necessary to equip a whole site for the work of the unit: a place for equipment, a medical station, a place for rest, for the removal of vegetation, garbage or scrap metal, etc. All this can be avoided with remote demining."
     },
     {
-      "title": "title4",
-      "desc": "desc3"
+      "title": "How does the team of deminers work?",
+      "desc": "Checks the area first visually and with the help of a metal detector. In any case, this procedure is long and risky for a specialist. They absolutely cannot hurry. In contrast, Sokrat allows one not to be dependent on external conditions (nature or weather, human factor, equipment conditions). Remote demining technology has been tested in real conditions."
     },
     {
-      "title": "title5",
-      "desc": "desc3"
+      "title": "What may happen during the cleaning process?",
+      "desc": "The metal detector may be ineffective in areas that have a high level of contamination with ferromagnetic materials. Carrying out the procedure in such a case is dangerous for the deminer. Moreover, the soil is excavated manually, which also adds to the total time. Sokrat allows one to detect small objects from 10 cm (4 in) with an accuracy higher than 86%. Scanning can be used for complex areas: ponds, bushes, fields, slopes, hills, forests, etc."
     },
     {
-      "title": "title6",
+      "title": "Who are the consumers of the Socrat methodology?",
       "desc": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Demining operators",
+        "Communities and the state of Ukraine",
+        "Agricultural holdings and farms",
+        "Manufacturers of agricultural machinery, insurance companies, leasing companies",
+        "Urban development companies that prepare areas used for buildings"
       ]
     }
   ],
   "activity_block": {
-    "title": "",
-    "about": "",
+    "title": "Research activities",
+    "about": "We also advise on choosing a UAV, using its features and safety rules. Our team of experts is always ready to give you advice and help with any questions related to UAVs.",
     "items": [
       {
-        "title": "title1",
-        "desc": "desc1"
+        "title": "Innovations",
+        "desc": "The team of the SE SRCSUP \"Georesurs\" of the National Academy of Sciences of Ukraine, together with specialists of the National Academy of Internal Affairs, the State Emergency Service, the State Special Transport Service, the Support Forces of the Armed Forces of Ukraine, are testing the newest method of remote demining of the land."
       },
       {
-        "title": "title2",
-        "desc": "desc2"
+        "title": "Method",
+        "desc": "The principle is that UAV while being above the ground determines the location of mines using the method of electromagnetic sensing. The methodology determines where exactly metallic and non-metallic explosive objects are located and how deep they are in the ground. Activities are performed without direct human participation in the contaminated area."
       },
       {
-        "title": "title3",
-        "desc": "desc3"
+        "title": "Remote approach",
+        "desc": "This is a fundamentally new approach that allows one to quickly find the mines using a UAV in a remote mode and, after processing the data, provide a map of their locations linked to the GPS coordinate system."
       },
       {
-        "title": "title2",
-        "desc": "desc2"
+        "title": "Importance",
+        "desc": "In Ukraine, there is a need to create maps of the territories and objects contaminated or possibly contaminated with explosive objects for the safety of Ukrainians."
       },
       {
-        "title": "title3",
-        "desc": "desc3"
-      },
-      {
-        "title": "title4",
-        "desc": "desc4"
-      },
-      {
-        "title": "title5",
-        "desc": "desc5"
+        "title": "Relevance",
+        "desc": "Determining locations with exact coordinates of explosive objects will greatly help in isolating dangerous places and increase the chance of conducting humanitarian demining of the Ukrainian territories much faster."
       }
     ]
   },
   "contacts_block": {
-    "main_page_title": "If you have questions, comments, or suggestions, please, contact us",
-    "contact_page_title": "",
-    "contact_page_desc": ""
+    "main_page_title": "If you have questions, comments, or suggestions, please fill out the feedback form.",
+    "contact_page_title": "Feedback",
+    "contact_page_desc": "Your feedback is important for us."
   },
   "our_contacts": {
     "title": "Our contacts",
     "address_title": "Our address",
-    "phone_title": "Our phone",
-    "email_title": "Our email",
-    "address": "Olesia Honchara St, 55Б, Kyiv, 01601"
+    "phone_title": "Call us",
+    "email_title": "Write to us",
+    "address": "55B Olesia Honchara str, Kyiv 01601, Ukraine"
   },
   "our_rules": {
-    "privacy_policy": "Privacy policy",
-    "using_site": "Rules of use of the site",
-    "publicity": "Publicity"
+    "privacy_policy": "Privacy Policy",
+    "using_site": "Terms&Use",
+    "publicity": "Reporting"
   },
   "developers": "Develop by Baza Trainee Ukraine 2023 © All rights reserved",
   "page_404": {
@@ -184,33 +162,36 @@
     "payment_amount": "Choose a payment amount",
     "payment_method": "Choose a payment method",
     "another_amount": "Another payment amount",
-    "success_title": "Thanks",
-    "success_text": "!"
+
+    "success_title": "Thank you",
+    "success_text": "for your support"
+
   },
   "about_us_carousel": [
     {
-      "title": "Title1",
+      "title": "State Enterprise’s areas of work 1",
       "desc": "description1"
     },
     {
-      "title": "Title2",
+      "title": "State Enterprise’s areas of work 2",
       "desc": "description2"
     },
     {
-      "title": "Title3",
+      "title": "State Enterprise’s areas of work 3",
       "desc": "description3"
     }
   ],
   "validation": {
     "input_max_length": "!",
     "input_min_length": "!",
-    "only_letter": "!",
-    "required_name": "!",
-    "required_surname": "!",
-    "required_email": "!",
-    "required_phone": "!",
-    "required_field": "!",
-    "validation_error": "!",
+
+    "only_letter": "Please, use only letters",
+    "required_name": "First name is a required field",
+    "required_surname": "Last name is a required field",
+    "required_email": "Email is a required field",
+    "required_phone": "Phone is a required field",
+    "required_field": "The field is required",
+    "validation_error": "Validation error",
     "message_max_length": "!",
     "message_mix_length": "!"
   }
