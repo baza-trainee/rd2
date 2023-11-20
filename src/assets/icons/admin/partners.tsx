@@ -1,4 +1,4 @@
-// eslint-disable-next-line max-len
+/* eslint-disable max-len */
 const partnersSvgIcon = <svg xmlns="http://www.w3.org/2000/svg" width="27" height="20" viewBox="0 0 27 20" fill="none">
     <g clipPath="url(#clip0_890_4503)">
         <path d="M9.50355 15.1907C8.3212 14.6842 7.88292 14.2076 7.88292 12.8362C7.88292 12.8362 10.7101 11.4996 10.7101 7.56209C10.7101 4.87532 8.85994 3.3584 6.5775 3.3584C4.29506 3.3584 2.44524 4.87532 2.44524 7.56209C2.44524 7.90086 2.46628 8.22117 2.50427 8.5224C2.52719 8.69901 2.87536 8.56732 2.90895 8.73101C3.48474 11.5384 5.27271 12.8369 5.27271 12.8362C5.27271 16.6246 -0.00390625 15.2606 -0.00390625 18.9753C-0.00390625 18.9753 1.65471 18.9753 6.02023 18.9753C6.01741 17.0513 7.47415 15.879 9.50355 15.1907Z" fill="white"/>
@@ -12,3 +12,5 @@ const partnersSvgIcon = <svg xmlns="http://www.w3.org/2000/svg" width="27" heigh
 </svg>
 
 export {partnersSvgIcon}
+
+/* eslint-enable max-len */

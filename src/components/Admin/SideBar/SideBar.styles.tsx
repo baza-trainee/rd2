@@ -11,8 +11,10 @@ const NavLinkStyled = styled(NavLink)`
   &.active {
     color: #8EB6F8;
     
-    svg path{
-      fill: #8EB6F8;
+    svg {
+      path{
+        fill: #8EB6F8;
+      }
     }
   }
   
