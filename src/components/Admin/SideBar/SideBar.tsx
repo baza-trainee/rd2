@@ -11,14 +11,19 @@ import iconLeave from "assets/icons/admin/leave.png";
 import { DrawerStyles } from "./SideBar.classes";
 import { buttonsList } from "./buttonsList";
 
+import {NavLinkStyled} from "./SideBar.styles";
+
 export const ToolBar = () => {
   return (
     <Drawer variant="permanent" sx={DrawerStyles}>
       <Grid container height="100%">
         <Grid sx={{ paddingTop: "104px" }} xs={12} item>
           <List>
-            {buttonsList.map(({ id, icon, buttonText }) => (
-              <MenuButton key={id} icon={icon} buttonText={buttonText} />
+            {buttonsList.map(({ id, icon, buttonText, routePath }) => (
+                <NavLinkStyled to={routePath} key={id}>
+                  <MenuButton icon={icon} buttonText={buttonText} />
+                </NavLinkStyled>
+
             ))}
           </List>
         </Grid>

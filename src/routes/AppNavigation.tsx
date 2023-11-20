@@ -1,4 +1,4 @@
-import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import {Route, createBrowserRouter, createRoutesFromElements, Navigate} from "react-router-dom";
 
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { About } from "pages/About";
@@ -9,11 +9,15 @@ import { NotFound } from "pages/NotFound";
 import { Auth } from "pages/auth/Auth";
 import { Restore } from "pages/auth/Restore";
 import { NewPassword } from "pages/auth/NewPassword";
-import { Admin } from "pages/Admin";
 
 import { MainLayout } from "routes/layouts/MainLayout";
 import { AuthLayout } from "routes/layouts/AuthLayout";
 import { AdminLayout } from "routes/layouts/AdminLayout";
+
+import {Feedback} from "../pages/adminPanel/Feedback";
+import {Reports} from "../pages/adminPanel/Reports";
+import {Partners} from "../pages/adminPanel/Partners";
+import {OurContacts} from "../pages/adminPanel/OurContacts";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
@@ -33,7 +37,15 @@ export const AppNavigation = createBrowserRouter(
       </Route>
       ,
       <Route element={<AdminLayout />}>
-        <Route path={ROUTES_ENUM.ADMIN} element={<Admin />} />
+        <Route index
+               path={ROUTES_ENUM.ADMINPARTNERS} element={<Partners />}
+        />
+        <Route path={ROUTES_ENUM.ADMIN}
+               element={<Navigate to={ROUTES_ENUM.ADMINPARTNERS} replace={true}/>}
+        />
+        <Route path={ROUTES_ENUM.ADMINREPORTS} element={<Reports />} />
+        <Route path={ROUTES_ENUM.ADMINOURCONTACTS} element={<OurContacts />} />
+        <Route path={ROUTES_ENUM.ADMINFEEDBACK} element={<Feedback />} />
       </Route>
     </Route>,
   ),
