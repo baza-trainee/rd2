@@ -1,6 +1,14 @@
+import Typography from "@mui/material/Typography";
+
+import {AdminFeedback} from "../../components/Admin/AdminFeedback/AdminFeedback";
+
 const Feedback = () => {
     return <>
-        <p>Feedback</p>
+        <Typography variant="h4" component="h4" color="info.main">
+            Звернення
+        </Typography>
+
+        <AdminFeedback />
     </>;
 };
 

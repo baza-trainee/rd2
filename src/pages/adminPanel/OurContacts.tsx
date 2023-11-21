@@ -1,6 +1,13 @@
+import Typography from "@mui/material/Typography";
+
 const OurContacts = () => {
     return (
-        <p>OurContacts</p>
+        <>
+            <Typography variant="h4" component="h4" color="info.main">
+                Контакти
+            </Typography>
+
+        </>
     )
 }
 

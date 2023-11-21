@@ -1,7 +1,12 @@
+import Typography from "@mui/material/Typography";
+
 const Reports = () => {
     return <>
-        <p>Reports</p>
-    </>;
+        <Typography variant="h4" component="h4" color="info.main">
+            Звітність
+        </Typography>
+
+    </>
 };
 
 export {Reports}
