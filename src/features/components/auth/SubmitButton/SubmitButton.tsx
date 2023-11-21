@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 
 export const SubmitButton = ({ children }: PropsWithChildren) => {
   return (
-    <Button fullWidth type="submit" variant="contained" color="primary">
+    <Button type="submit" variant="contained" color="primary">
       {children}
     </Button>
   );
