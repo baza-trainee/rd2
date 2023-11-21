@@ -1,14 +1,17 @@
 import { SxProps } from "@mui/material";
 
+import {theme} from "../../../theme/theme";
+
+const bgColor = theme.palette.secondary.main;
+
 const BoxStyles: SxProps = {
   width: "100%",
-  bgcolor: "#f5f5f5",
+  backgroundColor: `${bgColor}`,
 };
 
 const ContainerStyles: SxProps = {
   display: "flex",
   flexDirection: "row",
-  bgcolor: "#f5f5f5",
   minHeight: "calc(100vh - 8rem)",
   letterSpacing: 0.5,
 };
