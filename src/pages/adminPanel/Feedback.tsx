@@ -1,7 +1,5 @@
 import Typography from "@mui/material/Typography";
 
-import {theme} from "../../theme/theme";
-
 import {AdminFeedback} from "../../components/Admin/AdminFeedback/AdminFeedback";
 
 const Feedback = () => {
