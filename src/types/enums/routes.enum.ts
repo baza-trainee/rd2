@@ -7,6 +7,7 @@ export enum ROUTES_ENUM {
   ADMINPARTNERS = "/admin/partners",
   ADMINOURCONTACTS = "/admin/contacts",
   ADMINFEEDBACK = "/admin/feedback",
+  FEEDBACKDETAILS = ":id",
   ADMINREPORTS = "/admin/reports",
   AUTH = "auth",
   RESTORE = "restore",

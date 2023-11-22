@@ -18,6 +18,7 @@ import {Feedback} from "../pages/adminPanel/Feedback";
 import {Reports} from "../pages/adminPanel/Reports";
 import {Partners} from "../pages/adminPanel/Partners";
 import {OurContacts} from "../pages/adminPanel/OurContacts";
+import {FeedbackDetails} from "../pages/adminPanel/FeedbackDetails";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
@@ -45,7 +46,12 @@ export const AppNavigation = createBrowserRouter(
         />
         <Route path={ROUTES_ENUM.ADMINREPORTS} element={<Reports />} />
         <Route path={ROUTES_ENUM.ADMINOURCONTACTS} element={<OurContacts />} />
-        <Route path={ROUTES_ENUM.ADMINFEEDBACK} element={<Feedback />} />
+        <Route path={ROUTES_ENUM.ADMINFEEDBACK} >
+            <Route index element={<Feedback />} />
+            <Route path={ROUTES_ENUM.FEEDBACKDETAILS}
+                   element={<FeedbackDetails />}
+            />
+        </Route>
       </Route>
     </Route>,
   ),
