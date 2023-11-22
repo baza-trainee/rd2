@@ -7,7 +7,7 @@ import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { Description } from "features/components/restore/Description/Description";
 import { RestoreForm } from "features/components/restore/RestoreForm/RestoreForm";
 import { EmailField } from "features/components/restore/EmailField/EmailField";
-import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
+// import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 import { FormContainer } from "features/components/restore/FormContainer/FormContainer";
 import { MessageModal } from "features/components/restore/MessageModal/MessageModal";
 
@@ -44,7 +44,7 @@ export const RestorePassword = (): JSX.Element => {
         <FormContainer>
           <EmailField />
 
-          <SubmitButton>Надіслати</SubmitButton>
+          {/* <SubmitButton>Надіслати</SubmitButton> */}
         </FormContainer>
       </RestoreForm>
 
