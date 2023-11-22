@@ -1,24 +1,25 @@
-import { FormikHelpers } from "formik";
+/* eslint-disable max-len */
+// import { FormikHelpers } from "formik";
 
-import { FormPasswords } from "types/formPasswords";
-import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
-import { PasswordField } from "features/components/newPassword/PasswordField/PasswordField";
-import { NewPasswordForm } from "features/components/newPassword/NewPasswordForm/NewPasswordForm";
-import { InputContainer } from "components/Auth/InputContainer/InputContainer";
-import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
+// import { FormPasswords } from "types/formPasswords";
+// import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
+// import { PasswordField } from "features/components/newPassword/PasswordField/PasswordField";
+// import { NewPasswordForm } from "features/components/newPassword/NewPasswordForm/NewPasswordForm";
+// import { InputContainer } from "components/Auth/InputContainer/InputContainer";
+// import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 
-import { validationShema } from "./validationShema";
+// import { validationShema } from "./validationShema";
 
 export const UpdatingPassword = () => {
-  const handleSubmitChangePassword = (
-    values: FormPasswords,
-    formikHelpers: FormikHelpers<FormPasswords>,
-  ) => {
-    formikHelpers.resetForm();
-  };
+  // const handleSubmitChangePassword = (
+  //   values: FormPasswords,
+  //   formikHelpers: FormikHelpers<FormPasswords>,
+  // ) => {
+  //   formikHelpers.resetForm();
+  // };
   return (
     <>
-      <AuthTitle>Відновити пароль</AuthTitle>
+      {/* <AuthTitle>Відновити пароль</AuthTitle>
       <NewPasswordForm
         validationSchema={validationShema}
         handleSubmit={handleSubmitChangePassword}
@@ -29,7 +30,7 @@ export const UpdatingPassword = () => {
         </InputContainer>
 
         <SubmitButton>Підтвердити</SubmitButton>
-      </NewPasswordForm>
+      </NewPasswordForm> */}
     </>
   );
 };
