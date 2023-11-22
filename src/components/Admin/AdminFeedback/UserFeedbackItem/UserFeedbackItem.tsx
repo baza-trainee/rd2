@@ -1,16 +1,22 @@
 import Typography from "@mui/material/Typography";
 
-import Button from "@mui/material/Button";
+import {ROUTES_ENUM} from "../../../../types/enums/routes.enum";
 
-import {ItemWrap} from "./UserFeedbackItem.styled";
+import {ItemWrap, LinkStyled} from "./UserFeedbackItem.styled";
 
 type UserFeedbackItemProps = {
     name: string,
     surname: string,
     date: string,
+    id: string
 }
 
-const UserFeedbackItem = ({name, surname, date}: UserFeedbackItemProps) => {
+const UserFeedbackItem = ({name, surname, date, id}: UserFeedbackItemProps) => {
+
+    const onClick = () => {
+        console.log(id)
+    }
+
     return(
         <ItemWrap>
             <Typography variant="h6">
@@ -23,9 +29,11 @@ const UserFeedbackItem = ({name, surname, date}: UserFeedbackItemProps) => {
                 <span>{date}</span>
             </div>
 
-            <Button size="small" variant="contained">
-                Детальніше
-            </Button>
+            <LinkStyled to={id}
+                        onClick={onClick}
+            >
+               Детальніше
+            </LinkStyled>
         </ItemWrap>
     )
 }
