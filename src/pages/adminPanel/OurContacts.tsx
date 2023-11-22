@@ -11,7 +11,7 @@ import { EmailField } from "features/components/admin/ourContacts/EmailField/Ema
 import { SubmitButton } from "features/components/admin/ourContacts/SubmitButton/SubmitButton";
 import { InputWrapper } from "features/components/admin/ourContacts/InputWrapper/InputWrapper";
 
-const OurContacts = () => {
+export const Component = () => {
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -45,4 +45,4 @@ const OurContacts = () => {
   );
 };
 
-export { OurContacts };
+Component.displayName = "OurContacts";

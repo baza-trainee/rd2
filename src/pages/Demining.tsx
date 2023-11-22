@@ -1,7 +1,7 @@
 import { SocratProject } from "components/SocratComponent/SocratProject";
 import ContactFormSection from "components/commonComponents/ContactFormSection/ContactFormSection";
 
-export const Demining = () => {
+export const Component = () => {
   return (
     <>
       <SocratProject />
@@ -9,3 +9,5 @@ export const Demining = () => {
     </>
   );
 };
+
+Component.displayName = "Demining";

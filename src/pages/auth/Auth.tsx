@@ -1,5 +1,7 @@
 import { Authorization } from "components/Authorization/Authorization";
 
-export const Auth = () => {
+export const Component = () => {
   return <Authorization />;
 };
+
+Component.displayName = "Auth";
