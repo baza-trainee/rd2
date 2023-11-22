@@ -17,6 +17,8 @@ const LoadFeedbackListButton = () => {
                 variant="contained"
                 size="small"
                 endIcon={<DownloadIcon />}
+                href="#"
+                download
                 onClick={onClick}
             >Завантажити excel файл з переліком звернень</Button>
         </Box>

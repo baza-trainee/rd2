@@ -26,7 +26,7 @@ const UserData:UserProps = {
 
 async function LoadData (id:string){
 
-    const promise: Promise<UserProps> = new Promise((resolve, reject) => {
+    const promise: Promise<UserProps> = new Promise((resolve) => {
         setTimeout(() =>
                 resolve( UserData),
             1000)

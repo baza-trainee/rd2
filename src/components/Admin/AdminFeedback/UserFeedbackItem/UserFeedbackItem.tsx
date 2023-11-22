@@ -1,7 +1,5 @@
 import Typography from "@mui/material/Typography";
 
-import {ROUTES_ENUM} from "../../../../types/enums/routes.enum";
-
 import {ItemWrap, LinkStyled} from "./UserFeedbackItem.styled";
 
 type UserFeedbackItemProps = {
