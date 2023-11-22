@@ -5,7 +5,7 @@ import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 import { PasswordField } from "features/components/newPassword/PasswordField/PasswordField";
 import { NewPasswordForm } from "features/components/newPassword/NewPasswordForm/NewPasswordForm";
 import { InputContainer } from "components/Auth/InputContainer/InputContainer";
-import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
+// import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 
 import { validationShema } from "./validationShema";
 
@@ -28,7 +28,7 @@ export const UpdatingPassword = () => {
           <PasswordField labelText="Підтвердіть новий пароль*" name="passwordRepeat" />
         </InputContainer>
 
-        <SubmitButton>Підтвердити</SubmitButton>
+        {/* <SubmitButton>Підтвердити</SubmitButton> */}
       </NewPasswordForm>
     </>
   );

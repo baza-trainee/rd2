@@ -8,7 +8,6 @@ import { ForgetPassword } from "features/components/auth/ForgetPassword/ForgetPa
 import { PasswordField } from "features/components/auth/PasswordField/PasswordField";
 import { UsernameField } from "features/components/auth/UsernameField/UsernameField";
 import { FormValues } from "types/formValues";
-
 export const Component = () => {
   const validationSchema = object({
     username: string().required("введіть вірний логін"),
