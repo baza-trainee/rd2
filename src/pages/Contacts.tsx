@@ -1,8 +1,7 @@
-import {ContactUs} from "../components/Contacts/ContactUs";
+import { ContactUs } from "../components/Contacts/ContactUs";
 
-export const Contacts = () => {
-
+export const Component = () => {
   return <ContactUs />;
-
 };
 
+Component.displayName = "Contacts";

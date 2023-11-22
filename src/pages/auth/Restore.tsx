@@ -1,5 +1,7 @@
 import { RestorePassword } from "components/RestorePassword/RestorePassword";
 
-export const Restore = () => {
+export const Component = () => {
   return <RestorePassword />;
 };
+
+Component.displayName = "Restore";
