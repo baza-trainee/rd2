@@ -1,27 +1,44 @@
-import { ReactNode } from "react";
-
 import { Form, Formik, FormikHelpers } from "formik";
-import { ObjectSchema } from "yup";
+import { object, ref, string } from "yup";
+import { Button } from "@mui/material";
 
 import { FormPasswords } from "types/formPasswords";
+import { InputContainer } from "components/Auth/InputContainer/InputContainer";
 
-interface Props {
-  children: ReactNode;
-  validationSchema: ObjectSchema<{}>;
-  handleSubmit: (
-    values: FormPasswords,
+import { PasswordField } from "features/components/newPassword/PasswordField/PasswordField";
+
+export const NewPasswordForm = () => {
+  const validationShema = object({
+    password: string(),
+    passwordRepeat: string()
+      .oneOf([ref("password")], "пароль має співпадать")
+      .required("пароль має співпадать"),
+  });
+
+  const handleSubmit = (
+    _: FormPasswords,
     formikHelpers: FormikHelpers<FormPasswords>,
-  ) => void;
-}
+  ) => {
+    formikHelpers.resetForm();
+  };
 
-export const NewPasswordForm = ({ children, validationSchema, handleSubmit }: Props) => {
   return (
     <Formik
       initialValues={{ password: "", passwordRepeat: "" }}
-      validationSchema={validationSchema}
+      validationSchema={validationShema}
       onSubmit={handleSubmit}
     >
-      <Form>{children}</Form>
+      <Form>
+        <InputContainer>
+          <PasswordField labelText="Введіть новий пароль*" name="password" />
+
+          <PasswordField labelText="Підтвердіть новий пароль*" name="passwordRepeat" />
+        </InputContainer>
+
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Підтвердити
+        </Button>
+      </Form>
     </Formik>
   );
 };
