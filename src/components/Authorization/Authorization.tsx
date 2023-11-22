@@ -6,7 +6,7 @@ import { AuthForm } from "features/components/auth/AuthForm/AuthForm";
 import { UsernameField } from "features/components/auth/UsernameField/UsernameField";
 import { PasswordField } from "features/components/auth/PasswordField/PasswordField";
 import { ForgetPassword } from "features/components/auth/ForgetPassword/ForgetPassword";
-import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
+// import { SubmitButton } from "features/components/auth/SubmitButton/SubmitButton";
 import { AuthTitle } from "features/components/auth/AuthTitle/AuthTitle";
 
 export const Authorization = () => {
@@ -30,7 +30,7 @@ export const Authorization = () => {
 
         <ForgetPassword />
 
-        <SubmitButton>Вхід</SubmitButton>
+        {/* <SubmitButton>Вхід</SubmitButton> */}
       </AuthForm>
     </>
   );
