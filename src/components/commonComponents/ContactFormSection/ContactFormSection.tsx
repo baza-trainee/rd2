@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import {useTranslation} from "react-i18next";
 
-import ContactForm from "./ContactForm";
+import ContactForm from "./ContactForm/ContactForm";
 import ModalSuccessSent from "./ModalSuccessSent";
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
 

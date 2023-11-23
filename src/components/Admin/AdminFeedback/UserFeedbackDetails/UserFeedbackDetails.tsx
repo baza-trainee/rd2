@@ -6,46 +6,35 @@ import Typography from "@mui/material/Typography";
 
 import {Grid} from "@mui/material";
 
+import {theme} from "../../../../theme/theme";
+
+import {FeedbackUserDetails, UserMessage} from "../../../../types/typeFeedbackUserDetails";
+
+import {LoadData} from "../../../../api/feedbackData";
+
 import {PageContentWrapper} from "../../PageContentWrapper/PageContentWrapper";
 
+import {fieldNamesList} from "./FieldNamesList";
 
-type UserProps = {
-    name: string,
-    surname: string,
-    phone: string,
-    email: string,
-    message: string
-}
-const UserData:UserProps = {
-    name: "Name",
-    surname: "Surname",
-    phone: "some phone",
-    email: "email@gmail.com",
-    message: "some message",
-}
+import {MessageBlock, MessageDateBlock} from "./UserFeedbackDetales.styled";
 
-async function LoadData (id:string){
 
-    const promise: Promise<UserProps> = new Promise((resolve) => {
-        setTimeout(() =>
-                resolve( UserData),
-            1000)
-    });
-    const  response = await promise;
+//type UserProps = {
+    //name: string,
+    //surname: string,
+    //phone: string,
+    //email: string,
+    //message: []
+//}
 
-    //if (response.ok) return response.json;
-    if (response) return response;
-    else throw Error("loading user error");
-
-}
 const UserFeedbackDetails = () => {
     const {id} = useParams();
 
-    const [user, setUser] = useState<UserProps | null>(null);
+    const [user, setUser] = useState<FeedbackUserDetails | null>(null);
 
     useEffect(() => {
         id && LoadData(id)
-          .then((response:UserProps) => setUser(response));
+          .then((response:FeedbackUserDetails) => setUser(response));
     }, [id]);
 
     return (
@@ -53,54 +42,43 @@ const UserFeedbackDetails = () => {
 
             <Grid container spacing={2}>
 
-                <Grid item xs={6}>
-                    <Typography variant="h6">
-                        Ім'я
-                    </Typography>
+                {fieldNamesList.map((fieldItem) => (
 
-                    <Typography variant="h6">
-                        {user ? user.name : "load..."}
-                    </Typography>
-                </Grid>
+                    <Grid item xs={6} key={fieldItem.key}>
+                        <Typography variant="h6" color={theme.palette.primary.dark}>
+                            {fieldItem.field}
+                        </Typography>
 
-                <Grid item xs={6}>
-                    <Typography variant="h6">
-                        Фамілія
-                    </Typography>
-
-                    <Typography variant="h6">
-                        {user ? user.surname : "load..."}
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={6}>
-                    <Typography variant="h6">
-                        Телефон
-                    </Typography>
-
-                    <Typography variant="h6">
-                        {user ? user.phone : "load..."}
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={6}>
-                    <Typography variant="h6">
-                        Електронна адреса
-                    </Typography>
-
-                    <Typography variant="h6">
-                        {user ? user.email : "load..."}
-                    </Typography>
-                </Grid>
+                        <Typography variant="h6">
+                            {user
+                                ? user[fieldItem.key as keyof Omit<FeedbackUserDetails, "messages">]
+                                : "load..."}
+                        </Typography>
+                    </Grid>
+                ))}
 
                 <Grid item xs={12}>
-                    <Typography variant="h6">
-                        Текст звернення
-                    </Typography>
 
-                    <Typography variant="h6">
-                        {user ? user.message : "load..."}
-                    </Typography>
+                    {user
+                        ?
+                         user.messages.map((mes:UserMessage, index) => (
+                            <MessageBlock key={index}>
+                                <MessageDateBlock>
+                                    <span>дата звернення: </span>
+                                    <span>{mes.date}</span>
+                                </MessageDateBlock>
+                                <Typography variant="h6" color={theme.palette.primary.dark}>
+                                    Текст звернення
+                                </Typography>
+
+                                <Typography variant="h6">
+                                    {mes.message}
+                                </Typography>
+                            </MessageBlock>
+                            ))
+
+                        : <p>"load..."</p>
+                    }
                 </Grid>
             </Grid>
 

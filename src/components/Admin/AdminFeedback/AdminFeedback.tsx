@@ -36,7 +36,6 @@ const AdminFeedback = () => {
                         key={user.id}
                         name={user.name}
                         surname={user.surname}
-                        date={user.date}
                         id={user.id}
                     />
                 ))

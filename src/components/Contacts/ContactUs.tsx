@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 
 import Typography from "@mui/material/Typography";
 
-import ContactForm from "../commonComponents/ContactFormSection/ContactForm";
+import ContactForm from "../commonComponents/ContactFormSection/ContactForm/ContactForm";
 
 import {ContactItem} from "../commonComponents/ContactItem/ContactItem";
 

@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 
 import { contactValuesType } from "types/typeContactInitialValues";
 
-import {contactSchema} from "../../../helpers/updateValidationTranslation";
+import {contactSchema} from "./updateValidationTranslation";
 
 import { FormEl, FieldContainer, FieldLabel, Input, Textarea, FormError } from "./Form.styled";
 
