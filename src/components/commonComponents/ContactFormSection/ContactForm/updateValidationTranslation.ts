@@ -1,10 +1,10 @@
+/* eslint-disable max-len */
 import * as yup from "yup";
 
-import i18next from "../translation/i18next";
+import i18next from "../../../../translation/i18next";
 
-import {CreateContactSchema} from "./contactFormValidationSchema";
-
-/* eslint-disable max-len */
+import {CreateContactSchema}
+    from "./contactFormValidationSchema";
 
 /*type ErrorMes = {
     inputMaxLength: string;

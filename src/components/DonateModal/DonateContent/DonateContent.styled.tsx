@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 
 import {theme} from "../../../theme/theme";
 
-import {Input} from "../../commonComponents/ContactFormSection/Form.styled";
+import {Input} from "../../commonComponents/ContactFormSection/ContactForm/Form.styled";
 
 const mainColor = theme.palette.primary.main;
 const mainHoverColor = theme.palette.primary.dark;
