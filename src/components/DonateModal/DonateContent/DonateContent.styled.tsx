@@ -10,6 +10,8 @@ import {Input} from "../../commonComponents/ContactFormSection/ContactForm/Form.
 
 const mainColor = theme.palette.primary.main;
 const mainHoverColor = theme.palette.primary.dark;
+const errorBorderColor = theme.palette.error.main;
+const errorTextColor = theme.palette.error.dark;
 
 const FormStyled = styled.form`
   display: flex;
@@ -111,7 +113,7 @@ const InputStyled = styled(Input)`
   }
   
   &.error {
-    border-color: red;
+    border-color: ${errorBorderColor};
   }
 
   @media (min-width: 1280px) {
@@ -126,7 +128,7 @@ const RelativeBlock = styled.div`
 const ErrorMes = styled.p`
   position: absolute;
   bottom: -30px;
-  color: red;
+  color: ${errorTextColor};
 `;
 
 export {ButtonsWrap, ButtonStyled, TypographyStyled,

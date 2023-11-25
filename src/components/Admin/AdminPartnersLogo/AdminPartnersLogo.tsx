@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 import {Form, Formik} from "formik";
 
 import {Button, Box} from "@mui/material";
@@ -6,46 +8,77 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import {PageContentWrapper} from "../PageContentWrapper/PageContentWrapper";
 
-import {FieldStyled, LabelStyled} from "./AdminPartnersLogo.styled";
+import {loadLogosSchema} from "./loadLogosValidationSchema";
+
+import {
+    ErrorMessageStyled,
+    InputStyled,
+    LabelStyled,
+    LoadFieldWrapper,
+} from "./AdminPartnersLogo.styled";
+
+
+interface FormValues {
+    logoImg?: File;
+}
 
 const AdminPartnersLogo = () => {
 
-    //const onSubmitForm = () => {
-        //console.log("submit");
-    //}
+    const [fieldText, setFieldText] = useState("Додати лого")
+
+    const initialValues: FormValues = { };
+
   return (
       <PageContentWrapper>
           <Formik
-            initialValues={{logoImg: ""}}
-            onSubmit={(values) =>(
-                console.log(values)
-            )}
+            initialValues={initialValues}
+            validationSchema = {loadLogosSchema}
+            onSubmit={(values, actions) =>{
+                console.log(values);
+                actions.resetForm({values:{}});
+                setFieldText("Додати лого");
+            }
+            }
           >
-              <Form>
+              {({ errors, touched, setFieldValue }) => (
+                  <Form>
 
-                  <div>
-                      <LabelStyled htmlFor="logoImg">
-                          <AddCircleIcon color="primary"/>
-                          <span>Додати лого</span>
-                      </LabelStyled>
+                      <LoadFieldWrapper>
+                          <LabelStyled
+                              htmlFor="logoImg"
+                              className={touched.logoImg && errors.logoImg ? "error" : ""}
+                          >
+                              <AddCircleIcon color="primary"/>
+                              <span>{fieldText}</span>
+                          </LabelStyled>
 
-                      <FieldStyled
-                          type="file"
-                          id="logoImg"
-                          name="logoImg"
-                      ></FieldStyled>
-                  </div>
+                          <InputStyled type="file"
+                                 accept=".jpg, .png, .webp, .svg"
+                                 id="logoImg"
+                                 name="logoImg"
+                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                     if (e.currentTarget.files){
+                                         const loadImg = e.currentTarget.files[0];
+                                     setFieldValue("logoImg", loadImg, true)
+                                         .then(() => setFieldText(loadImg.name));
+                                     }
+                                 }}/>
 
-                  <Box display="flex"
-                       justifyContent="center"
-                      m={"auto"}>
-                      <Button
-                          variant="contained"
-                          type="submit">
-                          Додати
-                      </Button>
-                  </Box>
-              </Form>
+                          <ErrorMessageStyled name="logoImg" component="p" />
+                      </LoadFieldWrapper>
+
+                      <Box display="flex"
+                           justifyContent="center"
+                           m={"auto"}>
+                          <Button
+                              variant="contained"
+                              type="submit">
+                              Додати
+                          </Button>
+                      </Box>
+                  </Form>
+              )}
+
           </Formik>
       </PageContentWrapper>
   )

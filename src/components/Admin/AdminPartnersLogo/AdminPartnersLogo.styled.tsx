@@ -1,11 +1,17 @@
 import styled from "@emotion/styled";
 
-import {Field} from "formik";
+import {ErrorMessage, Field} from "formik";
 
 import {theme} from "../../../theme/theme";
 
 const hoverColor = theme.palette.primary.dark
+const errorBorderColor = theme.palette.error.main;
+const errorTextColor = theme.palette.error.dark;
 
+const LoadFieldWrapper = styled.div`
+position: relative;
+  margin-bottom: 50px;
+`;
 
 const LabelStyled = styled.label`
   display: flex;
@@ -14,7 +20,6 @@ const LabelStyled = styled.label`
   
   width: 100%;
   height: 120px;
-  margin-bottom: 30px;
   
   border: 2px dashed #C7C7C7;
   
@@ -36,9 +41,22 @@ const LabelStyled = styled.label`
     }
   }
   
+  &.error {
+    border-color: ${errorBorderColor};
+  }
+  
 `;
-const FieldStyled = styled(Field)`
+const InputStyled = styled.input`
   display: none;
 `;
 
-export {FieldStyled, LabelStyled}
+const ErrorMessageStyled = styled(ErrorMessage)`
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  
+  text-align: center;
+  color: ${errorTextColor};
+`;
+
+export {InputStyled, LabelStyled, ErrorMessageStyled, LoadFieldWrapper}
