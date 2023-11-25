@@ -1,13 +1,9 @@
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from "react";
 
-import {Wrapper} from "./AdminPageContainer.styled";
+import { Wrapper } from "./AdminPageContainer.styled";
 
 const AdminPageContainer = ({ children }: PropsWithChildren) => {
-    return (
-        <Wrapper>
-            {children}
-        </Wrapper>
-    )
-}
+  return <Wrapper>{children}</Wrapper>;
+};
 
-export {AdminPageContainer}
+export { AdminPageContainer };

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
-import { App } from "components/App";
+import { App } from "App";
 
+import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { AuthContainer } from "components/Auth/AuthContainer/AuthContainer";
 import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
 
