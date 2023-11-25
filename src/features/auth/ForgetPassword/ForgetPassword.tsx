@@ -2,8 +2,10 @@ import { Box, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
 import { ROUTES_ENUM } from "types/enums/routes.enum";
-
-import { BoxStyles, LinkStyles } from "./ForgetPassword.classes";
+import {
+  BoxStyles,
+  LinkStyles,
+} from "features/auth/ForgetPassword/ForgetPassword.classes";
 
 export const ForgetPassword = () => {
   return (

@@ -3,7 +3,7 @@ import {
   Title,
   Divider,
   Desc,
-} from "features/components/SectionHeader/SectionHeader.styled";
+} from "features/SectionHeader/SectionHeader.styled";
 
 interface Props {
   title: string;

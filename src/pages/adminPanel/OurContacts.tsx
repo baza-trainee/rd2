@@ -4,12 +4,12 @@ import { validationSchemaAdminOurContacts } from "constants/validationSchemaAdmi
 import Typography from "@mui/material/Typography";
 
 import { OurContactsContainer } from "components/Admin/OurContacts/OurContactsContainer/OurContactsContainer";
-import { OurContactsForm } from "features/components/admin/ourContacts/OurContactsForm/OurContactsForm";
+import { OurContactsForm } from "features/admin/ourContacts/OurContactsForm/OurContactsForm";
 import { handleAdminOurContactsForm } from "helpers/handleAdminOurContactsForm";
-import { NumberField } from "features/components/admin/ourContacts/NumberField/NumberField";
-import { EmailField } from "features/components/admin/ourContacts/EmailField/EmailField";
-import { SubmitButton } from "features/components/admin/ourContacts/SubmitButton/SubmitButton";
-import { InputWrapper } from "features/components/admin/ourContacts/InputWrapper/InputWrapper";
+import { NumberField } from "features/admin/ourContacts/NumberField/NumberField";
+import { EmailField } from "features/admin/ourContacts/EmailField/EmailField";
+import { SubmitButton } from "features/admin/ourContacts/SubmitButton/SubmitButton";
+import { InputWrapper } from "features/admin/ourContacts/InputWrapper/InputWrapper";
 
 export const Component = () => {
   return (
