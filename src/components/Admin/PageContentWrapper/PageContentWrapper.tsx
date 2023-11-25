@@ -1,13 +1,7 @@
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from "react";
 
-import {Wrapper} from "./PageContentWrapper.styled";
+import { Wrapper } from "components/Admin/PageContentWrapper/PageContentWrapper.styled";
 
-const PageContentWrapper = ({children}: PropsWithChildren) => {
-    return (
-        <Wrapper>
-            {children}
-        </Wrapper>
-    )
-}
-
-export {PageContentWrapper}
+export const PageContentWrapper = ({ children }: PropsWithChildren) => {
+  return <Wrapper>{children}</Wrapper>;
+};

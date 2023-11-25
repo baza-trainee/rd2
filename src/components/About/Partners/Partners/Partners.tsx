@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import { PartnersSlider } from "components/About/Partners/PartnersSlider/PartnersSlider";
-import { SectionContainer } from "features/SectionContainer/SectionContainer";
-import { SectionHeader } from "features/SectionHeader/SectionHeader";
+import { SectionContainer } from "components/commonComponents/SectionContainer/SectionContainer";
+import { SectionHeader } from "components/commonComponents/SectionHeader/SectionHeader";
 
 import { partners } from "components/About/Partners/Partners/partnersList";
 

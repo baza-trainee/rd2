@@ -3,15 +3,15 @@ import { Drawer, Grid, List } from "@mui/material";
 
 import iconLeave from "assets/icons/admin/leave.png";
 import iconChangePassword from "assets/icons/admin/change-password.png";
-import { ButtonChangePassword } from "components/Admin/SideBar/ButtonChangePassword/ButtonChangePassword";
-import { ButtonLeave } from "components/Admin/SideBar/ButtonLeave/ButtonLeave";
-import { MenuButton } from "components/Admin/SideBar/MenuButton/MenuButton";
-import { buttonsList } from "components/Admin/SideBar/SideBar/buttonsList";
+import { ButtonChangePassword } from "components/Admin/sidebar/ButtonChangePassword/ButtonChangePassword";
+import { ButtonLeave } from "components/Admin/sidebar/ButtonLeave/ButtonLeave";
+import { MenuButton } from "components/Admin/sidebar/MenuButton/MenuButton";
+import { buttonsList } from "components/Admin/sidebar/SideBar/buttonsList";
 
-import { DrawerStyles } from "components/Admin/SideBar/SideBar/SideBar.classes";
-import { NavLinkStyled } from "components/Admin/SideBar/SideBar/SideBar.styles";
+import { DrawerStyles } from "components/Admin/sidebar/SideBar/SideBar.classes";
+import { NavLinkStyled } from "components/Admin/sidebar/SideBar/SideBar.styles";
 
-export const ToolBar = () => {
+export const SideBar = () => {
   return (
     <Drawer variant="permanent" sx={DrawerStyles}>
       <Grid container height="100%">

@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 import { Box, Button } from "@mui/material";
 
-import { BoxStyles } from "./SubmitButton.classes";
+import { BoxStyles } from "components/Admin/ourContacts/SubmitButton/SubmitButton.classes";
 
 export const SubmitButton = ({ children }: PropsWithChildren) => {
   return (

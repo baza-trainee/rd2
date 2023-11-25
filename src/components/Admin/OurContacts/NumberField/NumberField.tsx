@@ -1,7 +1,10 @@
 import { Box, FilledInput, Typography } from "@mui/material";
 import { ErrorMessage, Field } from "formik";
 
-import { BoxStyles, InputStyles } from "./NumberField.classes";
+import {
+  BoxStyles,
+  InputStyles,
+} from "components/Admin/ourContacts/NumberField/NumberField.classes";
 
 interface Props {
   labelText: string;

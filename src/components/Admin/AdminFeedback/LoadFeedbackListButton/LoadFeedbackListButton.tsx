@@ -1,28 +1,24 @@
 import Button from "@mui/material/Button";
 import DownloadIcon from "@mui/icons-material/Download";
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 
 const LoadFeedbackListButton = () => {
+  const onClick = () => {};
 
-    const onClick = () => {
+  return (
+    <Box display="flex" justifyContent="end" mb={3}>
+      <Button
+        variant="contained"
+        size="small"
+        endIcon={<DownloadIcon />}
+        href="#"
+        download
+        onClick={onClick}
+      >
+        Завантажити excel файл з переліком звернень
+      </Button>
+    </Box>
+  );
+};
 
-    }
-
-    return (
-        <Box display="flex"
-             justifyContent="end"
-             mb={3}
-        >
-            <Button
-                variant="contained"
-                size="small"
-                endIcon={<DownloadIcon />}
-                href="#"
-                download
-                onClick={onClick}
-            >Завантажити excel файл з переліком звернень</Button>
-        </Box>
-    )
-}
-
-export {LoadFeedbackListButton}
+export { LoadFeedbackListButton };

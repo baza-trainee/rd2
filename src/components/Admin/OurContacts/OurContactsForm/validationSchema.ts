@@ -3,7 +3,7 @@ import { object, string, ref } from "yup";
 
 const phoneRegExp = /^(\+?\d{1,3})?[ -]?\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$/;
 
-export const validationSchemaAdminOurContacts = object({
+export const validationSchema = object({
   currentNumber: string(),
   newNumber: string()
     .matches(phoneRegExp, "номер має містити 10 цифр")
