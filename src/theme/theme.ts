@@ -26,6 +26,9 @@ const theme = createTheme({
     info: {
       main: "#1B3969",
     },
+    error: {
+      main: "#D60A0A",
+    },
   },
 
   typography: {

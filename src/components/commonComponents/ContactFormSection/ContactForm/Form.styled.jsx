@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+import {theme} from "../../../../theme/theme";
+
+const errorBorderColor = theme.palette.error.main;
+const errorTextColor = theme.palette.error.dark;
+
 const FormEl = styled.form`
 width: 100%;
 border-radius: 24px;
@@ -39,7 +44,7 @@ background-color: #F5F5F5;
 padding: 16px;
 outline: none; 
   &.error {
-    border: 2px solid #D60A0A;
+    border: 2px solid ${errorBorderColor};
   }
 `;
 
@@ -70,14 +75,14 @@ outline: none;
 width: 100%;
 resize: none;
   &.error {
-    border: 2px solid #D60A0A;
+    border: 2px solid ${errorBorderColor};
   }
 `;
 
 const FormError = styled.span`
 font-size: 12px;
 line-height: 150%;
-color: #A0041E;
+color: ${errorTextColor};
 margin-top: 3px;
 `;
 

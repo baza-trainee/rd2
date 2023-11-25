@@ -32,25 +32,25 @@ export const AppNavigation = createBrowserRouter(
       <Route element={<AdminLayout />}>
         <Route
           index
-          path={ROUTES_ENUM.ADMINPARTNERS}
+          path={ROUTES_ENUM.ADMIN_PARTNERS}
           lazy={() => import("pages/adminPanel/Partners")}
         />
         <Route
           path={ROUTES_ENUM.ADMIN}
-          element={<Navigate to={ROUTES_ENUM.ADMINPARTNERS} replace={true} />}
+          element={<Navigate to={ROUTES_ENUM.ADMIN_PARTNERS} replace={true} />}
         />
         <Route
-          path={ROUTES_ENUM.ADMINREPORTS}
+          path={ROUTES_ENUM.ADMIN_REPORTS}
           lazy={() => import("pages/adminPanel/Reports")}
         />
         <Route
-          path={ROUTES_ENUM.ADMINOURCONTACTS}
+          path={ROUTES_ENUM.ADMIN_OUR_CONTACTS}
           lazy={() => import("pages/adminPanel/OurContacts")}
         />
-        <Route path={ROUTES_ENUM.ADMINFEEDBACK}>
+        <Route path={ROUTES_ENUM.ADMIN_FEEDBACK}>
           <Route index lazy={() => import("pages/adminPanel/Feedback")} />
           <Route
-            path={ROUTES_ENUM.FEEDBACKDETAILS}
+            path={ROUTES_ENUM.FEEDBACK_DETAILS}
             lazy={() => import("pages/adminPanel/FeedbackDetails")}
           />
         </Route>
