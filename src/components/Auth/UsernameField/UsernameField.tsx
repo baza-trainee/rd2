@@ -1,7 +1,10 @@
 import { Box, FilledInput, Typography } from "@mui/material";
 import { ErrorMessage, Field } from "formik";
 
-import { BoxStyles, InputStyles } from "./UsernameField.classes";
+import {
+  BoxStyles,
+  InputStyles,
+} from "components/Auth/UsernameField/UsernameField.classes";
 
 export const UsernameField = () => {
   return (

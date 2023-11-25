@@ -3,7 +3,10 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Close from "@mui/icons-material/Close";
 
-import { IconStyles, ModalStyles } from "./MessageModal.classes";
+import {
+  IconStyles,
+  ModalStyles,
+} from "components/Restore/MessageModal/MessageModal.classes";
 
 interface Props {
   children: string;

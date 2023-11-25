@@ -1,10 +1,12 @@
 import { useState } from "react";
-
+import { ErrorMessage, Field } from "formik";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box, FilledInput, IconButton, InputAdornment, Typography } from "@mui/material";
-import { ErrorMessage, Field } from "formik";
 
-import { BoxStyles, InputStyles } from "./PasswordField.classes";
+import {
+  BoxStyles,
+  InputStyles,
+} from "components/Auth/PasswordField/PasswordField.classes";
 
 export const PasswordField = () => {
   const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);

@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 import { Paper } from "@mui/material";
 
-import { PaperStyles } from "./PaperContainer.classes";
+import { PaperStyles } from "components/Auth/PaperContainer/PaperContainer.classes";
 
 export const PaperContainer = ({ children }: PropsWithChildren) => {
   return (

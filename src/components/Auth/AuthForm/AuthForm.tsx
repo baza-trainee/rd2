@@ -2,10 +2,10 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { Button } from "@mui/material";
 
 import { FormValues } from "types/formValues";
-import { UsernameField } from "features/auth/UsernameField/UsernameField";
-import { PasswordField } from "features/auth/PasswordField/PasswordField";
-import { ForgetPassword } from "features/auth/ForgetPassword/ForgetPassword";
-import { validationSchema } from "features/auth/AuthForm/validationSchema";
+import { UsernameField } from "components/Auth/UsernameField/UsernameField";
+import { PasswordField } from "components/Auth/PasswordField/PasswordField";
+import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
+import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 
 export const AuthForm = () => {
   const handleSubmit = (_: FormValues, formikHelpers: FormikHelpers<FormValues>) => {
