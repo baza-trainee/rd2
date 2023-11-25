@@ -1,6 +1,6 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 
-import { Divider } from "./MoreInfoOfNews.styled";
+import { Divider } from "components/About/OurNews/MoreInfoOfNews/MoreInfoOfNews.styled";
 
 interface Props {
   buttonText: string;

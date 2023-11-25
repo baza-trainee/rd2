@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "theme/theme";
-import { ListNews } from "components/About/OurNews/listNews";
+import { ListNews } from "components/About/OurNews/OurNews/listNews";
 import { getSlideCount } from "features/helpers/getSlideCount";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import { NewOfOurNews } from "../NewOfOurNews/NewOfOurNews";
 import { MoreInfoOfNews } from "../MoreInfoOfNews/MoreInfoOfNews";
@@ -26,7 +26,7 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
 
   const slidesCount = getSlideCount(isAboveMd, isAboveXl);
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Wrapper>
@@ -48,10 +48,7 @@ export const ListOfOurNews: FC<Props> = ({ list }) => {
               title={title}
               description={description}
             >
-              <MoreInfoOfNews
-                  date={date}
-                  buttonText={`${t("buttons.more_info")}`}
-              />
+              <MoreInfoOfNews date={date} buttonText={`${t("buttons.more_info")}`} />
             </NewOfOurNews>
           </SwiperSlide>
         ))}

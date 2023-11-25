@@ -1,8 +1,9 @@
-import { ListOfOurNews } from "features/about/ourNews/ListOfOurNews/ListOfOurNews";
-import { list } from "components/About/OurNews/listNews";
+import { useTranslation } from "react-i18next";
+
+import { ListOfOurNews } from "components/About/OurNews/ListOfOurNews/ListOfOurNews";
+import { list } from "components/About/OurNews/OurNews/listNews";
 import { SectionContainer } from "features/SectionContainer/SectionContainer";
 import { SectionHeader } from "features/SectionHeader/SectionHeader";
-import { useTranslation } from "react-i18next";
 
 export const OurNews = () => {
   const { t } = useTranslation();

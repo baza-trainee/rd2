@@ -9,7 +9,7 @@ import nextIcon from "assets/images/partners/Icon-2.png";
 
 import { handleSlideToDisplay } from "features/helpers/handleSlideToDisplay";
 
-import { IPartners } from "components/About/Partners/partnersList";
+import { IPartners } from "components/About/Partners/Partners/partnersList";
 
 import { SwiperButtonNav } from "../PartnersButtonNav/PartnersButtonNav";
 import { PartnersCard } from "../PartnersCard/PartnersCard";

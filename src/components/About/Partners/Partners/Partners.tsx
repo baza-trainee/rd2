@@ -1,10 +1,10 @@
-import { PartnersSlider } from "features/about/partners/PartnersSlider/PartnersSlider";
+import { useTranslation } from "react-i18next";
+
+import { PartnersSlider } from "components/About/Partners/PartnersSlider/PartnersSlider";
 import { SectionContainer } from "features/SectionContainer/SectionContainer";
 import { SectionHeader } from "features/SectionHeader/SectionHeader";
 
-import { useTranslation } from "react-i18next";
-
-import { partners } from "./partnersList";
+import { partners } from "components/About/Partners/Partners/partnersList";
 
 export const Partners = () => {
   const { t } = useTranslation();
