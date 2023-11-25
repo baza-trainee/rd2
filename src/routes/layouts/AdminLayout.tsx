@@ -5,7 +5,7 @@ import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { AdminContainer } from "components/Admin/AdminContainer/AdminContainer";
 import { SideBar } from "components/Admin/sidebar/SideBar/SideBar";
 
-import { AdminPageContainer } from "../../components/Admin/AdminPageContainer/AdminPageContainer";
+import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPageContainer";
 
 export const AdminLayout = () => {
   return (
