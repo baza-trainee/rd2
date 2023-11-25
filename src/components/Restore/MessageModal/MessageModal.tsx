@@ -21,6 +21,7 @@ export const MessageModal = ({
       <Modal open={isOpenModal} onClose={handleCloseModal}>
         <Box sx={ModalStyles}>
           <Close sx={IconStyles} onClick={handleCloseModal} />
+
           <Typography>{children}</Typography>
         </Box>
       </Modal>
