@@ -1,7 +1,10 @@
 import { Box, FilledInput, Typography } from "@mui/material";
 import { ErrorMessage, Field } from "formik";
 
-import { BoxStyles, InputStyles } from "./PasswordField.classes";
+import {
+  BoxStyles,
+  InputStyles,
+} from "components/NewPassword/PasswordField/PasswordField.classes";
 
 interface Props {
   labelText: string;

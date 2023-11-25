@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
 import { PropsWithChildren } from "react";
+
+import { Box } from "@mui/material";
 
 export const FormContainer = ({ children }: PropsWithChildren) => {
   return (

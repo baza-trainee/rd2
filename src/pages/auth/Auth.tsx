@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-import { AuthForm } from "features/auth/AuthForm/AuthForm";
+import { AuthForm } from "components/Auth/AuthForm/AuthForm";
 
 export const Component = () => {
   return (
