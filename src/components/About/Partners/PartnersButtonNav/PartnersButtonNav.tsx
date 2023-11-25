@@ -6,7 +6,7 @@ interface Props {
   next?: boolean;
 }
 
-export const SwiperButtonNav = ({ imageSrc, prev, next }: Props) => {
+export const PartnersButtonNav = ({ imageSrc, prev, next }: Props) => {
   return (
     <>
       {prev && (

@@ -1,15 +1,14 @@
+/* eslint-disable indent */
 import {
-  Box,
   ListItemAvatar,
   ListItemButton,
   ListItemText,
   SvgIcon,
   Typography,
 } from "@mui/material";
-
 import ChatIcon from "@mui/icons-material/Chat";
 
-import { SidebarIcon } from "../../../../components/Admin/SideBar/buttonsList";
+import { SidebarIcon } from "components/Admin/SideBar/SideBar/buttonsList";
 
 interface Props {
   icon: SidebarIcon;

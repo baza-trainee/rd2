@@ -1,18 +1,18 @@
 import { FC } from "react";
+
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
+
 import { theme } from "theme/theme";
+import { getSlideCount } from "helpers/getSlideCount";
 import { ListNews } from "components/About/OurNews/OurNews/listNews";
-import { getSlideCount } from "features/helpers/getSlideCount";
+import { NewOfOurNews } from "components/About/OurNews/NewOfOurNews/NewOfOurNews";
+import { MoreInfoOfNews } from "components/About/OurNews/MoreInfoOfNews/MoreInfoOfNews";
+import { CustomPagination } from "components/About/OurNews/CustomPagination/CustomPagination";
 
-import { useTranslation } from "react-i18next";
-
-import { NewOfOurNews } from "../NewOfOurNews/NewOfOurNews";
-import { MoreInfoOfNews } from "../MoreInfoOfNews/MoreInfoOfNews";
-import { CustomPagination } from "../CustomPagination/CustomPagination";
-
-import { Wrapper } from "./ListOfOurNews.styled";
+import { Wrapper } from "components/About/OurNews/ListOfOurNews/ListOfOurNews.styled";
 import "swiper/css";
 import "swiper/css/pagination";
 
