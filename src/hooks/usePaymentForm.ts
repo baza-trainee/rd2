@@ -47,6 +47,7 @@ const usePaymentForm = (func: () => void) => {
         amountError: errorMesAmount,
         methodError: errorMesMethod,
       });
+
       return;
     }
 
