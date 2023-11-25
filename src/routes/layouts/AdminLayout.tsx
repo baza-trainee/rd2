@@ -4,7 +4,7 @@ import { App } from "App";
 import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { AdminContainer } from "components/Admin/AdminContainer/AdminContainer";
 import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPageContainer";
-import { SideBar } from "components/Admin/sidebar/SideBar/SideBar";
+import { ToolBar } from "components/Admin/sidebar/ToolBar/ToolBar";
 
 export const AdminLayout = () => {
   return (
@@ -12,7 +12,7 @@ export const AdminLayout = () => {
       <AuthHeader />
 
       <AdminContainer>
-        <SideBar />
+        <ToolBar />
 
         <AdminPageContainer>
           <Outlet />

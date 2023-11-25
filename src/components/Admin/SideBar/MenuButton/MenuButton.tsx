@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 
-import { SidebarIcon } from "components/Admin/sidebar/SideBar/buttonsList";
+import { SidebarIcon } from "components/Admin/sidebar/ToolBar/buttonsList";
 
 interface Props {
   icon: SidebarIcon;

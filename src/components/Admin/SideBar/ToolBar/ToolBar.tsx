@@ -6,12 +6,12 @@ import iconChangePassword from "assets/icons/admin/change-password.png";
 import { ButtonChangePassword } from "components/Admin/sidebar/ButtonChangePassword/ButtonChangePassword";
 import { ButtonLeave } from "components/Admin/sidebar/ButtonLeave/ButtonLeave";
 import { MenuButton } from "components/Admin/sidebar/MenuButton/MenuButton";
-import { buttonsList } from "components/Admin/sidebar/SideBar/buttonsList";
+import { buttonsList } from "components/Admin/sidebar/ToolBar/buttonsList";
 
-import { DrawerStyles } from "components/Admin/sidebar/SideBar/SideBar.classes";
-import { NavLinkStyled } from "components/Admin/sidebar/SideBar/SideBar.styles";
+import { DrawerStyles } from "components/Admin/sidebar/ToolBar/ToolBar.classes";
+import { NavLinkStyled } from "components/Admin/sidebar/ToolBar/ToolBar.styles";
 
-export const SideBar = () => {
+export const ToolBar = () => {
   return (
     <Drawer variant="permanent" sx={DrawerStyles}>
       <Grid container height="100%">
