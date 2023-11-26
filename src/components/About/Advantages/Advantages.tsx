@@ -1,46 +1,43 @@
-import React from "react";
+import { useTranslation } from "react-i18next";
 
-import {useTranslation} from "react-i18next";
-
-import advantageList from "./advantageList";
+import { advantageList } from "components/About/Advantages/advantageList";
+import { AdvantagesCard } from "components/About/Advantages/AdvantagesCard/AdvantagesCard";
 
 import {
-  Container, DescWrap, Divider, Desc, Title, AdvantageList, AdvantageDescBox,
-  AdvantageCard, AdvantageImgBox, AdvantageImg, AdvantageTitle, SectionWrapper,
-} from "./Advantages.styled";
+  Container,
+  DescWrap,
+  Divider,
+  Desc,
+  Title,
+  AdvantageList,
+  SectionWrapper,
+} from "components/About/Advantages/Advantages.styled";
 
-const Advantages: React.FC = () => {
-
+export const Advantages = () => {
   const { t } = useTranslation();
 
-  return <Container>
-    <SectionWrapper>
-      <DescWrap>
+  return (
+    <Container>
+      <SectionWrapper>
+        <DescWrap>
+          <Title> {t("advantages_block.title")}</Title>
 
-        <Title> {t("advantages_block.title")}</Title>
+          <Divider></Divider>
 
-        <Divider></Divider>
+          <Desc>{t("advantages_block.about")}</Desc>
+        </DescWrap>
 
-        <Desc>{t("advantages_block.about")}</Desc>
-
-      </DescWrap>
-
-      <AdvantageList>
-        {advantageList.map(({ id,img, titleKey, descKey}) =>{
-          return <AdvantageCard key={id}>
-            <AdvantageImgBox>
-              <AdvantageImg src={img} alt={t(titleKey)} />
-            </AdvantageImgBox>
-            <AdvantageDescBox>
-              <AdvantageTitle>{t(titleKey)}</AdvantageTitle>
-              <p>{t(descKey)}</p>
-            </AdvantageDescBox>
-          </AdvantageCard>;
-        })}
-      </AdvantageList>
-
-    </SectionWrapper>
-        
-  </Container>;
+        <AdvantageList>
+          {advantageList.map(({ id, img, titleKey, descKey }) => (
+            <AdvantagesCard
+              key={id}
+              imgSrc={img}
+              titleKey={titleKey}
+              descriptionKey={descKey}
+            />
+          ))}
+        </AdvantageList>
+      </SectionWrapper>
+    </Container>
+  );
 };
-export default Advantages;

@@ -1,9 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
-import { themeHeaders } from "./typography";
-import { globalOverrides } from "./styleOverrides";
+import { themeHeaders } from "theme/typography";
+import { globalOverrides } from "theme/styleOverrides";
 
-const theme = createTheme({
+export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -84,5 +84,3 @@ const theme = createTheme({
     },
   },
 });
-
-export { theme };

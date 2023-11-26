@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import DownloadIcon from "@mui/icons-material/Download";
 import { Box } from "@mui/material";
 
-const LoadFeedbackListButton = () => {
+export const LoadFeedbackListButton = () => {
   const onClick = () => {};
 
   return (
@@ -20,5 +20,3 @@ const LoadFeedbackListButton = () => {
     </Box>
   );
 };
-
-export { LoadFeedbackListButton };

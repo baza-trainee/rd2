@@ -1,7 +1,5 @@
-import { FC } from "react";
-
 import { Pagination } from "components/About/OurNews/CustomPagination/CustomPaginagion.styled";
 
-export const CustomPagination: FC = () => {
+export const CustomPagination = () => {
   return <Pagination className="pagination"></Pagination>;
 };

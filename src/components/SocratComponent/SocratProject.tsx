@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import DronImgMob from "../../assets/images/socrat/Drone_mob-min.png";
-import DronImgMob2x from "../../assets/images/socrat/Drone_mob@2x-min.png";
-import DronImgTab from "../../assets/images/socrat/Drone_tab-min.png";
-import DronImgTab2x from "../../assets/images/socrat/Drone_tab@2x-min.png";
-import DronImgDesk from "../../assets/images/socrat/Drone_desk-min.png";
-import DronImgDesk2x from "../../assets/images/socrat/Drone_desk@2x-min.png";
+import DronImgMob from "assets/images/socrat/Drone_mob-min.png";
+import DronImgMob2x from "assets/images/socrat/Drone_mob@2x-min.png";
+import DronImgTab from "assets/images/socrat/Drone_tab-min.png";
+import DronImgTab2x from "assets/images/socrat/Drone_tab@2x-min.png";
+import DronImgDesk from "assets/images/socrat/Drone_desk-min.png";
+import DronImgDesk2x from "assets/images/socrat/Drone_desk@2x-min.png";
 
-import { SocratListAbout, SocratListQuestion } from "./SocratList";
+import {
+  SocratListAbout,
+  SocratListQuestion,
+} from "components/SocratComponent/SocratList";
+import { AccordionItem } from "components/SocratComponent/AccordionItem/AccordionItem";
 
 import {
   Container,
@@ -21,29 +25,23 @@ import {
   SocratAboutItem,
   SocratAboutTitle,
   SocratAboutText,
-} from "./Socrat.styled";
-import {AccordionItem} from "./AccordionItem/AccordionItem";
+} from "components/SocratComponent/Socrat.styled";
 
-export const SocratProject: React.FC = () => {
-
+export const SocratProject = () => {
   const { t } = useTranslation();
 
-  const [openId, setId] = useState<null | number>(null);
+  const [isOpenAccordion, setIsOpenAccordion] = useState<null | number>(null);
 
-  const clickHandler = (id: number) => {
-    return () => {
-      (id === openId) ? setId(null) : setId(id);
-    }
+  const handleClickAccordionById = (id: number) => () => {
+    id === isOpenAccordion ? setIsOpenAccordion(null) : setIsOpenAccordion(id);
   };
 
   return (
     <div>
-
       <Container>
+        <SocrstHeader>{t("about_socrat_block.title")}</SocrstHeader>
 
-        <SocrstHeader>{ t("about_socrat_block.title") }</SocrstHeader>
-
-        <TitleText>{ t("about_socrat_block.about") }</TitleText>
+        <TitleText>{t("about_socrat_block.about")}</TitleText>
 
         <Picture>
           <source
@@ -68,24 +66,21 @@ export const SocratProject: React.FC = () => {
             );
           })}
         </SocratAboutWrapper>
-
       </Container>
 
       <Accordion>
         {SocratListQuestion.map(({ id, titleKey, textKey }) => {
-
-          const itemText = t(textKey, {returnObjects: true});
+          const itemText = t(textKey, { returnObjects: true });
 
           return (
             <AccordionItem
-                key={id}
-                itemText={itemText}
-                titleKey={titleKey}
-                id={id}
-                openId={openId}
-                clickHandler={clickHandler}
+              key={id}
+              itemText={itemText}
+              titleKey={titleKey}
+              id={id}
+              isOpenAccordion={isOpenAccordion}
+              handleClickAccordionById={handleClickAccordionById}
             />
-
           );
         })}
       </Accordion>

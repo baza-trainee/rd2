@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-
 import Typography from "@mui/material/Typography";
-
 import { Grid } from "@mui/material";
 
-import { theme } from "../../../../theme/theme";
+import { FeedbackUserDetails, UserMessage } from "types/typeFeedbackUserDetails";
+import { theme } from "theme/theme";
+import { LoadData } from "api/feedbackData";
+import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
+import { fieldNamesList } from "components/Admin/AdminFeedback/UserFeedbackDetails/FieldNamesList";
 
 import {
-  FeedbackUserDetails,
-  UserMessage,
-} from "../../../../types/typeFeedbackUserDetails";
-
-import { LoadData } from "../../../../api/feedbackData";
-
-import { PageContentWrapper } from "../../PageContentWrapper/PageContentWrapper";
-
-import { fieldNamesList } from "./FieldNamesList";
-
-import { MessageBlock, MessageDateBlock } from "./UserFeedbackDetales.styled";
+  MessageBlock,
+  MessageDateBlock,
+} from "components/Admin/AdminFeedback/UserFeedbackDetails/UserFeedbackDetales.styled";
 
 //type UserProps = {
 //name: string,

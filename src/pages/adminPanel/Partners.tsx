@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-import {AdminPartnersLogo} from "../../components/Admin/AdminPartnersLogo/AdminPartnersLogo";
+import { AdminPartnersLogo } from "components/Admin/AdminPartnersLogo/AdminPartnersLogo";
 
 export const Component = () => {
   return (

@@ -1,11 +1,11 @@
-import OpenSansRegularWoff2 from "../assets/fonts/OpenSans-Regular.woff2";
-import OpenSansRegularWoff from "../assets/fonts/OpenSans-Regular.woff";
-import OpenSansSemiBoldWoff2 from "../assets/fonts/OpenSans-SemiBold.woff2";
-import OpenSansSemiBoldWoff from "../assets/fonts/OpenSans-SemiBold.woff";
-import OpenSansBoldWoff2 from "../assets/fonts/OpenSans-Bold.woff2";
-import OpenSansBoldWoff from "../assets/fonts/OpenSans-Bold.woff";
+import OpenSansRegularWoff2 from "assets/fonts/OpenSans-Regular.woff2";
+import OpenSansRegularWoff from "assets/fonts/OpenSans-Regular.woff";
+import OpenSansSemiBoldWoff2 from "assets/fonts/OpenSans-SemiBold.woff2";
+import OpenSansSemiBoldWoff from "assets/fonts/OpenSans-SemiBold.woff";
+import OpenSansBoldWoff2 from "assets/fonts/OpenSans-Bold.woff2";
+import OpenSansBoldWoff from "assets/fonts/OpenSans-Bold.woff";
 
-const globalOverrides = `
+export const globalOverrides = `
              a {
                 text-decoration: none;
             } 
@@ -66,4 +66,3 @@ const globalOverrides = `
                 }
             }
         `;
-export { globalOverrides };
