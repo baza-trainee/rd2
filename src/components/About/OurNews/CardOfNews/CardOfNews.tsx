@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import { Typography } from "@mui/material";
 
-import { Card, Content } from "components/About/OurNews/NewOfOurNews/NewOfOurNews.styled";
+import { Card, Content } from "components/About/OurNews/CardOfNews/CardOfNews.styled";
 
 interface Props {
   imageSrc: string;

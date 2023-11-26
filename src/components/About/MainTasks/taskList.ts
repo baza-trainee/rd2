@@ -9,32 +9,32 @@ import sixthIcon from "assets/icons/TaskIcons/sixth.svg";
 
 export const taskList: Task[] = [
   {
-    id: 321,
+    id: 1,
     icon: firstIcon,
     descKey: "main_tasks_block.desc.item_1",
   },
   {
-    id: 322,
+    id: 2,
     icon: secondIcon,
     descKey: "main_tasks_block.desc.item_2",
   },
   {
-    id: 323,
+    id: 3,
     icon: thirdIcon,
     descKey: "main_tasks_block.desc.item_3",
   },
   {
-    id: 324,
+    id: 4,
     icon: fourthIcon,
     descKey: "main_tasks_block.desc.item_4",
   },
   {
-    id: 325,
+    id: 5,
     icon: fifthIcon,
     descKey: "main_tasks_block.desc.item_5",
   },
   {
-    id: 326,
+    id: 6,
     icon: sixthIcon,
     descKey: "main_tasks_block.desc.item_6",
   },

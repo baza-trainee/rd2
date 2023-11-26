@@ -1,13 +1,11 @@
-import { FC } from "react";
-
-import { Card } from "./PartnersCard.styled";
+import { Card } from "components/About/Partners/PartnersCard/PartnersCard.styled";
 
 interface Props {
   imageSrc: string;
   retinaImageSrc: string;
 }
 
-export const PartnersCard: FC<Props> = ({ imageSrc, retinaImageSrc }) => {
+export const PartnersCard = ({ imageSrc, retinaImageSrc }: Props) => {
   return (
     <Card>
       <img

@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
@@ -19,7 +17,7 @@ interface Props {
   partnersList: IPartners[];
 }
 
-export const PartnersSlider: FC<Props> = ({ partnersList }) => {
+export const PartnersSlider = ({ partnersList }: Props) => {
   const isXl = useMediaQuery(theme.breakpoints.up("xl"));
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
   const isSm = useMediaQuery(theme.breakpoints.up("sm"));

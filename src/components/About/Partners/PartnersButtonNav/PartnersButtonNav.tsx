@@ -1,4 +1,7 @@
-import { Next, Prev } from "./PartnersButtonNav.styled";
+import {
+  Next,
+  Prev,
+} from "components/About/Partners/PartnersButtonNav/PartnersButtonNav.styled";
 
 interface Props {
   imageSrc: string;
