@@ -32,10 +32,8 @@ export const SocratProject = () => {
 
   const [isOpenAccordion, setIsOpenAccordion] = useState<null | number>(null);
 
-  const handleClickAccordionById = (id: number) => {
-    return () => {
-      id === isOpenAccordion ? setIsOpenAccordion(null) : setIsOpenAccordion(id);
-    };
+  const handleClickAccordionById = (id: number) => () => {
+    id === isOpenAccordion ? setIsOpenAccordion(null) : setIsOpenAccordion(id);
   };
 
   return (
