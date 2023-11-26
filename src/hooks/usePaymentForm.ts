@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FormEvent, ChangeEvent, MouseEvent, useState } from "react";
 
 type PaymentProps = {
   amount: number;
@@ -7,7 +7,7 @@ type PaymentProps = {
   methodError?: string;
 };
 
-const usePaymentForm = (func: () => void) => {
+export const usePaymentForm = (func: () => void) => {
   const initialState: PaymentProps = {
     amount: 0,
     method: "",
@@ -16,22 +16,22 @@ const usePaymentForm = (func: () => void) => {
   const [payment, setPayment] = useState(initialState);
   const [inputValue, setInputValue] = useState<number | string>("");
 
-  const onClickPayment = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onClickPayment = (e: MouseEvent<HTMLButtonElement>) => {
     setPayment({ ...payment, method: e.currentTarget.id, methodError: "" });
   };
 
-  const onClickSum = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onClickSum = (e: MouseEvent<HTMLButtonElement>) => {
     setPayment({ ...payment, amount: +e.currentTarget.id, amountError: "" });
     setInputValue(+e.currentTarget.id);
   };
 
-  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value.trim();
     setInputValue(value);
     setPayment({ ...payment, amount: +value, amountError: "" });
   };
 
-  const onSubmitForm = (e: React.FormEvent) => {
+  const onSubmitForm = (e: FormEvent) => {
     e.preventDefault();
 
     if (!payment.amount || !payment.method.length) {
@@ -56,5 +56,3 @@ const usePaymentForm = (func: () => void) => {
 
   return { payment, onClickPayment, inputValue, onClickSum, onChangeValue, onSubmitForm };
 };
-
-export { usePaymentForm };
