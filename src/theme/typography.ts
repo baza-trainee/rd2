@@ -1,4 +1,4 @@
-const themeHeaders = {
+export const themeHeaders = {
   h1: {
     fontSize: "2.5rem",
     fontWeight: 700,
@@ -39,5 +39,3 @@ const themeHeaders = {
     margin: 0,
   },
 };
-
-export {themeHeaders};

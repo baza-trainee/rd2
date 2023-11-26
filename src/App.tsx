@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 import { CssBaseline } from "@mui/material";
 import i18next from "translation/i18next";
 
-import { theme } from "./theme/theme";
+import { theme } from "theme/theme";
 
 export const App = ({ children }: PropsWithChildren): JSX.Element => {
   return (

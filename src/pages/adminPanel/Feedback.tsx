@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-import { AdminFeedback } from "../../components/Admin/AdminFeedback/AdminFeedback";
+import { AdminFeedback } from "components/Admin/AdminFeedback/AdminFeedback";
 
 export const Component = () => {
   return (

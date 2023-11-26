@@ -1,7 +1,7 @@
 import { initReactI18next } from "react-i18next";
 import i18next, { InitOptions } from "i18next";
 
-import { resources } from "./i18next.resources";
+import { resources } from "translation/i18next.resources";
 
 const initOptions: InitOptions = {
   debug: true,
