@@ -1,5 +1,5 @@
-import MainTasks from "components/About/MainTasks/MainTasks";
-import Advantages from "components/About/Advantages/Advantages";
+import { MainTasks } from "components/About/MainTasks/MainTasks";
+import { Advantages } from "components/About/Advantages/Advantages";
 import { Carousel } from "components/About/Carousel/Carousel";
 import { Introduce } from "components/About/Introduce/Introduce";
 import { OurNews } from "components/About/OurNews/OurNews/OurNews";

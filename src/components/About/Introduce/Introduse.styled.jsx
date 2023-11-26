@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import {theme} from "../../../theme/theme";
+import { theme } from "theme/theme";
 
 const bgColor = theme.palette.secondary.main;
 
