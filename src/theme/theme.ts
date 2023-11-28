@@ -76,9 +76,11 @@ export const theme = createTheme({
           borderRadius: "5px",
           textTransform: "capitalize",
           fontSize: "1.25rem",
-          color: "#f5f5f5",
           boxShadow: "none",
           ":hover": { boxShadow: "none" },
+        },
+        containedPrimary: {
+          color: "#f5f5f5",
         },
       },
     },
