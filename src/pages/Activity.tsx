@@ -1,7 +1,7 @@
 import { ScientificActivity } from "components/ScientificActivity/ScientificActivity";
 
-export const Component = () => {
+export const Activity = () => {
   return <ScientificActivity />;
 };
 
-Component.displayName = "Activity";
+export default Activity;

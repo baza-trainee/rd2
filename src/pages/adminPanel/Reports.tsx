@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-export const Component = () => {
+export const Reports = () => {
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -10,4 +10,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "Reports";
+export default Reports;

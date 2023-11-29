@@ -6,7 +6,7 @@ import { Description } from "components/Restore/Description/Description";
 import { RestoreForm } from "components/Restore/RestoreForm/RestoreForm";
 import { MessageModal } from "components/Restore/MessageModal/MessageModal";
 
-export const Component = () => {
+export const Restore = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
   const handleOpenModal = () => {
@@ -33,4 +33,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "Restore";
+export default Restore;

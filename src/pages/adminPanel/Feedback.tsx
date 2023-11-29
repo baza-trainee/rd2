@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 
 import { AdminFeedback } from "components/Admin/AdminFeedback/AdminFeedback";
 
-export const Component = () => {
+export const Feedback = () => {
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -14,4 +14,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "Feedback";
+export default Feedback;
