@@ -6,11 +6,11 @@ import { AdminLayout } from "routes/layouts/AdminLayout";
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { Fallback } from "components/commonComponents/Fallback/Fallback";
 
-const Feedback = lazy(() => import("pages/adminPanel/Feedback"));
-const FeedbackDetails = lazy(() => import("pages/adminPanel/FeedbackDetails"));
-const OurContacts = lazy(() => import("pages/adminPanel/OurContacts"));
-const Partners = lazy(() => import("pages/adminPanel/Partners"));
-const Reports = lazy(() => import("pages/adminPanel/Reports"));
+const Feedback = lazy(() => import("pages/admin/Feedback"));
+const FeedbackDetails = lazy(() => import("pages/admin/FeedbackDetails"));
+const OurContacts = lazy(() => import("pages/admin/OurContacts"));
+const Partners = lazy(() => import("pages/admin/Partners"));
+const Reports = lazy(() => import("pages/admin/Reports"));
 
 export const AdminRoutes = () => {
   return (

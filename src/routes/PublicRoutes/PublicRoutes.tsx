@@ -6,11 +6,11 @@ import { MainLayout } from "routes/layouts/MainLayout";
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { Fallback } from "components/commonComponents/Fallback/Fallback";
 
-const About = lazy(() => import("pages/About"));
-const Activity = lazy(() => import("pages/Activity"));
-const Contacts = lazy(() => import("pages/Contacts"));
-const Demining = lazy(() => import("pages/Demining"));
-const NotFound = lazy(() => import("pages/NotFound"));
+const About = lazy(() => import("pages/public/About"));
+const Activity = lazy(() => import("pages/public/Activity"));
+const Contacts = lazy(() => import("pages/public/Contacts"));
+const Demining = lazy(() => import("pages/public/Demining"));
+const NotFound = lazy(() => import("pages/public/NotFound"));
 
 export const PublicRoutes = () => {
   return (
