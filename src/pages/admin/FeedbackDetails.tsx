@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 
 import { UserFeedbackDetails } from "components/Admin/AdminFeedback/UserFeedbackDetails/UserFeedbackDetails";
 
-export const Component = () => {
+export const FeedbackDetails = () => {
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -15,4 +15,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "FeedbackDetails";
+export default FeedbackDetails;
