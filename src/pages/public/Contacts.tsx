@@ -7,7 +7,7 @@ import { OurContacts } from "components/Contacts/OurContacts/OurContacts";
 import ModalSuccessSent from "components/commonComponents/ContactFormSection/ModalSuccessSent";
 import ContactForm from "components/commonComponents/ContactFormSection/ContactForm/ContactForm";
 
-export const Component = () => {
+export const Contacts = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -31,4 +31,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "Contacts";
+export default Contacts;

@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { OurContactsContainer } from "components/Admin/ourContacts/OurContactsContainer/OurContactsContainer";
 import { OurContactsForm } from "components/Admin/ourContacts/OurContactsForm/OurContactsForm";
 
-export const Component = () => {
+export const OurContacts = () => {
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -18,4 +18,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "OurContacts";
+export default OurContacts;

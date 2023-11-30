@@ -5,6 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import { PublicRoutes } from "routes/PublicRoutes/PublicRoutes";
+import { AuthRoutes } from "routes/AuthRoutes/AuthRoutes";
+import { AdminRoutes } from "routes/AdminRoutes/AdminRoutes";
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { AdminAuthLayout } from "routes/layouts/AdminAuthLayout";
 import { AdminPanelLayout } from "routes/layouts/AdminPanelLayout";
@@ -14,7 +17,7 @@ import {AdminLayout} from "routes/layouts/AdminLayout";
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route element={<MainLayout />}>
+        {/*<Route element={<MainLayout />}>
         <Route index lazy={() => import("pages/About")} />
         <Route path={ROUTES_ENUM.ACTIVITY} lazy={() => import("pages/Activity")} />
         <Route path={ROUTES_ENUM.DEMINING} lazy={() => import("pages/Demining")} />
@@ -59,8 +62,11 @@ export const AppNavigation = createBrowserRouter(
                     lazy={() => import("pages/adminPanel/FeedbackDetails")}
                 />
             </Route>
-        </Route>
+        </Route>*/}
 
+      <Route path="/*" element={<PublicRoutes />} />
+      <Route path="/auth/*" element={<AuthRoutes />} />
+      <Route path="/admin/*" element={<AdminRoutes />} />
     </Route>,
   ),
 );

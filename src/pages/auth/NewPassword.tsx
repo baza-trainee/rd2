@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 import { NewPasswordForm } from "components/NewPassword/NewPasswordForm/NewPasswordForm";
 
-export const Component = () => {
+export const NewPassword = () => {
   return (
     <>
       <Typography sx={{ marginBottom: "32px", textAlign: "center" }} variant="h4">
@@ -14,4 +14,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "NewPassword";
+export default NewPassword;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import Container from "@mui/material/Container";
 
-import {contactsList} from "../commonComponents/ContactItem/contactsList";
+import { contactsList } from "../commonComponents/ContactItem/contactsList";
 
-import {ContactItem} from "../commonComponents/ContactItem/ContactItem";
+import { ContactItem } from "../commonComponents/ContactItem/ContactItem";
 
 import { rulesList } from "./footerList";
 
@@ -26,7 +26,6 @@ import { FooterLogo } from "./FooterLogo/FooterLogo";
 import { FooterModal } from "./FooterModal/FooterModal";
 
 export const Footer: React.FC = () => {
-
   const { t } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,6 +38,10 @@ export const Footer: React.FC = () => {
     setIsModalOpen(false);
   };
 
+  const clickHandler = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <FooterSection id="footer">
       <Container maxWidth="xl">
@@ -46,29 +49,24 @@ export const Footer: React.FC = () => {
           <FooterLogo />
           <FooterNav>
             <NavWrapper>
-              <FooterNavigation className="custom-nav-class" />
+              <FooterNavigation className="custom-nav-class" onClick={clickHandler} />
               <RulesList>
                 {rulesList.map(({ id, descKey }) => (
                   <RulesItem key={id} onClick={openModal}>
-                    { t(descKey) }
+                    {t(descKey)}
                   </RulesItem>
                 ))}
               </RulesList>
             </NavWrapper>
             <Address>
               {contactsList.map((item) => (
-                <ContactItem key={item.id}
-                             {...item}
-                />
+                <ContactItem key={item.id} {...item} />
               ))}
             </Address>
           </FooterNav>
         </Content>
 
-        <Rights>
-          { t("developers") }
-        </Rights>
-
+        <Rights>{t("developers")}</Rights>
       </Container>
       <FooterModal onCloseModal={closeModal} open={isModalOpen} />
     </FooterSection>

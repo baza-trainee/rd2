@@ -6,7 +6,7 @@ import { OurNews } from "components/About/OurNews/OurNews/OurNews";
 import { Partners } from "components/About/Partners/Partners/Partners";
 import ContactFormSection from "components/commonComponents/ContactFormSection/ContactFormSection";
 
-export const Component = () => {
+export const About = () => {
   return (
     <>
       <Carousel />
@@ -26,4 +26,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "About";
+export default About;
