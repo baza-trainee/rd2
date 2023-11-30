@@ -1,21 +1,22 @@
 import { Outlet } from "react-router-dom";
 
-import { App } from "App";
-
-import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
 import { AuthContainer } from "components/Auth/AuthContainer/AuthContainer";
 import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
+import {AuthHeader} from "../../components/Auth/AuthHeader/AuthHeader";
+import {App} from "../../App";
 
-export const AuthLayout = () => {
+export const AdminAuthLayout = () => {
   return (
-    <App>
-      <AuthHeader />
+<App>
+    <AuthHeader />
 
-      <AuthContainer>
+    <AuthContainer>
         <PaperContainer>
-          <Outlet />
+            <Outlet />
         </PaperContainer>
-      </AuthContainer>
-    </App>
+    </AuthContainer>
+
+</App>
+
   );
 };
