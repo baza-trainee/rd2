@@ -11,7 +11,9 @@ export const App = ({ children }: PropsWithChildren): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
+      <I18nextProvider i18n={i18next}>
+          {children}
+      </I18nextProvider>
     </ThemeProvider>
   );
 };
