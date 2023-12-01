@@ -1,4 +1,12 @@
+import {useContext} from "react";
+
 import { Button, ListItem } from "@mui/material";
+
+import {useNavigate} from "react-router-dom";
+
+import {AuthContext} from "../../../../routes/AdminRoutes/AdminRoutes";
+
+import {LogOut} from "../../../../api/adminAuth";
 
 interface Props {
   icon: string;
@@ -6,6 +14,14 @@ interface Props {
 }
 
 export const ButtonLeave = ({ icon, buttonText }: Props) => {
+
+    const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const onClick = () => {
+        LogOut();
+        setIsLoggedIn(false);
+        navigate("/admin");
+    }
   return (
     <ListItem sx={{ paddingLeft: "24px" }}>
       <Button
@@ -21,6 +37,7 @@ export const ButtonLeave = ({ icon, buttonText }: Props) => {
             bgcolor: "rgba(255, 255, 255, 0.8)",
           },
         }}
+        onClick={onClick}
       >
         <img src={icon} alt={buttonText} />
         {buttonText}
