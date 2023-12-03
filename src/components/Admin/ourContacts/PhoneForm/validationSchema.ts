@@ -13,5 +13,5 @@ export const validationSchema = object({
       const currentNumber = this.resolve(ref("currentNumber"));
       return value !== currentNumber;
     })
-    .required("номери не мають співпадати"),
+    .required("введіть номер"),
 });
