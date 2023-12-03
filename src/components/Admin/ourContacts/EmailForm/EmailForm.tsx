@@ -9,8 +9,14 @@ interface FormEmail {
   currentEmail: string;
   newEmail: string;
 }
-export const EmailForm = () => {
+
+interface Props {
+  handleOpenModal: () => void;
+}
+
+export const EmailForm = ({ handleOpenModal }: Props) => {
   const handleSubmit = (_: FormEmail, formikHelpers: FormikHelpers<FormEmail>) => {
+    handleOpenModal();
     formikHelpers.resetForm();
   };
 

@@ -10,8 +10,13 @@ interface FormNumber {
   newNumber: string;
 }
 
-export const PhoneForm = () => {
+interface Props {
+  handleOpenModal: () => void;
+}
+
+export const PhoneForm = ({ handleOpenModal }: Props) => {
   const handleSubmit = (_: FormNumber, formikHelpers: FormikHelpers<FormNumber>) => {
+    handleOpenModal();
     formikHelpers.resetForm();
   };
 
