@@ -22,19 +22,21 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
 
   return (
     <Formik
-      initialValues={{ currentEmail: "", newEmail: "" }}
+      initialValues={{ currentEmail: "foo@gmail.com", newEmail: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <InputWrapper>
-          <EmailField labelText="Поточний email" name="currentEmail" disabled />
+      {({ isValid }) => (
+        <Form>
+          <InputWrapper>
+            <EmailField labelText="Поточний email" name="currentEmail" disabled />
 
-          <EmailField labelText="Новий email" name="newEmail" />
-        </InputWrapper>
+            <EmailField labelText="Новий email" name="newEmail" />
+          </InputWrapper>
 
-        <SubmitButton>Змінити пошту</SubmitButton>
-      </Form>
+          <SubmitButton isValid={isValid}>Змінити пошту</SubmitButton>
+        </Form>
+      )}
     </Formik>
   );
 };

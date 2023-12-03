@@ -16,29 +16,31 @@ interface Props {
 
 export const PhoneForm = ({ handleOpenModal }: Props) => {
   const handleSubmit = (_: FormNumber, formikHelpers: FormikHelpers<FormNumber>) => {
-    handleOpenModal();
     formikHelpers.resetForm();
+    handleOpenModal();
   };
 
   return (
     <Formik
-      initialValues={{ currentNumber: "", newNumber: "" }}
+      initialValues={{ currentNumber: "+380667788999", newNumber: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <InputWrapper>
-          <NumberField
-            disabled
-            labelText="Поточний номер телефону"
-            name="currentNumber"
-          />
+      {({ isValid }) => (
+        <Form>
+          <InputWrapper>
+            <NumberField
+              disabled
+              labelText="Поточний номер телефону"
+              name="currentNumber"
+            />
 
-          <NumberField labelText="Новий номер телефону" name="newNumber" />
-        </InputWrapper>
+            <NumberField labelText="Новий номер телефону" name="newNumber" />
+          </InputWrapper>
 
-        <SubmitButton>Змінити номер</SubmitButton>
-      </Form>
+          <SubmitButton isValid={isValid}>Змінити номер</SubmitButton>
+        </Form>
+      )}
     </Formik>
   );
 };

@@ -11,8 +11,7 @@ export const validationSchema = object({
     .matches(phoneRegExp, "не валідний номер")
     .test("not-same", "номери не мають співпадати", function (value) {
       const currentNumber = this.resolve(ref("currentNumber"));
-
       return value !== currentNumber;
     })
-    .required("введіть номер телефону"),
+    .required("номери не мають співпадати"),
 });
