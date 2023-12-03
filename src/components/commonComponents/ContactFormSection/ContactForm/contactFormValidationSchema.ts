@@ -37,6 +37,7 @@ function CreateContactSchema(data: any) {
     phone: yup
       .string()
       .matches(phoneRegExp, data.validationError)
+      .min(12, "Недостатньо символів")
       .max(12, "Максимум 12 символів")
       .required(data.requiredPhone),
     message: yup
