@@ -25,7 +25,7 @@ export const NumberField = ({ disabled, labelText, name }: Props) => {
         variant="filled"
         fullWidth
         disabled={disabled}
-        type="number"
+        type="text"
         name={name}
       />
       <ErrorMessage className="error-message" name={name} component="div" />

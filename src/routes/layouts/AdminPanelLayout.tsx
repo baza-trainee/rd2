@@ -6,14 +6,12 @@ import { ToolBar } from "components/Admin/sidebar/ToolBar/ToolBar";
 
 export const AdminPanelLayout = () => {
   return (
-      <AdminContainer>
+    <AdminContainer>
+      <ToolBar />
 
-        <ToolBar />
-
-        <AdminPageContainer>
-          <Outlet />
-        </AdminPageContainer>
-
-      </AdminContainer>
+      <AdminPageContainer>
+        <Outlet />
+      </AdminPageContainer>
+    </AdminContainer>
   );
 };

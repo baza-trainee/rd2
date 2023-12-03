@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import Typography from "@mui/material/Typography";
 
+import { EmailForm } from "components/Admin/ourContacts/EmailForm/EmailForm";
 import { OurContactsContainer } from "components/Admin/ourContacts/OurContactsContainer/OurContactsContainer";
-import { OurContactsForm } from "components/Admin/ourContacts/OurContactsForm/OurContactsForm";
+import { PhoneForm } from "components/Admin/ourContacts/PhoneForm/PhoneForm";
 
 export const OurContacts = () => {
   return (
@@ -12,7 +13,11 @@ export const OurContacts = () => {
       </Typography>
 
       <OurContactsContainer>
-        <OurContactsForm />
+        <PhoneForm />
+      </OurContactsContainer>
+
+      <OurContactsContainer>
+        <EmailForm />
       </OurContactsContainer>
     </>
   );
