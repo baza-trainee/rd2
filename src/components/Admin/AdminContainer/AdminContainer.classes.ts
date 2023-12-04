@@ -1,6 +1,6 @@
 import { SxProps } from "@mui/material";
 
-import {theme} from "../../../theme/theme";
+import { theme } from "theme/theme";
 
 const bgColor = theme.palette.secondary.main;
 
