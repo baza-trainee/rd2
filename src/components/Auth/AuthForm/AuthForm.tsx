@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import { useContext } from "react";
 
 import { Form, Formik, FormikHelpers } from "formik";
 
@@ -11,27 +11,24 @@ import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
 
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import {FetchAuthCredentials} from "../../../api/adminAuth";
+import { FetchAuthCredentials } from "../../../api/adminAuth";
 
-import {AuthContext} from "../../../routes/AdminRoutes/AdminRoutes";
+import { AuthContext } from "../../../routes/layouts/Authorization";
 
 export const AuthForm = () => {
-
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = (_: FormValues, formikHelpers: FormikHelpers<FormValues>) => {
     console.log(_);
-    FetchAuthCredentials(_)
-        .then( (response) => {
-          if (response) {
-            setIsLoggedIn(true);
-            formikHelpers.resetForm();
-            navigate("/admin");
-          }
-        });
-
+    FetchAuthCredentials(_).then((response) => {
+      if (response) {
+        setIsLoggedIn(true);
+        formikHelpers.resetForm();
+        navigate("/admin");
+      }
+    });
   };
 
   return (
