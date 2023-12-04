@@ -49,12 +49,16 @@ export const Introduce = () => {
                     <source
                       srcSet={`${deskImg} 1x, ${deskImg2x} 2x`}
                       media="(min-width: 1440px)"
+                      width={631} height={483}
                     />
                     <source
                       srcSet={`${tabImg} 1x, ${tabImg2x} 2x`}
                       media="(min-width: 768px)"
+                      width={631} height={483}
                     />
-                    <img src={mobImg} srcSet={`${mobImg2x} 2x`} alt="dron" />
+                    <img src={mobImg} srcSet={`${mobImg2x} 2x`} alt="dron"
+                         width={631} height={483}
+                    />
                   </picture>
                 </Pictures>
                 <Text>{t("introduce_block.item_1_text")}</Text>
@@ -65,12 +69,16 @@ export const Introduce = () => {
                     <source
                       srcSet={`${deskImg2} 1x, ${deskImg2x2} 2x`}
                       media="(min-width: 1440px)"
+                      width={588} height={480}
                     />
                     <source
                       srcSet={`${tabImg2} 1x, ${tabImg2x2} 2x`}
                       media="(min-width: 768px)"
+                      width={588} height={480}
                     />
-                    <img src={mobImg2} srcSet={`${mobImg2x2} 2x`} alt="dron" />
+                    <img src={mobImg2} srcSet={`${mobImg2x2} 2x`} alt="dron"
+                         width={588} height={480}
+                    />
                   </picture>
                 </Pictures>
                 <Text>{t("introduce_block.item_2_text")}</Text>

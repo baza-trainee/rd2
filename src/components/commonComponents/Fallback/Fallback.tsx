@@ -8,6 +8,7 @@ export const Fallback = (): JSX.Element => {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        backgroundColor: "rgba(0,0,0,0.15)",
       }}
     >
       <CircularProgress />

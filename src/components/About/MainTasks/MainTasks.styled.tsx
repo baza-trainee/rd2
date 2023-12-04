@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-import bgMob from "assets/images/tasks/task-bg-mob.png";
-import bgTab1 from "assets/images/tasks/task-bg-tab1.png";
+import bgMob from "assets/images/tasks/task-bg-mob.jpg";
+import bgTab1 from "assets/images/tasks/task-bg-tab1.jpg";
 import bgDesk from "assets/images/tasks/task-bg-desk.png";
 
 const Container = styled.section`

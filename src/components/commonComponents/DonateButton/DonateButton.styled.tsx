@@ -13,7 +13,7 @@ const ButtonStyled = styled(Button)`
 
     margin-left: 20px;
     margin-right: 20px;
-    width: 185px;
+    min-width: 185px;
 
   }
 

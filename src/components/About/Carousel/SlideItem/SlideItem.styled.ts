@@ -13,6 +13,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   background-size: cover;
   background-position: center;
   background-image: url(${(props) => props.imgSrc});
+  background-color: #8293a3;
 
   & .MuiButton-root {
     position: absolute;

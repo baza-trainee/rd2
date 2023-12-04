@@ -49,7 +49,7 @@ const Picture = styled.picture`
 const SocrstHeader = styled.h1`
   color: #151515;
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 700;
 
   margin-bottom: 12px;
 

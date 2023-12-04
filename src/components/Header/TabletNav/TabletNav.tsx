@@ -1,12 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
-import {IconButton} from "@mui/material";
+import {Box, IconButton} from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Drawer from "@mui/material/Drawer";
+
+import {
+    useLocation,
+} from "react-router-dom";
+
+import Link from "@mui/material/Link";
 
 import {
   DonateButtonStyled,
@@ -18,7 +24,11 @@ import {
 
 export const TabletNav = () => {
 
+  const location = useLocation();
+  const { pathname } = location;
+
   const [state, setState] = useState({right: false});
+
 
   const toggleDrawer = (open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -31,6 +41,17 @@ export const TabletNav = () => {
       }
       setState({ right: open });
     };
+
+    function handleReset() {
+        setState({ right: false });
+    }
+
+    useEffect(() => {
+        //if (!state.right) setState({ right: stateRef.current });
+        //toggleDrawer(false)
+        setState({ right: false });
+        //console.log("use effect" + pathname);
+    }, [pathname]);
 
   return (
     <TabletContainer>
@@ -67,9 +88,12 @@ export const TabletNav = () => {
 
           <DonateButtonStyled />
 
-          <NavStyled
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}/>
+            <Box onClick={handleReset}
+                 onKeyDown={toggleDrawer(false)}
+                 role="presentation"
+            >
+                <NavStyled />
+            </Box>
 
           <LanguageMenuStyled />
 

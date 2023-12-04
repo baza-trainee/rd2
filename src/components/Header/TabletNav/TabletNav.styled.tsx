@@ -46,11 +46,11 @@ const DonateButtonStyled = styled(DonateButton)`
   margin: 66px 16px 32px 16px;
 `;
 
-interface NavStyledProps {
-    onClick: (e:React.KeyboardEvent | React.MouseEvent) => void
-    onKeyDown: (e:React.KeyboardEvent | React.MouseEvent) => void
-}
-const NavStyled = styled(Nav)<NavStyledProps>`
+//interface NavStyledProps {
+    //onClick: (e:React.KeyboardEvent | React.MouseEvent) => void
+    //onKeyDown: (e:React.KeyboardEvent | React.MouseEvent) => void
+//}
+const NavStyled = styled(Nav)`
   display: block;
   
   a {
