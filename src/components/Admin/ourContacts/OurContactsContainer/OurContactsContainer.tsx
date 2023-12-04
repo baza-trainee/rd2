@@ -12,7 +12,7 @@ export const OurContactsContainer = ({ children }: PropsWithChildren) => {
         bgcolor: "#fff",
         marginTop: "32px",
         borderRadius: "20px",
-        minHeight: "583px",
+        height: "fit-content",
       }}
     >
       {children}

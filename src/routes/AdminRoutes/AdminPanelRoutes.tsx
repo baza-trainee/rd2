@@ -11,6 +11,7 @@ const FeedbackDetails = lazy(() => import("pages/admin/FeedbackDetails"));
 const OurContacts = lazy(() => import("pages/admin/OurContacts"));
 const Partners = lazy(() => import("pages/admin/Partners"));
 const Reports = lazy(() => import("pages/admin/Reports"));
+const ChangePassword = lazy(() => import("pages/admin/ChangePassword"));
 const NotFound = lazy(() => import("pages/public/NotFound"));
 
 export const AdminPanelRoutes = () => {
@@ -18,7 +19,6 @@ export const AdminPanelRoutes = () => {
     <Suspense fallback={<Fallback />}>
       <Routes>
         <Route element={<AdminPanelLayout />}>
-
           <Route path={ROUTES_ENUM.ADMIN_PARTNERS} element={<Partners />} />
           <Route
             index
@@ -34,10 +34,10 @@ export const AdminPanelRoutes = () => {
             <Route path={ROUTES_ENUM.FEEDBACK_DETAILS} element={<FeedbackDetails />} />
           </Route>
 
+          <Route path={ROUTES_ENUM.CHANGE_PASSWORD} element={<ChangePassword />} />
         </Route>
 
         <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
-
       </Routes>
     </Suspense>
   );

@@ -4,18 +4,17 @@ import { ErrorMessage, Field } from "formik";
 import {
   BoxStyles,
   InputStyles,
-} from "components/Admin/ourContacts/NumberField/NumberField.classes";
+} from "components/ChangePassword/PasswordField/PasswordField.classes";
 
 interface Props {
   labelText: string;
-  name: "currentNumber" | "newNumber";
-  disabled?: boolean;
+  name: "oldPassword" | "newPassword" | "newPasswordRepeat";
 }
 
-export const NumberField = ({ disabled, labelText, name }: Props) => {
+export const PasswordField = ({ labelText, name }: Props) => {
   return (
     <Box sx={BoxStyles}>
-      <Typography variant="h6" component="label" htmlFor={name}>
+      <Typography fontSize="h5" component="label" htmlFor={name}>
         {labelText}
       </Typography>
       <Field
@@ -24,8 +23,7 @@ export const NumberField = ({ disabled, labelText, name }: Props) => {
         disableUnderline
         variant="filled"
         fullWidth
-        disabled={disabled}
-        type="text"
+        type="password"
         name={name}
       />
       <ErrorMessage className="error-message" name={name} component="div" />

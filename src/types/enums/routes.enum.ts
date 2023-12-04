@@ -11,5 +11,6 @@ export enum ROUTES_ENUM {
   AUTH = "auth",
   RESTORE = "auth/restore",
   NEW_PASSWORD = "new-password",
+  CHANGE_PASSWORD = "change-password",
   NOT_FOUND = "/*",
 }
