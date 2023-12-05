@@ -1,6 +1,5 @@
 import * as yup from "yup";
-const phoneRegExp =
-  /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
+const phoneRegExp = /^\d{1,12}$/;
 function CreateContactSchema(data: any) {
   const contactSchema = yup.object().shape({
     name: yup
