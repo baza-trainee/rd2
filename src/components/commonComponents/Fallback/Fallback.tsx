@@ -7,6 +7,8 @@ export const Fallback = (): JSX.Element => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        //flexGrow: "2",
+        //with: "100%",
         height: "100vh",
         backgroundColor: "rgba(0,0,0,0.15)",
       }}

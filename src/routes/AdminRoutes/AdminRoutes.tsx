@@ -6,6 +6,9 @@ import {AuthRoutes} from "routes/AdminRoutes/AuthRoutes";
 import {AdminPanelRoutes} from "routes/AdminRoutes/AdminPanelRoutes";
 
 import {checkIsLoggedIn} from "../../api/adminAuth";
+//import {ToolBar} from "../../components/Admin/sidebar/ToolBar/ToolBar";
+
+//import {AdminContainer} from "../../components/Admin/AdminContainer/AdminContainer";
 
 type ContextValueProps = {
     isLoggedIn: boolean,
@@ -32,7 +35,12 @@ export const AdminRoutes = () => {
             }}>
 
             { isLoggedIn
-                ? <AdminPanelRoutes />
+                ? (
+                    /*<AdminContainer>
+                        <ToolBar />*/
+                        <AdminPanelRoutes />
+                    /*</AdminContainer>*/
+                  )
                 : <AuthRoutes />
             }
             </AuthContext.Provider>

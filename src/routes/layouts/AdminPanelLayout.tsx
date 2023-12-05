@@ -7,21 +7,21 @@ import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPag
 import { ToolBar } from "components/Admin/sidebar/ToolBar/ToolBar";
 
 export const AdminPanelLayout = () => {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
+  //useEffect(() => {
+    //document.body.style.overflow = "hidden";
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+    //return () => {
+      //document.body.style.overflow = "auto";
+    //};
+  //}, []);
 
   return (
-    <AdminContainer>
-      <ToolBar />
+      <AdminContainer>
+          <ToolBar />
 
-      <AdminPageContainer>
-        <Outlet />
-      </AdminPageContainer>
-    </AdminContainer>
+          <AdminPageContainer>
+              <Outlet />
+          </AdminPageContainer>
+      </AdminContainer>
   );
 };

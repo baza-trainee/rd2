@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import {Box, IconButton} from "@mui/material";
 
@@ -11,8 +11,6 @@ import Drawer from "@mui/material/Drawer";
 import {
     useLocation,
 } from "react-router-dom";
-
-import Link from "@mui/material/Link";
 
 import {
   DonateButtonStyled,
