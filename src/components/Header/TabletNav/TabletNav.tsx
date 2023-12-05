@@ -1,12 +1,14 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
-import {IconButton} from "@mui/material";
+import {Box, IconButton} from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Drawer from "@mui/material/Drawer";
+
+import {useLocation} from "react-router-dom";
 
 import {
   DonateButtonStyled,
@@ -18,6 +20,8 @@ import {
 
 export const TabletNav = () => {
 
+  const location = useLocation();
+  const { pathname } = location;
   const [state, setState] = useState({right: false});
 
   const toggleDrawer = (open: boolean) =>
@@ -31,6 +35,14 @@ export const TabletNav = () => {
       }
       setState({ right: open });
     };
+
+    function handleReset() {
+        setState({ right: false });
+    }
+
+    useEffect(() => {
+        setState({ right: false });
+    }, [pathname]);
 
   return (
     <TabletContainer>
@@ -67,9 +79,12 @@ export const TabletNav = () => {
 
           <DonateButtonStyled />
 
-          <NavStyled
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}/>
+            <Box onClick={handleReset}
+                 onKeyDown={toggleDrawer(false)}
+                 role="presentation"
+            >
+                <NavStyled />
+            </Box>
 
           <LanguageMenuStyled />
 

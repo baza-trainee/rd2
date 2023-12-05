@@ -1,9 +1,14 @@
 import { SxProps } from "@mui/material";
 
+import {theme} from "../../../../theme/theme";
+
+const errorTextColor = theme.palette.error.dark;
 const BoxStyles: SxProps = {
+  width: "48%",
+  position: "relative",
   "& .error-message": {
-    color: "red",
-    fontSize: "12px",
+    position: "absolute",
+    color: errorTextColor,
   },
 };
 

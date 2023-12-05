@@ -12,7 +12,8 @@ const BoxStyles: SxProps = {
 const ContainerStyles: SxProps = {
   display: "flex",
   flexDirection: "row",
-  minHeight: "calc(100vh - 8rem)",
+  alignItems: "stretch",
+  minHeight: "calc(100vh - 128px)",
   letterSpacing: 0.5,
 };
 

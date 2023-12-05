@@ -36,7 +36,10 @@ const CardTitle = styled.h2`
   }
 `;
 
-const CardText = styled.p``;
+const CardText = styled.p`
+  @media (min-width: 1440px) {
+    font-size: 18px;
+  }`;
 
 const ActivityImg = styled.img`
   display: block;

@@ -22,20 +22,19 @@ const DescWrap = styled.div`
 
   @media (min-width: 768px) {
     display: flex;
+    align-items: stretch;
   }
   @media (min-width: 1440px) {
-    align-items: center;
     padding: 12px 0;
     margin-bottom: 60px;
   }
 `;
 const Title = styled.h2`
-  margin: 0;
   font-size: 40px;
-  font-weight: 600;
   text-align: center;
   @media (min-width: 768px) {
     width: 260px;
+    align-self: center;
     text-align: start;
   }
   @media (min-width: 1440px) {
@@ -51,17 +50,17 @@ const Divider = styled.span`
   @media (min-width: 768px) {
     display: block;
     width: 1px;
-    height: 144px;
-    margin: 0 24px;
+    height: auto;
+    margin: 5px 24px;
   }
   @media (min-width: 1440px) {
-    height: 66px;
-    margin: 0 32px;
+    margin: 5px 32px;
   }
 `;
 const Desc = styled.p`
   @media (min-width: 768px) {
     width: 396px;
+    align-self: center;
   }
   @media (min-width: 1440px) {
     width: 760px;

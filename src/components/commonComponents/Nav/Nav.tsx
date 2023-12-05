@@ -17,10 +17,11 @@ export const Nav: React.FC<NavProps> = ({ className,onClick, onKeyDown}) => {
     const { t } = useTranslation();
 
     return (
-    <nav className={className} onClick={onClick} onKeyDown={onKeyDown}>
+    <nav className={className}>
 
       {navNames.map((navItem) => (
-        <NavigationLink key={navItem.id} to={navItem.route}>
+        <NavigationLink key={navItem.id} to={navItem.route}
+        >
             {t(navItem.nameKey)}
         </NavigationLink>
       ))}

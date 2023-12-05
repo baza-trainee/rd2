@@ -40,10 +40,13 @@ const ItemWrapper = styled.div`
 `;
 const Pictures = styled.div`
   margin-bottom: 40px;
+  
+  & img {
+    width: 100%;
+    height: auto;
+  }
   @media (min-width: 768px) {
     margin-bottom: 0;
-  }
-  @media (min-width: 1440px) {
   }
 `;
 const Text = styled.p`
@@ -54,6 +57,7 @@ const Text = styled.p`
   }
   @media (min-width: 1440px) {
     width: 483px;
+    font-size: 18px;
   }
 `;
 const Text2 = styled.p`
@@ -66,6 +70,8 @@ const Text2 = styled.p`
     width: 483px;
     margin-left: 145px;
     margin-right: 16px;
+
+    font-size: 18px;
   }
 `;
 export { Container, SectionWrapper, ItemWrapper, Pictures, Text, Text2 };

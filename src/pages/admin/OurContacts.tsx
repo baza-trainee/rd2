@@ -4,9 +4,11 @@ import { useState } from "react";
 import Typography from "@mui/material/Typography";
 
 import { EmailForm } from "components/Admin/ourContacts/EmailForm/EmailForm";
-import { OurContactsContainer } from "components/Admin/ourContacts/OurContactsContainer/OurContactsContainer";
+
 import { PhoneForm } from "components/Admin/ourContacts/PhoneForm/PhoneForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+
+import {PageContentWrapper} from "../../components/Admin/PageContentWrapper/PageContentWrapper";
 
 export const OurContacts = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -25,13 +27,11 @@ export const OurContacts = () => {
         Контакти
       </Typography>
 
-      <OurContactsContainer>
-        <PhoneForm handleOpenModal={handleOpenModal} />
-      </OurContactsContainer>
+        <PageContentWrapper>
+            <PhoneForm handleOpenModal={handleOpenModal} />
 
-      <OurContactsContainer>
-        <EmailForm handleOpenModal={handleOpenModal} />
-      </OurContactsContainer>
+            <EmailForm handleOpenModal={handleOpenModal} />
+        </PageContentWrapper>
 
       <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleCloseModal}>
         Відредаговано

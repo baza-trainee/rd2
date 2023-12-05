@@ -4,7 +4,6 @@ const BoxWrapperStyle: SxProps = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  height: "100%",
 };
 
 const BoxContainerStyle: SxProps = {
