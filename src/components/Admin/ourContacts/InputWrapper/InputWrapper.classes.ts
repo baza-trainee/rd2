@@ -3,6 +3,6 @@ import { SxProps } from "@mui/material";
 export const BoxStyles: SxProps = {
   marginBottom: "32px",
   display: "flex",
-  flexDirection: "column",
+  justifyContent: "space-between",
   rowGap: "10px",
 };

@@ -8,9 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import Drawer from "@mui/material/Drawer";
 
-import {
-    useLocation,
-} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 import {
   DonateButtonStyled,
@@ -24,9 +22,7 @@ export const TabletNav = () => {
 
   const location = useLocation();
   const { pathname } = location;
-
   const [state, setState] = useState({right: false});
-
 
   const toggleDrawer = (open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -45,10 +41,7 @@ export const TabletNav = () => {
     }
 
     useEffect(() => {
-        //if (!state.right) setState({ right: stateRef.current });
-        //toggleDrawer(false)
         setState({ right: false });
-        //console.log("use effect" + pathname);
     }, [pathname]);
 
   return (

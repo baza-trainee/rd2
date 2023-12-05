@@ -17,7 +17,7 @@ export const ButtonChangePassword = ({ icon, buttonText }: Props) => {
 
         <ListItemText sx={{ paddingLeft: "12px" }}>
           <Link to={ROUTES_ENUM.CHANGE_PASSWORD}>
-            <Typography color="#8eb6f8" variant="h6">
+            <Typography variant="h6">
               {buttonText}
             </Typography>
           </Link>

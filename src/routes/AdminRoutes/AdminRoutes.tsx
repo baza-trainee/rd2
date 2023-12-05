@@ -1,9 +1,5 @@
 import { Suspense, lazy } from "react";
 
-import {checkIsLoggedIn} from "../../api/adminAuth";
-//import {ToolBar} from "../../components/Admin/sidebar/ToolBar/ToolBar";
-
-//import {AdminContainer} from "../../components/Admin/AdminContainer/AdminContainer";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { AdminPanelLayout } from "routes/layouts/AdminPanelLayout";
