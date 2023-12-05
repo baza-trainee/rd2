@@ -1,41 +1,44 @@
-import {createContext, useState} from "react";
-import { App } from "App";
-import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
+import { Suspense, lazy } from "react";
 
-import {AuthRoutes} from "routes/AdminRoutes/AuthRoutes";
-import {AdminPanelRoutes} from "routes/AdminRoutes/AdminPanelRoutes";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import {checkIsLoggedIn} from "../../api/adminAuth";
+import { AdminPanelLayout } from "routes/layouts/AdminPanelLayout";
+import { ROUTES_ENUM } from "types/enums/routes.enum";
+import { Fallback } from "components/commonComponents/Fallback/Fallback";
 
-type ContextValueProps = {
-    isLoggedIn: boolean,
-    setIsLoggedIn: (newIsLoggedIn: boolean) => void
-}
+const Feedback = lazy(() => import("pages/admin/Feedback"));
+const FeedbackDetails = lazy(() => import("pages/admin/FeedbackDetails"));
+const OurContacts = lazy(() => import("pages/admin/OurContacts"));
+const Partners = lazy(() => import("pages/admin/Partners"));
+const Reports = lazy(() => import("pages/admin/Reports"));
+const ChangePassword = lazy(() => import("pages/admin/ChangePassword"));
+const NotFound = lazy(() => import("pages/public/NotFound"));
 
-export const AuthContext = createContext<ContextValueProps>({
-    isLoggedIn: false,
-    setIsLoggedIn: () => {},
-});
+export const AdminPanelRoutes = () => {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <Routes>
+        <Route element={<AdminPanelLayout />}>
+          <Route path={ROUTES_ENUM.ADMIN_PARTNERS} element={<Partners />} />
+          <Route
+            index
+            element={<Navigate to={ROUTES_ENUM.ADMIN_PARTNERS} replace={true} />}
+          />
 
-export const AdminRoutes = () => {
+          <Route path={ROUTES_ENUM.ADMIN_REPORTS} element={<Reports />} />
 
-    const initialState = checkIsLoggedIn();
-    const [isLoggedIn, setIsLoggedIn] = useState(initialState);
+          <Route path={ROUTES_ENUM.ADMIN_OUR_CONTACTS} element={<OurContacts />} />
 
-    return (
-        <App>
-            <AuthHeader />
+          <Route path={ROUTES_ENUM.ADMIN_FEEDBACK}>
+            <Route index element={<Feedback />} />
+            <Route path={ROUTES_ENUM.FEEDBACK_DETAILS} element={<FeedbackDetails />} />
+          </Route>
 
-            <AuthContext.Provider value={{
-                isLoggedIn,
-                setIsLoggedIn,
-            }}>
+          <Route path={ROUTES_ENUM.CHANGE_PASSWORD} element={<ChangePassword />} />
+        </Route>
 
-            { isLoggedIn
-                ? <AdminPanelRoutes />
-                : <AuthRoutes />
-            }
-            </AuthContext.Provider>
-        </App>
-    );
+        <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  );
 };

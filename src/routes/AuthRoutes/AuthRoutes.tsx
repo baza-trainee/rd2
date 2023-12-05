@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 
-import {Navigate, Route, Routes} from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AuthLayout } from "routes/layouts/AuthLayout";
 import { ROUTES_ENUM } from "types/enums/routes.enum";
@@ -15,19 +15,14 @@ export const AuthRoutes = () => {
   return (
     <Suspense fallback={<Fallback />}>
       <Routes>
-
         <Route element={<AuthLayout />}>
           <Route path={ROUTES_ENUM.AUTH} element={<Auth />} />
-          <Route
-              index
-              element={<Navigate to={ROUTES_ENUM.AUTH}  />}
-          />
+          <Route index element={<Navigate to={ROUTES_ENUM.AUTH} />} />
           <Route path={ROUTES_ENUM.RESTORE} element={<Restore />} />
           <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<NewPassword />} />
         </Route>
 
         <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
-
       </Routes>
     </Suspense>
   );
