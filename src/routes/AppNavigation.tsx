@@ -1,19 +1,13 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import { PublicRoutes } from "routes/PublicRoutes/PublicRoutes";
-import {AdminRoutes} from "routes/AdminRoutes/AdminRoutes";
+import { Authorization } from "routes/layouts/Authorization";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(
-
     <Route>
       <Route path="/*" element={<PublicRoutes />} />
-      <Route path="/admin/*" element={<AdminRoutes />} />
+      <Route path="/admin/*" element={<Authorization />} />
     </Route>,
-
   ),
 );
