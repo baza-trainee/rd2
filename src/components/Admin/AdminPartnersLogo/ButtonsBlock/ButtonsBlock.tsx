@@ -3,15 +3,17 @@ import React from "react";
 import {Box, Button} from "@mui/material";
 
 type ButtonsBlockProps = {
+    className?: string;
     onReset: () => void
 }
 
-const ButtonsBlock = ({onReset}: ButtonsBlockProps) => {
+const ButtonsBlock = ({onReset, className}: ButtonsBlockProps) => {
 
     return (
         <Box display="flex"
              justifyContent="center"
              m={"auto"} gap={3}
+             className={className}
         >
             <Button
                 variant="contained"

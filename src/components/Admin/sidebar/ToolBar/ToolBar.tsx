@@ -2,8 +2,7 @@
 import { Drawer, Grid, List, ListItem } from "@mui/material";
 
 import iconLeave from "assets/icons/admin/leave.png";
-import iconChangePassword from "assets/icons/admin/change-password.png";
-import { ButtonChangePassword } from "components/Admin/sidebar/ButtonChangePassword/ButtonChangePassword";
+
 import { ButtonLeave } from "components/Admin/sidebar/ButtonLeave/ButtonLeave";
 import { MenuButton } from "components/Admin/sidebar/MenuButton/MenuButton";
 import { buttonsList } from "components/Admin/sidebar/ToolBar/buttonsList";

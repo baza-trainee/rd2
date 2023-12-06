@@ -2,6 +2,8 @@ import Typography from "@mui/material/Typography";
 
 import { TestQuery } from "components/TestQuery/TestQuery";
 
+import {AdminReports} from "../../components/Admin/AdminReports/AdminReports";
+
 export const Reports = () => {
   return (
     <>
@@ -9,7 +11,9 @@ export const Reports = () => {
         Звітність
       </Typography>
 
-      <TestQuery />
+      <AdminReports />
+
+        {/*<TestQuery />*/}
     </>
   );
 };
