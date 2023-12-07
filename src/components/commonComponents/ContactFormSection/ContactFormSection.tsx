@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import ContactForm from "./ContactForm/ContactForm";
-import ModalSuccessSent from "./ModalSuccessSent";
+import { ModalSuccess } from "../ModalSuccess/ModalSuccess";
+
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
+import ContactForm from "./ContactForm/ContactForm";
 
 const ContactFormSection: React.FC = () => {
-
   const { t } = useTranslation();
 
   const [open, setOpenModal] = useState(false);
@@ -20,17 +20,17 @@ const ContactFormSection: React.FC = () => {
     setOpenModal(false);
   };
 
-  return <Container>
+  return (
+    <Container>
+      <SectionWrapper>
+        <Desc>{t("contacts_block.main_page_title")}</Desc>
+        <ContactForm openModal={onOpenModal} />
+      </SectionWrapper>
 
-    <SectionWrapper>
-      <Desc>{t("contacts_block.main_page_title")}</Desc>
-      <ContactForm openModal={onOpenModal} />
-    </SectionWrapper>
-
-    <ModalSuccessSent
-      open={open}
-      onCloseModal={onCloseModal}
-    />
-  </Container>;
+      <ModalSuccess isOpenModal={open} handleCloseModal={onCloseModal}>
+        Повідомлення успішно відправлено
+      </ModalSuccess>
+    </Container>
+  );
 };
 export default ContactFormSection;
