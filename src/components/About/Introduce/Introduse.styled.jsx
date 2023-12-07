@@ -28,50 +28,5 @@ const SectionWrapper = styled.div`
     padding: 121px 40px 120px 40px;
   }
 `;
-const ItemWrapper = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    column-gap: 24px;
-  }
-  @media (min-width: 1440px) {
-    column-gap: 115px;
-  }
-`;
-const Pictures = styled.div`
-  margin-bottom: 40px;
-  
-  & img {
-    width: 100%;
-    height: auto;
-  }
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-  }
-`;
-const Text = styled.p`
-  font-weight: 400;
-  line-height: 150%;
-  @media (min-width: 768px) {
-    width: 340px;
-  }
-  @media (min-width: 1440px) {
-    width: 483px;
-    font-size: 18px;
-  }
-`;
-const Text2 = styled.p`
-  font-weight: 400;
-  line-height: 150%;
-  @media (min-width: 768px) {
-    width: 340px;
-  }
-  @media (min-width: 1440px) {
-    width: 483px;
-    margin-left: 145px;
-    margin-right: 16px;
 
-    font-size: 18px;
-  }
-`;
-export { Container, SectionWrapper, ItemWrapper, Pictures, Text, Text2 };
+export { Container, SectionWrapper };
