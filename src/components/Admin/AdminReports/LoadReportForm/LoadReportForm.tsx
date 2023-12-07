@@ -8,10 +8,15 @@ import {validateReport} from "./loadReportValidation";
 
 import {ButtonsBlockStyled} from "./LoadreportForm.styled";
 
-interface FormValues {
+type FormValues = {
     reportFile?: File;
 }
-const LoadReportForm =({id}:{id: string}) => {
+
+type LoadReportFormProps = {
+    id: string;
+    openModal: () => void;
+}
+const LoadReportForm =({id, openModal}:LoadReportFormProps) => {
 
     const [fileName, setFileName] = useState<string | null>(null)
     const initialValues: FormValues = {};
@@ -21,7 +26,8 @@ const LoadReportForm =({id}:{id: string}) => {
         initialValues: initialValues,
         validate,
         onSubmit: (values,{resetForm}) => {
-            console.log(values.reportFile)
+            console.log(values.reportFile);
+            openModal();
             resetForm({ values: {} });
             setFileName(null);
         },

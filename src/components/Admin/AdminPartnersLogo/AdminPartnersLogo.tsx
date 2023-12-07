@@ -11,11 +11,14 @@ import {LoadLogoBlock} from "components/Admin/AdminPartnersLogo/LoadLogoBlock/Lo
 import {ButtonsBlock} from "components/Admin/AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
 
 
-interface FormValues {
+type FormValues = {
   logoImg?: File;
 }
 
-const AdminPartnersLogo = () => {
+type AdminPartnersLogoProps = {
+    openModal: () => void
+}
+const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
 
   const [previewSrc, setPreviewSrc] = useState<string | null>(null)
 
@@ -27,6 +30,7 @@ const AdminPartnersLogo = () => {
         validate,
         onSubmit: (values,{resetForm}) => {
             console.log(values.logoImg)
+            openModal();
             resetForm({ values: {} });
             setPreviewSrc(null);
         },
