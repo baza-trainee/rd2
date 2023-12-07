@@ -8,7 +8,7 @@ export const validationSchema = object({
   newPassword: string()
     .matches(
       passwordRegex,
-      "пароль має містити тільки латинські літери, одну велику літеру, цифру та спецсимвол !@#$%^&*",
+      "пароль має містити тільки латинські літери (мінімум 8 знаків), одну велику літеру, цифру та спецсимвол !@#$%^&*",
     )
     .required("введіть новий пароль"),
   newPasswordRepeat: string()
