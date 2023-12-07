@@ -4,7 +4,6 @@ import { useState } from "react";
 import { PageContainer } from "components/Contacts/PageContainer/PageContainer";
 import { ContactFormContainer } from "components/Contacts/ContactFormContainer/ContactFormContainer";
 import { OurContacts } from "components/Contacts/OurContacts/OurContacts";
-import ModalSuccessSent from "components/commonComponents/ContactFormSection/ModalSuccessSent";
 import ContactForm from "components/commonComponents/ContactFormSection/ContactForm/ContactForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 
