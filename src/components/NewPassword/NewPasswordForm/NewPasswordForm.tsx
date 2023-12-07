@@ -6,12 +6,17 @@ import { InputContainer } from "components/NewPassword/InputContainer/InputConta
 import { PasswordField } from "components/NewPassword/PasswordField/PasswordField";
 import { validationSchema } from "components/NewPassword/NewPasswordForm/validationSchema";
 
-export const NewPasswordForm = () => {
+interface Props {
+  handleOpenModal: () => void;
+}
+
+export const NewPasswordForm = ({ handleOpenModal }: Props) => {
   const handleSubmit = (
     _: FormPasswords,
     formikHelpers: FormikHelpers<FormPasswords>,
   ) => {
     formikHelpers.resetForm();
+    handleOpenModal();
   };
 
   return (

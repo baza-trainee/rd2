@@ -8,7 +8,7 @@ import { EmailForm } from "components/Admin/ourContacts/EmailForm/EmailForm";
 import { PhoneForm } from "components/Admin/ourContacts/PhoneForm/PhoneForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 
-import {PageContentWrapper} from "../../components/Admin/PageContentWrapper/PageContentWrapper";
+import { PageContentWrapper } from "../../components/Admin/PageContentWrapper/PageContentWrapper";
 
 export const OurContacts = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -27,11 +27,11 @@ export const OurContacts = () => {
         Контакти
       </Typography>
 
-        <PageContentWrapper>
-            <PhoneForm handleOpenModal={handleOpenModal} />
+      <PageContentWrapper>
+        <PhoneForm handleOpenModal={handleOpenModal} />
 
-            <EmailForm handleOpenModal={handleOpenModal} />
-        </PageContentWrapper>
+        <EmailForm handleOpenModal={handleOpenModal} />
+      </PageContentWrapper>
 
       <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleCloseModal}>
         Відредаговано
