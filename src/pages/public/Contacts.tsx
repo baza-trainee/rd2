@@ -6,6 +6,7 @@ import { ContactFormContainer } from "components/Contacts/ContactFormContainer/C
 import { OurContacts } from "components/Contacts/OurContacts/OurContacts";
 import ModalSuccessSent from "components/commonComponents/ContactFormSection/ModalSuccessSent";
 import ContactForm from "components/commonComponents/ContactFormSection/ContactForm/ContactForm";
+import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 
 export const Contacts = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -26,7 +27,9 @@ export const Contacts = () => {
 
       <OurContacts />
 
-      <ModalSuccessSent open={isOpenModal} onCloseModal={handleCloseModal} />
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleCloseModal}>
+        Повідомлення успішно відправлено
+      </ModalSuccess>
     </PageContainer>
   );
 };
