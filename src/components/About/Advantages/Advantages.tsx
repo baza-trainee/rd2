@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { advantageList } from "components/About/Advantages/advantageList";
-import { AdvantagesCard } from "components/About/Advantages/AdvantagesCard/AdvantagesCard";
+import { AdvantagesList } from "components/About/Advantages/AdvantagesList/AdvantagesList";
 
 import {
   Container,
@@ -9,7 +9,6 @@ import {
   Divider,
   Desc,
   Title,
-  AdvantageList,
   SectionWrapper,
 } from "components/About/Advantages/Advantages.styled";
 
@@ -22,21 +21,12 @@ export const Advantages = () => {
         <DescWrap>
           <Title> {t("advantages_block.title")}</Title>
 
-          <Divider></Divider>
+          <Divider />
 
           <Desc>{t("advantages_block.about")}</Desc>
         </DescWrap>
 
-        <AdvantageList>
-          {advantageList.map(({ id, img, titleKey, descKey }) => (
-            <AdvantagesCard
-              key={id}
-              imgSrc={img}
-              titleKey={titleKey}
-              descriptionKey={descKey}
-            />
-          ))}
-        </AdvantageList>
+        <AdvantagesList list={advantageList} />
       </SectionWrapper>
     </Container>
   );
