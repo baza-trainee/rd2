@@ -12,16 +12,16 @@ const ModalStyles: SxProps = {
   width: 446,
   bgcolor: "background.paper",
   border: "1px solid #1B3969",
+  borderRadius: "5px",
   boxShadow: 24,
   paddingInline: "75px",
   textAlign: "center",
 };
 
-const IconStyles = {
+const IconButtonStyles = {
   position: "absolute",
-  top: "20px",
-  right: "20px",
-  cursor: "pointer",
+  top: "10px",
+  right: "10px",
 };
 
-export { ModalStyles, IconStyles };
+export { ModalStyles, IconButtonStyles };

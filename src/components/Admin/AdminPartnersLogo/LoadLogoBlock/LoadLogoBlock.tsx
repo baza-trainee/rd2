@@ -68,6 +68,7 @@ const LoadLogoBlock = (props: LoadLogoBlockProps) => {
                 accept=".jpg, .png, .webp, .svg"
                 id="logoImg"
                 name="logoImg"
+                value=""
                 onChange={onChange}
             />
 

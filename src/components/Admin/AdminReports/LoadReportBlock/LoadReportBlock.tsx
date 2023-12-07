@@ -25,7 +25,7 @@ const LoadReportBlock = (props: LoadReportBlockProps) => {
                 {fileName
                     ? <span>{fileName}</span>
                     : ( <>
-                            <span>Обрати файл</span>
+                            <span>Обрати файл у форматі pdf</span>
                             <DownloadIcon color="primary" />
                         </>)
                 }

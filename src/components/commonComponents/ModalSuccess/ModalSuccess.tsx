@@ -1,7 +1,12 @@
-import { Close } from "@mui/icons-material";
-import { Box, Modal, Typography } from "@mui/material";
+import React from "react";
 
-import { IconStyles, ModalStyles } from "./ModalSuccess.classes";
+import CloseIcon from "@mui/icons-material/Close";
+
+import {Box, IconButton, Modal, Typography} from "@mui/material";
+
+import {IconButtonStyles, ModalStyles} from "./ModalSuccess.classes";
+
+
 
 interface Props {
   children: string;
@@ -13,7 +18,13 @@ export const ModalSuccess = ({ children, isOpenModal, handleCloseModal }: Props)
   return (
     <Modal open={isOpenModal} onClose={handleCloseModal}>
       <Box sx={ModalStyles}>
-        <Close sx={IconStyles} onClick={handleCloseModal} />
+          <IconButton
+              sx={IconButtonStyles}
+              aria-label="close"
+              onClick={handleCloseModal}
+          >
+              <CloseIcon />
+          </IconButton>
 
         <Typography>{children}</Typography>
       </Box>
