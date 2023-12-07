@@ -22,8 +22,10 @@ export const AdvantagesCard = ({ imgSrc, titleKey, descriptionKey }: Props) => {
       <AdvantageImgBox>
         <AdvantageImg src={imgSrc} alt={t(titleKey)} />
       </AdvantageImgBox>
+
       <AdvantageDescBox>
         <AdvantageTitle>{t(titleKey)}</AdvantageTitle>
+
         <p>{t(descriptionKey)}</p>
       </AdvantageDescBox>
     </AdvantageCard>

@@ -66,14 +66,5 @@ const Desc = styled.p`
     width: 760px;
   }
 `;
-const AdvantageList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  @media (min-width: 1440px) {
-    display: flex;
-    justify-content: space-between;
-  }
-`;
 
-export { Container, DescWrap, Divider, Desc, Title, AdvantageList, SectionWrapper };
+export { Container, DescWrap, Divider, Desc, Title, SectionWrapper };
