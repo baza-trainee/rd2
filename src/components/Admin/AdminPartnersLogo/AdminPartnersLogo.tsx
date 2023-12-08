@@ -10,6 +10,8 @@ import {LoadLogoBlock} from "components/Admin/AdminPartnersLogo/LoadLogoBlock/Lo
 
 import {ButtonsBlock} from "components/Admin/AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
 
+import {fetchLogos} from "../../../api/partnersLogo";
+
 
 type FormValues = {
   logoImg?: File;
