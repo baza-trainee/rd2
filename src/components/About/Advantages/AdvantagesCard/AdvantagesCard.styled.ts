@@ -31,7 +31,7 @@ const AdvantageImgBox = styled.div`
   justify-content: center;
   overflow: hidden;
   @media (min-width: 768px) {
-    flex: 1 1 50%;
+    flex: 1 0 50%;
   }
 `;
 const AdvantageImg = styled.img`

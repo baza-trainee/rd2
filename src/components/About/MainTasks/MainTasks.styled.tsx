@@ -70,7 +70,7 @@ const Task = styled.li`
     align-items: flex-start;
   }
   @media (min-width: 1280px) {
-    width: calc((100% - 88px) / 3);
+    width: calc((100% - 72px) / 3);
   }
 `;
 const TaskIcon = styled.img`
