@@ -15,7 +15,7 @@ const Container = styled.section`
     background-position: 50% 50%;
     background-size: cover;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     background: #6c7d8d url(${bgDesk}) no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -30,8 +30,8 @@ const SectionWrapper = styled.div`
     width: 768px;
     padding: 40px 32px;
   }
-  @media (min-width: 1440px) {
-    width: 1440px;
+  @media (min-width: 1280px) {
+    width: 1280px;
     padding: 40px;
   }
 `;
@@ -69,7 +69,7 @@ const Task = styled.li`
     margin: 20px 12px;
     align-items: flex-start;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: calc((100% - 88px) / 3);
   }
 `;
@@ -85,7 +85,7 @@ const TaskDesc = styled.p`
   @media (min-width: 768px) {
     width: 275px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 367px;
   }
 `;
