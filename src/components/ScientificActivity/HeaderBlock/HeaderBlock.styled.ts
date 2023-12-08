@@ -9,7 +9,7 @@ const Title = styled.h1`
     width: 214px;
     text-align: start;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 395px;
   }
 `;
@@ -21,7 +21,7 @@ const TitleWrap = styled.div`
     display: flex;
     align-items: center;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     padding: 12px 0;
     margin-bottom: 74px;
   }
@@ -40,7 +40,7 @@ const Divider = styled.span`
     height: 112px;
     margin: 0 35px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     height: 72px;
     margin: 0 67px;
   }
@@ -51,7 +51,7 @@ const TitleText = styled.p`
   @media (min-width: 768px) {
     width: 420px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 813px;
   }
 `;

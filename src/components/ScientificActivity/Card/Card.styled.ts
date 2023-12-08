@@ -16,7 +16,7 @@ const CardTextWrap = styled.div`
     width: 340px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 668px;
     display: flex;
     flex-direction: column;
@@ -31,15 +31,16 @@ const CardTitle = styled.h2`
   font-size: 16px;
   text-transform: uppercase;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     font-size: 32px;
   }
 `;
 
 const CardText = styled.p`
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     font-size: 18px;
-  }`;
+  }
+`;
 
 const ActivityImg = styled.img`
   display: block;
@@ -52,7 +53,7 @@ const ActivityImg = styled.img`
     width: 340px;
     height: 289px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 668px;
     height: 560px;
   }
