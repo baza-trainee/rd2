@@ -16,7 +16,7 @@ const FormEl = styled.form`
     width: 60%;
     padding: 98px 60px 60px 60px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 712px;
   }
 `;
@@ -56,7 +56,7 @@ const FieldLabel = styled.label`
   pointer-events: none;
   text-transform: capitalize;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     line-height: 27.24px;
   }
 `;

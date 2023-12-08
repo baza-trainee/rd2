@@ -18,14 +18,14 @@ interface Props {
 }
 
 export const PartnersSlider = ({ partnersList }: Props) => {
-  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
-  const isMd = useMediaQuery(theme.breakpoints.up("md"));
-  const isSm = useMediaQuery(theme.breakpoints.up("sm"));
+  const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
+  const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
+  const isAboveSm = useMediaQuery(theme.breakpoints.up("sm"));
 
-  const numToDisplay = handleSlideToDisplay(isSm, isMd, isXl);
+  const numToDisplay = handleSlideToDisplay(isAboveSm, isAboveMd, isAboveLg);
 
-  const prevButton = isMd && <PartnersButtonNav imageSrc={prevIcon} prev />;
-  const nextButton = isMd && <PartnersButtonNav imageSrc={nextIcon} next />;
+  const prevButton = isAboveMd && <PartnersButtonNav imageSrc={prevIcon} prev />;
+  const nextButton = isAboveMd && <PartnersButtonNav imageSrc={nextIcon} next />;
   return (
     <SwiperContainer>
       {prevButton}

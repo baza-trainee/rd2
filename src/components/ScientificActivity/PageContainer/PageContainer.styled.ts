@@ -17,8 +17,8 @@ const SectionWrapper = styled.div`
     width: 768px;
     padding: 80px 32px;
   }
-  @media (min-width: 1440px) {
-    width: 1440px;
+  @media (min-width: 1280px) {
+    width: 1280px;
     padding: 80px 40px 120px 40px;
   }
 `;
