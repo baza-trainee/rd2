@@ -27,6 +27,9 @@ const SectionWrapper = styled.div`
     width: 1280px;
     padding: 121px 40px 120px 40px;
   }
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
 `;
 
 export { Container, SectionWrapper };

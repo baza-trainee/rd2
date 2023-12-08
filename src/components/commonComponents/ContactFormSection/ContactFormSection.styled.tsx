@@ -37,6 +37,9 @@ const SectionWrapper = styled.div`
     width: 1280px;
     padding: 40px 40px 60px 40px;
   }
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
 `;
 const Desc = styled.p`
   margin: 0;
@@ -51,6 +54,7 @@ const Desc = styled.p`
   }
   @media (min-width: 1280px) {
     width: 610px;
+    margin-right: 20px;
     font-size: 32px;
     transform: translateY(0);
   }
