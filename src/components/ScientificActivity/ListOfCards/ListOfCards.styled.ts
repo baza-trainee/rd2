@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   @media (min-width: 768px) {
     row-gap: 40px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     row-gap: 24px;
   }
 `;

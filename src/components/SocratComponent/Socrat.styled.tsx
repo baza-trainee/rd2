@@ -30,9 +30,9 @@ const Container = styled.section`
     padding-bottom: 80px;
     background-image: url(${bcTab});
   }
-  @media (min-width: 1440px) {
-    padding-top: 120px;
-    padding-bottom: 110px;
+  @media (min-width: 1280px) {
+    /* padding-top: 120px;
+    padding-bottom: 110px; */
     background-image: url(${bcDesk});
   }
 `;
@@ -42,7 +42,7 @@ const Picture = styled.picture`
   @media (min-width: 768px) {
     margin-bottom: 30px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-bottom: 14px;
   }
 `;
@@ -56,7 +56,7 @@ const SocrstHeader = styled.h1`
   @media (min-width: 768px) {
     margin-bottom: 24px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-bottom: 16px;
     font-size: 64px;
   }
@@ -71,7 +71,7 @@ const TitleText = styled.p`
   @media (min-width: 768px) {
     width: 704px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     font-size: 20px;
     width: 672px;
     margin-bottom: 26px;
@@ -84,7 +84,7 @@ const SocratAboutWrapper = styled.div`
   @media (min-width: 768px) {
     row-gap: 24px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     flex-direction: row;
     column-gap: 24px;
   }
@@ -101,7 +101,7 @@ const SocratAboutItem = styled.div`
     width: 522px;
     padding: 24px 34px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 361px;
     padding: 24px 24px;
   }
@@ -136,7 +136,7 @@ const Accordion = styled.section`
   @media (min-width: 768px) {
     row-gap: 18px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     row-gap: 32px;
   }
 `;

@@ -1,7 +1,7 @@
 import { getSlideCount } from "helpers/getSlideCount";
 
 describe("getSlideCount", () => {
-  it("when isAboveXl is true should return 3", () => {
+  it("when isAboveLg is true should return 3", () => {
     expect(getSlideCount(false, true)).toBe(3);
   });
   it("when isAboveMd is true should return 2", () => {

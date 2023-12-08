@@ -19,10 +19,10 @@ interface Props {
 }
 
 export const ListOfOurNews = ({ list }: Props) => {
-  const isAboveXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
 
-  const slidesCount = getSlideCount(isAboveMd, isAboveXl);
+  const slidesCount = getSlideCount(isAboveMd, isAboveLg);
 
   const { t } = useTranslation();
 

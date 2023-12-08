@@ -10,7 +10,7 @@ const Card = styled.div`
     flex-direction: row;
     justify-content: space-between;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     column-gap: 124px;
   }
 `;
@@ -24,8 +24,8 @@ const Pictures = styled.div`
     flex: 1 1 50%;
   }
 
-  @media (min-width: 1440px) {
-    height: 483px;
+  @media (min-width: 1280px) {
+    height: 400px;
   }
 
   & img {
@@ -50,7 +50,7 @@ const Text = styled.p`
   @media (min-width: 768px) {
     flex: 1 1 50%;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 530px;
     font-size: 18px;
 

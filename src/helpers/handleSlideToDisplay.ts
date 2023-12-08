@@ -1,15 +1,15 @@
 export const handleSlideToDisplay = (
-  isSm: boolean,
-  isMd: boolean,
-  isXl: boolean,
+  isAboveSm: boolean,
+  isAboveMd: boolean,
+  isAboveLg: boolean,
 ): number => {
   let numToDisplay = 1.5;
 
-  if (isXl) {
-    numToDisplay = 5.5;
-  } else if (isMd) {
+  if (isAboveLg) {
+    numToDisplay = 5;
+  } else if (isAboveMd) {
     numToDisplay = 2.8;
-  } else if (isSm) {
+  } else if (isAboveSm) {
     numToDisplay = 1.5;
   }
 
