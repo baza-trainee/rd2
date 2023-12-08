@@ -4,7 +4,7 @@ const AccordionHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-bottom: 25px;
   }
 `;
@@ -17,9 +17,8 @@ const AccordionItemWrap = styled.div`
     width: 522px;
     padding: 24px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 1013px;
-    padding: 50px;
   }
 `;
 const AccordionHeader = styled.h2`
@@ -29,7 +28,7 @@ const AccordionHeader = styled.h2`
   @media (min-width: 768px) {
     font-size: 18px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     font-size: 24px;
   }
 `;
@@ -41,12 +40,13 @@ const AccordionButton = styled.button`
   border: none;
   width: 24px;
   background-color: inherit;
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 50px;
+  }
 `;
 const Img = styled.img`
   width: 24px;
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 50px;
   }
 `;
@@ -55,7 +55,7 @@ const AccordionBody = styled.div`
   @media (min-width: 768px) {
     width: 445px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 858px;
   }
 `;
@@ -66,11 +66,11 @@ const AccordionCollapse = styled.div`
 `;
 
 export {
-    AccordionItemWrap,
-    AccordionHeader,
-    AccordionButton,
-    AccordionBody,
-    AccordionCollapse,
-    AccordionHeaderWrapper,
-    Img,
+  AccordionItemWrap,
+  AccordionHeader,
+  AccordionButton,
+  AccordionBody,
+  AccordionCollapse,
+  AccordionHeaderWrapper,
+  Img,
 };
