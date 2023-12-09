@@ -5,7 +5,7 @@ const Container = styled.section`
   background-color: #f5f5f5;
 `;
 const SectionWrapper = styled.div`
-  max-width: 1280px;
+  max-width: 1440px;
   width: 360px;
   padding: 72px 16px;
   margin: 0 auto;
@@ -16,6 +16,9 @@ const SectionWrapper = styled.div`
   @media (min-width: 1280px) {
     width: 1280px;
     padding: 120px 40px;
+  }
+  @media (min-width: 1440px) {
+    width: 1440px;
   }
 `;
 const DescWrap = styled.div`

@@ -13,6 +13,10 @@ const ItemWrap = styled.div`
   align-items: center;
 
   margin-bottom: 10px;
+  
+  span {
+    padding-right: 20px;
+  }
 `;
 
 const LinkStyled = styled(Link)`

@@ -34,6 +34,9 @@ const SectionWrapper = styled.div`
     width: 1280px;
     padding: 40px;
   }
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
 `;
 const Title = styled.h2`
   margin: 0;
