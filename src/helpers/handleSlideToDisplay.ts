@@ -1,16 +1,24 @@
 export const handleSlideToDisplay = (
-  isAboveSm: boolean,
+  lengthOflist: number,
   isAboveMd: boolean,
   isAboveLg: boolean,
 ): number => {
-  let numToDisplay = 1.5;
+  let numToDisplay = 1;
 
-  if (isAboveLg) {
+  if ((isAboveMd || isAboveLg) && lengthOflist <= 3) {
+    numToDisplay = lengthOflist;
+  }
+
+  if (isAboveMd && lengthOflist > 3) {
+    numToDisplay = 3;
+  }
+
+  if (isAboveLg && lengthOflist < 6) {
+    numToDisplay = lengthOflist;
+  }
+
+  if (isAboveLg && lengthOflist >= 6) {
     numToDisplay = 5;
-  } else if (isAboveMd) {
-    numToDisplay = 2.8;
-  } else if (isAboveSm) {
-    numToDisplay = 1.5;
   }
 
   return numToDisplay;
