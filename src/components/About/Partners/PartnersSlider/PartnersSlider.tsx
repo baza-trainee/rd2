@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useMediaQuery } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 
 import { theme } from "theme/theme";
 import prevIcon from "assets/images/partners/Icon.png";
@@ -20,29 +20,36 @@ interface Props {
 export const PartnersSlider = ({ partnersList }: Props) => {
   const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
-  const isAboveSm = useMediaQuery(theme.breakpoints.up("sm"));
+  const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
 
-  const numToDisplay = handleSlideToDisplay(isAboveSm, isAboveMd, isAboveLg);
+  const numToDisplay = handleSlideToDisplay(partnersList.length, isAboveMd, isAboveLg);
 
-  const prevButton = isAboveMd && <PartnersButtonNav imageSrc={prevIcon} prev />;
-  const nextButton = isAboveMd && <PartnersButtonNav imageSrc={nextIcon} next />;
+  const prevButton = <PartnersButtonNav imageSrc={prevIcon} prev />;
+  const nextButton = <PartnersButtonNav imageSrc={nextIcon} next />;
+
   return (
     <SwiperContainer>
       {prevButton}
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
+        centeredSlides={isBolowMd}
         slidesPerView={numToDisplay}
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
         }}
       >
-        {partnersList.map(({ id, imageSrc, retinaImageSrc }) => (
-          <SwiperSlide key={id}>
-            <PartnersCard imageSrc={imageSrc} retinaImageSrc={retinaImageSrc} />
-          </SwiperSlide>
-        ))}
+        {partnersList.length < 1 && (
+          <Typography>Тут будуть логотипи наших партнерів</Typography>
+        )}
+
+        {partnersList.length >= 1 &&
+          partnersList.map(({ id, imageSrc }) => (
+            <SwiperSlide key={id}>
+              <PartnersCard imageSrc={imageSrc} />
+            </SwiperSlide>
+          ))}
       </Swiper>
       {nextButton}
     </SwiperContainer>
