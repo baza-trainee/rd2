@@ -1,19 +1,13 @@
 export class RefreshTokenService {
-  private refreshToken: string | null;
-
-  constructor(token: string) {
-    this.refreshToken = token;
-  }
-
-  public setRefreshToken() {
-    localStorage.setItem("refresh-token", this.refreshToken as string);
+  public setRefreshToken(refreshToken: string) {
+    localStorage.setItem("refresh_token", refreshToken);
   }
 
   public getRefreshToken(): string | null {
-    return localStorage.getItem("refresh-token");
+    return localStorage.getItem("refresh_token");
   }
 
   public removeRefreshToken() {
-    localStorage.removeItem("refresh-token");
+    localStorage.removeItem("refresh_token");
   }
 }
