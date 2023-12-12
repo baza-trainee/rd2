@@ -6,14 +6,14 @@ export class RefreshTokenService {
   }
 
   public setRefreshToken() {
-    localStorage.setItem("token", this.refreshToken as string);
+    localStorage.setItem("refresh-token", this.refreshToken as string);
   }
 
   public getRefreshToken(): string | null {
-    return localStorage.getItem("token");
+    return localStorage.getItem("refresh-token");
   }
 
   public removeRefreshToken() {
-    localStorage.removeItem("token");
+    localStorage.removeItem("refresh-token");
   }
 }

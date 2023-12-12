@@ -6,14 +6,14 @@ export class AccessTokenService {
   }
 
   public setAccessToken() {
-    localStorage.setItem("token", this.accessToken as string);
+    localStorage.setItem("access-token", this.accessToken as string);
   }
 
   public getAccessToken(): string | null {
-    return localStorage.getItem("token");
+    return localStorage.getItem("access-token");
   }
 
   public removeAccessToken() {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access-token");
   }
 }
