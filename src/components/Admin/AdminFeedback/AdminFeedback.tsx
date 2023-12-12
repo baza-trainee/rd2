@@ -1,40 +1,27 @@
-import { ChangeEvent, useState } from "react";
+import { useQuery } from "react-query";
 
-import Pagination from "@mui/material/Pagination";
-
-import { Box } from "@mui/material";
-
-import {getPageCount} from "../../../helpers/admin/getPages";
+import {fetchUserList} from "../../../api/feedBackUsers";
 
 import { PageContentWrapper } from "../PageContentWrapper/PageContentWrapper";
 
+import {Fallback} from "../../commonComponents/Fallback/Fallback";
+
+import {loadData} from "../../../api/loadData";
+
 import { LoadFeedbackListButton } from "./LoadFeedbackListButton/LoadFeedbackListButton";
 
-import {userList} from "./userList";
-
-import {UserFeedbackList} from "./UserFeedbackList/UserFeedbackList";
 import {FeedbackListWrapper} from "./AdminFeedback.styled";
+
+import {UsersFeedbackBlock} from "./UsersFeedbackBlock/UsersFeedbackBlock";
 
 const AdminFeedback = () => {
 
-  const totalUsers = userList.length;
-  const limit: number=6;
-  const [page, setPage] = useState(1);
-  //const [displayUser, setDisplayUser] = useState({start: 0, end: 0})
-  const [displayUsers, setDisplayUsers] = useState({start: 0, end: limit})
-  //const [totalUsers, setTotalUsers] = useState(0);// will change after we will recieve userList
+  const { isLoading, isError, data, error } = useQuery({
+    queryKey: ["users"],
+    queryFn: loadData(fetchUserList),
+  });
 
-  //const [totalPages, setTotalPages] = useState(totalUsers/limit);
-
-  const totalPages = getPageCount(totalUsers, limit);
-
-  const handleChange = (event: ChangeEvent<unknown>, page: number) => {
-    setPage(page);
-    setDisplayUsers({
-      start: (page-1)*limit,
-      end: page*limit,
-    });
-  };
+  if (isLoading) return <Fallback />
 
   return (
     <PageContentWrapper>
@@ -43,23 +30,9 @@ const AdminFeedback = () => {
 
         <LoadFeedbackListButton />
 
-        <UserFeedbackList
-            startIndex={displayUsers.start}
-            endIndex={displayUsers.end}
-            total={totalUsers}
-            userList={userList}
-        />
+        {(error instanceof Error) && isError && <p>Error: {error.message}</p>}
 
-          <Box display="flex" justifyContent="center" mt={3} alignItems="end" flexGrow={2}>
-              <Pagination
-                  count={totalPages}
-                  shape="rounded"
-                  color="primary"
-                  defaultPage={page}
-                  page={page}
-                  onChange={handleChange}
-              />
-          </Box>
+        {data && <UsersFeedbackBlock userList={data}/>}
 
       </FeedbackListWrapper>
 
