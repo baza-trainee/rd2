@@ -22,6 +22,7 @@ export const IntroduceList = ({ list }: Props) => {
 
           return (
             <IntroduceCard
+              key={id}
               id={id}
               isEval={isEval}
               desktopImage={desktopImage}
