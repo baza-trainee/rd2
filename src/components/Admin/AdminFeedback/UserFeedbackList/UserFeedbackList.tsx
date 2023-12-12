@@ -1,6 +1,6 @@
 import {UserFeedbackItem} from "../UserFeedbackItem/UserFeedbackItem";
 
-import {IUserFeedback} from "../userList";
+import {IUserFeedback} from "../../../../api/feedBackUsers";
 
 type UserFeedbackListProps = {
     userList: IUserFeedback[],
