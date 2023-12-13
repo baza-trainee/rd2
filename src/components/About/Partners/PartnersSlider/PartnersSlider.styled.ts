@@ -7,6 +7,9 @@ export const SwiperContainer = styled.div`
   align-items: center;
 
   & .swiper-slide {
-    max-width: fit-content;
+    @media screen and (max-width: 767px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
