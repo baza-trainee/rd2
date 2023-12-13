@@ -8,15 +8,15 @@ import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/Modal
 
 export const Partners = () => {
 
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const handleOpenModal = () => {
-        setOpen(true);
-    };
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
 
-    const handleCloseModal = () => {
-        setOpen(false);
-    };
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
 
   return (
     <>

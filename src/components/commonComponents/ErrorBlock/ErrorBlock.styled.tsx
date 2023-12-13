@@ -16,4 +16,4 @@ const StyledText = styled.div<StyledTextProps>`
   position: ${props => (props.blockType ? "static" : "absolute")};
 `;
 
-export {StyledText}
+export {StyledText};

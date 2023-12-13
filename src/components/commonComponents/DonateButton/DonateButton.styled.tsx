@@ -21,6 +21,6 @@ const ButtonStyled = styled(Button)`
     margin-left: 0;
     margin-right: 0;
   }
-`
+`;
 
-export {ButtonStyled}
+export {ButtonStyled};

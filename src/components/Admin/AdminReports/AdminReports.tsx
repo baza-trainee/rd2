@@ -14,33 +14,33 @@ type AdminReportsProps = {
 
 const AdminReports = ({openModal}: AdminReportsProps) => {
 
-    return (
-        <PageContentWrapper>
+  return (
+    <PageContentWrapper>
 
-            <Grid container rowSpacing={6} columnSpacing={2}>
+      <Grid container rowSpacing={6} columnSpacing={2}>
 
-                {
-                    reportsNameList.map((reportTitle, index) => (
+        {
+          reportsNameList.map((reportTitle, index) => (
 
-                        <Grid item xs={6} key={reportTitle+index}>
+            <Grid item xs={6} key={reportTitle+index}>
 
-                            <Typography variant="h6">
-                                {reportTitle}
-                            </Typography>
+              <Typography variant="h6">
+                {reportTitle}
+              </Typography>
 
-                            <LoadReportForm
-                                id={`reportFile${index}`}
-                                openModal={openModal}
-                            />
-                        </Grid>
-
-                    ))
-                }
-
+              <LoadReportForm
+                id={`reportFile${index}`}
+                openModal={openModal}
+              />
             </Grid>
 
-        </PageContentWrapper>
-    );
+          ))
+        }
+
+      </Grid>
+
+    </PageContentWrapper>
+  );
 };
 
 export { AdminReports };

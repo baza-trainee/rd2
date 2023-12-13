@@ -32,10 +32,10 @@ const UserFeedbackDetails = () => {
     enabled: !!id,
   });
 
-  const [userMessages, setUserMessages] = useState<UserMessage[]|null>(null)
+  const [userMessages, setUserMessages] = useState<UserMessage[]|null>(null);
 
   useEffect(() => {
-      data && setUserMessages(mapFeedbackMessages(data.messages));
+    data && setUserMessages(mapFeedbackMessages(data.messages));
   }, [data]);
 
   return (
@@ -58,7 +58,7 @@ const UserFeedbackDetails = () => {
 
             </Typography>
           </Grid>
-          ))
+        ))
         }
 
         <Grid item xs={12}>
@@ -67,8 +67,8 @@ const UserFeedbackDetails = () => {
 
           {error instanceof Error
               && <ErrorBlock blockType={true}>
-                   <p>{error.message}</p>
-                 </ErrorBlock>
+                <p>{error.message}</p>
+              </ErrorBlock>
           }
 
         </Grid>

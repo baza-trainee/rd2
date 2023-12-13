@@ -5,8 +5,8 @@ import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPag
 export const AdminPanelLayout = () => {
 
   return (
-          <AdminPageContainer>
-            <Outlet />
-          </AdminPageContainer>
+    <AdminPageContainer>
+      <Outlet />
+    </AdminPageContainer>
   );
 };

@@ -9,27 +9,27 @@ type ButtonsBlockProps = {
 
 const ButtonsBlock = ({onReset, className}: ButtonsBlockProps) => {
 
-    return (
-        <Box display="flex"
-             justifyContent="center"
-             m={"auto"} gap={3}
-             className={className}
-        >
-            <Button
-                variant="contained"
-                type="submit"
-            >
+  return (
+    <Box display="flex"
+      justifyContent="center"
+      m={"auto"} gap={3}
+      className={className}
+    >
+      <Button
+        variant="contained"
+        type="submit"
+      >
                 Додати
-            </Button>
-            <Button
-                variant="contained"
-                color="secondary"
-                onClick={onReset}
-            >
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={onReset}
+      >
                 Скасувати
-            </Button>
-        </Box>
-    )
-}
+      </Button>
+    </Box>
+  );
+};
 
-export {ButtonsBlock}
+export {ButtonsBlock};

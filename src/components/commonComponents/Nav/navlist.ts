@@ -5,6 +5,6 @@ const navNames:navNamesProps[] = [
   { id: "research_activities", "nameKey": "nav.activity", route: "/activity" },
   { id: "demining", "nameKey": "nav.demining", route: "/demining" },
   { id: "contacts", "nameKey": "nav.contacts", route: "/contacts" },
-]
+];
 
-export {navNames}
+export {navNames};

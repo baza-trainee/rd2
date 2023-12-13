@@ -8,9 +8,9 @@ type ErrorBlockProps = {
 }
 export const ErrorBlock = ({children, blockType=false}: ErrorBlockProps) => {
 
-    return (
-        <StyledText blockType={blockType}>
-            {children}
-        </StyledText>
-    )
-}
+  return (
+    <StyledText blockType={blockType}>
+      {children}
+    </StyledText>
+  );
+};

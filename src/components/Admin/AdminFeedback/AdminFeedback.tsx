@@ -32,8 +32,8 @@ const AdminFeedback = () => {
 
         {error instanceof Error
             && <ErrorBlock blockType={true}>
-                 <p>{error.message}</p>
-               </ErrorBlock>
+              <p>{error.message}</p>
+            </ErrorBlock>
         }
 
         {!isError && data && <UsersFeedbackBlock userList={data} />}

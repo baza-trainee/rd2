@@ -6,4 +6,4 @@ const ButtonsBlockStyled = styled(ButtonsBlock)`
     justify-content: start;
 `;
 
-export {ButtonsBlockStyled}
+export {ButtonsBlockStyled};

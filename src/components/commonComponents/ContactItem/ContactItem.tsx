@@ -15,41 +15,41 @@ type ContactItemProps = {
 
 const ContactItem = ( props: ContactItemProps) => {
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    const {icon, alt, desc, descKey, href, type} = props;
+  const {icon, alt, desc, descKey, href, type} = props;
 
-    switch ( type ) {
+  switch ( type ) {
 
-        case "text":
-            return (
-                <AddressItem >
-                    <img src={icon} width={24} height={24} alt={alt} />
-                    <span>{desc}</span>
-                </AddressItem>
-            )
+  case "text":
+    return (
+      <AddressItem >
+        <img src={icon} width={24} height={24} alt={alt} />
+        <span>{desc}</span>
+      </AddressItem>
+    );
 
-        case "link":
-            return (
-                <StyledLink href={href} target="_blank">
-                    <AddressItem >
-                        <img src={icon} width={24} height={24} alt={alt} />
-                        <span>{desc}</span>
-                    </AddressItem>
-                </StyledLink>
-            )
+  case "link":
+    return (
+      <StyledLink href={href} target="_blank">
+        <AddressItem >
+          <img src={icon} width={24} height={24} alt={alt} />
+          <span>{desc}</span>
+        </AddressItem>
+      </StyledLink>
+    );
 
-        case "translatedLink":
-            return (
-                <StyledLink href={href} target="_blank">
-                    <AddressItem >
-                        <img src={icon} width={24} height={24} alt={alt} />
-                        <span>{ t(descKey) }</span>
-                    </AddressItem>
-                </StyledLink>
-            )
-        default: return <></>
-    }
+  case "translatedLink":
+    return (
+      <StyledLink href={href} target="_blank">
+        <AddressItem >
+          <img src={icon} width={24} height={24} alt={alt} />
+          <span>{ t(descKey) }</span>
+        </AddressItem>
+      </StyledLink>
+    );
+  default: return <></>;
+  }
 };
 
 export {ContactItem};

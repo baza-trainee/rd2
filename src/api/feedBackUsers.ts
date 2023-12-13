@@ -16,22 +16,22 @@ export type GetUsersResponse = {
 };
 
 export const fetchUsersList = () => {
-    //console.log(token)
-    /*return axios.get<GetUsersResponse>(
+  //console.log(token)
+  /*return axios.get<GetUsersResponse>(
         "http://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com/api/user/",
         {headers: {
                 Authorization: token,
             }},
     )*/
-    return api.get<GetUsersResponse>(
-        "/api/user/",
-    )
-}
+  return api.get<GetUsersResponse>(
+    "/api/user/",
+  );
+};
 
 export const fetchUserFeedback = (id: string | undefined) => {
-    return () => api.get<ResponseUserDetails>(
-        `/api/user/${id}`,
-    )
-}
+  return () => api.get<ResponseUserDetails>(
+    `/api/user/${id}`,
+  );
+};
 
 

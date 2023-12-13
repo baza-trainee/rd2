@@ -9,15 +9,15 @@ import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/Modal
 
 export const Reports = () => {
 
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const handleOpenModal = () => {
-        setOpen(true);
-    };
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
 
-    const handleCloseModal = () => {
-        setOpen(false);
-    };
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
@@ -30,7 +30,7 @@ export const Reports = () => {
         Файл успішно завантажено
       </ModalSuccess>
 
-        {/*<TestQuery />*/}
+      {/*<TestQuery />*/}
     </>
   );
 };

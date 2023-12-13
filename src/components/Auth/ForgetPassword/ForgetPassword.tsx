@@ -9,7 +9,7 @@ import {
 export const ForgetPassword = () => {
   return (
     <Box sx={BoxStyles}>
-        <Link sx={LinkStyles} component={RouterLink} to="restore">
+      <Link sx={LinkStyles} component={RouterLink} to="restore">
         Забули пароль?
       </Link>
     </Box>
