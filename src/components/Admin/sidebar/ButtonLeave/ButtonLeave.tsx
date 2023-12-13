@@ -4,9 +4,9 @@ import { Button, ListItem } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../../../routes/layouts/Authorization";
-
-import { LogOut } from "../../../../api/adminAuth";
+import { AccessTokenService } from "services/AccessTokenService";
+import { AuthContext } from "routes/layouts/Authorization";
+import { LogOut } from "api/adminAuth";
 
 interface Props {
   icon: string;
@@ -14,10 +14,14 @@ interface Props {
 }
 
 export const ButtonLeave = ({ icon, buttonText }: Props) => {
+  const { removeAccessToken } = new AccessTokenService();
+
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const onClick = () => {
     LogOut();
+    removeAccessToken();
+
     setIsLoggedIn(false);
     navigate("/admin");
   };

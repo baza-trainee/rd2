@@ -1,27 +1,23 @@
-import axios, {AxiosResponse} from "axios";
+import axios, { AxiosResponse } from "axios";
 
-export function loadData(func:()=> Promise<AxiosResponse<any, any>>) {
+export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
+  return async () => {
+    try {
+      const promise = func();
 
-    return async ()=> {
-        try {
+      const response = await promise;
 
-            const promise = func();
+      console.log(response.data);
 
-            const response = await promise;
+      return response.data;
+    } catch (error) {
+      let errMes: string = "";
 
-            console.log(response.data);
+      if (axios.isAxiosError(error)) errMes = error.message;
 
-            return response.data;
-        }
-        catch (error) {
+      console.log(error);
 
-            let errMes: string = "";
-
-            if (axios.isAxiosError(error)) errMes = error.message;
-
-            console.log(error);
-
-            throw Error(`Виникла помилка при завантаженні даних. ${errMes}` );
-        }
+      throw Error(`Виникла помилка при завантаженні даних. ${errMes}`);
     }
+  };
 }

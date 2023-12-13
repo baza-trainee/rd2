@@ -9,7 +9,7 @@ import {
 export const UsernameField = () => {
   return (
     <Box sx={BoxStyles}>
-      <Typography variant="h6" component="label" htmlFor="username">
+      <Typography variant="h6" component="label" htmlFor="email">
         Логін
       </Typography>
       <Field
@@ -20,9 +20,9 @@ export const UsernameField = () => {
         variant="filled"
         fullWidth
         type="text"
-        name="username"
+        name="email"
       />
-      <ErrorMessage className="error-message" name="username" component="div" />
+      <ErrorMessage className="error-message" name="email" component="div" />
     </Box>
   );
 };

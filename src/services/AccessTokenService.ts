@@ -1,19 +1,13 @@
 export class AccessTokenService {
-  private accessToken: string | null;
-
-  constructor(token: string) {
-    this.accessToken = token;
-  }
-
-  public setAccessToken() {
-    localStorage.setItem("token", this.accessToken as string);
+  public setAccessToken(accessToken: string) {
+    localStorage.setItem("access_token", accessToken);
   }
 
   public getAccessToken(): string | null {
-    return localStorage.getItem("token");
+    return localStorage.getItem("access_token");
   }
 
   public removeAccessToken() {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access_token");
   }
 }
