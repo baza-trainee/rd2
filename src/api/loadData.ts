@@ -7,9 +7,8 @@ export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
 
       const response = await promise;
 
-      console.log(response.data);
-
       return response.data;
+
     } catch (error) {
       let errMes: string = "";
 

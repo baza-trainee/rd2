@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 
-import { FeedbackUserDetails, UserMessage } from "types/typeFeedbackUserDetails";
+import {FeedbackUserDetails, ResponseUserDetails, UserMessage} from "types/typeFeedbackUserDetails";
+
 import { theme } from "theme/theme";
-import { LoadData } from "api/feedbackData";
+
 import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
+
 import { fieldNamesList } from "components/Admin/AdminFeedback/UserFeedbackDetails/FieldNamesList";
 
 import {
@@ -15,26 +17,36 @@ import {
   MessageDateBlock,
 } from "components/Admin/AdminFeedback/UserFeedbackDetails/UserFeedbackDetales.styled";
 
-//type UserProps = {
-//name: string,
-//surname: string,
-//phone: string,
-//email: string,
-//message: []
-//}
+import {useQuery} from "react-query";
+
+import {loadData} from "../../../../api/loadData";
+
+import {fetchUserFeedback} from "../../../../api/feedBackUsers";
+
+import {mapFeedbackMessages} from "../../../../helpers/admin/mapFeedbackMessages";
+import {FeedbackDetailsMessages} from "../FeedbackDetailsMessages/FeedbackDetailsMessages";
+import {ErrorBlock} from "../../../commonComponents/ErrorBlock/ErrorBlock";
 
 const UserFeedbackDetails = () => {
+
   const { id } = useParams();
 
-  const [user, setUser] = useState<FeedbackUserDetails | null>(null);
+  const { isLoading, data, error } = useQuery({
+    queryKey: ["user", id],
+    queryFn: loadData(fetchUserFeedback(id)),
+    enabled: !!id,
+  });
+
+  const [userMessages, setUserMessages] = useState<UserMessage[]|null>(null)
 
   useEffect(() => {
-    id && LoadData(id).then((response: FeedbackUserDetails) => setUser(response));
-  }, [id]);
+      data && setUserMessages(mapFeedbackMessages(data.messages));
+  }, [data]);
 
   return (
     <PageContentWrapper>
       <Grid container spacing={2}>
+
         {fieldNamesList.map((fieldItem) => (
           <Grid item xs={6} key={fieldItem.key}>
             <Typography variant="h6" color={theme.palette.primary.dark}>
@@ -42,31 +54,28 @@ const UserFeedbackDetails = () => {
             </Typography>
 
             <Typography variant="h6">
-              {user
-                ? user[fieldItem.key as keyof Omit<FeedbackUserDetails, "messages">]
-                : "load..."}
+
+              {isLoading && "load..."}
+
+              {data && data[fieldItem.key as keyof Omit<FeedbackUserDetails, "messages">]}
+
+              {error instanceof Error && null}
+
             </Typography>
           </Grid>
-        ))}
+          ))
+        }
 
         <Grid item xs={12}>
-          {user ? (
-            user.messages.map((mes: UserMessage, index) => (
-              <MessageBlock key={index}>
-                <MessageDateBlock>
-                  <span>дата звернення: </span>
-                  <span>{mes.date}</span>
-                </MessageDateBlock>
-                <Typography variant="h6" color={theme.palette.primary.dark}>
-                  Текст звернення
-                </Typography>
 
-                <Typography variant="h6">{mes.message}</Typography>
-              </MessageBlock>
-            ))
-          ) : (
-            <p>"load..."</p>
-          )}
+          {userMessages && <FeedbackDetailsMessages userMessages={userMessages}/>}
+
+          {error instanceof Error
+              && <ErrorBlock blockType={true}>
+                   <p>{error.message}</p>
+                 </ErrorBlock>
+          }
+
         </Grid>
       </Grid>
     </PageContentWrapper>

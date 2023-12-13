@@ -9,9 +9,6 @@ type UserFeedbackItemProps = {
 };
 
 const UserFeedbackItem = ({ name, surname, id }: UserFeedbackItemProps) => {
-  const onClick = () => {
-    console.log(id);
-  };
 
   return (
     <ItemWrap>
@@ -20,7 +17,7 @@ const UserFeedbackItem = ({ name, surname, id }: UserFeedbackItemProps) => {
         <span>{surname}</span>
       </Typography>
 
-      <LinkStyled to={id} onClick={onClick}>
+      <LinkStyled to={`${id}`}>
         Детальніше
       </LinkStyled>
     </ItemWrap>

@@ -21,10 +21,6 @@ const UsersFeedbackBlock = ({userList}:UsersFeedbackBlockProps) => {
     const [page, setPage] = useState(1);
     //const [displayUser, setDisplayUser] = useState({start: 0, end: 0})
     const [displayUsers, setDisplayUsers] = useState({start: 0, end: limit})
-    //const [totalUsers, setTotalUsers] = useState(0);// will change after we will recieve userList
-
-    //const [totalPages, setTotalPages] = useState(totalUsers/limit);
-
     const totalPages = getPageCount(totalUsers, limit);
 
     const handleChange = (event: ChangeEvent<unknown>, page: number) => {

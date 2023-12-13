@@ -1,13 +1,15 @@
+import React, {ReactNode} from "react";
+
 import {StyledText} from "./ErrorBlock.styled";
 
 type ErrorBlockProps = {
-    blockType: boolean;
-    children: string;
+    blockType?: boolean;
+    children: ReactNode;
 }
-export const ErrorBlock = ({children, blockType = false}: ErrorBlockProps) => {
+export const ErrorBlock = ({children, blockType=false}: ErrorBlockProps) => {
 
     return (
-        <StyledText blockType>
+        <StyledText blockType={blockType}>
             {children}
         </StyledText>
     )

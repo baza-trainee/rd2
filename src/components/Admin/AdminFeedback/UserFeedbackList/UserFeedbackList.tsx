@@ -19,10 +19,10 @@ const UserFeedbackList = (props: UserFeedbackListProps) => {
         for (let i=start; i<end; i++) {
             const user =
                 <UserFeedbackItem
-                    key={userList[i].id+i}
-                    name={userList[i].name + i}
-                    surname={userList[i].surname + i}
-                    id={userList[i].id+i}
+                    key={userList[i].id}
+                    name={userList[i].name}
+                    surname={userList[i].surname}
+                    id={userList[i].id}
                 />
             users.push(user);
         }
