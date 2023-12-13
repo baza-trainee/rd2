@@ -4,18 +4,13 @@ import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 
-import {FeedbackUserDetails, ResponseUserDetails, UserMessage} from "types/typeFeedbackUserDetails";
+import {FeedbackUserDetails, UserMessage} from "types/typeFeedbackUserDetails";
 
 import { theme } from "theme/theme";
 
 import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
 
 import { fieldNamesList } from "components/Admin/AdminFeedback/UserFeedbackDetails/FieldNamesList";
-
-import {
-  MessageBlock,
-  MessageDateBlock,
-} from "components/Admin/AdminFeedback/UserFeedbackDetails/UserFeedbackDetales.styled";
 
 import {useQuery} from "react-query";
 

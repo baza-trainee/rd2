@@ -1,6 +1,6 @@
 //import axios from "axios";
 
-import {FeedbackUserDetails, ResponseUserDetails} from "../types/typeFeedbackUserDetails";
+import {ResponseUserDetails} from "../types/typeFeedbackUserDetails";
 
 import {api} from "./instanceApi";
 
