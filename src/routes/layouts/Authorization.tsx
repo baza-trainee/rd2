@@ -36,13 +36,13 @@ export const Authorization = () => {
         }}
       >
         {isLoggedIn
-            ? (
-                <AdminContainer>
-                  <ToolBar />
-                  <AdminPanelRoutes />
-                </AdminContainer>
-            )
-            : <AuthRoutes />
+          ? (
+            <AdminContainer>
+              <ToolBar />
+              <AdminPanelRoutes />
+            </AdminContainer>
+          )
+          : <AuthRoutes />
         }
       </AuthContext.Provider>
     </App>

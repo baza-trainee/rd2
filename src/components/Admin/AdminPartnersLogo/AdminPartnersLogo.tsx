@@ -19,37 +19,37 @@ type AdminPartnersLogoProps = {
 }
 const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
 
-  const [previewSrc, setPreviewSrc] = useState<string | null>(null)
+  const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
   const initialValues: FormValues = {};
   const validate = validateImage;
 
-    const formik = useFormik({
-        initialValues: initialValues,
-        validate,
-        onSubmit: (values,{resetForm}) => {
-            console.log(values.logoImg)
-            openModal();
-            resetForm({ values: {} });
-            setPreviewSrc(null);
-        },
-    });
+  const formik = useFormik({
+    initialValues: initialValues,
+    validate,
+    onSubmit: (values,{resetForm}) => {
+      console.log(values.logoImg);
+      openModal();
+      resetForm({ values: {} });
+      setPreviewSrc(null);
+    },
+  });
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 
-      if (e.currentTarget.files) {
-          const loadImg = e.currentTarget.files[0];
-          formik.setFieldValue("logoImg", loadImg, true)
-              .then(() => {
-                setPreviewSrc(URL.createObjectURL(loadImg))
-              });
-      }
-  }
+    if (e.currentTarget.files) {
+      const loadImg = e.currentTarget.files[0];
+      formik.setFieldValue("logoImg", loadImg, true)
+        .then(() => {
+          setPreviewSrc(URL.createObjectURL(loadImg));
+        });
+    }
+  };
 
   const onResetForm = () => {
-      formik.resetForm({ values: {} });
-      setPreviewSrc(null);
-  }
+    formik.resetForm({ values: {} });
+    setPreviewSrc(null);
+  };
 
   return (
     <PageContentWrapper>
@@ -57,9 +57,9 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
       <form onSubmit={formik.handleSubmit}>
 
         <LoadLogoBlock
-               previewSrc={previewSrc}
-               errorMes={formik.errors.logoImg}
-               onChange={onChangeInput}
+          previewSrc={previewSrc}
+          errorMes={formik.errors.logoImg}
+          onChange={onChangeInput}
         />
         <ButtonsBlock onReset={onResetForm}/>
 

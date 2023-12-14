@@ -6,15 +6,15 @@ import {Wrapper} from "./SuccessContent.styled";
 
 const SuccessContent = () => {
 
-    const {t} = useTranslation();
+  const {t} = useTranslation();
 
   return (
     <Wrapper>
       <Typography variant="h2" align="center">
-          { t("donate_modal.success_title") }
+        { t("donate_modal.success_title") }
       </Typography>
       <Typography variant="h3" align="center">
-          { t("donate_modal.success_text") }
+        { t("donate_modal.success_text") }
       </Typography>
     </Wrapper>
   );

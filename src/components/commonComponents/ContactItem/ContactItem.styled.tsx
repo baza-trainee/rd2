@@ -9,6 +9,6 @@ const AddressItem = styled.p`
 
 const StyledLink = styled.a`
     color: inherit;
-`
+`;
 
 export {AddressItem, StyledLink};

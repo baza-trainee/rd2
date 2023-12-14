@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import {theme} from "../../../../theme/theme";
 
-const borderColor = theme.palette.primary.main
+const borderColor = theme.palette.primary.main;
 const MessageBlock = styled.div`
   margin-bottom: 20px;
   padding-top: 20px;
@@ -14,4 +14,4 @@ const MessageDateBlock = styled.div`
 margin-bottom: 10px
 `;
 
-export {MessageBlock, MessageDateBlock}
+export {MessageBlock, MessageDateBlock};

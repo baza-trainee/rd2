@@ -34,12 +34,12 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
   const onClickMenuItem = (e: React.MouseEvent<HTMLElement>) => {
 
     changeLanguage(e.currentTarget.id)
-        .then(() => onCloseMenu());
+      .then(() => onCloseMenu());
   };
 
   useEffect(() => {
     i18n.on("languageChanged",
-            ()=> setMenuLang(i18n.language))
+      ()=> setMenuLang(i18n.language));
   }, []);
 
   return (
@@ -73,7 +73,7 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
           },
         }}
       >
-          <MenuItemsList onClick={onClickMenuItem}/>
+        <MenuItemsList onClick={onClickMenuItem}/>
       </Menu>
 
     </LanguageMenuWrap>

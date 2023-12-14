@@ -38,7 +38,7 @@ export const ToolBar = () => {
             <ListItem disablePadding sx={{ marginBottom: "34px" }}>
               <NavLinkStyled to={ROUTES_ENUM.CHANGE_PASSWORD} >
                 <MenuButton icon={{ iconType: "custom", iconEl: changePasswordSvgIcon }}
-                            buttonText="Змінити пароль"
+                  buttonText="Змінити пароль"
                 />
               </NavLinkStyled>
             </ListItem>

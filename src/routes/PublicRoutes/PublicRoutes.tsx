@@ -14,7 +14,7 @@ const NotFound = lazy(() => import("pages/public/NotFound"));
 
 export const PublicRoutes = () => {
   return (
-      <Suspense fallback={<Fallback />}>
+    <Suspense fallback={<Fallback />}>
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<About />} />

@@ -18,13 +18,13 @@ export const ModalSuccess = ({ children, isOpenModal, handleCloseModal }: Props)
   return (
     <Modal open={isOpenModal} onClose={handleCloseModal}>
       <Box sx={ModalStyles}>
-          <IconButton
-              sx={IconButtonStyles}
-              aria-label="close"
-              onClick={handleCloseModal}
-          >
-              <CloseIcon />
-          </IconButton>
+        <IconButton
+          sx={IconButtonStyles}
+          aria-label="close"
+          onClick={handleCloseModal}
+        >
+          <CloseIcon />
+        </IconButton>
 
         <Typography>{children}</Typography>
       </Box>

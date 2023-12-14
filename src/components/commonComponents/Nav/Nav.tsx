@@ -14,15 +14,15 @@ interface NavProps {
 
 export const Nav: React.FC<NavProps> = ({ className,onClick, onKeyDown}) => {
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
+  return (
     <nav className={className}>
 
       {navNames.map((navItem) => (
         <NavigationLink key={navItem.id} to={navItem.route}
         >
-            {t(navItem.nameKey)}
+          {t(navItem.nameKey)}
         </NavigationLink>
       ))}
 

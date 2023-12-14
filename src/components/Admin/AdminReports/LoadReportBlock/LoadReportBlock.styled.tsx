@@ -61,4 +61,4 @@ const ErrorBlock = styled.p`
 `;
 
 
-export {LoadFieldWrapper, LabelStyled, InputStyled, ErrorBlock}
+export {LoadFieldWrapper, LabelStyled, InputStyled, ErrorBlock};

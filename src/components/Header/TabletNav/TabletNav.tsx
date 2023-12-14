@@ -36,13 +36,13 @@ export const TabletNav = () => {
       setState({ right: open });
     };
 
-    function handleReset() {
-        setState({ right: false });
-    }
+  function handleReset() {
+    setState({ right: false });
+  }
 
-    useEffect(() => {
-        setState({ right: false });
-    }, [pathname]);
+  useEffect(() => {
+    setState({ right: false });
+  }, [pathname]);
 
   return (
     <TabletContainer>
@@ -79,12 +79,12 @@ export const TabletNav = () => {
 
           <DonateButtonStyled />
 
-            <Box onClick={handleReset}
-                 onKeyDown={toggleDrawer(false)}
-                 role="presentation"
-            >
-                <NavStyled />
-            </Box>
+          <Box onClick={handleReset}
+            onKeyDown={toggleDrawer(false)}
+            role="presentation"
+          >
+            <NavStyled />
+          </Box>
 
           <LanguageMenuStyled />
 

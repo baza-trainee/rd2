@@ -36,7 +36,7 @@ export const DonateButton = ({className}: DonateButtonProps) => {
         onClick={onClickOpen}
         className={className}
       >
-          {t("buttons.donate")}
+        {t("buttons.donate")}
       </ButtonStyled>
 
       <DonateModal

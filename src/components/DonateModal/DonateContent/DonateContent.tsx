@@ -20,7 +20,7 @@ type DonateContentProps = {
 
 const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const {payment, onClickPayment,
     inputValue, onClickSum, onChangeValue,
@@ -29,7 +29,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
   return (
     <FormStyled onSubmit={onSubmitForm}>
       <TypographyStyled variant="h3" align="center">
-          { t("donate_modal.payment_amount") }
+        { t("donate_modal.payment_amount") }
       </TypographyStyled>
 
       <PaymentAmountBtns
@@ -51,7 +51,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
       </RelativeBlock>
 
       <TypographyStyled variant="h3"  align="center">
-          { t("donate_modal.payment_method") }
+        { t("donate_modal.payment_method") }
       </TypographyStyled>
 
       <PaymentInfoBtns
@@ -67,7 +67,7 @@ const DonateContent = ({onChangeSuccess}:DonateContentProps) => {
           fullWidth={true}
           type="submit"
         >
-            { t("buttons.pay") }
+          { t("buttons.pay") }
         </Button>
       </BottomContainer>
     </FormStyled>
