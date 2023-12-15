@@ -1,29 +1,5 @@
 import styled from "@emotion/styled";
 
-const Container = styled.section`
-  width: 100%;
-  background-color: #f5f5f5;
-`;
-
-const SectionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 360px;
-  padding: 20px 16px 108px 16px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    width: 768px;
-    padding: 80px 184px 94px;
-  }
-  @media (min-width: 1440px) {
-    width: 1440px;
-    padding: 60px 521px 94px;
-  }
-`;
-
 const Drone = styled.img`
   width: 250px;
   height: 84px;
@@ -87,29 +63,4 @@ const Text2 = styled.p`
   }
 `;
 
-const Button = styled.button`
-  display: flex;
-  width: 328px;
-  padding: 16px 24px;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 5px;
-  background: #4285f4;
-
-  cursor: pointer;
-  border: none;
-
-  font-size: 14px;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: uppercase;
-  color: #f5f5f5;
-
-  @media (min-width: 768px) {
-    width: 398px;
-    font-size: 18px;
-  }
-`;
-
-export { Container, SectionWrapper, Drone, Numb, Text, Text2, Button, Picture };
+export { Drone, Numb, Text, Text2, Picture };
