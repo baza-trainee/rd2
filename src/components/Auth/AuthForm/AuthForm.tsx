@@ -13,24 +13,27 @@ import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { AuthContext } from "routes/layouts/Authorization";
 import { signIn } from "api/signIn";
 
-export const AuthForm = () => {
+interface Props {
+  handleIsOpenModal: () => void;
+}
+
+export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const navigate = useNavigate();
   const { getAccessToken } = new AccessTokenService();
   const { setIsLoggedIn } = useContext(AuthContext);
 
-  const handleSubmit = (
-    credentials: FormValues,
-    formikHelpers: FormikHelpers<FormValues>,
-  ) => {
+  const handleSubmit = (credentials: FormValues, _: FormikHelpers<FormValues>) => {
     signIn(credentials)
-      .then((_) => {
+      .then(() => {
         if (getAccessToken()) {
           setIsLoggedIn(true);
           navigate("/admin");
         }
+
+        throw new Error("Not correct credentials");
       })
-      .finally(() => {
-        formikHelpers.resetForm();
+      .catch(() => {
+        handleIsOpenModal();
       });
   };
 

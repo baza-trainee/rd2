@@ -20,7 +20,6 @@ fetcher.interceptors.request.use(
     const accessToken = getAccessToken();
 
     if (accessToken) {
-      //config.headers.Authorization = `Bearer ${accessToken}`;
       config.headers.Authorization = accessToken;
     }
 
