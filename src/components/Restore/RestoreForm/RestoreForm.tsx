@@ -12,15 +12,15 @@ import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 
 interface Props {
-  handleOpenModal: () => void;
+  handleOpenModalSuccess: () => void;
 }
 
-export const RestoreForm = ({ handleOpenModal }: Props) => {
+export const RestoreForm = ({ handleOpenModalSuccess }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   const mutation = useMutation((email: FormEmail) => restorePassword(email), {
     onSuccess: () => {
-      handleOpenModal();
+      handleOpenModalSuccess();
     },
 
     onError: () => {

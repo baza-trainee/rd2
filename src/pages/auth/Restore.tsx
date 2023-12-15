@@ -19,7 +19,7 @@ export const Restore = () => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm handleOpenModal={handleIsOpenModal} />
+      <RestoreForm handleOpenModalSuccess={handleIsOpenModal} />
 
       <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Перейдіть за посиланням, відправленим у листі на Вашу пошту
