@@ -13,7 +13,11 @@ import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { AuthContext } from "routes/layouts/Authorization";
 import { signIn } from "api/signIn";
 
-export const AuthForm = () => {
+interface Props {
+  handleIsOpenModal: () => void;
+}
+
+export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const navigate = useNavigate();
   const { getAccessToken } = new AccessTokenService();
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -28,11 +32,8 @@ export const AuthForm = () => {
           setIsLoggedIn(true);
           navigate("/admin");
         }
-      })
-      .catch((error) => {
-        if (error) {
-          console.log(error);
-        }
+
+        handleIsOpenModal();
       })
       .finally(() => {
         formikHelpers.resetForm();
