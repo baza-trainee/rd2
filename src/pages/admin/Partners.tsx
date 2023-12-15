@@ -1,22 +1,11 @@
-import React, {useState} from "react";
-
 import Typography from "@mui/material/Typography";
 
 import { AdminPartnersLogo } from "components/Admin/AdminPartnersLogo/AdminPartnersLogo";
-
-import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/ModalSuccess";
+import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const Partners = () => {
-
-  const [open, setOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpen(false);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -24,10 +13,10 @@ export const Partners = () => {
         Лого партнерів
       </Typography>
 
-      <AdminPartnersLogo openModal={handleOpenModal}/>
+      <AdminPartnersLogo openModal={handleIsOpenModal} />
 
-      <ModalSuccess isOpenModal={open} handleCloseModal={handleCloseModal} >
-         Логотип успішно завантажено
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
+        Логотип успішно завантажено
       </ModalSuccess>
     </>
   );
