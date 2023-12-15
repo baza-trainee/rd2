@@ -22,21 +22,18 @@ export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const { getAccessToken } = new AccessTokenService();
   const { setIsLoggedIn } = useContext(AuthContext);
 
-  const handleSubmit = (
-    credentials: FormValues,
-    formikHelpers: FormikHelpers<FormValues>,
-  ) => {
+  const handleSubmit = (credentials: FormValues, _: FormikHelpers<FormValues>) => {
     signIn(credentials)
-      .then((_) => {
+      .then(() => {
         if (getAccessToken()) {
           setIsLoggedIn(true);
           navigate("/admin");
         }
 
-        handleIsOpenModal();
+        throw new Error("Not correct credentials");
       })
-      .finally(() => {
-        formikHelpers.resetForm();
+      .catch(() => {
+        handleIsOpenModal();
       });
   };
 
