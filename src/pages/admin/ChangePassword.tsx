@@ -1,22 +1,13 @@
 /* eslint-disable max-len */
-import { useState } from "react";
-
 import { Typography } from "@mui/material";
 
 import { ChangePasswordForm } from "components/ChangePassword/ChangePasswordForm/ChangePasswordForm";
 import { FormContainer } from "components/ChangePassword/FormContainer/FormContainer";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 const ChangePassword = () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-  const handleOpenModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -25,10 +16,10 @@ const ChangePassword = () => {
       </Typography>
 
       <FormContainer>
-        <ChangePasswordForm handleOpenModal={handleOpenModal} />
+        <ChangePasswordForm handleOpenModal={handleIsOpenModal} />
       </FormContainer>
 
-      <ModalSuccess handleCloseModal={handleCloseModal} isOpenModal={isOpenModal}>
+      <ModalSuccess handleCloseModal={handleIsOpenModal} isOpenModal={isOpenModal}>
         Пароль успішно змінено
       </ModalSuccess>
     </>
