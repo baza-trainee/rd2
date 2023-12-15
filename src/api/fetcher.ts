@@ -11,11 +11,11 @@ const BASE_URL =
   process.env.REACT_APP_BASE_URL ||
   "http://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com";
 
-export const api = axios.create({
+export const fetcher = axios.create({
   baseURL: BASE_URL,
 });
 
-api.interceptors.request.use(
+fetcher.interceptors.request.use(
   (config) => {
     const accessToken = getAccessToken();
 
@@ -31,7 +31,7 @@ api.interceptors.request.use(
   },
 );
 
-api.interceptors.response.use(
+fetcher.interceptors.response.use(
   (response) => {
     return response;
   },
@@ -46,16 +46,17 @@ api.interceptors.response.use(
 
       if (refreshToken) {
         try {
-          const newAccessTokenResponse = await api.post("/api/auth/refresh", {
+          const newAccessTokenResponse = await fetcher.post("/api/auth/refresh", {
             refresh_token: refreshToken,
           });
 
           const newAccessToken = newAccessTokenResponse.data.access_token;
           setAccessToken(newAccessToken);
 
-          api.defaults.headers.common["Authorization"] = newAccessToken;
+          //api.defaults.headers.common["Authorization"] = `Bearer ${newAccessToken}`;
+          fetcher.defaults.headers.common["Authorization"] = newAccessToken;
 
-          return api(originalRequest);
+          return fetcher(originalRequest);
         } catch (refreshError) {
           const navigate = useNavigate();
           navigate("/admin");

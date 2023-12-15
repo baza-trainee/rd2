@@ -2,7 +2,7 @@ import { isAxiosError } from "axios";
 
 import { AccessTokenService } from "services/AccessTokenService";
 import { RefreshTokenService } from "services/RefreshTokenService";
-import { api } from "api/instanceApi";
+import { fetcher } from "api/fetcher";
 import { Credentials } from "types/credentials";
 import { Tokens } from "types/tokens";
 
@@ -16,7 +16,7 @@ const { setRefreshToken } = new RefreshTokenService();
 
 export const signIn = async (credentials: Credentials): Promise<void> => {
   try {
-    const response = await api.post<Tokens>("/api/auth/login", credentials, {
+    const response = await fetcher.post<Tokens>("/api/auth/login", credentials, {
       headers: {
         "Content-Type": "application/json",
       },
