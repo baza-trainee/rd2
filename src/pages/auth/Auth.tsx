@@ -2,14 +2,10 @@ import { Typography } from "@mui/material";
 
 import { AuthForm } from "components/Auth/AuthForm/AuthForm";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
-import { useState } from "react";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const Auth = () => {
-  const [isOpenModalError, setIsOpenModalError] = useState<boolean>(false);
-
-  const handleIsOpenModal = () => {
-    setIsOpenModalError((prev) => !prev);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -19,7 +15,7 @@ export const Auth = () => {
 
       <AuthForm handleIsOpenModal={handleIsOpenModal} />
 
-      <ModalError handleCloseModal={handleIsOpenModal} isOpenModal={isOpenModalError}>
+      <ModalError handleCloseModal={handleIsOpenModal} isOpenModal={isOpenModal}>
         Ви ввели не вірний логін, або пароль
       </ModalError>
     </>

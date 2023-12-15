@@ -12,6 +12,7 @@ import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { AuthContext } from "routes/layouts/Authorization";
 import { signIn } from "api/signIn";
+import { useMutation } from "react-query";
 
 interface Props {
   handleIsOpenModal: () => void;
@@ -22,19 +23,24 @@ export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const { getAccessToken } = new AccessTokenService();
   const { setIsLoggedIn } = useContext(AuthContext);
 
-  const handleSubmit = (credentials: FormValues, _: FormikHelpers<FormValues>) => {
-    signIn(credentials)
-      .then(() => {
-        if (getAccessToken()) {
-          setIsLoggedIn(true);
-          navigate("/admin");
-        }
+  const mutation = useMutation((credentials: FormValues) => signIn(credentials), {
+    onSuccess: () => {
+      if (getAccessToken()) {
+        setIsLoggedIn(true);
+        navigate("/admin");
+      }
+      throw new Error("invalid credentials");
+    },
 
-        throw new Error("Not correct credentials");
-      })
-      .catch(() => {
-        handleIsOpenModal();
-      });
+    onError: () => {
+      handleIsOpenModal();
+    },
+  });
+
+  const { isLoading } = mutation;
+
+  const handleSubmit = (credentials: FormValues, _: FormikHelpers<FormValues>) => {
+    mutation.mutate(credentials);
   };
 
   return (
@@ -51,7 +57,7 @@ export const AuthForm = ({ handleIsOpenModal }: Props) => {
         <ForgetPassword />
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Вхід
+          {(isLoading && <div>Fallback</div>) || "Вхід"}
         </Button>
       </Form>
     </Formik>
