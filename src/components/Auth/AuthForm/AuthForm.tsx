@@ -29,6 +29,11 @@ export const AuthForm = () => {
           navigate("/admin");
         }
       })
+      .catch((error) => {
+        if (error) {
+          console.log(error);
+        }
+      })
       .finally(() => {
         formikHelpers.resetForm();
       });
