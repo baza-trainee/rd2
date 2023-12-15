@@ -1,36 +1,23 @@
-import React, {useState} from "react";
-
 import Typography from "@mui/material/Typography";
 
-import { TestQuery } from "components/TestQuery/TestQuery";
-
-import {AdminReports} from "../../components/Admin/AdminReports/AdminReports";
-import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/ModalSuccess";
+import { AdminReports } from "components/Admin/AdminReports/AdminReports";
+import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const Reports = () => {
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-  const [open, setOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpen(false);
-  };
   return (
     <>
       <Typography variant="h4" component="h4" color="info.main">
         Звітність
       </Typography>
 
-      <AdminReports openModal={handleOpenModal}/>
+      <AdminReports openModal={handleIsOpenModal} />
 
-      <ModalSuccess isOpenModal={open} handleCloseModal={handleCloseModal} >
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Файл успішно завантажено
       </ModalSuccess>
-
-      {/*<TestQuery />*/}
     </>
   );
 };
