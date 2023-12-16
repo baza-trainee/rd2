@@ -9,6 +9,7 @@ import { validationSchema } from "components/NewPassword/NewPasswordForm/validat
 import { updatePassword } from "api/updatePassword";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
+import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 
 interface Props {
   handleOpenModal: () => void;
@@ -54,7 +55,7 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
         </InputContainer>
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Підтвердити
+          {(isLoading && <RequestFallback />) || "Підтвердити"}
         </Button>
 
         <ModalError isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
