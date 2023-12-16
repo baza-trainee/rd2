@@ -1,15 +1,12 @@
 import { createContext, useState } from "react";
+
 import { App } from "App";
 import { AuthHeader } from "components/Auth/AuthHeader/AuthHeader";
-
 import { AuthRoutes } from "routes/AuthRoutes/AuthRoutes";
 import { AdminRoutes } from "routes/AdminRoutes/AdminRoutes";
-
 import { checkIsLoggedIn } from "api/adminAuth";
-
-import { ToolBar } from "../../components/Admin/sidebar/ToolBar/ToolBar";
-
-import { AdminContainer } from "../../components/Admin/AdminContainer/AdminContainer";
+import { ToolBar } from "components/Admin/sidebar/ToolBar/ToolBar";
+import { AdminContainer } from "components/Admin/AdminContainer/AdminContainer";
 
 type ContextValueProps = {
   isLoggedIn: boolean;
