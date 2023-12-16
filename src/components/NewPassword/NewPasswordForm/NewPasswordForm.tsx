@@ -6,7 +6,7 @@ import { FormPasswords } from "types/formPasswords";
 import { InputContainer } from "components/NewPassword/InputContainer/InputContainer";
 import { PasswordField } from "components/NewPassword/PasswordField/PasswordField";
 import { validationSchema } from "components/NewPassword/NewPasswordForm/validationSchema";
-import { updatePassword } from "api/updatePassword";
+import { PasswordCredentials, updatePassword } from "api/updatePassword";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
@@ -19,14 +19,10 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   const mutation = useMutation(
-    (credential: FormPasswords) => updatePassword(credential),
+    (credential: PasswordCredentials) => updatePassword(credential),
     {
-      onSuccess: (data) => {
-        if (data?.status === 200) {
-          handleOpenModal();
-        }
-
-        throw new Error("Password was not changed");
+      onSuccess: () => {
+        handleOpenModal();
       },
 
       onError: () => {
@@ -37,8 +33,16 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
 
   const { isLoading } = mutation;
 
-  const handleSubmit = (credentials: FormPasswords, _: FormikHelpers<FormPasswords>) => {
-    mutation.mutate(credentials);
+  const handleSubmit = (
+    credentials: FormPasswords,
+    formikHelpers: FormikHelpers<FormPasswords>,
+  ) => {
+    const newCredentials = {
+      new_password: credentials.password,
+      confirm_password: credentials.confirmPassword,
+    };
+
+    mutation.mutate(newCredentials);
   };
 
   return (

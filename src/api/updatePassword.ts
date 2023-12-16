@@ -2,9 +2,9 @@ import { isAxiosError } from "axios";
 
 import { fetcher } from "api/fetcher";
 
-interface PasswordCredentials {
-  password: string;
-  confirmPassword: string;
+export interface PasswordCredentials {
+  new_password: string;
+  confirm_password: string;
 }
 
 export const updatePassword = async (credentials: PasswordCredentials) => {
@@ -18,11 +18,11 @@ export const updatePassword = async (credentials: PasswordCredentials) => {
     return response;
   } catch (error) {
     if (isAxiosError(error)) {
-      console.log(error.message, error.response?.status);
+      throw new Error(error.message);
     }
 
     if (error instanceof Error) {
-      console.log(error.message);
+      throw new Error(error.message);
     }
   }
 };
