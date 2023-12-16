@@ -9,7 +9,7 @@ export const validationSchema = object({
     "пароль має містити тільки латинські літери (мінімум 8 знаків), одну велику літеру, цифру та спецсимвол !@#$%^&*",
   ),
 
-  passwordRepeat: string()
+  confirmPassword: string()
     .oneOf([ref("password")], "пароль має співпадать")
     .required("пароль має співпадать"),
 });

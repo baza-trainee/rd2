@@ -21,7 +21,7 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
 
   return (
     <Formik
-      initialValues={{ password: "", passwordRepeat: "" }}
+      initialValues={{ password: "", confirmPassword: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
@@ -29,7 +29,7 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
         <InputContainer>
           <PasswordField labelText="Введіть новий пароль*" name="password" />
 
-          <PasswordField labelText="Підтвердіть новий пароль*" name="passwordRepeat" />
+          <PasswordField labelText="Підтвердіть новий пароль*" name="confirmPassword" />
         </InputContainer>
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
