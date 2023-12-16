@@ -5,18 +5,29 @@ import { FormPasswords } from "types/formPasswords";
 import { InputContainer } from "components/NewPassword/InputContainer/InputContainer";
 import { PasswordField } from "components/NewPassword/PasswordField/PasswordField";
 import { validationSchema } from "components/NewPassword/NewPasswordForm/validationSchema";
+import { useMutation } from "react-query";
+import { updatePassword } from "api/updatePassword";
 
 interface Props {
   handleOpenModal: () => void;
 }
 
 export const NewPasswordForm = ({ handleOpenModal }: Props) => {
-  const handleSubmit = (
-    _: FormPasswords,
-    formikHelpers: FormikHelpers<FormPasswords>,
-  ) => {
-    formikHelpers.resetForm();
-    handleOpenModal();
+  const mutation = useMutation(
+    (credential: FormPasswords) => updatePassword(credential),
+    {
+      onSuccess: () => {
+        handleOpenModal();
+      },
+
+      onError: () => {},
+    },
+  );
+
+  const { isLoading } = mutation;
+
+  const handleSubmit = (credentials: FormPasswords, _: FormikHelpers<FormPasswords>) => {
+    mutation.mutate(credentials);
   };
 
   return (
