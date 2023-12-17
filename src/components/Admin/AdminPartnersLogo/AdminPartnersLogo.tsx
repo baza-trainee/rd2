@@ -14,7 +14,8 @@ import {useMutation} from "react-query";
 
 import {addLogo} from "../../../api/partnersLogo";
 
-import {BlockFallback} from "../BlockFallback/BlockFallback";
+import {Fallback} from "../../commonComponents/Fallback/Fallback";
+
 
 type FormValues = {
   logoImg?: File;
@@ -83,7 +84,7 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
         <ButtonsBlock onReset={onResetForm}/>
       </form>
 
-      {mutation.isLoading && <BlockFallback />}
+      {mutation.isLoading && <Fallback blockType={true}/>}
 
       </>
     </PageContentWrapper>

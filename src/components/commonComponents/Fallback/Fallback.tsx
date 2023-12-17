@@ -1,18 +1,15 @@
-import { Box, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 
-export const Fallback = (): JSX.Element => {
+import {FallbackWrap} from "./Falback.styles";
+
+type FallbackProps = {
+    blockType?: boolean;
+}
+
+export const Fallback = ({blockType=false}: FallbackProps): JSX.Element => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexGrow: "2",
-        minHeight: "calc(100vh - 129px)",
-        backgroundColor: "rgba(0,0,0,0.15)",
-      }}
-    >
+    <FallbackWrap blockType={blockType}>
       <CircularProgress />
-    </Box>
+    </FallbackWrap>
   );
 };
