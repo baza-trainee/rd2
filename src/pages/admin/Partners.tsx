@@ -9,12 +9,16 @@ import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/Modal
 export const Partners = () => {
 
   const [open, setOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
+  //const [reset, setReset]
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (text:string) => {
+    setModalText(text)
     setOpen(true);
   };
 
   const handleCloseModal = () => {
+    //func();
     setOpen(false);
   };
 
@@ -27,7 +31,7 @@ export const Partners = () => {
       <AdminPartnersLogo openModal={handleOpenModal}/>
 
       <ModalSuccess isOpenModal={open} handleCloseModal={handleCloseModal} >
-         Логотип успішно завантажено
+          {modalText}
       </ModalSuccess>
     </>
   );

@@ -10,14 +10,31 @@ import {LoadLogoBlock} from "components/Admin/AdminPartnersLogo/LoadLogoBlock/Lo
 
 import {ButtonsBlock} from "components/Admin/AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
 
+import {useMutation} from "react-query";
+
+import {addLogo} from "../../../api/partnersLogo";
+
+import {BlockFallback} from "../BlockFallback/BlockFallback";
+
 type FormValues = {
   logoImg?: File;
 }
 
 type AdminPartnersLogoProps = {
-    openModal: () => void
+    openModal: (text: string) => void
 }
 const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
+
+  const mutation = useMutation(
+      (logo: File) => {return addLogo(logo) }, {
+        onError: (error) => {
+            openModal("Error");
+        },
+        onSuccess: () => {
+            openModal("Логотип успішно завантажено");
+        },
+      },
+  )
 
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
@@ -29,7 +46,7 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
     validate,
     onSubmit: (values,{resetForm}) => {
       console.log(values.logoImg);
-      openModal();
+      values.logoImg && mutation.mutate(values.logoImg);
       resetForm({ values: {} });
       setPreviewSrc(null);
     },
@@ -53,6 +70,7 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
 
   return (
     <PageContentWrapper>
+      <>
 
       <form onSubmit={formik.handleSubmit}>
 
@@ -65,7 +83,12 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
 
       </form>
 
+      {mutation.isLoading && <BlockFallback />}
+
+      </>
+
     </PageContentWrapper>
+
   );
 };
 

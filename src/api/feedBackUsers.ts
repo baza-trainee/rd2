@@ -11,7 +11,7 @@ export interface IUserFeedback  {
     id: string
 }
 
-export type GetUsersResponse = {
+ type GetUsersResponse = {
     data: IUserFeedback[];
 };
 
@@ -23,15 +23,11 @@ export const fetchUsersList = () => {
                 Authorization: token,
             }},
     )*/
-  return api.get<GetUsersResponse>(
-    "/api/user/",
-  );
+  return api.get<GetUsersResponse>("/api/user/");
 };
 
 export const fetchUserFeedback = (id: string | undefined) => {
-  return () => api.get<ResponseUserDetails>(
-    `/api/user/${id}`,
-  );
+  return () => api.get<ResponseUserDetails>(`/api/user/${id}`);
 };
 
 
