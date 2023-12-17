@@ -1,18 +1,18 @@
 //import axios from "axios";
 
-import { ResponseUserDetails } from "../types/typeFeedbackUserDetails";
+import {ResponseUserDetails} from "../types/typeFeedbackUserDetails";
 
 import { fetcher } from "./fetcher";
 
 //const token= localStorage.getItem("access_token")
-export interface IUserFeedback {
-  name: string;
-  surname: string;
-  id: string;
+export interface IUserFeedback  {
+    name: string,
+    surname: string,
+    id: string
 }
 
-export type GetUsersResponse = {
-  data: IUserFeedback[];
+ type GetUsersResponse = {
+    data: IUserFeedback[];
 };
 
 export const fetchUsersList = () => {
@@ -29,3 +29,5 @@ export const fetchUsersList = () => {
 export const fetchUserFeedback = (id: string | undefined) => {
   return () => fetcher.get<ResponseUserDetails>(`/api/user/${id}`);
 };
+
+

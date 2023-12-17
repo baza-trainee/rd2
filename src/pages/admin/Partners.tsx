@@ -1,11 +1,28 @@
+import React, {useState} from "react";
+
 import Typography from "@mui/material/Typography";
 
 import { AdminPartnersLogo } from "components/Admin/AdminPartnersLogo/AdminPartnersLogo";
-import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
-import { useIsOpenModal } from "hooks/useIsOpenModal";
+
+import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/ModalSuccess";
+import {useIsOpenModal} from "../../hooks/useIsOpenModal";
+import {ModalError} from "../../components/commonComponents/ModalError/ModalError";
 
 export const Partners = () => {
-  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
+
+  const openSuccess = useIsOpenModal();
+
+  const [openError, setOpenError] = useState(false);
+  const [modalText, setModalText] = useState("");
+
+  const handleOpenModalError = (text:string) => {
+    setModalText(text)
+    setOpenError(true);
+  };
+
+  const handleCloseModalError = () => {
+    setOpenError(false);
+  };
 
   return (
     <>
@@ -13,10 +30,19 @@ export const Partners = () => {
         Лого партнерів
       </Typography>
 
-      <AdminPartnersLogo openModal={handleIsOpenModal} />
+      <AdminPartnersLogo
+          openModalError={handleOpenModalError}
+          openModalSuccess={openSuccess.handleIsOpenModal}
+      />
 
-      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
-        Логотип успішно завантажено
+      <ModalError isOpenModal={openError} handleCloseModal={handleCloseModalError} >
+           {modalText}
+      </ModalError>
+
+      <ModalSuccess isOpenModal={openSuccess.isOpenModal}
+                    handleCloseModal={openSuccess.handleIsOpenModal}
+      >
+          "Логотип успішно завантажено"
       </ModalSuccess>
     </>
   );

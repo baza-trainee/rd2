@@ -10,14 +10,35 @@ import {LoadLogoBlock} from "components/Admin/AdminPartnersLogo/LoadLogoBlock/Lo
 
 import {ButtonsBlock} from "components/Admin/AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
 
+import {useMutation} from "react-query";
+
+import {addLogo} from "../../../api/partnersLogo";
+
+import {Fallback} from "../../commonComponents/Fallback/Fallback";
+
+
 type FormValues = {
   logoImg?: File;
 }
 
 type AdminPartnersLogoProps = {
-    openModal: () => void
+    openModalError: (text: string) => void,
+    openModalSuccess: () => void,
 }
-const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
+const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogoProps) => {
+
+  const mutation = useMutation(
+      (logo: File) => {return addLogo(logo) }, {
+        onError: (error) => {
+            openModalError(`Помилка завантаження. 
+              ${error instanceof Error && error.message}`,
+            );
+        },
+        onSuccess: () => {
+            openModalSuccess();
+        },
+      },
+  )
 
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
@@ -28,8 +49,7 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
     initialValues: initialValues,
     validate,
     onSubmit: (values,{resetForm}) => {
-      console.log(values.logoImg);
-      openModal();
+      values.logoImg && mutation.mutate(values.logoImg);
       resetForm({ values: {} });
       setPreviewSrc(null);
     },
@@ -53,18 +73,20 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
 
   return (
     <PageContentWrapper>
+      <>
 
       <form onSubmit={formik.handleSubmit}>
-
         <LoadLogoBlock
           previewSrc={previewSrc}
           errorMes={formik.errors.logoImg}
           onChange={onChangeInput}
         />
         <ButtonsBlock onReset={onResetForm}/>
-
       </form>
 
+      {mutation.isLoading && <Fallback blockType={true}/>}
+
+      </>
     </PageContentWrapper>
   );
 };
