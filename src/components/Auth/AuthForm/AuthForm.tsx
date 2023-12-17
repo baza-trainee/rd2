@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useMutation } from "react-query";
 
 import { AccessTokenService } from "services/AccessTokenService";
 import { FormValues } from "types/formValues";
@@ -11,8 +12,8 @@ import { PasswordField } from "components/Auth/PasswordField/PasswordField";
 import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { AuthContext } from "routes/layouts/Authorization";
+import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { signIn } from "api/signIn";
-import { useMutation } from "react-query";
 
 interface Props {
   handleIsOpenModal: () => void;
@@ -57,7 +58,7 @@ export const AuthForm = ({ handleIsOpenModal }: Props) => {
         <ForgetPassword />
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          {(isLoading && <div>Fallback</div>) || "Вхід"}
+          {(isLoading && <RequestFallback />) || "Вхід"}
         </Button>
       </Form>
     </Formik>
