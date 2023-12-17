@@ -21,17 +21,20 @@ type FormValues = {
 }
 
 type AdminPartnersLogoProps = {
-    openModal: (text: string) => void
+    openModalError: (text: string) => void,
+    openModalSuccess: () => void,
 }
-const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
+const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogoProps) => {
 
   const mutation = useMutation(
       (logo: File) => {return addLogo(logo) }, {
         onError: (error) => {
-            openModal("Error");
+            openModalError(`Помилка завантаження. 
+              ${error instanceof Error && error.message}`,
+            );
         },
         onSuccess: () => {
-            openModal("Логотип успішно завантажено");
+            openModalSuccess();
         },
       },
   )
@@ -45,7 +48,6 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
     initialValues: initialValues,
     validate,
     onSubmit: (values,{resetForm}) => {
-      console.log(values.logoImg);
       values.logoImg && mutation.mutate(values.logoImg);
       resetForm({ values: {} });
       setPreviewSrc(null);
@@ -73,22 +75,18 @@ const AdminPartnersLogo = ({openModal}: AdminPartnersLogoProps) => {
       <>
 
       <form onSubmit={formik.handleSubmit}>
-
         <LoadLogoBlock
           previewSrc={previewSrc}
           errorMes={formik.errors.logoImg}
           onChange={onChangeInput}
         />
         <ButtonsBlock onReset={onResetForm}/>
-
       </form>
 
       {mutation.isLoading && <BlockFallback />}
 
       </>
-
     </PageContentWrapper>
-
   );
 };
 
