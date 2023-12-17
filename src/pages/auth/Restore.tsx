@@ -1,17 +1,12 @@
-import { useState } from "react";
-
 import { Typography } from "@mui/material";
 
 import { Description } from "components/Restore/Description/Description";
 import { RestoreForm } from "components/Restore/RestoreForm/RestoreForm";
-import { MessageModal } from "components/Restore/MessageModal/MessageModal";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
+import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 
 export const Restore = () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-  const handleOpenModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -24,11 +19,11 @@ export const Restore = () => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm handleOpenModal={handleOpenModal} />
+      <RestoreForm handleOpenModalSuccess={handleIsOpenModal} />
 
-      <MessageModal isOpenModal={isOpenModal} handleCloseModal={handleOpenModal}>
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Перейдіть за посиланням, відправленим у листі на Вашу пошту
-      </MessageModal>
+      </ModalSuccess>
     </>
   );
 };

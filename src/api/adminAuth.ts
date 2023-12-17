@@ -1,8 +1,8 @@
-import {FormValues} from "../types/formValues";
+import { FormValues } from "../types/formValues";
 
 export const checkIsLoggedIn = () => {
   const value = localStorage.getItem("admin_rd2");
-  return  Boolean(value ? JSON.parse(value) : null);
+  return Boolean(value ? JSON.parse(value) : null);
 };
 
 export const LogOut = () => {
@@ -18,10 +18,8 @@ export const FetchAuthCredentials = async (admin: FormValues) => {
 
   const response = await promise;
   // if (response.ok) save true to the localStorage
-  if ( response ) {
+  if (response) {
     localStorage.setItem("admin_rd2", JSON.stringify(admin));
     return response;
-  }
-
-  else throw Error("login error");
+  } else throw Error("login error");
 };

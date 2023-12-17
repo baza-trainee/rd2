@@ -1,5 +1,9 @@
 import { SxProps } from "@mui/material";
 
+import { theme } from "theme/theme";
+
+const errorColor = theme.palette.error.main;
+
 const ModalStyles: SxProps = {
   minHeight: "200px",
   display: "flex",
@@ -11,17 +15,21 @@ const ModalStyles: SxProps = {
   transform: "translate(-50%, -50%)",
   width: 446,
   bgcolor: "background.paper",
-  border: "1px solid #1B3969",
+  border: `1px solid ${errorColor}`,
+  borderRadius: "5px",
   boxShadow: 24,
   paddingInline: "75px",
   textAlign: "center",
+
+  "&:focus": {
+    outlineColor: errorColor,
+  },
 };
 
-const IconStyles = {
+const IconButtonStyles = {
   position: "absolute",
-  top: "20px",
-  right: "20px",
-  cursor: "pointer",
+  top: "10px",
+  right: "10px",
 };
 
-export { ModalStyles, IconStyles };
+export { ModalStyles, IconButtonStyles };

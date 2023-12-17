@@ -14,7 +14,7 @@ const Reports = lazy(() => import("pages/admin/Reports"));
 const ChangePassword = lazy(() => import("pages/admin/ChangePassword"));
 const NotFound = lazy(() => import("pages/public/NotFound"));
 
-export const AdminPanelRoutes = () => {
+export const AdminRoutes = () => {
   return (
     <Suspense fallback={<Fallback />}>
       <Routes>

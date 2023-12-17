@@ -2,18 +2,10 @@ import { Typography } from "@mui/material";
 
 import { NewPasswordForm } from "components/NewPassword/NewPasswordForm/NewPasswordForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
-import { useState } from "react";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const NewPassword = () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-  const handleOpenModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -21,9 +13,9 @@ export const NewPassword = () => {
         Відновити пароль
       </Typography>
 
-      <NewPasswordForm handleOpenModal={handleOpenModal} />
+      <NewPasswordForm handleOpenModal={handleIsOpenModal} />
 
-      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleCloseModal}>
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Пароль успішно відновлено
       </ModalSuccess>
     </>

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Form, Formik, FormikHelpers } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useMutation } from "react-query";
 
 import { AccessTokenService } from "services/AccessTokenService";
 import { FormValues } from "types/formValues";
@@ -11,27 +12,36 @@ import { PasswordField } from "components/Auth/PasswordField/PasswordField";
 import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { AuthContext } from "routes/layouts/Authorization";
+import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { signIn } from "api/signIn";
 
-export const AuthForm = () => {
+interface Props {
+  handleIsOpenModal: () => void;
+}
+
+export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const navigate = useNavigate();
   const { getAccessToken } = new AccessTokenService();
   const { setIsLoggedIn } = useContext(AuthContext);
 
-  const handleSubmit = (
-    credentials: FormValues,
-    formikHelpers: FormikHelpers<FormValues>,
-  ) => {
-    signIn(credentials)
-      .then((_) => {
-        if (getAccessToken()) {
-          setIsLoggedIn(true);
-          navigate("/admin");
-        }
-      })
-      .finally(() => {
-        formikHelpers.resetForm();
-      });
+  const mutation = useMutation((credentials: FormValues) => signIn(credentials), {
+    onSuccess: () => {
+      if (getAccessToken()) {
+        setIsLoggedIn(true);
+        navigate("/admin");
+      }
+      throw new Error("invalid credentials");
+    },
+
+    onError: () => {
+      handleIsOpenModal();
+    },
+  });
+
+  const { isLoading } = mutation;
+
+  const handleSubmit = (credentials: FormValues, _: FormikHelpers<FormValues>) => {
+    mutation.mutate(credentials);
   };
 
   return (
@@ -48,7 +58,7 @@ export const AuthForm = () => {
         <ForgetPassword />
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Вхід
+          {(isLoading && <RequestFallback />) || "Вхід"}
         </Button>
       </Form>
     </Formik>

@@ -1,25 +1,14 @@
 /* eslint-disable max-len */
-import { useState } from "react";
-
 import Typography from "@mui/material/Typography";
 
 import { EmailForm } from "components/Admin/ourContacts/EmailForm/EmailForm";
-
 import { PhoneForm } from "components/Admin/ourContacts/PhoneForm/PhoneForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
-
-import { PageContentWrapper } from "../../components/Admin/PageContentWrapper/PageContentWrapper";
+import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const OurContacts = () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-  const handleOpenModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpenModal((prev) => !prev);
-  };
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -28,12 +17,12 @@ export const OurContacts = () => {
       </Typography>
 
       <PageContentWrapper>
-        <PhoneForm handleOpenModal={handleOpenModal} />
+        <PhoneForm handleOpenModal={handleIsOpenModal} />
 
-        <EmailForm handleOpenModal={handleOpenModal} />
+        <EmailForm handleOpenModal={handleIsOpenModal} />
       </PageContentWrapper>
 
-      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleCloseModal}>
+      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Відредаговано
       </ModalSuccess>
     </>
