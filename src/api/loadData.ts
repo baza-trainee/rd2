@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, {AxiosError, AxiosResponse} from "axios";
 
 export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
   return async () => {
@@ -9,12 +9,17 @@ export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
 
       return response.data;
 
-    } catch (error) {
-      let errMes: string = "";
+    } catch (error: any | AxiosError) {
+      let errMes: string = " ";
 
-      if (axios.isAxiosError(error)) errMes = error.message;
+      if (axios.isAxiosError(error))  {
 
-      console.log(error);
+        if (error.response) {
+          const response = error.response;
+          errMes = `Status ${response.status}. ${response.data?.detail}`;
+        }
+        else { errMes = error.message }
+      }
 
       throw Error(`Виникла помилка при завантаженні даних. ${errMes}`);
     }
