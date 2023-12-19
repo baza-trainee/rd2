@@ -7,7 +7,7 @@ import { FormEmail } from "types/formEmail";
 import { FormContainer } from "components/Restore/FormContainer/FormContainer";
 import { EmailField } from "components/Restore/EmailField/EmailField";
 import { validationSchema } from "components/Restore/RestoreForm/validationShema";
-import { restorePassword } from "api/restorePassword";
+import { restorePassword } from "api/sendEmailToServer";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";

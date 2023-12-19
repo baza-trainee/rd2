@@ -26,11 +26,11 @@ export const signIn = async (credentials: Credentials): Promise<void> => {
     setRefreshToken(response.data.refresh_token);
   } catch (error) {
     if (isAxiosError(error)) {
-      console.log(error.message, error.response?.status);
+      throw new Error(error.message);
     }
 
     if (error instanceof Error) {
-      console.log(error.message);
+      throw new Error(error.message);
     }
   }
 };
