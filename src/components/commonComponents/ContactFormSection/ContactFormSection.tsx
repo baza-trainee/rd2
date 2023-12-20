@@ -4,32 +4,50 @@ import { useTranslation } from "react-i18next";
 
 import { ModalSuccess } from "../ModalSuccess/ModalSuccess";
 
+import {useIsOpenModal} from "../../../hooks/useIsOpenModal";
+
+import {ModalError} from "../ModalError/ModalError";
+
 import { Container, SectionWrapper, Desc } from "./ContactFormSection.styled";
+
 import ContactForm from "./ContactForm/ContactForm";
+
 
 const ContactFormSection: React.FC = () => {
   const { t } = useTranslation();
 
-  const [open, setOpenModal] = useState(false);
+  const openSuccess = useIsOpenModal();
+  const [openError, setOpenError] = useState(false);
+  const [modalText, setModalText] = useState("");
 
-  const onOpenModal = () => {
-    setOpenModal(true);
-  };
+    const handleOpenModalError = (text:string) => {
+        setModalText(text)
+        setOpenError(true);
+    };
 
-  const onCloseModal = () => {
-    setOpenModal(false);
-  };
+    const handleCloseModalError = () => {
+        setOpenError(false);
+    };
 
   return (
     <Container>
       <SectionWrapper>
         <Desc>{t("contacts_block.main_page_title")}</Desc>
-        <ContactForm openModal={onOpenModal} />
+        <ContactForm openModalError={handleOpenModalError}
+                     openModalSuccess={openSuccess.handleIsOpenModal}
+        />
       </SectionWrapper>
 
-      <ModalSuccess isOpenModal={open} handleCloseModal={onCloseModal}>
+      <ModalError isOpenModal={openError} handleCloseModal={handleCloseModalError} >
+        {modalText}
+      </ModalError>
+
+      <ModalSuccess isOpenModal={openSuccess.isOpenModal}
+                    handleCloseModal={openSuccess.handleIsOpenModal}
+      >
         Повідомлення успішно відправлено
       </ModalSuccess>
+
     </Container>
   );
 };

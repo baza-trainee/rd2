@@ -21,7 +21,7 @@ export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
         else { errMes = error.message }
       }
 
-      throw Error(`Виникла помилка при завантаженні даних. ${errMes}`);
+      throw Error(`Виникла помилка. ${errMes}`);
     }
   };
 }

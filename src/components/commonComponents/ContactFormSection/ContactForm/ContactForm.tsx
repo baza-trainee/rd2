@@ -1,10 +1,18 @@
 import React from "react";
+
 import { useFormik } from "formik";
+
+import {useMutation} from "react-query";
+
 import { Button } from "@mui/material";
+
+import { contactValuesType } from "types/typeFeedbackUserDetails";
 
 import { useTranslation } from "react-i18next";
 
-import { contactValuesType } from "types/typeContactInitialValues";
+import {sendFeedback} from "../../../../api/feedBackUsers";
+
+import {loadData} from "../../../../api/loadData";
 
 import { contactSchema } from "./updateValidationTranslation";
 
@@ -18,7 +26,8 @@ import {
 } from "./Form.styled";
 
 interface ContactFormProps {
-  openModal: () => void;
+  openModalSuccess: () => void;
+  openModalError: (errorText: string) => void;
 }
 
 const initialValues: contactValuesType = {
@@ -29,28 +38,36 @@ const initialValues: contactValuesType = {
   message: "",
 };
 
-const ContactForm: React.FC<ContactFormProps> = ({ openModal }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalError }) => {
   const { t } = useTranslation();
+
+    const mutation = useMutation(
+        (user: contactValuesType) => loadData(sendFeedback(user))(), {
+            onError: (error: Error) => {
+                openModalError(`Повідомлення не відправлено. ${error.message}`);
+                //openModalError(`${error instanceof Error && error.message}`);
+            },
+            onSuccess: () => {
+                openModalSuccess();
+                resetForm();
+            },
+        },
+    )
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm } =
     useFormik({
       initialValues: initialValues,
       validationSchema: contactSchema,
       onSubmit: ({ name, surname, phone, email, message }) => {
-        // send to email
-        const emailData = {
+        const emailData: contactValuesType = {
           name,
           surname,
           phone,
           email,
           message,
         };
-        // eslint-disable-next-line
         console.log(emailData);
-
-        // await sendEmail(emailData);
-        resetForm();
-        openModal();
+        mutation.mutate(emailData);
       },
     });
 

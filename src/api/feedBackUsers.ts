@@ -1,6 +1,6 @@
 //import axios from "axios";
 
-import {ResponseUserDetails} from "../types/typeFeedbackUserDetails";
+import {contactValuesType, ResponseUserDetails} from "../types/typeFeedbackUserDetails";
 
 import { fetcher } from "./fetcher";
 
@@ -15,6 +15,28 @@ export interface IUserFeedback  {
     data: IUserFeedback[];
 };
 
+export const sendFeedback = (user: contactValuesType ) => {
+    const msgDate = new Date();
+    return () => fetcher.post<ResponseUserDetails>("",
+        {
+            "obj_in": {
+                "name": user.name,//"Ann",
+                "surname": user.surname,//"Lethteria",
+                "phone": user.phone,//"236852",
+                "email": user.email,//"Ann@example.com"
+            },
+            "message": {
+                "msg": user.message,//"ghjgjk bjjh jkjkkhjkmn mkhlkkmn mkh.l.km,n ",
+                "created_at": msgDate,
+            },
+        },
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        },
+    )
+}
 export const fetchUsersList = () => {
   return fetcher.get<GetUsersResponse>("/api/user/");
 };
