@@ -25,7 +25,6 @@ export const Contacts = () => {
         setOpenError(false);
     };
 
-
     return (
     <PageContainer>
 

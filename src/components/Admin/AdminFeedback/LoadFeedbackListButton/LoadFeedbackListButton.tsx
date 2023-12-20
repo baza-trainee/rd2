@@ -21,7 +21,7 @@ export const LoadFeedbackListButton = () => {
     const {isOpenModal, handleIsOpenModal} = useIsOpenModal();
     const [modalText, setModalText] = useState("");
 
-    const {isFetching, data, error, refetch} = useQuery({
+    const {isFetching, data, refetch} = useQuery({
         queryKey: ["usersReport"],
         queryFn: loadData(loadUsersListReport),
         enabled: false,
@@ -49,21 +49,17 @@ export const LoadFeedbackListButton = () => {
 
   return (
     <>
-    <Box display="flex" justifyContent="end" mb={3}>
-      <Button
-        sx={{textTransform: "inherit"}}
-        variant="contained"
-        size="small"
-        endIcon={<DownloadIconStyled className={isFetching ? "flashing" : ""}/>}
-        onClick={onClick}
-      >
-        Завантажити excel файл з переліком звернень
-      </Button>
-    </Box>
-
-    {//!isFetching && isError//error instanceof Error
-      // && handleIsOpenModal()//`${error.message}`
-    }
+        <Box display="flex" justifyContent="end" mb={3}>
+          <Button
+            sx={{textTransform: "inherit"}}
+            variant="contained"
+            size="small"
+            endIcon={<DownloadIconStyled className={isFetching ? "flashing" : ""}/>}
+            onClick={onClick}
+          >
+            Завантажити excel файл з переліком звернень
+          </Button>
+        </Box>
 
         <ModalError isOpenModal={isOpenModal}
                       handleCloseModal={handleIsOpenModal}
