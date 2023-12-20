@@ -9,7 +9,7 @@ const { getRefreshToken } = new RefreshTokenService();
 
 const BASE_URL =
   process.env.REACT_APP_BASE_URL ||
-  "http://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com";
+  "https://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com";
 
 export const fetcher = axios.create({
   baseURL: BASE_URL,

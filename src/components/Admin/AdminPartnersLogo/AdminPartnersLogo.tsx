@@ -16,6 +16,9 @@ import {addLogo} from "../../../api/partnersLogo";
 
 import {Fallback} from "../../commonComponents/Fallback/Fallback";
 
+import {loadData} from "../../../api/loadData";
+
+
 
 type FormValues = {
   logoImg?: File;
@@ -28,11 +31,9 @@ type AdminPartnersLogoProps = {
 const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogoProps) => {
 
   const mutation = useMutation(
-      (logo: File) => {return addLogo(logo) }, {
+      (logo: File) => loadData(addLogo(logo))() , {
         onError: (error) => {
-            openModalError(`Помилка завантаження. 
-              ${error instanceof Error && error.message}`,
-            );
+            openModalError(`${error instanceof Error && error.message}`);
         },
         onSuccess: () => {
             openModalSuccess();
