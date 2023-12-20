@@ -1,5 +1,6 @@
 import { Form, Formik, FormikHelpers } from "formik";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
+import { AxiosError } from "axios";
 
 import { InputWrapper } from "components/Admin/ourContacts/InputWrapper/InputWrapper";
 import { EmailField } from "components/Admin/ourContacts/EmailField/EmailField";
@@ -7,6 +8,10 @@ import { SubmitButton } from "components/Admin/ourContacts/SubmitButton/SubmitBu
 import { validationSchema } from "components/Admin/ourContacts/EmailForm/validationSchema";
 import { loadData } from "api/loadData";
 import { getCurrentEmail } from "api/getCurrentEmail";
+import { EmailCredentials, setNewEmail } from "api/setNewEmail";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
+import { ModalError } from "components/commonComponents/ModalError/ModalError";
+import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 
 interface FormEmail {
   currentEmail: string;
@@ -18,17 +23,42 @@ interface Props {
 }
 
 export const EmailForm = ({ handleOpenModal }: Props) => {
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
+
   const { data: email, isError } = useQuery({
     queryKey: "email",
     queryFn: loadData(getCurrentEmail),
   });
 
-  const currentEmail: string = isError ? "наш email" : email;
+  const setEmail = useMutation(
+    (credentials: EmailCredentials) => setNewEmail(credentials),
+    {
+      onSuccess: () => {
+        handleOpenModal();
+      },
+      onError: (error: AxiosError) => {
+        if (error.response && error) {
+          handleIsOpenModal();
+        }
+      },
+    },
+  );
 
-  const handleSubmit = (_: FormEmail, formikHelpers: FormikHelpers<FormEmail>) => {
-    handleOpenModal();
+  const currentEmail: string = isError ? "наш email" : email?.email;
+
+  const handleSubmit = (
+    credentials: FormEmail,
+    formikHelpers: FormikHelpers<FormEmail>,
+  ) => {
+    const newEmail = {
+      email: credentials.newEmail,
+    };
+
+    setEmail.mutate(newEmail);
     formikHelpers.resetForm();
   };
+
+  const { isLoading } = setEmail;
 
   return (
     <Formik
@@ -39,12 +69,23 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
       {({ isValid }) => (
         <Form>
           <InputWrapper>
-            <EmailField labelText="Поточний email" name="currentEmail" disabled />
+            <EmailField
+              labelText="Поточний email"
+              name="currentEmail"
+              email={currentEmail}
+              disabled
+            />
 
             <EmailField labelText="Новий email" name="newEmail" />
           </InputWrapper>
 
-          <SubmitButton isValid={isValid}>Змінити пошту</SubmitButton>
+          <SubmitButton isValid={isValid}>
+            {(isLoading && <RequestFallback />) || "Змінити пошту"}
+          </SubmitButton>
+
+          <ModalError isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
+            Пошта не була змінена
+          </ModalError>
         </Form>
       )}
     </Formik>

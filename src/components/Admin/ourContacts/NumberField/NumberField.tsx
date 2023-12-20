@@ -10,9 +10,10 @@ interface Props {
   labelText: string;
   name: "currentNumber" | "newNumber";
   disabled?: boolean;
+  number?: string;
 }
 
-export const NumberField = ({ disabled, labelText, name }: Props) => {
+export const NumberField = ({ disabled, labelText, name, number }: Props) => {
   return (
     <Box sx={BoxStyles}>
       <Typography variant="h6" component="label" htmlFor={name}>
@@ -25,9 +26,11 @@ export const NumberField = ({ disabled, labelText, name }: Props) => {
         variant="filled"
         fullWidth
         disabled={disabled}
+        placeholder={number}
         type="text"
         name={name}
       />
+
       <ErrorMessage className="error-message" name={name} component="div" />
     </Box>
   );

@@ -10,9 +10,10 @@ interface Props {
   labelText: string;
   name: "currentEmail" | "newEmail";
   disabled?: boolean;
+  email?: string;
 }
 
-export const EmailField = ({ disabled, labelText, name }: Props) => {
+export const EmailField = ({ disabled, labelText, name, email }: Props) => {
   return (
     <Box sx={BoxStyles}>
       <Typography variant="h6" component="label" htmlFor={name}>
@@ -24,6 +25,7 @@ export const EmailField = ({ disabled, labelText, name }: Props) => {
         disableUnderline
         variant="filled"
         fullWidth
+        placeholder={email}
         disabled={disabled}
         type="text"
         name={name}

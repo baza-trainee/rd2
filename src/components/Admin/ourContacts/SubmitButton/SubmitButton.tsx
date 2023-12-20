@@ -1,9 +1,10 @@
 import { Box, Button } from "@mui/material";
 
 import { BoxStyles } from "components/Admin/ourContacts/SubmitButton/SubmitButton.classes";
+import { ReactNode } from "react";
 
 interface Props {
-  children: string;
+  children: string | ReactNode;
   isValid: boolean;
 }
 
