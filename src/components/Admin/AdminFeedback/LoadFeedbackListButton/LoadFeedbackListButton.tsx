@@ -21,7 +21,7 @@ export const LoadFeedbackListButton = () => {
     const {isOpenModal, handleIsOpenModal} = useIsOpenModal();
     const [modalText, setModalText] = useState("");
 
-    const {isFetching, isError, data, error, refetch} = useQuery({
+    const {isFetching, data, error, refetch} = useQuery({
         queryKey: ["usersReport"],
         queryFn: loadData(loadUsersListReport),
         enabled: false,
