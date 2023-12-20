@@ -51,7 +51,7 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
   const formik = useFormik({
     initialValues: initialValues,
     validate,
-    onSubmit: (values,{resetForm}) => {
+    onSubmit: (values) => {
       values.logoImg && mutation.mutate(values.logoImg);
     },
   });
