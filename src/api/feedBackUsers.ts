@@ -1,10 +1,7 @@
-//import axios from "axios";
-
 import {contactValuesType, ResponseUserDetails} from "../types/typeFeedbackUserDetails";
 
 import { fetcher } from "./fetcher";
 
-//const token= localStorage.getItem("access_token")
 export interface IUserFeedback  {
     name: string,
     surname: string,
@@ -17,16 +14,16 @@ export interface IUserFeedback  {
 
 export const sendFeedback = (user: contactValuesType ) => {
     const msgDate = new Date();
-    return () => fetcher.post<ResponseUserDetails>("",
+    return () => fetcher.post<ResponseUserDetails>("api/user/create-user",
         {
             "obj_in": {
-                "name": user.name,//"Ann",
-                "surname": user.surname,//"Lethteria",
-                "phone": user.phone,//"236852",
-                "email": user.email,//"Ann@example.com"
+                "name": user.name,
+                "surname": user.surname,
+                "phone": user.phone,
+                "email": user.email,
             },
             "message": {
-                "msg": user.message,//"ghjgjk bjjh jkjkkhjkmn mkhlkkmn mkh.l.km,n ",
+                "msg": user.message,
                 "created_at": msgDate,
             },
         },
@@ -46,31 +43,7 @@ export const fetchUserFeedback = (id: string | undefined) => {
 };
 
 export const loadUsersListReport = () => {
-    return fetcher.get("/api/user/download-repo", {
+    return fetcher.get("/api/user/download-report", {
         responseType: "blob",
     });
 }
-
-const loadUsersListReport1 = () => {
-    //if (token)
-    /*return fetch(
-        "http://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com/api/user/download-report",
-        {
-            method: "GET",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-                "Authorization": token,
-            },
-        },
-    )*/
-
-    //return axios.get(
-        //"http://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com/api/user/download-report",{
-        //headers: {
-            //Authorization: token,
-        //},
-    //})
-}
-
-

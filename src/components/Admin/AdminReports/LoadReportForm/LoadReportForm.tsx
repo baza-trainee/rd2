@@ -2,7 +2,15 @@ import React, {useState} from "react";
 
 import {useFormik} from "formik";
 
+import {useMutation} from "react-query";
+
+import {AxiosResponse} from "axios";
+
 import {LoadReportBlock} from "../LoadReportBlock/LoadReportBlock";
+
+import {loadData} from "../../../../api/loadData";
+
+import {Fallback} from "../../../commonComponents/Fallback/Fallback";
 
 import {validateReport} from "./loadReportValidation";
 
@@ -14,9 +22,25 @@ type FormValues = {
 
 type LoadReportFormProps = {
     id: string;
-    openModal: () => void;
+    loadFunc: (data: File) => () => Promise<AxiosResponse<any, any>>;
+    openModalSuccess: () => void;
+    openModalError: (errorText: string) => void;
 }
-const LoadReportForm =({id, openModal}:LoadReportFormProps) => {
+const LoadReportForm =({id, openModalSuccess, openModalError, loadFunc}:LoadReportFormProps) => {
+
+    const mutation = useMutation(
+        (reportFile: File) => loadData(loadFunc(reportFile))(), {
+            onError: (error: Error) => {
+                openModalError(`Повідомлення не відправлено. ${error.message}`);
+                //openModalError(`${error instanceof Error && error.message}`);
+            },
+            onSuccess: () => {
+                openModalSuccess();
+                formik.resetForm({ values: {} });
+                setFileName(null);
+            },
+        },
+    )
 
   const [fileName, setFileName] = useState<string | null>(null);
   const initialValues: FormValues = {};
@@ -25,11 +49,9 @@ const LoadReportForm =({id, openModal}:LoadReportFormProps) => {
   const formik = useFormik({
     initialValues: initialValues,
     validate,
-    onSubmit: (values,{resetForm}) => {
+    onSubmit: (values) => {
       console.log(values.reportFile);
-      openModal();
-      resetForm({ values: {} });
-      setFileName(null);
+        values.reportFile && mutation.mutate(values.reportFile);
     },
   });
 
@@ -49,6 +71,7 @@ const LoadReportForm =({id, openModal}:LoadReportFormProps) => {
   };
 
   return (
+      <>
     <form  onSubmit={formik.handleSubmit} id={`${id}form`}> {/*onSubmit={formik.handleSubmit}*/}
 
       <LoadReportBlock
@@ -61,6 +84,10 @@ const LoadReportForm =({id, openModal}:LoadReportFormProps) => {
       <ButtonsBlockStyled onReset={onResetForm}/>
 
     </form>
+
+    {mutation.isLoading && <Fallback blockType={true}/>}
+
+      </>
   );
 };
 

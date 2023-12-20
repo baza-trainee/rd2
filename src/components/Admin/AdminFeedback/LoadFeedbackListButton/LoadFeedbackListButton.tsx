@@ -49,21 +49,17 @@ export const LoadFeedbackListButton = () => {
 
   return (
     <>
-    <Box display="flex" justifyContent="end" mb={3}>
-      <Button
-        sx={{textTransform: "inherit"}}
-        variant="contained"
-        size="small"
-        endIcon={<DownloadIconStyled className={isFetching ? "flashing" : ""}/>}
-        onClick={onClick}
-      >
-        Завантажити excel файл з переліком звернень
-      </Button>
-    </Box>
-
-    {//!isFetching && isError//error instanceof Error
-      // && handleIsOpenModal()//`${error.message}`
-    }
+        <Box display="flex" justifyContent="end" mb={3}>
+          <Button
+            sx={{textTransform: "inherit"}}
+            variant="contained"
+            size="small"
+            endIcon={<DownloadIconStyled className={isFetching ? "flashing" : ""}/>}
+            onClick={onClick}
+          >
+            Завантажити excel файл з переліком звернень
+          </Button>
+        </Box>
 
         <ModalError isOpenModal={isOpenModal}
                       handleCloseModal={handleIsOpenModal}

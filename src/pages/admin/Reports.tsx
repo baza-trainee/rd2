@@ -1,11 +1,10 @@
+import React from "react";
+
 import Typography from "@mui/material/Typography";
 
 import { AdminReports } from "components/Admin/AdminReports/AdminReports";
-import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
-import { useIsOpenModal } from "hooks/useIsOpenModal";
 
 export const Reports = () => {
-  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
     <>
@@ -13,11 +12,8 @@ export const Reports = () => {
         Звітність
       </Typography>
 
-      <AdminReports openModal={handleIsOpenModal} />
+      <AdminReports />
 
-      <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
-        Файл успішно завантажено
-      </ModalSuccess>
     </>
   );
 };

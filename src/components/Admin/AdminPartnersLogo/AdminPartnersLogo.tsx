@@ -37,6 +37,8 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
         },
         onSuccess: () => {
             openModalSuccess();
+            formik.resetForm({ values: {} });
+            setPreviewSrc(null);
         },
       },
   )
@@ -51,8 +53,6 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
     validate,
     onSubmit: (values,{resetForm}) => {
       values.logoImg && mutation.mutate(values.logoImg);
-      resetForm({ values: {} });
-      setPreviewSrc(null);
     },
   });
 
