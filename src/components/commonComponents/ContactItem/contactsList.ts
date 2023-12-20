@@ -2,7 +2,7 @@ import phoneIcon from "assets/icons/footerIcons/phone.svg";
 import emailIcon from "assets/icons/footerIcons/email.svg";
 import markerIcon from "assets/icons/footerIcons/map-marker.svg";
 
-import {Contacts} from "../../../types/typeFooter";
+import { Contacts } from "types/typeFooter";
 
 export const contactsList: Contacts[] = [
   {
@@ -29,4 +29,3 @@ export const contactsList: Contacts[] = [
     href: "https://maps.app.goo.gl/JRZd6hs3MxNwZrzE8",
   },
 ];
-
