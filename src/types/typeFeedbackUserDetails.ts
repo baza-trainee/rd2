@@ -20,3 +20,6 @@ export interface FeedbackUserDetails extends FeedbackUserData {
 export interface ResponseUserDetails extends FeedbackUserData {
     messages: Messages[]
 }
+export interface contactValuesType extends FeedbackUserData {
+    message: string;
+}
