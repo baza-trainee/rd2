@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { loadData } from "api/loadData";
 import { getCurrentEmail } from "api/getCurrentEmail";
+import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
 
 import { AddressItem, StyledLink } from "./ContactItem.styled";
 
@@ -16,16 +17,22 @@ type ContactItemProps = {
 };
 
 const ContactItem = (props: ContactItemProps) => {
-  const { data: email, isError } = useQuery({
+  const { t } = useTranslation();
+
+  const { data: phoneNumber, isError: isErrorPhoneNumber } = useQuery({
+    queryKey: "phone",
+    queryFn: loadData(getCurrentPhoneNumber),
+  });
+
+  const { data: email, isError: isErrorEmail } = useQuery({
     queryKey: "email",
     queryFn: loadData(getCurrentEmail),
   });
 
-  const currentEmail = isError ? "наш email" : email;
+  const currentEmail = isErrorEmail ? "наш email" : email?.email;
+  const currentPhoneNumber = isErrorPhoneNumber ? "наш телефон" : phoneNumber?.phone;
 
-  const { t } = useTranslation();
-
-  const { icon, alt, desc, descKey, href, type } = props;
+  const { icon, alt, descKey, href, type } = props;
 
   switch (type) {
     case "text":
@@ -41,7 +48,7 @@ const ContactItem = (props: ContactItemProps) => {
         <StyledLink href={href} target="_blank">
           <AddressItem>
             <img src={icon} width={24} height={24} alt={alt} />
-            <span>{desc}</span>
+            <span>{currentPhoneNumber}</span>
           </AddressItem>
         </StyledLink>
       );
