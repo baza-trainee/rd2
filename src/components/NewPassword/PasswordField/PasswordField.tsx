@@ -8,7 +8,7 @@ import {
 
 interface Props {
   labelText: string;
-  name: "password" | "passwordRepeat";
+  name: "password" | "confirmPassword";
 }
 
 export const PasswordField = ({ labelText, name }: Props) => {

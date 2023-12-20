@@ -13,6 +13,7 @@ export function loadData(func: () => Promise<AxiosResponse<any, any>>) {
       let errMes: string = " ";
 
       if (axios.isAxiosError(error))  {
+
         if (error.response) {
           const response = error.response;
           errMes = `Status ${response.status}. ${response.data?.detail}`;

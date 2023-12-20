@@ -29,8 +29,9 @@ export const AuthForm = ({ handleIsOpenModal }: Props) => {
       if (getAccessToken()) {
         setIsLoggedIn(true);
         navigate("/admin");
+      } else {
+        throw new Error("invalid credentials");
       }
-      throw new Error("invalid credentials");
     },
 
     onError: () => {

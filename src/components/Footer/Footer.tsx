@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 import { useTranslation } from "react-i18next";
-
 import Container from "@mui/material/Container";
 
-import { contactsList } from "../commonComponents/ContactItem/contactsList";
+import { contactsList } from "components/commonComponents/ContactItem/contactsList";
 
-import { ContactItem } from "../commonComponents/ContactItem/ContactItem";
+import { ContactItem } from "components/commonComponents/ContactItem/ContactItem";
 
 import { rulesList } from "./footerList";
 
