@@ -7,7 +7,7 @@ import { RefreshTokenService } from "services/RefreshTokenService";
 const { getAccessToken, setAccessToken } = new AccessTokenService();
 const { getRefreshToken } = new RefreshTokenService();
 
-const BASE_URL =
+export const BASE_URL =
   process.env.REACT_APP_BASE_URL ||
   "https://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com";
 

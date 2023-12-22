@@ -1,5 +1,13 @@
 import { fetcher } from "./fetcher";
 
+export interface ResponseLogosList {
+    id: number,
+    filename: string,
+    description: string,
+    path: string,
+    src?: string,
+}
+
 export const addLogo = (data: File) => {
     return () => fetcher.post("/api/logo/upload",
             {
@@ -12,4 +20,8 @@ export const addLogo = (data: File) => {
                   },
                 },
               )
+}
+
+export const fetchLogosList = () => {
+    return fetcher.get<ResponseLogosList>("/api/logo/logos")
 }
