@@ -47,7 +47,7 @@ export const PartnersSlideList = () => {
             <Swiper
                 modules={[Navigation]}
                 spaceBetween={16}
-                centeredSlides={isBolowMd}
+                //centeredSlides={isBolowMd}
                 slidesPerView={numToDisplay}
                 navigation={{
                     prevEl: ".prev",
