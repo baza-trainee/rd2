@@ -5,6 +5,12 @@ export const SwiperContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  
+  & .swiper {
+    @media (min-width: 1280px) {
+      margin-left: 0;
+    }
+  }
 
   & .swiper-slide {
     
