@@ -12,6 +12,7 @@ import { EmailCredentials, setNewEmail } from "api/setNewEmail";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
+import { queryClient } from "App";
 
 interface FormEmail {
   currentEmail: string;
@@ -35,6 +36,8 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
     {
       onSuccess: () => {
         handleOpenModal();
+
+        queryClient.invalidateQueries("email");
       },
       onError: (error: AxiosError) => {
         if (error.response && error) {

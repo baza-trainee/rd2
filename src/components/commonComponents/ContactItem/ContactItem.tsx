@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
 
@@ -19,12 +21,20 @@ type ContactItemProps = {
 const ContactItem = (props: ContactItemProps) => {
   const { t } = useTranslation();
 
-  const { data: phoneNumber, isError: isErrorPhoneNumber } = useQuery({
+  const {
+    data: phoneNumber,
+    isError: isErrorPhoneNumber,
+    refetch: refetchPhoneNumber,
+  } = useQuery({
     queryKey: "phone",
     queryFn: loadData(getCurrentPhoneNumber),
   });
 
-  const { data: email, isError: isErrorEmail } = useQuery({
+  const {
+    data: email,
+    isError: isErrorEmail,
+    refetch: refetchEmail,
+  } = useQuery({
     queryKey: "email",
     queryFn: loadData(getCurrentEmail),
   });
@@ -33,6 +43,11 @@ const ContactItem = (props: ContactItemProps) => {
   const currentPhoneNumber = isErrorPhoneNumber ? "наш телефон" : phoneNumber?.phone;
 
   const { icon, alt, descKey, href, type } = props;
+
+  useEffect(() => {
+    refetchEmail();
+    refetchPhoneNumber();
+  }, [refetchEmail, refetchPhoneNumber]);
 
   switch (type) {
     case "text":
