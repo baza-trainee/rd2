@@ -8,14 +8,13 @@ import { Fallback } from "../../commonComponents/Fallback/Fallback";
 
 import { loadData } from "../../../api/loadData";
 
-import {ErrorBlock} from "../../commonComponents/ErrorBlock/ErrorBlock";
+import { ErrorBlock } from "../../commonComponents/ErrorBlock/ErrorBlock";
 
 import { LoadFeedbackListButton } from "./LoadFeedbackListButton/LoadFeedbackListButton";
 
 import { FeedbackListWrapper } from "./AdminFeedback.styled";
 
 import { UsersFeedbackBlock } from "./UsersFeedbackBlock/UsersFeedbackBlock";
-
 
 const AdminFeedback = () => {
   const { isLoading, isError, data, error } = useQuery({
@@ -30,14 +29,13 @@ const AdminFeedback = () => {
       <FeedbackListWrapper>
         <LoadFeedbackListButton />
 
-        {error instanceof Error
-            && <ErrorBlock blockType={true}>
-              <p>{error.message}</p>
-            </ErrorBlock>
-        }
+        {error instanceof Error && (
+          <ErrorBlock blockType={true}>
+            <p>{error.message}</p>
+          </ErrorBlock>
+        )}
 
-        {!isError && data && <UsersFeedbackBlock userList={data} />}
-
+        {!isError && Array.isArray(data) && <UsersFeedbackBlock userList={data} />}
       </FeedbackListWrapper>
     </PageContentWrapper>
   );
