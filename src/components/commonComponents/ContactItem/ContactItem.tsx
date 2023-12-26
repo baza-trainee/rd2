@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { loadData } from "api/loadData";
 import { getCurrentEmail } from "api/getCurrentEmail";
-import { CurrentPhoneNumber, getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
+import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
 
 import { AddressItem, StyledLink } from "./ContactItem.styled";
 
