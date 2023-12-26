@@ -12,6 +12,7 @@ import { loadData } from "api/loadData";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
+import { queryClient } from "App";
 
 interface FormNumber {
   currentNumber: string;
@@ -35,7 +36,9 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     {
       onSuccess: () => {
         handleOpenModal();
+        queryClient.invalidateQueries("phone");
       },
+
       onError: (error: AxiosError) => {
         if (error.response || error) {
           handleIsOpenModal();
