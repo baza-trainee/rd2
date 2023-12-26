@@ -7,9 +7,9 @@ import { CssBaseline } from "@mui/material";
 import i18next from "translation/i18next";
 
 import { theme } from "theme/theme";
-import { clientConfig } from "config/clientQuery.config";
+import { clientConfig } from "configs/clientQuery.config";
 
-const queryClient = new QueryClient(clientConfig);
+export const queryClient = new QueryClient(clientConfig);
 
 export const App = ({ children }: PropsWithChildren): JSX.Element => {
   return (
