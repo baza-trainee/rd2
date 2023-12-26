@@ -1,7 +1,7 @@
 import { fetcher } from "api/fetcher";
 
-interface CurrentPhoneNumber {
-  email: string;
+export interface CurrentPhoneNumber {
+  phone: string;
 }
 
 export const getCurrentPhoneNumber = () =>
