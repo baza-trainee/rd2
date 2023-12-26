@@ -61,7 +61,9 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     formikHelpers.resetForm();
   };
 
-  const currentPhoneNumber = isErrorPhoneNumber ? "наш телефон" : phoneNumber?.phone;
+  const currentPhoneNumber = isErrorPhoneNumber
+    ? "наш телефон"
+    : (phoneNumber?.phone as string);
 
   return (
     <Formik

@@ -47,7 +47,7 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
     },
   );
 
-  const currentEmail: string = isError ? "наш email" : email?.email;
+  const currentEmail = isError ? "наш email" : (email?.email as string);
 
   const handleSubmit = (
     credentials: FormEmail,
