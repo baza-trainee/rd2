@@ -1,94 +1,93 @@
 import React from "react";
 
-import { useQuery } from "react-query";
+import {useQuery} from "react-query";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import {Typography, useMediaQuery} from "@mui/material";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 import { Navigation } from "swiper/modules";
 
-import { BASE_URL } from "../../../../api/fetcher";
+import {BASE_URL} from "../../../../api/fetcher";
 
-import { loadData } from "../../../../api/loadData";
+import {loadData} from "../../../../api/loadData";
 
-import { fetchLogosList, ResponseLogosList } from "../../../../api/partnersLogo";
+import {fetchLogosList, ResponseLogosList} from "../../../../api/partnersLogo";
 
 import "swiper/css";
 
-import { PartnersCard } from "../PartnersCard/PartnersCard";
+import {PartnersCard} from "../PartnersCard/PartnersCard";
 
-import { theme } from "../../../../theme/theme";
+import {theme} from "../../../../theme/theme";
 
-import { handleSlideToDisplay } from "../../../../helpers/handleSlideToDisplay";
+import {handleSlideToDisplay} from "../../../../helpers/handleSlideToDisplay";
 
-import { partners } from "../PartnersSlider/partnersList";
+import {partners} from "../PartnersSlider/partnersList";
 
-export const PartnersSlideList = (): JSX.Element => {
-  const imgPath = BASE_URL + "/api/logo/logos/";
+export const PartnersSlideList = () => {
 
-  const { isLoading, isError, data } = useQuery({
-    queryKey: ["logosList"],
-    queryFn: loadData(fetchLogosList),
-    // placeholderData: partners,
-  });
+    const imgPath = BASE_URL + "/api/logo/logos/";
 
-  const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
-  const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
-  const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
+    const {isLoading, isError, data} = useQuery({
+        queryKey: ["logosList"],
+        queryFn: loadData(fetchLogosList),
+        placeholderData: partners,
+    });
 
-  const numToDisplay = handleSlideToDisplay(2, isAboveMd, isAboveLg);
+    const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
+    const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
+    const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
 
-  if (isLoading) return <></>;
+    const numToDisplay = handleSlideToDisplay(2, isAboveMd, isAboveLg);
 
-  if (isError || !Array.isArray(data)) {
-    return (
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={16}
-        //centeredSlides={isBolowMd}
-        slidesPerView={numToDisplay}
-        navigation={{
-          prevEl: ".prev",
-          nextEl: ".next",
-        }}
-      >
-        {partners.map((item) => (
-          <SwiperSlide key={item.id}>
-            <PartnersCard imageSrc={item.src} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    );
-  }
+    if (isLoading ) return (<></>);
 
-  {
-    return (
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={16}
-        centeredSlides={isBolowMd}
-        slidesPerView={handleSlideToDisplay(data.length, isAboveMd, isAboveLg)}
-        navigation={{
-          prevEl: ".prev",
-          nextEl: ".next",
-        }}
-      >
-        {data.length < 1 ? (
-          <Typography>Тут будуть логотипи наших партнерів</Typography>
-        ) : (
-          data.map((slideInfo: ResponseLogosList) => {
-            const imgSrc = slideInfo.path
-              ? imgPath + slideInfo.path
-              : slideInfo.src || "";
-            return (
-              <SwiperSlide key={slideInfo.id}>
-                <PartnersCard imageSrc={imgSrc} />
-              </SwiperSlide>
-            );
-          })
-        )}
-      </Swiper>
-    );
-  }
-};
+    if (isError) {
+        return (
+            <Swiper
+                modules={[Navigation]}
+                spaceBetween={16}
+                //centeredSlides={isBolowMd}
+                slidesPerView={numToDisplay}
+                navigation={{
+                    prevEl: ".prev",
+                    nextEl: ".next",
+                }}
+            >
+                {
+                    partners.map((item) => (
+                        <SwiperSlide key={item.id}>
+                            <PartnersCard imageSrc={item.src} />
+                        </SwiperSlide>
+                    ))
+                }
+            </Swiper>
+        )
+    }
+
+    return  (
+        <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            centeredSlides={isBolowMd}
+            slidesPerView={handleSlideToDisplay(data.length, isAboveMd, isAboveLg)}
+            navigation={{
+                prevEl: ".prev",
+                nextEl: ".next",
+            }}
+        >
+            {
+                ( data.length < 1 )
+                    ? <Typography>Тут будуть логотипи наших партнерів</Typography>
+                    : (
+                        data.map((slideInfo: ResponseLogosList) => {
+                          const imgSrc = slideInfo.path?(imgPath+slideInfo.path):slideInfo.src|| "";
+                          return (<SwiperSlide key={slideInfo.id}>
+                                    <PartnersCard imageSrc={imgSrc} />
+                                </SwiperSlide>)
+                        })
+                    )
+            }
+        </Swiper>
+    )
+}
