@@ -1,17 +1,19 @@
 import { isAxiosError } from "axios";
 
 import { fetcher } from "api/fetcher";
+import { PasswordCredentials } from "types/restorePasswordCredentials";
+import { getResetTokenFromUrl } from "helpers/auth/getResetTokenFromUrl";
 
-export interface PasswordCredentials {
-  new_password: string;
-  confirm_password: string;
-}
-
-export const updatePassword = async (credentials: PasswordCredentials) => {
+export const restorePassword = async (credentials: PasswordCredentials) => {
   try {
+    const resetToken = getResetTokenFromUrl();
+
     const response = await fetcher.post("/api/auth/reset-password", credentials, {
       headers: {
         "Content-Type": "application/json",
+      },
+      params: {
+        reset_token: resetToken as string,
       },
     });
 

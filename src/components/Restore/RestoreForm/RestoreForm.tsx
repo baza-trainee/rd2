@@ -1,6 +1,5 @@
 import { Form, Formik, FormikHelpers } from "formik";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 
 import { FormEmail } from "types/formEmail";
@@ -18,15 +17,10 @@ interface Props {
 
 export const RestoreForm = ({ handleOpenModalSuccess }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-  const navigate = useNavigate();
 
   const mutation = useMutation((email: FormEmail) => restorePassword(email), {
     onSuccess: () => {
       handleOpenModalSuccess();
-
-      setTimeout(() => {
-        navigate("/admin/auth/new-password");
-      }, 3e3);
     },
 
     onError: () => {
