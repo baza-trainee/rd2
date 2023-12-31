@@ -6,13 +6,14 @@ import { validationSchema } from "components/Admin/ourContacts/PhoneForm/validat
 import { InputWrapper } from "components/Admin/ourContacts/InputWrapper/InputWrapper";
 import { NumberField } from "components/Admin/ourContacts/NumberField/NumberField";
 import { SubmitButton } from "components/Admin/ourContacts/SubmitButton/SubmitButton";
-import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
-import { PhoneNumberCredentials, setNewPhoneNumber } from "api/setNewPhoneNumber";
-import { loadData } from "api/loadData";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { queryClient } from "App";
+import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
+import { loadData } from "api/loadData";
+import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
+import { PhoneNumberCredentials, setNewPhoneNumber } from "api/setNewPhoneNumber";
 
 interface FormNumber {
   currentNumber: string;
@@ -26,19 +27,13 @@ interface Props {
 export const PhoneForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-  const { data: phoneNumber, isError: isErrorPhoneNumber } = useQuery({
-    queryKey: "phone",
-    queryFn: loadData(getCurrentPhoneNumber),
-  });
-
-  const setNumber = useMutation(
+  const phone = useMutation(
     (credential: PhoneNumberCredentials) => setNewPhoneNumber(credential),
     {
       onSuccess: () => {
         handleOpenModal();
         queryClient.invalidateQueries("phone");
       },
-
       onError: (error: AxiosError) => {
         if (error.response || error) {
           handleIsOpenModal();
@@ -47,27 +42,31 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     },
   );
 
-  const { isLoading } = setNumber;
+  const { data, isError, isLoading } = useQuery({
+    queryKey: "phone",
+    queryFn: loadData(getCurrentPhoneNumber),
+    enabled: !phone.isLoading,
+  });
 
   const handleSubmit = (
     credentials: FormNumber,
     formikHelpers: FormikHelpers<FormNumber>,
   ) => {
-    const newPhone = {
-      phone: credentials.newNumber,
-    };
-    setNumber.mutate(newPhone);
-
+    phone.mutate({ phone: credentials.newNumber });
     formikHelpers.resetForm();
   };
 
-  const currentPhoneNumber = isErrorPhoneNumber
-    ? "наш телефон"
-    : (phoneNumber?.phone as string);
+  if (!data || isLoading) {
+    return <ContactsSkeleton />;
+  }
+
+  const { isLoading: isLoadingSendPhone } = phone;
+
+  const currentPhoneNumber = isError ? "номер телефону" : data?.phone;
 
   return (
     <Formik
-      initialValues={{ currentNumber: currentPhoneNumber, newNumber: "" }}
+      initialValues={{ currentNumber: data.phone, newNumber: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
@@ -84,8 +83,8 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
             <NumberField labelText="Новий номер телефону" name="newNumber" />
           </InputWrapper>
 
-          <SubmitButton isValid={isValid}>
-            {(isLoading && <RequestFallback />) || "Змінити номер"}
+          <SubmitButton isValid={isValid || isLoadingSendPhone}>
+            {(isLoadingSendPhone && <RequestFallback />) || "Змінити номер"}
           </SubmitButton>
 
           <ModalError isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
