@@ -6,13 +6,14 @@ import { InputWrapper } from "components/Admin/ourContacts/InputWrapper/InputWra
 import { EmailField } from "components/Admin/ourContacts/EmailField/EmailField";
 import { SubmitButton } from "components/Admin/ourContacts/SubmitButton/SubmitButton";
 import { validationSchema } from "components/Admin/ourContacts/EmailForm/validationSchema";
-import { loadData } from "api/loadData";
-import { getCurrentEmail } from "api/getCurrentEmail";
-import { EmailCredentials, setNewEmail } from "api/setNewEmail";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { queryClient } from "App";
+import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
+import { EmailCredentials, setNewEmail } from "api/setNewEmail";
+import { loadData } from "api/loadData";
+import { getCurrentEmail } from "api/getCurrentEmail";
 
 interface FormEmail {
   currentEmail: string;
@@ -26,42 +27,37 @@ interface Props {
 export const EmailForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-  const { data: email, isError } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: "email",
     queryFn: loadData(getCurrentEmail),
   });
 
-  const setEmail = useMutation(
-    (credentials: EmailCredentials) => setNewEmail(credentials),
-    {
-      onSuccess: () => {
-        handleOpenModal();
+  const email = useMutation((credentials: EmailCredentials) => setNewEmail(credentials), {
+    onSuccess: () => {
+      handleOpenModal();
 
-        queryClient.invalidateQueries("email");
-      },
-      onError: (error: AxiosError) => {
-        if (error.response && error) {
-          handleIsOpenModal();
-        }
-      },
+      queryClient.invalidateQueries("email");
     },
-  );
-
-  const currentEmail = isError ? "наш email" : (email?.email as string);
+    onError: (error: AxiosError) => {
+      if (error.response && error) {
+        handleIsOpenModal();
+      }
+    },
+  });
 
   const handleSubmit = (
     credentials: FormEmail,
     formikHelpers: FormikHelpers<FormEmail>,
   ) => {
-    const newEmail = {
-      email: credentials.newEmail,
-    };
-
-    setEmail.mutate(newEmail);
+    email.mutate({ email: credentials.newEmail });
     formikHelpers.resetForm();
   };
 
-  const { isLoading } = setEmail;
+  if (!data || isLoading) {
+    return <ContactsSkeleton />;
+  }
+
+  const currentEmail = isError ? "email" : data.email || "";
 
   return (
     <Formik
