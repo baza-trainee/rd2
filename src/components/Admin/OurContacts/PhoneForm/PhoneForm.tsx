@@ -9,7 +9,6 @@ import { SubmitButton } from "components/Admin/OurContacts/SubmitButton/SubmitBu
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { queryClient } from "App";
 import { ContactsSkeleton } from "components/Admin/OurContacts/ContactsSkeleton/ContactsSkeleton";
 import { loadData } from "api/loadData";
 import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
@@ -32,7 +31,6 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     {
       onSuccess: () => {
         handleOpenModal();
-        queryClient.invalidateQueries("phone");
       },
       onError: (error: AxiosError) => {
         if (error.response || error) {
@@ -45,7 +43,6 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
   const { data, isError, isLoading } = useQuery({
     queryKey: "phone",
     queryFn: loadData(getCurrentPhoneNumber),
-    enabled: !phone.isLoading,
   });
 
   const handleSubmit = (
@@ -64,9 +61,12 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
 
   const currentPhoneNumber = isError ? "номер телефону" : data?.phone;
 
+  console.log(currentPhoneNumber);
+
   return (
     <Formik
-      initialValues={{ currentNumber: data.phone, newNumber: "" }}
+      enableReinitialize
+      initialValues={{ currentNumber: currentPhoneNumber, newNumber: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >

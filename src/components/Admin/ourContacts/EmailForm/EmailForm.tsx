@@ -9,7 +9,6 @@ import { validationSchema } from "components/Admin/OurContacts/EmailForm/validat
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { queryClient } from "App";
 import { ContactsSkeleton } from "components/Admin/OurContacts/ContactsSkeleton/ContactsSkeleton";
 import { EmailCredentials, setNewEmail } from "api/setNewEmail";
 import { loadData } from "api/loadData";
@@ -35,8 +34,6 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
   const email = useMutation((credentials: EmailCredentials) => setNewEmail(credentials), {
     onSuccess: () => {
       handleOpenModal();
-
-      queryClient.invalidateQueries("email");
     },
     onError: (error: AxiosError) => {
       if (error.response && error) {
@@ -61,6 +58,7 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
 
   return (
     <Formik
+      enableReinitialize
       initialValues={{ currentEmail, newEmail: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
