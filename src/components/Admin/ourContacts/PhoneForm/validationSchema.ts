@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+// /* eslint-disable max-len */
 import { object, string, ref } from "yup";
 
 const phoneRegExp = /^(\+?\d{1,3})?[ -]?\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$/;
@@ -12,7 +12,8 @@ export const validationSchema = object({
     .test("start from +", "номер має починатись зі знаку +", function (value) {
       return value?.slice(0, 1).includes("+");
     })
-    .test("not-same", "номери не мають співпадати", function (value) {
+
+    .test("not-same", "номери не мають співпадати", function (value): boolean {
       const currentNumber = this.resolve(ref("currentNumber"));
       return value !== currentNumber;
     })
