@@ -35,7 +35,7 @@ export const PartnersSlideList = (): JSX.Element => {
 
   const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
-  const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
+  //const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
 
   const numToDisplay = handleSlideToDisplay(2, isAboveMd, isAboveLg);
 
@@ -67,7 +67,7 @@ export const PartnersSlideList = (): JSX.Element => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
-        centeredSlides={isBolowMd}
+        //centeredSlides={isBolowMd}
         slidesPerView={handleSlideToDisplay(data.length, isAboveMd, isAboveLg)}
         navigation={{
           prevEl: ".prev",
