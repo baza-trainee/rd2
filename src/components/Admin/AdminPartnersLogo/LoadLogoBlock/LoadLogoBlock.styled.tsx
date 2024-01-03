@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
+import { ErrorBlock } from "components/commonComponents/ErrorBlock/ErrorBlock";
 
 import { theme } from "../../../../theme/theme";
 
 const hoverColor = theme.palette.primary.dark;
 const errorBorderColor = theme.palette.error.main;
-const errorTextColor = theme.palette.error.dark;
 
 const LoadFieldWrapper = styled.div`
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   height: 200px;
   
   outline: 2px dashed #c7c7c7;
@@ -88,13 +88,9 @@ const LoadedImg = styled.img`
 }
 `;
 
-const ErrorBlock = styled.p`
-  position: absolute;
-  bottom: -30px;
+const ErrorBlockStyled = styled(ErrorBlock)`
   width: 100%;
-
   text-align: center;
-  color: ${errorTextColor};
 `;
 
-export { InputStyled, LabelStyled, ErrorBlock, LoadFieldWrapper, LoadedImg };
+export { InputStyled, LabelStyled, ErrorBlockStyled, LoadFieldWrapper, LoadedImg };
