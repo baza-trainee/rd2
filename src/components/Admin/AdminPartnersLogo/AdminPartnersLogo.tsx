@@ -12,13 +12,13 @@ import {ButtonsBlock} from "components/Admin/AdminPartnersLogo/ButtonsBlock/Butt
 
 import {useMutation} from "react-query";
 
+import Typography from "@mui/material/Typography";
+
 import {addLogo} from "../../../api/partnersLogo";
 
 import {Fallback} from "../../commonComponents/Fallback/Fallback";
 
 import {loadData} from "../../../api/loadData";
-
-
 
 type FormValues = {
   logoImg?: File;
@@ -82,6 +82,13 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
           errorMes={formik.errors.logoImg}
           onChange={onChangeInput}
         />
+
+          <Typography marginBottom={5}>
+              Зверніть увагу, що пропорції завантаженного зображення логотипу при
+              відображенні на сайті 3:2. Після завантаження на сайт логотип буде
+              виглядати саме так, як він відобразивля на цій сторінці.
+          </Typography>
+
         <ButtonsBlock onReset={onResetForm}/>
       </form>
 
