@@ -13,6 +13,7 @@ import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/
 import { EmailCredentials, setNewEmail } from "api/setNewEmail";
 import { loadData } from "api/loadData";
 import { getCurrentEmail } from "api/getCurrentEmail";
+import { queryClient } from "App";
 
 interface FormEmail {
   currentEmail: string;
@@ -34,6 +35,7 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
   const email = useMutation((credentials: EmailCredentials) => setNewEmail(credentials), {
     onSuccess: () => {
       handleOpenModal();
+      queryClient.invalidateQueries("email");
     },
     onError: (error: AxiosError) => {
       if (error.response && error) {

@@ -13,6 +13,7 @@ import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/
 import { loadData } from "api/loadData";
 import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
 import { PhoneNumberCredentials, setNewPhoneNumber } from "api/setNewPhoneNumber";
+import { queryClient } from "App";
 
 interface FormNumber {
   currentNumber: string;
@@ -31,6 +32,7 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     {
       onSuccess: () => {
         handleOpenModal();
+        queryClient.invalidateQueries("phone");
       },
       onError: (error: AxiosError) => {
         if (error.response || error) {
