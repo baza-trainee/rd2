@@ -16,8 +16,8 @@ export const AuthRoutes = () => {
     <Suspense fallback={<Fallback />}>
       <Routes>
         <Route element={<AuthLayout />}>
-          <Route path={ROUTES_ENUM.AUTH} element={<Auth />} />
-          <Route index element={<Navigate to={ROUTES_ENUM.AUTH} />} />
+          <Route path={ROUTES_ENUM.LOGIN} element={<Auth />} />
+          <Route index element={<Navigate to={ROUTES_ENUM.LOGIN} />} />
           <Route path={ROUTES_ENUM.RESTORE} element={<Restore />} />
           <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<NewPassword />} />
         </Route>
