@@ -6,7 +6,7 @@ export const clientConfig = {
       refetchOnWindowFocus: true,
       refetchOnMount: true,
       refetchOnReconnect: true,
-      retry: true,
+      //retry: true,
       staleTime: twentyFourHoursInMs,
     },
   },

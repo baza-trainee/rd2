@@ -4,7 +4,7 @@ import {Transition} from "react-transition-group";
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-import {ErrorBlock,
+import {ErrorBlockStyled,
   InputStyled,
   LabelStyled,
   LoadedImg,
@@ -73,7 +73,7 @@ const LoadLogoBlock = (props: LoadLogoBlockProps) => {
       />
 
       {errorMes
-        ? <ErrorBlock>{errorMes}</ErrorBlock>
+        ? <ErrorBlockStyled>{errorMes}</ErrorBlockStyled>
         : null
       }
 

@@ -1,14 +1,15 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-export function loadData<T>(func: () => Promise<AxiosResponse<T, AxiosError>>) {
+export function loadData<T>(func: () => Promise<AxiosResponse<T, AxiosError>> ) {
   return async () => {
     try {
       const promise = func();
 
       const response = await promise;
-
-      return response.data;
+//console.log(response.data)
+      return (response && response.data)
     } catch (error: unknown | AxiosError) {
+
       let errMes: string = " ";
 
       if (axios.isAxiosError(error)) {
