@@ -61,8 +61,6 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
 
   const currentPhoneNumber = isError ? "номер телефону" : data?.phone;
 
-  console.log(currentPhoneNumber);
-
   return (
     <Formik
       enableReinitialize
