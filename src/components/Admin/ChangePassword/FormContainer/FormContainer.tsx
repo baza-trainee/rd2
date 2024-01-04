@@ -6,7 +6,7 @@ import {
   BoxContainerStyle,
   BoxWrapperStyle,
   PaperStyle,
-} from "components/ChangePassword/FormContainer/FormContainer.classes";
+} from "components/Admin/ChangePassword/FormContainer/FormContainer.classes";
 
 export const FormContainer = ({ children }: PropsWithChildren) => {
   return (

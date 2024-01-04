@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { Typography } from "@mui/material";
 
-import { ChangePasswordForm } from "components/ChangePassword/ChangePasswordForm/ChangePasswordForm";
-import { FormContainer } from "components/ChangePassword/FormContainer/FormContainer";
+import { ChangePasswordForm } from "components/Admin/ChangePassword/ChangePasswordForm/ChangePasswordForm";
+import { FormContainer } from "components/Admin/ChangePassword/FormContainer/FormContainer";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 

@@ -13,6 +13,7 @@ import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { queryClient } from "App";
+import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
 
 interface FormEmail {
   currentEmail: string;
@@ -26,28 +27,23 @@ interface Props {
 export const EmailForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-  const { data: email, isError } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: "email",
     queryFn: loadData(getCurrentEmail),
   });
 
-  const setEmail = useMutation(
-    (credentials: EmailCredentials) => setNewEmail(credentials),
-    {
-      onSuccess: () => {
-        handleOpenModal();
+  const email = useMutation((credentials: EmailCredentials) => setNewEmail(credentials), {
+    onSuccess: () => {
+      handleOpenModal();
 
-        queryClient.invalidateQueries("email");
-      },
-      onError: (error: AxiosError) => {
-        if (error.response && error) {
-          handleIsOpenModal();
-        }
-      },
+      queryClient.invalidateQueries("email");
     },
-  );
-
-  const currentEmail = isError ? "наш email" : (email?.email as string);
+    onError: (error: AxiosError) => {
+      if (error.response && error) {
+        handleIsOpenModal();
+      }
+    },
+  });
 
   const handleSubmit = (
     credentials: FormEmail,
@@ -57,14 +53,21 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
       email: credentials.newEmail,
     };
 
-    setEmail.mutate(newEmail);
+    email.mutate(newEmail);
     formikHelpers.resetForm();
   };
 
-  const { isLoading } = setEmail;
+  if (!data || isLoading) {
+    return <ContactsSkeleton />;
+  }
+
+  const { isLoading: isLoadingSendEmail } = email;
+
+  const currentEmail = isError ? "email" : data.email || "";
 
   return (
     <Formik
+      enableReinitialize
       initialValues={{ currentEmail, newEmail: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
@@ -83,7 +86,7 @@ export const EmailForm = ({ handleOpenModal }: Props) => {
           </InputWrapper>
 
           <SubmitButton isValid={isValid}>
-            {(isLoading && <RequestFallback />) || "Змінити пошту"}
+            {(isLoadingSendEmail && <RequestFallback />) || "Змінити пошту"}
           </SubmitButton>
 
           <ModalError isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
