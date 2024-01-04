@@ -1,9 +1,7 @@
+import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPageContainer";
 import { Outlet } from "react-router-dom";
 
-import { AdminPageContainer } from "components/Admin/AdminPageContainer/AdminPageContainer";
-
-export const AdminPanelLayout = () => {
-
+export const AdminPageLayout = () => {
   return (
     <AdminPageContainer>
       <Outlet />

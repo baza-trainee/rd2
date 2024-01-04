@@ -8,9 +8,10 @@ export enum ROUTES_ENUM {
   ADMIN_FEEDBACK = "feedback",
   FEEDBACK_DETAILS = ":id",
   ADMIN_REPORTS = "reports",
-  AUTH = "auth",
-  RESTORE = "auth/restore",
-  NEW_PASSWORD = "auth/new-password",
+  ADMIN = "admin",
+  LOGIN = "login",
+  RESTORE = "restore",
+  NEW_PASSWORD = "new-password",
   CHANGE_PASSWORD = "change-password",
   NOT_FOUND = "/*",
 }

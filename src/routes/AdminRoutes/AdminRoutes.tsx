@@ -2,9 +2,9 @@ import { Suspense, lazy } from "react";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { AdminPanelLayout } from "routes/layouts/AdminPanelLayout";
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { Fallback } from "components/commonComponents/Fallback/Fallback";
+import { AdminPageLayout } from "routes/layouts/AdminPageLayout";
 
 const Feedback = lazy(() => import("pages/admin/Feedback"));
 const FeedbackDetails = lazy(() => import("pages/admin/FeedbackDetails"));
@@ -18,8 +18,9 @@ export const AdminRoutes = () => {
   return (
     <Suspense fallback={<Fallback />}>
       <Routes>
-        <Route element={<AdminPanelLayout />}>
+        <Route element={<AdminPageLayout />}>
           <Route path={ROUTES_ENUM.ADMIN_PARTNERS} element={<Partners />} />
+
           <Route
             index
             element={<Navigate to={ROUTES_ENUM.ADMIN_PARTNERS} replace={true} />}

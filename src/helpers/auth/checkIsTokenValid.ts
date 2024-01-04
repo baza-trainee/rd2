@@ -1,15 +1,11 @@
-import { jwtDecode } from "jwt-decode";
+import { checkIsTokenLive } from "helpers/auth/checkIsTokenLive";
 
-export const checkIsTokenValid = (token: string): any => {
-  const decodedToken = jwtDecode(token);
-  const { exp } = decodedToken;
-  if (exp) {
-    const expTime = exp * 1000;
-    const currentTime = new Date().getTime();
+export const checkIsTokenValid = (token: string | null): boolean => {
+  if (token) {
+    const isValid = checkIsTokenLive(token);
 
-    if (expTime - currentTime <= 0) {
-      return false;
-    }
+    return isValid;
   }
-  return true;
+
+  return false;
 };
