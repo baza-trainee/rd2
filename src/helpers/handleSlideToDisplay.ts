@@ -1,5 +1,5 @@
 export const handleSlideToDisplay = (
-  lengthOflist: number,
+  //lengthOflist: number,
   isAboveMd: boolean,//768
   isAboveLg: boolean,//1280
 ): number | string => {
