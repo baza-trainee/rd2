@@ -1,5 +1,3 @@
-import { useContext } from "react";
-
 import { Form, Formik, FormikHelpers } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -11,9 +9,9 @@ import { UsernameField } from "components/Auth/UsernameField/UsernameField";
 import { PasswordField } from "components/Auth/PasswordField/PasswordField";
 import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
-import { AuthContext } from "routes/layouts/Authorization";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { signIn } from "api/signIn";
+import { checkIsTokenValid } from "helpers/auth/checkIsTokenValid";
 
 interface Props {
   handleIsOpenModal: () => void;
@@ -22,12 +20,12 @@ interface Props {
 export const AuthForm = ({ handleIsOpenModal }: Props) => {
   const navigate = useNavigate();
   const { getAccessToken } = new AccessTokenService();
-  const { setIsLoggedIn } = useContext(AuthContext);
 
   const mutation = useMutation((credentials: FormValues) => signIn(credentials), {
     onSuccess: () => {
-      if (getAccessToken()) {
-        setIsLoggedIn(true);
+      const isAuthorizated = checkIsTokenValid(getAccessToken());
+
+      if (isAuthorizated) {
         navigate("/admin");
       } else {
         throw new Error("invalid credentials");
