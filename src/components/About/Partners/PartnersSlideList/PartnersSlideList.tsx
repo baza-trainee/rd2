@@ -1,8 +1,8 @@
 import React from "react";
 
-import { useQuery } from "react-query";
+import {useQuery} from "react-query";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,7 +12,7 @@ import { BASE_URL } from "../../../../api/fetcher";
 
 import { loadData } from "../../../../api/loadData";
 
-import { fetchLogosList, ResponseLogosList } from "../../../../api/partnersLogo";
+import { fetchLogosList } from "../../../../api/partnersLogo";
 
 import "swiper/css";
 
@@ -22,16 +22,32 @@ import { theme } from "../../../../theme/theme";
 
 import { handleSlideToDisplay } from "../../../../helpers/handleSlideToDisplay";
 
-import { partners } from "../PartnersSlider/partnersList";
+import {IPartners, partners} from "../PartnersSlider/partnersList";
 
-export const PartnersSlideList = (): JSX.Element => {
+
+export const PartnersSlideList = () => {
   const imgPath = BASE_URL + "/api/logo/logos/";
 
-  const { isLoading, isError, data } = useQuery({
-    queryKey: ["logosList"],
-    queryFn: loadData(fetchLogosList),
-    // placeholderData: partners,
-  });
+  const {isLoading, isError, isSuccess,data} = useQuery({
+      queryKey: ["logosList"],
+      queryFn: async () => {
+          try {
+              const data = await loadData(fetchLogosList)();
+
+              const dataNew:IPartners[] = data.map(logoData =>(
+                  {
+                      id: logoData.id.toString(),
+                      src: imgPath + logoData.path,
+                  }))
+              return dataNew;
+          }
+          catch (e){
+              throw e
+          }
+      },
+      placeholderData: partners,
+      },
+  );
 
   const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
@@ -41,11 +57,12 @@ export const PartnersSlideList = (): JSX.Element => {
 
   if (isLoading) return <></>;
 
-  if (isError || !Array.isArray(data)) {
+  if (isError) {
+
     return (
       <Swiper
         modules={[Navigation]}
-        spaceBetween={16}
+        spaceBetween={32}
         //centeredSlides={isBolowMd}
         slidesPerView={numToDisplay}
         navigation={{
@@ -62,11 +79,17 @@ export const PartnersSlideList = (): JSX.Element => {
     );
   }
 
+  if(isSuccess)
   {
-    return (
+     return (
       <Swiper
         modules={[Navigation]}
         spaceBetween={16}
+        breakpoints={{
+            1280: {
+                spaceBetween: 32,
+            },
+        }}
         //centeredSlides={isBolowMd}
         slidesPerView={handleSlideToDisplay(data.length, isAboveMd, isAboveLg)}
         navigation={{
@@ -74,21 +97,16 @@ export const PartnersSlideList = (): JSX.Element => {
           nextEl: ".next",
         }}
       >
-        {data.length < 1 ? (
-          <Typography>Тут будуть логотипи наших партнерів</Typography>
-        ) : (
-          data.map((slideInfo: ResponseLogosList) => {
-            const imgSrc = slideInfo.path
-              ? imgPath + slideInfo.path
-              : slideInfo.src || "";
-            return (
+        {
+          data.map((slideInfo: IPartners) => (
               <SwiperSlide key={slideInfo.id}>
-                <PartnersCard imageSrc={imgSrc} />
+                <PartnersCard imageSrc={slideInfo.src} />
               </SwiperSlide>
-            );
-          })
-        )}
+          ))
+        }
       </Swiper>
     );
   }
+
+  return  (<></>)
 };
