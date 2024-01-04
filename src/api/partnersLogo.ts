@@ -1,11 +1,6 @@
-import {fetcher} from "./fetcher";
+import {ResponseLogos} from "../types/typePartnersLogos";
 
-interface ResponseLogosList {
-  id: number;
-  filename: string;
-  description: string;
-  path: string;
-}
+import {fetcher} from "./fetcher";
 
 export const addLogo = (data: File) => {
   return () =>
@@ -25,6 +20,6 @@ export const addLogo = (data: File) => {
 
 export const  fetchLogosList = () => {
 
-  return fetcher.get<ResponseLogosList[]>("/api/logo/logos");
+  return fetcher.get<ResponseLogos[]>("/api/logo/logos");
 
 };
