@@ -13,6 +13,7 @@ import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { queryClient } from "App";
+import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
 
 interface FormNumber {
   currentNumber: string;
@@ -26,12 +27,7 @@ interface Props {
 export const PhoneForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-  const { data: phoneNumber, isError: isErrorPhoneNumber } = useQuery({
-    queryKey: "phone",
-    queryFn: loadData(getCurrentPhoneNumber),
-  });
-
-  const setNumber = useMutation(
+  const phone = useMutation(
     (credential: PhoneNumberCredentials) => setNewPhoneNumber(credential),
     {
       onSuccess: () => {
@@ -47,8 +43,6 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     },
   );
 
-  const { isLoading } = setNumber;
-
   const handleSubmit = (
     credentials: FormNumber,
     formikHelpers: FormikHelpers<FormNumber>,
@@ -56,17 +50,27 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
     const newPhone = {
       phone: credentials.newNumber,
     };
-    setNumber.mutate(newPhone);
+    phone.mutate(newPhone);
 
     formikHelpers.resetForm();
   };
 
-  const currentPhoneNumber = isErrorPhoneNumber
-    ? "наш телефон"
-    : (phoneNumber?.phone as string);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: "phone",
+    queryFn: loadData(getCurrentPhoneNumber),
+  });
+
+  if (!data || isLoading) {
+    return <ContactsSkeleton />;
+  }
+
+  const { isLoading: isLoadingSendPhone } = phone;
+
+  const currentPhoneNumber = isError ? "номер телефону" : data.phone;
 
   return (
     <Formik
+      enableReinitialize
       initialValues={{ currentNumber: currentPhoneNumber, newNumber: "" }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
@@ -85,7 +89,7 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
           </InputWrapper>
 
           <SubmitButton isValid={isValid}>
-            {(isLoading && <RequestFallback />) || "Змінити номер"}
+            {(isLoadingSendPhone && <RequestFallback />) || "Змінити номер"}
           </SubmitButton>
 
           <ModalError isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
