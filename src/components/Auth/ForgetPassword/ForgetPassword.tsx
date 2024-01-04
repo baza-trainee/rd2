@@ -1,5 +1,5 @@
-import { Box, Link} from "@mui/material";
-import {Link as RouterLink} from "react-router-dom";
+import { Box, Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
 import {
   BoxStyles,
@@ -9,7 +9,7 @@ import {
 export const ForgetPassword = () => {
   return (
     <Box sx={BoxStyles}>
-      <Link sx={LinkStyles} component={RouterLink} to="restore">
+      <Link sx={LinkStyles} component={RouterLink} to="/auth/restore">
         Забули пароль?
       </Link>
     </Box>
