@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 import {
   BoxStyles,
   InputStyles,
-} from "components/ChangePassword/PasswordField/PasswordField.classes";
+} from "components/Admin/ChangePassword/PasswordField/PasswordField.classes";
 import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 

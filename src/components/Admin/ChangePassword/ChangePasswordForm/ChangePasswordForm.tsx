@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import { Button, Typography } from "@mui/material";
 import { Form, Formik, FormikHelpers } from "formik";
 import { useMutation } from "react-query";
 import { AxiosError } from "axios";
 
-import { InputContainer } from "components/ChangePassword/InputContainer/InputContainer";
-import { PasswordField } from "components/ChangePassword/PasswordField/PasswordField";
-import { validationSchema } from "components/ChangePassword/ChangePasswordForm/validationSchema";
+import { InputContainer } from "components/Admin/ChangePassword/InputContainer/InputContainer";
+import { PasswordField } from "components/Admin/ChangePassword/PasswordField/PasswordField";
+import { validationSchema } from "components/Admin/ChangePassword/ChangePasswordForm/validationSchema";
 import { changePassword } from "api/changePassword";
 import { PasswordCredentials } from "types/passwordCredentials";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
