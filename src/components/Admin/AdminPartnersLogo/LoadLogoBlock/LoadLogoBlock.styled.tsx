@@ -68,7 +68,7 @@ const InputStyled = styled.input`
 `;
 
 const LoadedImg = styled.img`
-  width: 305px;
+  width: auto;
   height: 100%;
   display: block;
   margin: auto;
