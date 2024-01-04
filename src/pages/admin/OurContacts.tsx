@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import Typography from "@mui/material/Typography";
 
-import { EmailForm } from "components/Admin/OurContacts/EmailForm/EmailForm";
-import { PhoneForm } from "components/Admin/OurContacts/PhoneForm/PhoneForm";
+import { EmailForm } from "components/Admin/ourContacts/EmailForm/EmailForm";
+import { PhoneForm } from "components/Admin/ourContacts/PhoneForm/PhoneForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
 import { useIsOpenModal } from "hooks/useIsOpenModal";

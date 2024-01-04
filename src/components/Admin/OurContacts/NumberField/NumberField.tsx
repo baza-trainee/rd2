@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 import {
   BoxStyles,
   InputStyles,
-} from "components/Admin/OurContacts/NumberField/NumberField.classes";
+} from "components/Admin/ourContacts/NumberField/NumberField.classes";
 
 interface Props {
   labelText: string;
