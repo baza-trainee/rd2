@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 import { Box } from "@mui/material";
 
-import {useQuery, useQueryClient} from "react-query";
+import {useQuery} from "react-query";
 
 import {loadData} from "../../../../api/loadData";
 
