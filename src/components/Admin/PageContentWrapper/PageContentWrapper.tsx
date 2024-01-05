@@ -1,7 +1,12 @@
-import { PropsWithChildren } from "react";
+import React from "react";
 
 import { Wrapper } from "components/Admin/PageContentWrapper/PageContentWrapper.styled";
 
-export const PageContentWrapper = ({ children }: PropsWithChildren) => {
-  return <Wrapper>{children}</Wrapper>;
+type PageContentWrapperProps = {
+  children: React.ReactNode,
+  className?: string,
+}
+
+export const PageContentWrapper = ({ children, className }: PageContentWrapperProps) => {
+  return <Wrapper className={className}>{children}</Wrapper>;
 };

@@ -8,8 +8,6 @@ import {FeedbackUserDetails, UserMessage} from "types/typeFeedbackUserDetails";
 
 import { theme } from "theme/theme";
 
-import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
-
 import { fieldNamesList } from "components/Admin/AdminFeedback/UserFeedbackDetails/FieldNamesList";
 
 import {useQuery} from "react-query";
@@ -21,6 +19,8 @@ import {fetchUserFeedback} from "../../../../api/feedBackUsers";
 import {mapFeedbackMessages} from "../../../../helpers/admin/mapFeedbackMessages";
 import {FeedbackDetailsMessages} from "../FeedbackDetailsMessages/FeedbackDetailsMessages";
 import {ErrorBlock} from "../../../commonComponents/ErrorBlock/ErrorBlock";
+
+import {PageContentWrapperStyled} from "./UserFeedbackDetales.styled";
 
 const UserFeedbackDetails = () => {
 
@@ -39,7 +39,7 @@ const UserFeedbackDetails = () => {
   }, [data]);
 
   return (
-    <PageContentWrapper>
+    <PageContentWrapperStyled>
       <Grid container spacing={2}>
 
         {fieldNamesList.map((fieldItem) => (
@@ -73,7 +73,7 @@ const UserFeedbackDetails = () => {
 
         </Grid>
       </Grid>
-    </PageContentWrapper>
+    </PageContentWrapperStyled>
   );
 };
 
