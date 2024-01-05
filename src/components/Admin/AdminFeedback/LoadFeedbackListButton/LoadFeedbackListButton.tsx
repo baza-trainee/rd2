@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 import { Box } from "@mui/material";
 
-import {useQuery} from "react-query";
+import {useQuery, useQueryClient} from "react-query";
 
 import {loadData} from "../../../../api/loadData";
 
@@ -21,7 +21,7 @@ export const LoadFeedbackListButton = () => {
     const {isOpenModal, handleIsOpenModal} = useIsOpenModal();
     const [modalText, setModalText] = useState("");
 
-    const {isFetching, data, refetch} = useQuery({
+    const {isFetching, refetch} = useQuery({
         queryKey: ["usersReport"],
         queryFn: loadData(loadUsersListReport),
         enabled: false,
@@ -30,13 +30,15 @@ export const LoadFeedbackListButton = () => {
             handleIsOpenModal();
         },
     })
+
   const onClick = () => {
+
       refetch()
-          .then(() => {
+          .then((response) => {
               let url: string;
-              if (data)  {
+              if (response.data)  {
                   const new_blob = new Blob(
-                      [data],
+                      [response.data],
               {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,"})
                   url = window.URL.createObjectURL(new_blob);
                   const a:HTMLAnchorElement = document.createElement("a");
