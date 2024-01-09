@@ -1,7 +1,10 @@
 import { Box, FilledInput, Typography } from "@mui/material";
 import { ErrorMessage, Field } from "formik";
 
-import { BoxStyles, InputStyles } from "components/Restore/EmailField/EmailField.classes";
+import {
+  BoxStyles,
+  InputStyles,
+} from "components/ForgotPassword/EmailField/EmailField.classes";
 
 export const EmailField = () => {
   return (

@@ -7,8 +7,8 @@ import { ROUTES_ENUM } from "types/enums/routes.enum";
 import { Fallback } from "components/commonComponents/Fallback/Fallback";
 
 const Auth = lazy(() => import("pages/auth/Auth"));
-const Restore = lazy(() => import("pages/auth/Restore"));
-const NewPassword = lazy(() => import("pages/auth/NewPassword"));
+const ForgotPassword = lazy(() => import("pages/auth/ForgotPassword"));
+const UpdatePassword = lazy(() => import("pages/auth/UpdatePassword"));
 const NotFound = lazy(() => import("pages/public/NotFound"));
 
 export const AuthRoutes = () => {
@@ -18,8 +18,8 @@ export const AuthRoutes = () => {
         <Route element={<AuthLayout />}>
           <Route path={ROUTES_ENUM.LOGIN} element={<Auth />} />
           <Route index element={<Navigate to={ROUTES_ENUM.LOGIN} />} />
-          <Route path={ROUTES_ENUM.RESTORE} element={<Restore />} />
-          <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<NewPassword />} />
+          <Route path={ROUTES_ENUM.RESTORE} element={<ForgotPassword />} />
+          <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<UpdatePassword />} />
         </Route>
 
         <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
