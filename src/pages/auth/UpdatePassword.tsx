@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 import { Typography } from "@mui/material";
 
-import { NewPasswordForm } from "components/NewPassword/NewPasswordForm/NewPasswordForm";
+import { UpdatePasswordForm } from "components/Auth/UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 
-export const NewPassword = () => {
+export const UpdatePassword = () => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
@@ -13,7 +14,7 @@ export const NewPassword = () => {
         Відновити пароль
       </Typography>
 
-      <NewPasswordForm handleOpenModal={handleIsOpenModal} />
+      <UpdatePasswordForm handleOpenModal={handleIsOpenModal} />
 
       <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Пароль успішно відновлено
@@ -22,4 +23,4 @@ export const NewPassword = () => {
   );
 };
 
-export default NewPassword;
+export default UpdatePassword;

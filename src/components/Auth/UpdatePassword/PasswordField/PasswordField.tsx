@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 import {
   BoxStyles,
   InputStyles,
-} from "components/NewPassword/PasswordField/PasswordField.classes";
+} from "components/Auth/UpdatePassword/PasswordField/PasswordField.classes";
 
 interface Props {
   labelText: string;
