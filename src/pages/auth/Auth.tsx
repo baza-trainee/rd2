@@ -8,6 +8,7 @@ import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { AccessTokenService } from "services/AccessTokenService";
 import { checkIsTokenValid } from "helpers/auth/checkIsTokenValid";
+import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
 
 export const Auth = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export const Auth = () => {
   }, []);
 
   return (
-    <>
+    <PaperContainer>
       <Typography sx={{ marginBottom: "32px", textAlign: "center" }} variant="h4">
         Вхід
       </Typography>
@@ -35,7 +36,7 @@ export const Auth = () => {
       <ModalError handleCloseModal={handleIsOpenModal} isOpenModal={isOpenModal}>
         Ви ввели не вірний логін, або пароль
       </ModalError>
-    </>
+    </PaperContainer>
   );
 };
 
