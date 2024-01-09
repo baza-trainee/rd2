@@ -1,7 +1,9 @@
 import React from "react";
 
 import { useTranslation } from "react-i18next";
+
 import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 
 import { contactsList } from "components/commonComponents/ContactItem/contactsList";
 
@@ -11,7 +13,6 @@ import {
   FooterSection,
   Content,
   FooterNav,
-  NavWrapper,
   FooterNavigation,
   Address,
   Rights,
@@ -29,7 +30,8 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <FooterSection id="footer">
+    <FooterSection>
+
       <Container maxWidth="xl">
 
         <Content>
@@ -37,16 +39,25 @@ export const Footer: React.FC = () => {
 
           <FooterNav>
 
-            <NavWrapper>
-              <FooterNavigation className="custom-nav-class" onClick={clickHandler} />
-              <FooterReports />
-            </NavWrapper>
+            <Grid container spacing={2}>
 
-            <Address>
-              {contactsList.map((item) => (
-                <ContactItem key={item.id} {...item} />
-              ))}
-            </Address>
+              <Grid item xs={6} md={4}>
+                <FooterNavigation className="custom-nav-class" onClick={clickHandler} />
+              </Grid>
+
+              <Grid item xs={6} md={4}>
+                <FooterReports />
+              </Grid>
+
+              <Grid item xs={12} md={4}>
+                <Address>
+                  {contactsList.map((item) => (
+                      <ContactItem key={item.id} {...item} />
+                  ))}
+                </Address>
+              </Grid>
+
+            </Grid>
 
           </FooterNav>
         </Content>
@@ -54,6 +65,7 @@ export const Footer: React.FC = () => {
         <Rights>{t("developers")}</Rights>
 
       </Container>
+
     </FooterSection>
   );
 };
