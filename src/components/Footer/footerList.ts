@@ -9,16 +9,19 @@ export const logoImg: Logo = {
 
 export const rulesList: Rules[] = [
   {
-    id: 1,
+    id: "privacy_policy",
     descKey: "our_rules.privacy_policy",
+    filePath:"/api/report/private-policy/",
   },
   {
-    id: 2,
+    id: "terms_use",
     descKey: "our_rules.using_site",
+    filePath:"/api/report/terms-use/",
   },
   {
-    id: 3,
+    id: "publicity",
     descKey: "our_rules.publicity",
+    filePath:"/api/report/reports/",
   },
 ];
 

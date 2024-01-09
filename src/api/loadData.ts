@@ -6,10 +6,12 @@ export function loadData<T>(func: () => Promise<AxiosResponse<T, AxiosError>> ) 
       const promise = func();
 
       const response = await promise;
-//console.log(response.data)
+      //console.log(response)
+      //console.log(response.data)
       return (response && response.data)
     } catch (error: unknown | AxiosError) {
 
+      //console.log(error)
       let errMes: string = " ";
 
       if (axios.isAxiosError(error)) {

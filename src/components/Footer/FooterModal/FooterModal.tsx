@@ -1,35 +1,63 @@
-import { Dialog } from "@mui/material";
-// import { Close } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { ModalContainer, ModalContent } from "./FooterModal.styled";
+import {useQuery} from "react-query";
+
+import {loadData} from "../../../api/loadData";
+
+import {getReportFile} from "../../../api/reports";
+
+import {BASE_URL} from "../../../api/fetcher";
+
+import {Fallback} from "../../commonComponents/Fallback/Fallback";
+
+import {DialogStyled, ErrorBlockStyled, ModalContainer, ModalContent} from "./FooterModal.styled";
+
+
 
 interface FooterModalProps {
+  filePath: string,
   open: boolean;
   onCloseModal: () => void;
 }
 
 export function FooterModal(props: FooterModalProps) {
-  const { onCloseModal, open } = props;
+
+    const { onCloseModal, open, filePath } = props;
+
+    const {isLoading, isError, isSuccess} = useQuery({
+        queryKey: ["rules", filePath],
+        queryFn: loadData(getReportFile(filePath)),
+        enabled: open,
+    } )
 
   return (
-    <Dialog onClose={onCloseModal} open={open}>
+    <DialogStyled onClose={onCloseModal} open={open}>
       <ModalContainer>
-        <IconButton
-          aria-label="close"
-          onClick={onCloseModal}
-          sx={{
-            position: "absolute",
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
+
+        <IconButton aria-label="close" onClick={onCloseModal}>
           <CloseIcon />
         </IconButton>
-        <ModalContent>{/* Modal content */}</ModalContent>
+
+          <ModalContent>
+
+              {isLoading &&
+                  <Fallback blockType={true}/>
+              }
+
+              {isError &&
+                  <ErrorBlockStyled blockType={true}>
+                      При завантаженні документу виникла помилка
+                  </ErrorBlockStyled>
+              }
+
+              {isSuccess &&
+                  <iframe src={BASE_URL + filePath}/>
+              }
+
+          </ModalContent>
+
       </ModalContainer>
-    </Dialog>
+    </DialogStyled>
   );
 }

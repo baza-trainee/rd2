@@ -38,3 +38,9 @@ export const addTermsUse = (data: File) => {
         },
     )
 }
+
+export const getReportFile = (path: string) => {
+    return () => fetcher.get(path, {
+        responseType: "blob",
+    })
+}

@@ -1,6 +1,7 @@
 export type Rules = {
-    id: number;
+    id: string;
     descKey: string;
+    filePath: string;
 }
 
 export interface ITextContact {
