@@ -1,19 +1,15 @@
 import { Form, Formik, FormikHelpers } from "formik";
-import { useMutation, useQuery } from "react-query";
-import { AxiosError } from "axios";
 
 import { validationSchema } from "components/Admin/ourContacts/PhoneForm/validationSchema";
 import { InputWrapper } from "components/Admin/ourContacts/InputWrapper/InputWrapper";
 import { NumberField } from "components/Admin/ourContacts/NumberField/NumberField";
 import { SubmitButton } from "components/Admin/ourContacts/SubmitButton/SubmitButton";
-import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
-import { PhoneNumberCredentials, setNewPhoneNumber } from "api/setNewPhoneNumber";
-import { loadData } from "api/loadData";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { queryClient } from "App";
 import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
+import { useGetCurrentPhone } from "api/query-hooks/useGetCurrentPhone";
+import { useSetPhone } from "api/query-hooks/useSetPhone";
 
 interface FormNumber {
   currentNumber: string;
@@ -26,22 +22,8 @@ interface Props {
 
 export const PhoneForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-
-  const phone = useMutation(
-    (credential: PhoneNumberCredentials) => setNewPhoneNumber(credential),
-    {
-      onSuccess: () => {
-        handleOpenModal();
-        queryClient.invalidateQueries("phone");
-      },
-
-      onError: (error: AxiosError) => {
-        if (error.response || error) {
-          handleIsOpenModal();
-        }
-      },
-    },
-  );
+  const phone = useSetPhone(handleOpenModal, handleIsOpenModal);
+  const { data, isLoading, isError } = useGetCurrentPhone();
 
   const handleSubmit = (
     credentials: FormNumber,
@@ -54,11 +36,6 @@ export const PhoneForm = ({ handleOpenModal }: Props) => {
 
     formikHelpers.resetForm();
   };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: "phone",
-    queryFn: loadData(getCurrentPhoneNumber),
-  });
 
   if (!data || isLoading) {
     return <ContactsSkeleton />;

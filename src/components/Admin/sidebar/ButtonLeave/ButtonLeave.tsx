@@ -3,6 +3,7 @@ import { Button, ListItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import { AccessTokenService } from "services/AccessTokenService";
+import { ROUTES_ENUM } from "types/enums/routes.enum";
 
 interface Props {
   icon: string;
@@ -16,7 +17,7 @@ export const ButtonLeave = ({ icon, buttonText }: Props) => {
   const onClick = () => {
     removeAccessToken();
 
-    navigate("/auth");
+    navigate(`/${ROUTES_ENUM.AUTH}`);
   };
   return (
     <ListItem sx={{ paddingLeft: "24px" }}>

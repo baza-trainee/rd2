@@ -6,7 +6,7 @@ import { Contacts } from "types/typeFooter";
 
 export const contactsList: Contacts[] = [
   {
-    type: "text",
+    type: "email",
     id: "email",
     icon: emailIcon,
     alt: "Іконка листа",

@@ -1,19 +1,15 @@
 import { Form, Formik, FormikHelpers } from "formik";
-import { useMutation, useQuery } from "react-query";
-import { AxiosError } from "axios";
 
 import { InputWrapper } from "components/Admin/ourContacts/InputWrapper/InputWrapper";
 import { EmailField } from "components/Admin/ourContacts/EmailField/EmailField";
 import { SubmitButton } from "components/Admin/ourContacts/SubmitButton/SubmitButton";
 import { validationSchema } from "components/Admin/ourContacts/EmailForm/validationSchema";
-import { loadData } from "api/loadData";
-import { getCurrentEmail } from "api/getCurrentEmail";
-import { EmailCredentials, setNewEmail } from "api/setNewEmail";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { queryClient } from "App";
 import { ContactsSkeleton } from "components/Admin/ourContacts/ContactsSkeleton/ContactsSkeleton";
+import { useGetCurrentEmail } from "api/query-hooks/useGetCurrentEmail";
+import { useSetEmail } from "api/query-hooks/useSetEmail";
 
 interface FormEmail {
   currentEmail: string;
@@ -26,24 +22,8 @@ interface Props {
 
 export const EmailForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: "email",
-    queryFn: loadData(getCurrentEmail),
-  });
-
-  const email = useMutation((credentials: EmailCredentials) => setNewEmail(credentials), {
-    onSuccess: () => {
-      handleOpenModal();
-
-      queryClient.invalidateQueries("email");
-    },
-    onError: (error: AxiosError) => {
-      if (error.response && error) {
-        handleIsOpenModal();
-      }
-    },
-  });
+  const { data, isError, isLoading } = useGetCurrentEmail();
+  const email = useSetEmail(handleOpenModal, handleIsOpenModal);
 
   const handleSubmit = (
     credentials: FormEmail,

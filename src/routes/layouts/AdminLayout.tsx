@@ -8,6 +8,7 @@ import { AdminContainer } from "components/Admin/AdminContainer/AdminContainer";
 import { ToolBar } from "components/Admin/sidebar/ToolBar/ToolBar";
 import { AccessTokenService } from "services/AccessTokenService";
 import { checkIsTokenValid } from "helpers/auth/checkIsTokenValid";
+import { ROUTES_ENUM } from "types/enums/routes.enum";
 
 export const AdminLayout = ({ children }: PropsWithChildren) => {
   const { getAccessToken } = new AccessTokenService();
@@ -26,7 +27,7 @@ export const AdminLayout = ({ children }: PropsWithChildren) => {
           </AdminContainer>
         </>
       ) : (
-        <Navigate to="/auth" replace />
+        <Navigate to={`/${ROUTES_ENUM.AUTH}`} replace />
       )}
     </App>
   );

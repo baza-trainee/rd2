@@ -1,15 +1,15 @@
+/* eslint-disable max-len */
 import { Form, Formik, FormikHelpers } from "formik";
 import { Button } from "@mui/material";
-import { useMutation } from "react-query";
 
 import { FormEmail } from "types/formEmail";
-import { FormContainer } from "components/ForgotPassword/FormContainer/FormContainer";
-import { EmailField } from "components/ForgotPassword/EmailField/EmailField";
-import { validationSchema } from "components/ForgotPassword/ForgotPasswordForm/validationShema";
-import { restorePassword } from "api/sendEmailToServer";
+import { FormContainer } from "components/Auth/ForgotPassword/FormContainer/FormContainer";
+import { EmailField } from "components/Auth/ForgotPassword/EmailField/EmailField";
+import { validationSchema } from "components/Auth/ForgotPassword/ForgotPasswordForm/validationShema";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
+import { useUpdatePassword } from "api/query-hooks/useUpdatePassword";
 
 interface Props {
   handleOpenModalSuccess: () => void;
@@ -17,17 +17,7 @@ interface Props {
 
 export const ForgotPasswordForm = ({ handleOpenModalSuccess }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-
-  const mutation = useMutation((email: FormEmail) => restorePassword(email), {
-    onSuccess: () => {
-      handleOpenModalSuccess();
-    },
-
-    onError: () => {
-      handleIsOpenModal();
-    },
-  });
-
+  const mutation = useUpdatePassword(handleOpenModalSuccess, handleIsOpenModal);
   const { isLoading } = mutation;
 
   const handleSubmit = (email: FormEmail, formikHelpers: FormikHelpers<FormEmail>) => {
