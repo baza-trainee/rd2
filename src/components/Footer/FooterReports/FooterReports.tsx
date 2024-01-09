@@ -1,43 +1,49 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
-import { rulesList } from "../footerList";
+import {rulesList} from "../footerList";
 
-import { RulesItem, RulesList } from "../Footer.styled";
-import { FooterModal } from "../FooterModal/FooterModal";
-import { useIsOpenModal } from "../../../hooks/useIsOpenModal";
+
+import {FooterModal} from "../FooterModal/FooterModal";
+import {useIsOpenModal} from "../../../hooks/useIsOpenModal";
+
+import {RulesItem, RulesList} from "./FooterReports.styled";
 
 const FooterReports = () => {
-  const { t } = useTranslation();
 
-  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
+    const { t } = useTranslation();
 
-  const [loadFilePath, setLoadFilePath] = useState("");
+    const {isOpenModal, handleIsOpenModal} = useIsOpenModal();
 
-  const openRule = (filePath: string) => {
-    return () => {
-      setLoadFilePath(filePath);
-      handleIsOpenModal();
-    };
-  };
+    const [loadFilePath, setLoadFilePath] = useState("");
 
-  return (
-    <>
-      <RulesList>
-        {rulesList.map(({ id, descKey, filePath }) => (
-          <RulesItem key={id} onClick={openRule(filePath)}>
-            {t(descKey)}
-          </RulesItem>
-        ))}
-      </RulesList>
-      <FooterModal
-        filePath={loadFilePath}
-        onCloseModal={handleIsOpenModal}
-        open={isOpenModal}
-      />
-    </>
-  );
-};
+    const openRule = (filePath:string) => {
+        return ()=> {
+            setLoadFilePath(filePath);
+            handleIsOpenModal();
+        }
+    }
 
-export { FooterReports };
+    return (
+        <>
+            <RulesList>
+                {rulesList.map(({ id, descKey, filePath}) => (
+                    <RulesItem key={id} onClick={openRule(filePath)}>
+                        <span>
+                            {t(descKey)}
+                        </span>
+                    </RulesItem>
+                ))}
+            </RulesList>
+            <FooterModal
+                filePath={loadFilePath}
+                onCloseModal={handleIsOpenModal}
+                open={isOpenModal}
+            />
+        </>
+    )
+
+}
+
+export {FooterReports}

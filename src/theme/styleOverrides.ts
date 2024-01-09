@@ -26,6 +26,9 @@ export const globalOverrides = `
             p {
                 margin: 0
             }
+            address {
+                font-style: normal;
+            }
             color: #151515;
             @font-face {
               font-family: 'OpenSans';
