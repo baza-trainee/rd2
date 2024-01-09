@@ -1,10 +1,3 @@
-import {AxiosResponse} from "axios";
-
-//export type LoadFileFunction = {
-    //()=>
-//}
-function LoadFileFunction() {}
-
 export type Rules = {
     id: string;
     descKey: string;
