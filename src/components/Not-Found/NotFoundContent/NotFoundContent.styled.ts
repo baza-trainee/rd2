@@ -1,4 +1,28 @@
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
+
+const flicker = keyframes`
+  0% {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+  25% {
+    opacity: 0.8;
+    filter: brightness(90%);
+  }
+  50% {
+    opacity: 0.6;
+    filter: brightness(110%);
+  }
+  75% {
+    opacity: 0.9;
+    filter: brightness(95%);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+`;
 
 const Drone = styled.img`
   width: 250px;
@@ -16,6 +40,7 @@ const Picture = styled.picture`
   position: relative;
   z-index: 300;
 
+  animation: ${flicker} 0.1s infinite;
   @media (min-width: 768px) {
     margin-top: -22px;
     margin-left: 7px;
