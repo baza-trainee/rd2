@@ -3,9 +3,9 @@ import { Button } from "@mui/material";
 import { useMutation } from "react-query";
 
 import { FormEmail } from "types/formEmail";
-import { FormContainer } from "components/Restore/FormContainer/FormContainer";
-import { EmailField } from "components/Restore/EmailField/EmailField";
-import { validationSchema } from "components/Restore/RestoreForm/validationShema";
+import { FormContainer } from "components/ForgotPassword/FormContainer/FormContainer";
+import { EmailField } from "components/ForgotPassword/EmailField/EmailField";
+import { validationSchema } from "components/ForgotPassword/ForgotPasswordForm/validationShema";
 import { restorePassword } from "api/sendEmailToServer";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
@@ -15,7 +15,7 @@ interface Props {
   handleOpenModalSuccess: () => void;
 }
 
-export const RestoreForm = ({ handleOpenModalSuccess }: Props) => {
+export const ForgotPasswordForm = ({ handleOpenModalSuccess }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   const mutation = useMutation((email: FormEmail) => restorePassword(email), {

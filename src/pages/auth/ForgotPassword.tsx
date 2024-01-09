@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import { Typography } from "@mui/material";
 
-import { Description } from "components/Restore/Description/Description";
-import { RestoreForm } from "components/Restore/RestoreForm/RestoreForm";
+import { Description } from "components/ForgotPassword/Description/Description";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+import { ForgotPasswordForm } from "components/ForgotPassword/ForgotPasswordForm/ForgotPasswordForm";
 
-export const Restore = () => {
+export const ForgotPassword = () => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
   return (
@@ -19,7 +20,7 @@ export const Restore = () => {
         посиланням для зміни паролю
       </Description>
 
-      <RestoreForm handleOpenModalSuccess={handleIsOpenModal} />
+      <ForgotPasswordForm handleOpenModalSuccess={handleIsOpenModal} />
 
       <ModalSuccess isOpenModal={isOpenModal} handleCloseModal={handleIsOpenModal}>
         Перейдіть за посиланням, відправленим у листі на Вашу пошту
@@ -28,4 +29,4 @@ export const Restore = () => {
   );
 };
 
-export default Restore;
+export default ForgotPassword;
