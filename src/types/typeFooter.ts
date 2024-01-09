@@ -1,6 +1,14 @@
+import {AxiosResponse} from "axios";
+
+//export type LoadFileFunction = {
+    //()=>
+//}
+function LoadFileFunction() {}
+
 export type Rules = {
-    id: number;
+    id: string;
     descKey: string;
+    filePath: string;
 }
 
 export interface ITextContact {
