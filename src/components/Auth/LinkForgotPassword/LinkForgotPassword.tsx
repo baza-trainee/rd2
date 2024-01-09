@@ -6,7 +6,7 @@ import { ROUTES_ENUM } from "types/enums/routes.enum";
 import {
   BoxStyles,
   LinkStyles,
-} from "components/Auth/ForgetPassword/ForgetPassword.classes";
+} from "components/Auth/LinkForgotPassword/LinkForgotPassword.classes";
 
 export const ForgetPassword = () => {
   return (

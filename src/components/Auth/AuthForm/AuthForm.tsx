@@ -7,7 +7,7 @@ import { AccessTokenService } from "services/AccessTokenService";
 import { FormValues } from "types/formValues";
 import { UsernameField } from "components/Auth/UsernameField/UsernameField";
 import { PasswordField } from "components/Auth/PasswordField/PasswordField";
-import { ForgetPassword } from "components/Auth/ForgetPassword/ForgetPassword";
+import { ForgetPassword } from "components/Auth/LinkForgotPassword/LinkForgotPassword";
 import { validationSchema } from "components/Auth/AuthForm/validationSchema";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { signIn } from "api/signIn";
