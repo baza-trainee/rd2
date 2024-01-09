@@ -1,16 +1,17 @@
+/* eslint-disable max-len */
 import { Form, Formik, FormikHelpers } from "formik";
 import { Button } from "@mui/material";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 import { FormPasswords } from "types/formPasswords";
-import { InputContainer } from "components/NewPassword/InputContainer/InputContainer";
-import { PasswordField } from "components/NewPassword/PasswordField/PasswordField";
-import { validationSchema } from "components/NewPassword/NewPasswordForm/validationSchema";
+import { InputContainer } from "components/Auth/UpdatePassword/InputContainer/InputContainer";
+import { PasswordField } from "components/Auth/UpdatePassword/PasswordField/PasswordField";
+import { validationSchema } from "components/Auth/UpdatePassword/UpdatePasswordForm/validationSchema";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { restorePassword } from "api/restorePassword";
+import { updatePassword } from "api/updatePassword";
 import { PasswordCredentials } from "types/restorePasswordCredentials";
 import { RefreshTokenService } from "services/RefreshTokenService";
 import { AccessTokenService } from "services/AccessTokenService";
@@ -19,7 +20,7 @@ interface Props {
   handleOpenModal: () => void;
 }
 
-export const NewPasswordForm = ({ handleOpenModal }: Props) => {
+export const UpdatePasswordForm = ({ handleOpenModal }: Props) => {
   const navigate = useNavigate();
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
@@ -27,7 +28,7 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
   const { removeAccessToken } = new AccessTokenService();
 
   const mutation = useMutation(
-    (credential: PasswordCredentials) => restorePassword(credential),
+    (credential: PasswordCredentials) => updatePassword(credential),
     {
       onSuccess: () => {
         handleOpenModal();
@@ -46,10 +47,7 @@ export const NewPasswordForm = ({ handleOpenModal }: Props) => {
 
   const { isLoading } = mutation;
 
-  const handleSubmit = (
-    credentials: FormPasswords,
-    formikHelpers: FormikHelpers<FormPasswords>,
-  ) => {
+  const handleSubmit = (credentials: FormPasswords, _: FormikHelpers<FormPasswords>) => {
     const newCredentials = {
       new_password: credentials.password,
       confirm_password: credentials.confirmPassword,
