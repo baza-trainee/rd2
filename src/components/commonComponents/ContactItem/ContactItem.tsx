@@ -1,13 +1,12 @@
-import { useEffect } from "react";
-
-import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
 
-import { loadData } from "api/loadData";
-import { getCurrentEmail } from "api/getCurrentEmail";
-import { getCurrentPhoneNumber } from "api/getCurrentPhoneNumber";
+import { useGetCurrentPhone } from "api/query-hooks/useGetCurrentPhone";
+import { useGetCurrentEmail } from "api/query-hooks/useGetCurrentEmail";
 
-import { AddressItem, StyledLink } from "./ContactItem.styled";
+import {
+  AddressItem,
+  StyledLink,
+} from "components/commonComponents/ContactItem/ContactItem.styled";
 
 type ContactItemProps = {
   type: string;
@@ -20,34 +19,13 @@ type ContactItemProps = {
 
 const ContactItem = (props: ContactItemProps) => {
   const { t } = useTranslation();
+  const { isError: isErrorPhoneNumber, data: phoneData } = useGetCurrentPhone();
+  const { isError: isErrorEmail, data: emailData } = useGetCurrentEmail();
 
-  const {
-    data: phoneNumber,
-    isError: isErrorPhoneNumber,
-    refetch: refetchPhoneNumber,
-  } = useQuery({
-    queryKey: "phone",
-    queryFn: loadData(getCurrentPhoneNumber),
-  });
-
-  const {
-    data: email,
-    isError: isErrorEmail,
-    refetch: refetchEmail,
-  } = useQuery({
-    queryKey: "email",
-    queryFn: loadData(getCurrentEmail),
-  });
-
-  const currentEmail = isErrorEmail ? "наш email" : email?.email;
-  const currentPhoneNumber = isErrorPhoneNumber ? "наш телефон" : phoneNumber?.phone;
+  const currentEmail = isErrorEmail ? "наш email" : emailData?.email;
+  const currentPhoneNumber = isErrorPhoneNumber ? "наш телефон" : phoneData?.phone;
 
   const { icon, alt, descKey, href, type } = props;
-
-  useEffect(() => {
-    refetchEmail();
-    refetchPhoneNumber();
-  }, [refetchEmail, refetchPhoneNumber]);
 
   switch (type) {
     case "email":
