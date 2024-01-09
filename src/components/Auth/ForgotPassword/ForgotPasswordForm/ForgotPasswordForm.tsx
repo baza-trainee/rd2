@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import { Form, Formik, FormikHelpers } from "formik";
 import { Button } from "@mui/material";
 import { useMutation } from "react-query";
 
 import { FormEmail } from "types/formEmail";
-import { FormContainer } from "components/ForgotPassword/FormContainer/FormContainer";
-import { EmailField } from "components/ForgotPassword/EmailField/EmailField";
-import { validationSchema } from "components/ForgotPassword/ForgotPasswordForm/validationShema";
+import { FormContainer } from "components/Auth/ForgotPassword/FormContainer/FormContainer";
+import { EmailField } from "components/Auth/ForgotPassword/EmailField/EmailField";
+import { validationSchema } from "components/Auth/ForgotPassword/ForgotPasswordForm/validationShema";
 import { restorePassword } from "api/sendEmailToServer";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
 import { useIsOpenModal } from "hooks/useIsOpenModal";

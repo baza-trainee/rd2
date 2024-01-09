@@ -1,18 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import {DonateModal} from "../../DonateModal/DonateModal";
+import { DonateModal } from "../DonateModal/DonateModal";
 
-import {ButtonStyled} from "./DonateButton.styled";
+import { ButtonStyled } from "./DonateButton.styled";
 
 interface DonateButtonProps {
-    className?: string
+  className?: string;
 }
 
-
-export const DonateButton = ({className}: DonateButtonProps) => {
-
+export const DonateButton = ({ className }: DonateButtonProps) => {
   const { t } = useTranslation();
 
   const [open, setOpen] = useState(false);
@@ -32,10 +30,7 @@ export const DonateButton = ({className}: DonateButtonProps) => {
 
   return (
     <>
-      <ButtonStyled variant="contained"
-        onClick={onClickOpen}
-        className={className}
-      >
+      <ButtonStyled variant="contained" onClick={onClickOpen} className={className}>
         {t("buttons.donate")}
       </ButtonStyled>
 

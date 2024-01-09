@@ -18,11 +18,10 @@ export const AuthRoutes = () => {
         <Route element={<AuthLayout />}>
           <Route path={ROUTES_ENUM.LOGIN} element={<Auth />} />
           <Route index element={<Navigate to={ROUTES_ENUM.LOGIN} />} />
-          <Route path={ROUTES_ENUM.RESTORE} element={<ForgotPassword />} />
-          <Route path={ROUTES_ENUM.NEW_PASSWORD} element={<UpdatePassword />} />
+          <Route path={ROUTES_ENUM.FORGOT_PASSWORD} element={<ForgotPassword />} />
+          <Route path={ROUTES_ENUM.UPDATE_PASSWORD} element={<UpdatePassword />} />
+          <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
         </Route>
-
-        <Route path={ROUTES_ENUM.NOT_FOUND} element={<NotFound />} />
       </Routes>
     </Suspense>
   );

@@ -15,6 +15,7 @@ import { updatePassword } from "api/updatePassword";
 import { PasswordCredentials } from "types/restorePasswordCredentials";
 import { RefreshTokenService } from "services/RefreshTokenService";
 import { AccessTokenService } from "services/AccessTokenService";
+import { ROUTES_ENUM } from "types/enums/routes.enum";
 
 interface Props {
   handleOpenModal: () => void;
@@ -36,7 +37,7 @@ export const UpdatePasswordForm = ({ handleOpenModal }: Props) => {
         removeAccessToken();
         removeRefreshToken();
 
-        setTimeout(() => navigate("/admin"), 2e3);
+        setTimeout(() => navigate(`/${ROUTES_ENUM.ADMIN}`), 2e3);
       },
 
       onError: () => {

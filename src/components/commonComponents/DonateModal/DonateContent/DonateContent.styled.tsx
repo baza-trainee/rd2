@@ -4,9 +4,9 @@ import Button from "@mui/material/Button";
 
 import Typography from "@mui/material/Typography";
 
-import {theme} from "../../../theme/theme";
+import { theme } from "../../../../theme/theme";
 
-import {Input} from "../../commonComponents/ContactFormSection/ContactForm/Form.styled";
+import { Input } from "../../ContactFormSection/ContactForm/Form.styled";
 
 const mainColor = theme.palette.primary.main;
 const mainHoverColor = theme.palette.primary.dark;
@@ -16,7 +16,7 @@ const errorTextColor = theme.palette.error.dark;
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  
+
   height: 100%;
 `;
 
@@ -24,7 +24,7 @@ const ButtonsWrap = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  
+
   margin-bottom: 24px;
 `;
 
@@ -32,28 +32,28 @@ const ButtonStyled = styled(Button)`
   min-width: 85px;
   width: 27%;
   height: 56px;
-  
+
   padding-left: 5px;
   padding-right: 5px;
 
   font-size: 1rem;
   font-weight: 600;
   color: #151515;
-  
+
   background-color: #ffffff;
   border: 3px solid;
   box-sizing: border-box;
 
   border-color: #ffffff;
-  
+
   &.active {
     border-color: ${mainColor};
   }
-  
+
   &:hover {
     border-color: ${mainHoverColor};
   }
-  
+
   & img {
     margin-right: 5px;
     height: 16px;
@@ -76,7 +76,7 @@ const ButtonStyled = styled(Button)`
   @media (min-width: 1280px) {
     width: 205px;
     height: 64px;
-    
+
     font-size: 1.75rem;
 
     & img {
@@ -92,7 +92,7 @@ const BottomContainer = styled.div`
 `;
 
 const TypographyStyled = styled(Typography)`
-margin-bottom: 32px;
+  margin-bottom: 32px;
 `;
 
 const InputStyled = styled(Input)`
@@ -100,18 +100,18 @@ const InputStyled = styled(Input)`
   background-color: #ffffff;
   border: 2px solid;
   border-color: transparent;
-  
+
   transition: all 0.5s;
 
   &[type="number"]::-webkit-outer-spin-button,
   &[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
   }
-  &[type='number'] {
+  &[type="number"] {
     appearance: none;
     -moz-appearance: textfield;
   }
-  
+
   &.error {
     border-color: ${errorBorderColor};
   }
@@ -123,7 +123,7 @@ const InputStyled = styled(Input)`
 
 const RelativeBlock = styled.div`
   margin-bottom: 40px;
-    position: relative;
+  position: relative;
 `;
 const ErrorMes = styled.p`
   position: absolute;
@@ -131,7 +131,13 @@ const ErrorMes = styled.p`
   color: ${errorTextColor};
 `;
 
-export {ButtonsWrap, ButtonStyled, TypographyStyled,
-  InputStyled, BottomContainer, FormStyled, RelativeBlock,
+export {
+  ButtonsWrap,
+  ButtonStyled,
+  TypographyStyled,
+  InputStyled,
+  BottomContainer,
+  FormStyled,
+  RelativeBlock,
   ErrorMes,
 };

@@ -14,7 +14,6 @@ export const Partners = () => {
       </SectionHeader>
 
       <PartnersSlider />
-
     </SectionContainer>
   );
 };

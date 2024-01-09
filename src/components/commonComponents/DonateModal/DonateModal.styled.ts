@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
 
-import {Dialog} from "@mui/material";
+import { Dialog } from "@mui/material";
 
-import {theme} from "../../theme/theme";
+import { theme } from "../../../theme/theme";
 
 const bgrColor = theme.palette.secondary.main;
 
 const DialogStyled = styled(Dialog)`
   & .MuiPaper-root {
     max-width: 520px;
-     border-radius: 24px;
-    
+    border-radius: 24px;
+
     & > button {
       position: absolute;
       top: 10px;
@@ -34,7 +34,7 @@ const ModalContent = styled.div`
   height: 550px;
   padding: 40px 15px;
   background-color: ${bgrColor};
-  
+
   @media (min-width: 768px) {
     padding: 50px;
   }
@@ -44,4 +44,4 @@ const ModalContent = styled.div`
   }
 `;
 
-export {ModalContent, DialogStyled};
+export { ModalContent, DialogStyled };

@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from "formik";
 import {
   BoxStyles,
   InputStyles,
-} from "components/ForgotPassword/EmailField/EmailField.classes";
+} from "components/Auth/ForgotPassword/EmailField/EmailField.classes";
 
 export const EmailField = () => {
   return (

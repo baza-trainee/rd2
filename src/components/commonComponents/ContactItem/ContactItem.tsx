@@ -50,12 +50,14 @@ const ContactItem = (props: ContactItemProps) => {
   }, [refetchEmail, refetchPhoneNumber]);
 
   switch (type) {
-    case "text":
+    case "email":
       return (
-        <AddressItem>
-          <img src={icon} width={24} height={24} alt={alt} />
-          <span>{currentEmail}</span>
-        </AddressItem>
+        <StyledLink href={`mailto:${currentEmail}`} target="_blank">
+          <AddressItem>
+            <img src={icon} width={24} height={24} alt={alt} />
+            <span>{currentEmail}</span>
+          </AddressItem>
+        </StyledLink>
       );
 
     case "link":
