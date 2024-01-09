@@ -1,17 +1,15 @@
 /* eslint-disable max-len */
 import { Button, Typography } from "@mui/material";
 import { Form, Formik, FormikHelpers } from "formik";
-import { useMutation } from "react-query";
-import { AxiosError } from "axios";
 
 import { InputContainer } from "components/Admin/ChangePassword/InputContainer/InputContainer";
 import { PasswordField } from "components/Admin/ChangePassword/PasswordField/PasswordField";
 import { validationSchema } from "components/Admin/ChangePassword/ChangePasswordForm/validationSchema";
-import { changePassword } from "api/changePassword";
 import { PasswordCredentials } from "types/passwordCredentials";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
+import { useChangePassword } from "api/query-hooks/useChangePassword";
 
 interface Props {
   handleOpenModal: () => void;
@@ -19,21 +17,7 @@ interface Props {
 
 export const ChangePasswordForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-
-  const mutation = useMutation(
-    (credentials: PasswordCredentials) => changePassword(credentials),
-    {
-      onSuccess: () => {
-        handleOpenModal();
-      },
-      onError: (error: AxiosError) => {
-        if (error.status !== 200) {
-          handleIsOpenModal();
-        }
-      },
-    },
-  );
-
+  const mutation = useChangePassword(handleOpenModal, handleIsOpenModal);
   const { isLoading } = mutation;
 
   const handleSubmit = (
