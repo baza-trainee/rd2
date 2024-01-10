@@ -85,7 +85,7 @@ const AdminPartnersLogo = ({openModalError, openModalSuccess}: AdminPartnersLogo
 
           <Typography marginBottom={5}>
               Зверніть увагу, що після завантаження на сайт логотип буде
-              виглядати саме так, як він відобразивля на цій сторінці.
+              виглядати саме так, як він відобразився на цій сторінці.
           </Typography>
 
         <ButtonsBlock onReset={onResetForm}/>

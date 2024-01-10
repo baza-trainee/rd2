@@ -30,15 +30,11 @@ export const ToolBar = () => {
             ))}
           </List>
 
-        </Grid>
-
-        <Grid xs={12} item>
-
           <List>
-            <ListItem disablePadding sx={{ marginBottom: "34px" }}>
+            <ListItem disablePadding sx={{ marginBottom: "34px", marginTop: "34px" }}>
               <NavLinkStyled to={ROUTES_ENUM.CHANGE_PASSWORD} >
                 <MenuButton icon={{ iconType: "custom", iconEl: changePasswordSvgIcon }}
-                  buttonText="Змінити пароль"
+                            buttonText="Змінити пароль"
                 />
               </NavLinkStyled>
             </ListItem>
@@ -47,6 +43,7 @@ export const ToolBar = () => {
           </List>
 
         </Grid>
+
       </Grid>
     </Drawer>
   );

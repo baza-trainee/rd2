@@ -51,7 +51,7 @@ export const LoadFeedbackListButton = () => {
 
   return (
     <>
-        <Box display="flex" justifyContent="end" mb={3}>
+        <Box display="flex" justifyContent="end" mb={4}>
           <Button
             sx={{textTransform: "inherit"}}
             variant="contained"

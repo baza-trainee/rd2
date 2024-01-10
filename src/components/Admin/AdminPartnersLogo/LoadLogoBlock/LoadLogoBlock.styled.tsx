@@ -8,6 +8,7 @@ const errorBorderColor = theme.palette.error.main;
 
 const LoadFieldWrapper = styled.div`
   position: relative;
+  display: flex;
   margin-bottom: 40px;
   height: 200px;
   
@@ -69,8 +70,11 @@ const InputStyled = styled.input`
 
 const LoadedImg = styled.img`
   width: auto;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
   display: block;
+    
   margin: auto;
   padding: 10px 0;
 
@@ -90,6 +94,7 @@ const LoadedImg = styled.img`
 
 const ErrorBlockStyled = styled(ErrorBlock)`
   width: 100%;
+  bottom: -25px;
   text-align: center;
 `;
 
