@@ -6,12 +6,28 @@ const Card = styled.div`
   align-items: center;
   column-gap: 24px;
 
+    &:nth-of-type(2n) p{
+        padding-left: 24px;
+    }
+
+    &:nth-of-type(2n+1) p{
+        padding-right: 24px;
+    }
+
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
   @media (min-width: 1280px) {
     column-gap: 124px;
+
+    &:nth-of-type(2n) p{
+          padding-left: 115px;
+    }
+
+    &:nth-of-type(2n+1) p{
+          padding-right: 115px;
+    }  
   }
 `;
 const Pictures = styled.div`
@@ -39,13 +55,13 @@ const Text = styled.p`
   font-weight: 400;
   line-height: 150%;
 
-  &:nth-child(odd) {
-    padding-left: 24px;
-  }
+  //&:nth-of-type(2n+1) {
+    //padding-left: 24px;
+  //}
 
-  &:nth-child(even) {
-    padding-right: 24px;
-  }
+  //&:nth-of-type(2n) {
+    //padding-right: 24px;
+  //}
 
   @media (min-width: 768px) {
     flex: 1 1 50%;
@@ -53,14 +69,6 @@ const Text = styled.p`
   @media (min-width: 1280px) {
     width: 530px;
     font-size: 18px;
-
-    &:nth-child(odd) {
-      padding-left: 115px;
-    }
-
-    &:nth-child(even) {
-      padding-right: 115px;
-    }
   }
 `;
 

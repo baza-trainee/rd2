@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   const clickHandler = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({top: 0, behavior: "smooth"});
   };
 
   return (

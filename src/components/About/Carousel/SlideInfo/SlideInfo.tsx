@@ -11,7 +11,7 @@ interface Props {
 export const SlideInfo = ({ title, description }: Props) => {
   return (
     <SlideContent>
-      <Typography variant="h2" component="h1" color="secondary" gutterBottom>
+      <Typography variant="h2" component="h2" color="secondary" gutterBottom>
         {title}
       </Typography>
 

@@ -23,7 +23,7 @@ const FormEl = styled.form`
 
 const FieldContainer = styled.div`
   position: relative;
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-top: 51px;
   }
   &:last-child {

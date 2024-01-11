@@ -88,10 +88,14 @@ const NavStyled = styled(Nav)`
 `;
 
 const LanguageMenuStyled = styled(LanguageMenu)`
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
   margin-top: 15px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export {WrapBlock, DonateButtonStyled, NavStyled, LanguageMenuStyled, TabletContainer};

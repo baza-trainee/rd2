@@ -8,7 +8,7 @@ const SectionWrapper = styled.div`
   width: 360px;
   padding: 72px 16px;
   margin: 0 auto;
-  &:first-child {
+  &:first-of-type {
     padding-top: 0;
   }
   @media (min-width: 768px) {
