@@ -55,14 +55,6 @@ const Text = styled.p`
   font-weight: 400;
   line-height: 150%;
 
-  //&:nth-of-type(2n+1) {
-    //padding-left: 24px;
-  //}
-
-  //&:nth-of-type(2n) {
-    //padding-right: 24px;
-  //}
-
   @media (min-width: 768px) {
     flex: 1 1 50%;
   }
