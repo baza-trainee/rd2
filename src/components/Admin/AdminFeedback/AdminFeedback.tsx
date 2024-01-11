@@ -35,7 +35,7 @@ const AdminFeedback = () => {
           </ErrorBlock>
         )}
 
-        {!isError && Array.isArray(data) && <UsersFeedbackBlock userList={data} />}
+        {!isError && data && <UsersFeedbackBlock userList={data} />}
       </FeedbackListWrapper>
     </PageContentWrapper>
   );

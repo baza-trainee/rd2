@@ -8,10 +8,6 @@ export interface IUserFeedback  {
     id: string
 }
 
- type GetUsersResponse = {
-    data: IUserFeedback[];
-};
-
 export const sendFeedback = (user: contactValuesType ) => {
     const msgDate = new Date();
     return () => fetcher.post<ResponseUserDetails>("api/user/create-user",
@@ -35,7 +31,7 @@ export const sendFeedback = (user: contactValuesType ) => {
     )
 }
 export const fetchUsersList = () => {
-  return fetcher.get<GetUsersResponse>("/api/user/");
+  return fetcher.get<IUserFeedback[]>("/api/user/");
 };
 
 export const fetchUserFeedback = (id: string | undefined) => {

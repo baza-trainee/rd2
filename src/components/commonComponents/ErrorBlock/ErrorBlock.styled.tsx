@@ -10,7 +10,7 @@ type StyledTextProps = {
 const StyledText = styled.div<StyledTextProps>`
   padding: ${props => (props.blockType && "30px 0")};
   text-align: left;
-  font-size: ${props => (props.blockType ? "1.25rem" : "0.875rem")};
+  font-size: ${props => (props.blockType ? "1.25rem" : "1rem")};
   color: ${errorTextColor};
 
   position: ${props => (props.blockType ? "static" : "absolute")};
