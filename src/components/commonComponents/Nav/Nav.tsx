@@ -17,7 +17,7 @@ export const Nav: React.FC<NavProps> = ({ className,onClick, onKeyDown}) => {
   const { t } = useTranslation();
 
   return (
-    <nav className={className}>
+    <nav className={className} onClick={onClick}>
 
       {navNames.map((navItem) => (
         <NavigationLink key={navItem.id} to={navItem.route}
