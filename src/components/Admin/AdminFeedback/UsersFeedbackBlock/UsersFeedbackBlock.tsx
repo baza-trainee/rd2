@@ -17,9 +17,9 @@ type UsersFeedbackBlockProps = {
 const UsersFeedbackBlock = ({userList}:UsersFeedbackBlockProps) => {
 
   const totalUsers = userList.length;
-  const limit: number=6;
+  const limit: number=8;
   const [page, setPage] = useState(1);
-  //const [displayUser, setDisplayUser] = useState({start: 0, end: 0})
+
   const [displayUsers, setDisplayUsers] = useState({start: 0, end: limit});
   const totalPages = getPageCount(totalUsers, limit);
 
