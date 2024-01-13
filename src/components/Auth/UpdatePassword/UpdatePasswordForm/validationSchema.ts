@@ -1,16 +1,18 @@
 /* eslint-disable max-len */
+import { passwordValidation } from "constants/passwordValidation";
+
 import { object, string, ref } from "yup";
 
-const passwordRegex =
-  /([a-z]+[A-Z]+[0-9]+|[a-z]+[0-9]+[A-Z]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[0-9]+[A-Z]+[a-z]+)/;
+const { isValidPassword, isSpaceInPassword } = passwordValidation;
 
 export const validationSchema = object({
   password: string()
     .min(6, "мінімально шість знаків")
     .matches(
-      passwordRegex,
-      "пароль має місти тільки латинські літери, мати хоча б одну букву в верхньому регістрі та цифру",
-    ),
+      isValidPassword,
+      "пароль має місти тільки латинські літери без пробілів, мати хоча б одну букву в верхньому регістрі та цифру",
+    )
+    .matches(isSpaceInPassword, "пароль не має містить пробiли"),
 
   confirmPassword: string()
     .oneOf([ref("password")], "пароль має співпадать")
