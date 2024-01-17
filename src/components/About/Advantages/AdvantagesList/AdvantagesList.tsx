@@ -1,6 +1,5 @@
 import { Advantage } from "types/typeAdvantage";
 import { AdvantagesCard } from "components/About/Advantages/AdvantagesCard/AdvantagesCard";
-
 import { AdvantageList } from "components/About/Advantages/AdvantagesList/AdvantagesList.styled";
 
 interface Props {

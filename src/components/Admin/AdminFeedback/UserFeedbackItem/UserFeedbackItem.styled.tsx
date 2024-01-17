@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-
 import { Link } from "react-router-dom";
 
-import { theme } from "../../../../theme/theme";
+import { theme } from "theme/theme";
 
 const linkColor = theme.palette.primary.main;
 const linkHvrColor = theme.palette.primary.dark;
@@ -13,7 +12,7 @@ const ItemWrap = styled.div`
   align-items: center;
 
   margin-bottom: 10px;
-  
+
   span {
     padding-right: 20px;
   }

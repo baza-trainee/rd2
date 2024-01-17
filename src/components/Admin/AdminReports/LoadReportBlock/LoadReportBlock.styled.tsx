@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
-import {theme} from "../../../../theme/theme";
-
+import { theme } from "theme/theme";
 
 const bgInputColor = theme.palette.secondary.main;
 
@@ -16,7 +15,7 @@ const LoadFieldWrapper = styled.div`
 const LabelStyled = styled.label`
   position: inherit;
   z-index: 1;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,11 +24,11 @@ const LabelStyled = styled.label`
   height: 100%;
   padding-right: 10px;
   padding-left: 10px;
-  
+
   background-color: ${bgInputColor};
   border-radius: 5px;
   color: #7c7c7c;
-  
+
   transition: all 0.5s;
 
   span {
@@ -39,13 +38,12 @@ const LabelStyled = styled.label`
   &:hover {
     cursor: pointer;
     color: ${hoverColor};
-    
+
     svg {
       fill: ${hoverColor};
     }
   }
 `;
-
 
 const InputStyled = styled.input`
   display: none;
@@ -60,5 +58,4 @@ const ErrorBlock = styled.p`
   color: ${errorTextColor};
 `;
 
-
-export {LoadFieldWrapper, LabelStyled, InputStyled, ErrorBlock};
+export { LoadFieldWrapper, LabelStyled, InputStyled, ErrorBlock };

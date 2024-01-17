@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { Typography } from "@mui/material";
-import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
 
+import { PaperContainer } from "components/Auth/PaperContainer/PaperContainer";
 import { UpdatePasswordForm } from "components/Auth/UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
 import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
 import { useIsOpenModal } from "hooks/useIsOpenModal";

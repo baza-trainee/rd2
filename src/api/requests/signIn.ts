@@ -9,11 +9,6 @@ import { Tokens } from "types/tokens";
 const { setAccessToken } = new AccessTokenService();
 const { setRefreshToken } = new RefreshTokenService();
 
-// const credentials: Credentials = {
-//   email: "info@demining-georesource.tech",
-//   password: "admin",
-// };
-
 export const signIn = async (credentials: Credentials): Promise<void> => {
   try {
     const response = await fetcher.post<Tokens>("/api/auth/login", credentials, {

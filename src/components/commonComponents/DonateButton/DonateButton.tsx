@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import { DonateModal } from "../DonateModal/DonateModal";
+import { DonateModal } from "components/commonComponents/DonateModal/DonateModal";
 
-import { ButtonStyled } from "./DonateButton.styled";
+import { ButtonStyled } from "components/commonComponents/DonateButton/DonateButton.styled";
 
 interface DonateButtonProps {
   className?: string;

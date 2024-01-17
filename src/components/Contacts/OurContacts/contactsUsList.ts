@@ -1,5 +1,5 @@
-import { contactsList } from "../../commonComponents/ContactItem/contactsList";
-import { Contacts } from "../../../types/typeFooter";
+import { contactsList } from "components/commonComponents/ContactItem/contactsList";
+import { Contacts } from "types/typeFooter";
 
 const titleList: string[] = [
   "our_contacts.address_title",
@@ -11,8 +11,6 @@ type contactsUsListProps = {
   info: Contacts;
 };
 
-const contactsUsList: contactsUsListProps[] = [...contactsList]
+export const contactsUsList: contactsUsListProps[] = [...contactsList]
   .reverse()
   .map((item, index) => ({ info: item, title: titleList[index] }));
-
-export { contactsUsList };

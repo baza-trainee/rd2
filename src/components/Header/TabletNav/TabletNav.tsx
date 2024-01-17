@@ -1,14 +1,10 @@
-import React, {useEffect, useState} from "react";
+import { KeyboardEvent, MouseEvent, useEffect, useState } from "react";
 
-import {Box, IconButton} from "@mui/material";
-
+import { Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
 import MenuIcon from "@mui/icons-material/Menu";
-
 import Drawer from "@mui/material/Drawer";
-
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import {
   DonateButtonStyled,
@@ -16,25 +12,22 @@ import {
   NavStyled,
   TabletContainer,
   WrapBlock,
-} from "./TabletNav.styled";
+} from "components/Header/TabletNav/TabletNav.styled";
 
 export const TabletNav = () => {
-
   const location = useLocation();
   const { pathname } = location;
-  const [state, setState] = useState({right: false});
+  const [state, setState] = useState({ right: false });
 
-  const toggleDrawer = (open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-                    ((event as React.KeyboardEvent).key === "Tab" ||
-                        (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setState({ right: open });
-    };
+  const toggleDrawer = (open: boolean) => (event: KeyboardEvent | MouseEvent) => {
+    if (
+      event.type === "keydown" &&
+      ((event as KeyboardEvent).key === "Tab" || (event as KeyboardEvent).key === "Shift")
+    ) {
+      return;
+    }
+    setState({ right: open });
+  };
 
   function handleReset() {
     setState({ right: false });
@@ -56,7 +49,8 @@ export const TabletNav = () => {
         <MenuIcon />
       </IconButton>
 
-      <Drawer anchor="right"
+      <Drawer
+        anchor="right"
         open={state.right}
         onClose={toggleDrawer(false)}
         sx={{
@@ -69,29 +63,19 @@ export const TabletNav = () => {
         }}
       >
         <WrapBlock>
-
-          <IconButton
-            aria-label="close"
-            onClick={toggleDrawer(false)}
-          >
+          <IconButton aria-label="close" onClick={toggleDrawer(false)}>
             <CloseIcon />
           </IconButton>
 
           <DonateButtonStyled />
 
-          <Box onClick={handleReset}
-            onKeyDown={toggleDrawer(false)}
-            role="presentation"
-          >
+          <Box onClick={handleReset} onKeyDown={toggleDrawer(false)} role="presentation">
             <NavStyled />
           </Box>
 
           <LanguageMenuStyled />
-
         </WrapBlock>
-
       </Drawer>
-
     </TabletContainer>
   );
 };

@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-
 import { Dialog } from "@mui/material";
 
-import { theme } from "../../../theme/theme";
+import { theme } from "theme/theme";
 
 const bgrColor = theme.palette.secondary.main;
 

@@ -1,10 +1,9 @@
-import {validFileType} from "../../../../helpers/admin/validateFileType";
+import { validFileType } from "helpers/admin/validateFileType";
 
 const fileTypes = ["application/pdf"];
 
-const validateReport = (values: { reportFile?: File }) => {
-
-  const errors:{reportFile?: string} = {};
+export const validateReport = (values: { reportFile?: File }) => {
+  const errors: { reportFile?: string } = {};
 
   if (!values.reportFile) {
     errors.reportFile = "Спочатку виберіть файл";
@@ -15,6 +14,3 @@ const validateReport = (values: { reportFile?: File }) => {
   }
   return errors;
 };
-
-
-export { validateReport };

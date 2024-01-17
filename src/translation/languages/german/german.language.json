@@ -1,211 +1,211 @@
 {
- "nav": {
-  "about_us": "",
-  "activity": "",
-  "demining": "",
-  "contacts": ""
- },
- "buttons": {
-  "donate": "",
-  "more_info": "",
-  "send": "",
-  "pay": "",
-  "return_to_home_page": ""
- },
- "contact_form": {
-  "name": "",
-  "surname": "",
-  "phone": "",
-  "email": "",
-  "message": ""
- },
- "introduce_block": {
-  "item_1_text": "",
-  "item_2_text": ""
- },
- "main_tasks_block": {
-  "title": "",
-  "desc": {
-   "item_1": "",
-   "item_2": "",
-   "item_3": "",
-   "item_4": "",
-   "item_5": "",
-   "item_6": ""
+  "nav": {
+    "about_us": "",
+    "activity": "",
+    "demining": "",
+    "contacts": ""
+  },
+  "buttons": {
+    "donate": "",
+    "more_info": "",
+    "send": "",
+    "pay": "",
+    "return_to_home_page": ""
+  },
+  "contact_form": {
+    "name": "",
+    "surname": "",
+    "phone": "",
+    "email": "",
+    "message": ""
+  },
+  "introduce_block": {
+    "item_1_text": "",
+    "item_2_text": ""
+  },
+  "main_tasks_block": {
+    "title": "",
+    "desc": {
+      "item_1": "",
+      "item_2": "",
+      "item_3": "",
+      "item_4": "",
+      "item_5": "",
+      "item_6": ""
+    }
+  },
+  "advantages_block": {
+    "title": "",
+    "about": "",
+    "items": [
+      {
+        "title": "title1",
+        "desc": "desc1"
+      },
+      {
+        "title": "title2",
+        "desc": "desc2"
+      },
+      {
+        "title": "title3",
+        "desc": "desc3"
+      }
+    ]
+  },
+  "our_news_block": {
+    "title": "",
+    "about": "",
+    "items": [
+      {
+        "title": "title1",
+        "desc": "desc1"
+      },
+      {
+        "title": "title2",
+        "desc": "desc2"
+      },
+      {
+        "title": "title3",
+        "desc": "desc3"
+      }
+    ]
+  },
+  "partners_block": {
+    "title": "",
+    "about": ""
+  },
+  "about_socrat_block": {
+    "title": "",
+    "about": "",
+    "items": [
+      {
+        "title": "title1",
+        "desc": "desc1"
+      },
+      {
+        "title": "title2",
+        "desc": "desc2"
+      },
+      {
+        "title": "title3",
+        "desc": "desc3"
+      }
+    ]
+  },
+  "socrat_questions_block": [
+    {
+      "title": "title1",
+      "desc": "desc3"
+    },
+    {
+      "title": "title2",
+      "desc": "desc3"
+    },
+    {
+      "title": "title3",
+      "desc": "desc3"
+    },
+    {
+      "title": "title4",
+      "desc": "desc3"
+    },
+    {
+      "title": "title5",
+      "desc": "desc3"
+    },
+    {
+      "title": "title6",
+      "desc": "desc3"
+    }
+  ],
+  "activity_block": {
+    "title": "",
+    "about": "",
+    "items": [
+      {
+        "title": "title1",
+        "desc": "desc1"
+      },
+      {
+        "title": "title2",
+        "desc": "desc2"
+      },
+      {
+        "title": "title3",
+        "desc": "desc3"
+      },
+      {
+        "title": "title2",
+        "desc": "desc2"
+      },
+      {
+        "title": "title3",
+        "desc": "desc3"
+      },
+      {
+        "title": "title4",
+        "desc": "desc4"
+      },
+      {
+        "title": "title5",
+        "desc": "desc5"
+      }
+    ]
+  },
+  "contacts_block": {
+    "main_page_title": "",
+    "contact_page_title": "",
+    "contact_page_desc": ""
+  },
+  "our_contacts": {
+    "title": "",
+    "address_title": "",
+    "phone_title": "",
+    "email_title": "",
+    "address": ""
+  },
+  "our_rules": {
+    "privacy_policy": "",
+    "using_site": "",
+    "publicity": ""
+  },
+  "developers": "Baza Trainee Ukraine 2023 ©",
+  "page_404": {
+    "item_text_1": "",
+    "item_text_2": ""
+  },
+  "donate_modal": {
+    "payment_amount": "",
+    "payment_method": "",
+    "another_amount": "",
+    "success_title": "",
+    "success_text": "!"
+  },
+  "about_us_carousel": [
+    {
+      "title": "",
+      "desc": ""
+    },
+    {
+      "title": "",
+      "desc": ""
+    },
+    {
+      "title": "",
+      "desc": ""
+    }
+  ],
+  "validation": {
+    "input_max_length": "",
+    "input_min_length": "",
+    "only_letter": "",
+    "required_name": "",
+    "required_surname": "",
+    "required_email": "",
+    "required_phone": "",
+    "required_field": "",
+    "validation_error": "",
+    "message_max_length": "",
+    "message_mix_length": ""
   }
- },
- "advantages_block": {
-  "title": "",
-  "about": "",
-  "items": [
-   {
-    "title": "title1",
-    "desc": "desc1"
-   },
-   {
-    "title": "title2",
-    "desc": "desc2"
-   },
-   {
-    "title": "title3",
-    "desc": "desc3"
-   }
-  ]
- },
- "our_news_block": {
-  "title": "",
-  "about": "",
-  "items": [
-   {
-    "title": "title1",
-    "desc": "desc1"
-   },
-   {
-    "title": "title2",
-    "desc": "desc2"
-   },
-   {
-    "title": "title3",
-    "desc": "desc3"
-   }
-  ]
- },
- "partners_block": {
-  "title": "",
-  "about": ""
- },
- "about_socrat_block": {
-  "title": "",
-  "about": "",
-  "items": [
-   {
-    "title": "title1",
-    "desc": "desc1"
-   },
-   {
-    "title": "title2",
-    "desc": "desc2"
-   },
-   {
-    "title": "title3",
-    "desc": "desc3"
-   }
-  ]
- },
- "socrat_questions_block": [
-  {
-   "title": "title1",
-   "desc": "desc3"
-  },
-  {
-   "title": "title2",
-   "desc": "desc3"
-  },
-  {
-   "title": "title3",
-   "desc": "desc3"
-  },
-  {
-   "title": "title4",
-   "desc": "desc3"
-  },
-  {
-   "title": "title5",
-   "desc": "desc3"
-  },
-  {
-   "title": "title6",
-   "desc": "desc3"
-  }
- ],
- "activity_block": {
-  "title": "",
-  "about": "",
-  "items": [
-   {
-    "title": "title1",
-    "desc": "desc1"
-   },
-   {
-    "title": "title2",
-    "desc": "desc2"
-   },
-   {
-    "title": "title3",
-    "desc": "desc3"
-   },
-   {
-    "title": "title2",
-    "desc": "desc2"
-   },
-   {
-    "title": "title3",
-    "desc": "desc3"
-   },
-   {
-    "title": "title4",
-    "desc": "desc4"
-   },
-   {
-    "title": "title5",
-    "desc": "desc5"
-   }
-  ]
- },
- "contacts_block": {
-  "main_page_title": "",
-  "contact_page_title": "",
-  "contact_page_desc": ""
- },
- "our_contacts": {
-  "title": "",
-  "address_title": "",
-  "phone_title": "",
-  "email_title": "",
-  "address": ""
- },
- "our_rules": {
-  "privacy_policy": "",
-  "using_site": "",
-  "publicity": ""
- },
- "developers": "Baza Trainee Ukraine 2023 ©",
- "page_404": {
-  "item_text_1": "",
-  "item_text_2": ""
- },
- "donate_modal": {
-  "payment_amount": "",
-  "payment_method": "",
-  "another_amount": "",
-  "success_title": "",
-  "success_text": "!"
- },
- "about_us_carousel": [
-  {
-   "title": "",
-   "desc": ""
-  },
-  {
-   "title": "",
-   "desc": ""
-  },
-  {
-   "title": "",
-   "desc": ""
-  }
- ],
- "validation": {
-  "input_max_length": "",
-  "input_min_length": "",
-  "only_letter": "",
-  "required_name": "",
-  "required_surname": "",
-  "required_email": "",
-  "required_phone": "",
-  "required_field": "",
-  "validation_error": "",
-  "message_max_length": "",
-  "message_mix_length": ""
- }
 }

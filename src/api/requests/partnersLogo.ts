@@ -1,6 +1,5 @@
-import {ResponseLogos} from "../types/typePartnersLogos";
-
-import {fetcher} from "./fetcher";
+import { ResponseLogos } from "types/typePartnersLogos";
+import { fetcher } from "api/fetcher";
 
 export const addLogo = (data: File) => {
   return () =>
@@ -18,8 +17,6 @@ export const addLogo = (data: File) => {
     );
 };
 
-export const  fetchLogosList = () => {
-
+export const fetchLogosList = () => {
   return fetcher.get<ResponseLogos[]>("/api/logo/logos");
-
 };

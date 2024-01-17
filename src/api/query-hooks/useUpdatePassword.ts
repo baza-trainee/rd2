@@ -1,4 +1,4 @@
-import { restorePassword } from "api/sendEmailToServer";
+import { restorePassword } from "api/requests/sendEmailToServer";
 import { useMutation } from "react-query";
 import { FormEmail } from "types/formEmail";
 

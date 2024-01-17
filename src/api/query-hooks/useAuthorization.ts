@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 
-import { signIn } from "api/signIn";
+import { signIn } from "api/requests/signIn";
 import { checkIsTokenValid } from "helpers/auth/checkIsTokenValid";
 import { FormValues } from "types/formValues";
 import { AccessTokenService } from "services/AccessTokenService";

@@ -1,7 +1,7 @@
 import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 
-import { changePassword } from "api/changePassword";
+import { changePassword } from "api/requests/changePassword";
 import { PasswordCredentials } from "types/passwordCredentials";
 
 export const useChangePassword = (

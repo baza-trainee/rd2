@@ -1,34 +1,35 @@
-import React from "react";
+import { ChangeEvent } from "react";
 
 import DownloadIcon from "@mui/icons-material/Download";
 
-import {ErrorBlock, InputStyled,
-  LabelStyled, LoadFieldWrapper,
-} from "./LoadReportBlock.styled";
-
+import {
+  ErrorBlock,
+  InputStyled,
+  LabelStyled,
+  LoadFieldWrapper,
+} from "components/Admin/AdminReports/LoadReportBlock/LoadReportBlock.styled";
 
 type LoadReportBlockProps = {
-    id: string
-    fileName: string | null;
-    errorMes?: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+  id: string;
+  fileName: string | null;
+  errorMes?: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+};
 
-const LoadReportBlock = (props: LoadReportBlockProps) => {
-
-  const {id, fileName,  errorMes, onChange} = props;
+export const LoadReportBlock = (props: LoadReportBlockProps) => {
+  const { id, fileName, errorMes, onChange } = props;
 
   return (
     <LoadFieldWrapper>
-
       <LabelStyled htmlFor={id}>
-        {fileName
-          ? <span>{fileName}</span>
-          : ( <>
+        {fileName ? (
+          <span>{fileName}</span>
+        ) : (
+          <>
             <span>Обрати файл у форматі pdf</span>
             <DownloadIcon color="primary" />
-          </>)
-        }
+          </>
+        )}
       </LabelStyled>
 
       <InputStyled
@@ -40,13 +41,7 @@ const LoadReportBlock = (props: LoadReportBlockProps) => {
         onChange={onChange}
       />
 
-      {errorMes
-        ? <ErrorBlock>{errorMes}</ErrorBlock>
-        : null
-      }
-
+      {errorMes ? <ErrorBlock>{errorMes}</ErrorBlock> : null}
     </LoadFieldWrapper>
   );
 };
-
-export {LoadReportBlock};

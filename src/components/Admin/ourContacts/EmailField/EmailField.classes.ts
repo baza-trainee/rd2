@@ -1,6 +1,6 @@
 import { SxProps } from "@mui/material";
 
-import {theme} from "../../../../theme/theme";
+import { theme } from "theme/theme";
 
 const errorTextColor = theme.palette.error.dark;
 

@@ -1,49 +1,44 @@
-import React, {useState} from "react";
+import { useState } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import {rulesList} from "../footerList";
+import { rulesList } from "components/Footer/footerList";
+import { FooterModal } from "components/Footer/FooterModal/FooterModal";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
 
+import {
+  RulesItem,
+  RulesList,
+} from "components/Footer/FooterReports/FooterReports.styled";
 
-import {FooterModal} from "../FooterModal/FooterModal";
-import {useIsOpenModal} from "../../../hooks/useIsOpenModal";
+export const FooterReports = () => {
+  const { t } = useTranslation();
 
-import {RulesItem, RulesList} from "./FooterReports.styled";
+  const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
 
-const FooterReports = () => {
+  const [loadFilePath, setLoadFilePath] = useState("");
 
-    const { t } = useTranslation();
+  const openRule = (filePath: string) => {
+    return () => {
+      setLoadFilePath(filePath);
+      handleIsOpenModal();
+    };
+  };
 
-    const {isOpenModal, handleIsOpenModal} = useIsOpenModal();
-
-    const [loadFilePath, setLoadFilePath] = useState("");
-
-    const openRule = (filePath:string) => {
-        return ()=> {
-            setLoadFilePath(filePath);
-            handleIsOpenModal();
-        }
-    }
-
-    return (
-        <>
-            <RulesList>
-                {rulesList.map(({ id, descKey, filePath}) => (
-                    <RulesItem key={id} onClick={openRule(filePath)}>
-                        <span>
-                            {t(descKey)}
-                        </span>
-                    </RulesItem>
-                ))}
-            </RulesList>
-            <FooterModal
-                filePath={loadFilePath}
-                onCloseModal={handleIsOpenModal}
-                open={isOpenModal}
-            />
-        </>
-    )
-
-}
-
-export {FooterReports}
+  return (
+    <>
+      <RulesList>
+        {rulesList.map(({ id, descKey, filePath }) => (
+          <RulesItem key={id} onClick={openRule(filePath)}>
+            <span>{t(descKey)}</span>
+          </RulesItem>
+        ))}
+      </RulesList>
+      <FooterModal
+        filePath={loadFilePath}
+        onCloseModal={handleIsOpenModal}
+        open={isOpenModal}
+      />
+    </>
+  );
+};

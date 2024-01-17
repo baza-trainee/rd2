@@ -1,28 +1,18 @@
-import React from "react";
-
 import { useQuery } from "react-query";
-
 import { useMediaQuery } from "@mui/material";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Navigation } from "swiper/modules";
 
-import { loadData } from "../../../../api/loadData";
-
-import { fetchLogosList } from "../../../../api/partnersLogo";
+import { loadData } from "api/requests/loadData";
+import { fetchLogosList } from "api/requests/partnersLogo";
+import { handleSlideToDisplay } from "helpers/handleSlideToDisplay";
+import { PartnersLogos } from "types/typePartnersLogos";
+import { mapPartnersLogos } from "helpers/mapPartnersLogos";
+import { theme } from "theme/theme";
+import { partners } from "components/About/Partners/PartnersSlider/partnersList";
+import { PartnersCard } from "components/About/Partners/PartnersCard/PartnersCard";
 
 import "swiper/css";
-
-import { PartnersCard } from "../PartnersCard/PartnersCard";
-
-import { theme } from "../../../../theme/theme";
-
-import { handleSlideToDisplay } from "../../../../helpers/handleSlideToDisplay";
-
-import { partners } from "../PartnersSlider/partnersList";
-import { PartnersLogos } from "../../../../types/typePartnersLogos";
-import { mapPartnersLogos } from "../../../../helpers/mapPartnersLogos";
 
 export const PartnersSlideList = () => {
   const { isError, isSuccess, data } = useQuery({
@@ -40,7 +30,6 @@ export const PartnersSlideList = () => {
 
   const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
   const isAboveMd = useMediaQuery(theme.breakpoints.up("md"));
-  //const isBolowMd = useMediaQuery(theme.breakpoints.down("md"));
 
   const numToDisplay = handleSlideToDisplay(isAboveMd, isAboveLg);
 
@@ -71,8 +60,7 @@ export const PartnersSlideList = () => {
           spaceBetween: 32,
         },
       }}
-      //centeredSlides={isBolowMd}
-      slidesPerView={numToDisplay}
+      slidesPerView={numToDisplay as number}
       navigation={{
         prevEl: ".prev",
         nextEl: ".next",

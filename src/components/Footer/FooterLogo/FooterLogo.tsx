@@ -1,19 +1,12 @@
-import React from "react";
+import { logoImg } from "components/Footer/footerList";
 
-import { logoImg } from "../footerList";
+import { LogoLink } from "components/Footer/FooterLogo/FooterLogo.styled";
 
-import { LogoLink } from "./FooterLogo.styled";
-
-export const FooterLogo: React.FC = () => {
+export const FooterLogo = () => {
   return (
     <div>
       <LogoLink href="/">
-        <img
-          src={logoImg.src}
-          alt={logoImg.alt}
-          width="117"
-          height="149"
-        />
+        <img src={logoImg.src} alt={logoImg.alt} width="117" height="149" />
       </LogoLink>
     </div>
   );

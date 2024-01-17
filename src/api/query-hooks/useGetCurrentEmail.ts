@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 
-import { getCurrentEmail } from "api/getCurrentEmail";
-import { loadData } from "api/loadData";
+import { getCurrentEmail } from "api/requests/getCurrentEmail";
+import { loadData } from "api/requests/loadData";
 
 export const useGetCurrentEmail = () =>
   useQuery({

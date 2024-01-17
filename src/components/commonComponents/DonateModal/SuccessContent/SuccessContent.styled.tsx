@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import bgImage from "assets/images/successModal/drone.png";
 import bgImageRetina from "assets/images/successModal/drone@2x.png";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   height: 100%;
   padding-top: 300px;
 
@@ -34,5 +34,3 @@ const Wrapper = styled.div`
     background-image: url(${bgImageRetina});
   }
 `;
-
-export { Wrapper };

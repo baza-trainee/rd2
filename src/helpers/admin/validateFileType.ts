@@ -1,6 +1,5 @@
-export function validFileType(file:File, fileTypes: string[]) {
+export function validFileType(file: File, fileTypes: string[]) {
+  const loadFileType = fileTypes.find((type) => file.type === type);
 
-    const loadFileType = fileTypes.find(type => file.type === type);
-
-    return !!loadFileType;
+  return !!loadFileType;
 }

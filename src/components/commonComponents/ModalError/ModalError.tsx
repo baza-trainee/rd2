@@ -2,7 +2,10 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { Box, IconButton, Modal, Typography } from "@mui/material";
 
-import { IconButtonStyles, ModalStyles } from "./ModalError.classes";
+import {
+  IconButtonStyles,
+  ModalStyles,
+} from "components/commonComponents/ModalError/ModalError.classes";
 
 interface Props {
   children: string;

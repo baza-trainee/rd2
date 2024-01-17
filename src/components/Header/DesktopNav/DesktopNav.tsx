@@ -1,7 +1,4 @@
-import React from "react";
-
-import {NavStyled, NavContainer} from "./DesktopNav.styled";
-
+import { NavStyled, NavContainer } from "components/Header/DesktopNav/DesktopNav.styled";
 
 export const DesktopNav = () => {
   return (

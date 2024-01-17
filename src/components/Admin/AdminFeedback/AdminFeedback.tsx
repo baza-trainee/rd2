@@ -1,20 +1,15 @@
+/* eslint-disable max-len */
 import { useQuery } from "react-query";
 
-import { fetchUsersList } from "../../../api/feedBackUsers";
+import { fetchUsersList } from "api/requests/feedBackUsers";
+import { Fallback } from "components/commonComponents/Fallback/Fallback";
+import { loadData } from "api/requests/loadData";
+import { ErrorBlock } from "components/commonComponents/ErrorBlock/ErrorBlock";
+import { PageContentWrapper } from "components/Admin/PageContentWrapper/PageContentWrapper";
+import { LoadFeedbackListButton } from "components/Admin/AdminFeedback/LoadFeedbackListButton/LoadFeedbackListButton";
+import { UsersFeedbackBlock } from "components/Admin/AdminFeedback/UsersFeedbackBlock/UsersFeedbackBlock";
 
-import { PageContentWrapper } from "../PageContentWrapper/PageContentWrapper";
-
-import { Fallback } from "../../commonComponents/Fallback/Fallback";
-
-import { loadData } from "../../../api/loadData";
-
-import { ErrorBlock } from "../../commonComponents/ErrorBlock/ErrorBlock";
-
-import { LoadFeedbackListButton } from "./LoadFeedbackListButton/LoadFeedbackListButton";
-
-import { FeedbackListWrapper } from "./AdminFeedback.styled";
-
-import { UsersFeedbackBlock } from "./UsersFeedbackBlock/UsersFeedbackBlock";
+import { FeedbackListWrapper } from "components/Admin/AdminFeedback/AdminFeedback.styled";
 
 const AdminFeedback = () => {
   const { isLoading, isError, data, error } = useQuery({

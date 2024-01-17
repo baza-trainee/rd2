@@ -1,195 +1,195 @@
 {
- "nav": {
-  "about_us": "A propos",
-  "activity": "Activités de recherche",
-  "demining": "Déminage à distance",
-  "contacts": "Contact"
- },
- "buttons": {
-  "donate": "Soutenir",
-  "more_info": "en savoir plus",
-  "send": "envoyer",
-  "pay": "",
-  "return_to_home_page": ""
- },
- "contact_form": {
-  "name": "Prénom",
-  "surname": "Nom",
-  "phone": "téléphone",
-  "email": "e-mail",
-  "message": "message"
- },
- "introduce_block": {
-  "item_1_text": "L'équipe du Centre de recherche sur l'utilisation des ressourses naturelles de l'Académie nationale des sciences de l'Ukraine, une filiale de l'entreprise d'Etat \"Géoréssourses\", mène des tests sur le développement existant et l'équipement d'une méthodologie moderne pour déterminer l'implacement d'objets potentiellement explosifs par la méthode de la prospection électromagnétique pulsée.",
-  "item_2_text": "L'équipe est composée de la direction, de spécialistes scientifiques titulaires de doctorats et de candidats en sciences géologiques et géochimiques, d'un groupe de traducteurs scientifiques et possède 10 ans d'expérience dans la réalisation de travaux de recherche similaires. Les tests de la méthodologie sont effectués dans des conditions réelles sur un site en exploitation."
- },
- "main_tasks_block": {
-  "title": "Taches principales",
-  "desc": {
-   "item_1": "La mise en œuvre d'une approche radicalement nouvelle permettant de mener des recherches à distance à l'aide de drones pour détecter les emplacements d'objets potentiellement explosifs.",
-   "item_2": "L'utilisation de technologies basées sur la méthode de balayage (PEMZ) - la cartographie de la zone avec l'analyse des rayonnements anormaux des objets de recherche.",
-   "item_3": "Effectuer des tests sur le terrain dans des conditions réelles.",
-   "item_4": "Le déminage du territoire de l'Ukraine est nécessaire, car actuellement 30 % du territoire du pays est contaminé par des mines et des objets explosifs.",
-   "item_5": "L'élaboration de cartes des zones contaminées et des objets en Ukraine.",
-   "item_6": "La mise en œuvre de méthodes modernes de déminage, car avec les technologies actuelles, le déminage du territoire de l'Ukraine prendrait plus de 750 ans."
+  "nav": {
+    "about_us": "A propos",
+    "activity": "Activités de recherche",
+    "demining": "Déminage à distance",
+    "contacts": "Contact"
+  },
+  "buttons": {
+    "donate": "Soutenir",
+    "more_info": "en savoir plus",
+    "send": "envoyer",
+    "pay": "",
+    "return_to_home_page": ""
+  },
+  "contact_form": {
+    "name": "Prénom",
+    "surname": "Nom",
+    "phone": "téléphone",
+    "email": "e-mail",
+    "message": "message"
+  },
+  "introduce_block": {
+    "item_1_text": "L'équipe du Centre de recherche sur l'utilisation des ressourses naturelles de l'Académie nationale des sciences de l'Ukraine, une filiale de l'entreprise d'Etat \"Géoréssourses\", mène des tests sur le développement existant et l'équipement d'une méthodologie moderne pour déterminer l'implacement d'objets potentiellement explosifs par la méthode de la prospection électromagnétique pulsée.",
+    "item_2_text": "L'équipe est composée de la direction, de spécialistes scientifiques titulaires de doctorats et de candidats en sciences géologiques et géochimiques, d'un groupe de traducteurs scientifiques et possède 10 ans d'expérience dans la réalisation de travaux de recherche similaires. Les tests de la méthodologie sont effectués dans des conditions réelles sur un site en exploitation."
+  },
+  "main_tasks_block": {
+    "title": "Taches principales",
+    "desc": {
+      "item_1": "La mise en œuvre d'une approche radicalement nouvelle permettant de mener des recherches à distance à l'aide de drones pour détecter les emplacements d'objets potentiellement explosifs.",
+      "item_2": "L'utilisation de technologies basées sur la méthode de balayage (PEMZ) - la cartographie de la zone avec l'analyse des rayonnements anormaux des objets de recherche.",
+      "item_3": "Effectuer des tests sur le terrain dans des conditions réelles.",
+      "item_4": "Le déminage du territoire de l'Ukraine est nécessaire, car actuellement 30 % du territoire du pays est contaminé par des mines et des objets explosifs.",
+      "item_5": "L'élaboration de cartes des zones contaminées et des objets en Ukraine.",
+      "item_6": "La mise en œuvre de méthodes modernes de déminage, car avec les technologies actuelles, le déminage du territoire de l'Ukraine prendrait plus de 750 ans."
+    }
+  },
+  "advantages_block": {
+    "title": "Avantages du projet",
+    "about": "Le territoire peut être contaminé par des mines posées manuellement ou par des engins explosifs improvisés. Dans de tels cas, ils sont détectés et désamorcés manuellement. Nous proposons une méthode de déminage à distance sans intervention de démineur et adaptée à tout type de contamination.",
+    "items": [
+      {
+        "title": "Une technologie unique",
+        "desc": "L'Ukraine s'intéresse au développement de technologies pour sa survie, sa reconstruction et son développement. Actuellement, nous sommes en mesure de prendre la première place au monde en termes d'unicité des technologies testées sur le terrain."
+      },
+      {
+        "title": "Équipes de déminage",
+        "desc": "Plus de 500 équipes de démineurs risquent leur vie chaque jour pour déminer les territoires contaminés. Nous proposons un déminage sans intervention humaine - exclusivement à distance."
+      },
+      {
+        "title": "Objets explosifs",
+        "desc": "Notre méthodologie permet de détecter et de neutraliser les mines qui, avec le temps, se sont enfoncées dans le terre et sont invisibles à l'œil nu. Les rechercher manuellement est extrêmement dangereux."
+      }
+    ]
+  },
+  "our_news_block": {
+    "title": "Nos actualités",
+    "about": "Les scientifiques de l'Académie nationale des sciences d'Ukraine participent régulièrement à des conférences et à des forums dans le domaine des développements de haute technologie et des méthodes d'ingénierie les plus modernes."
+  },
+  "partners_block": {
+    "title": "Partenaires",
+    "about": "Les organisations avec lesquelles nous collaborons régulièrement"
+  },
+  "about_socrat_block": {
+    "title": "Projet Socrat",
+    "about": "Détection à distance d'objets explosifs",
+    "items": [
+      {
+        "title": "174 000 km²",
+        "desc": "Un tiers du territoire ukrainien est contaminé par des mines et doit faire l'objet d'une enquête approfondie sur les munitions et autres explosifs."
+      },
+      {
+        "title": "64 km² par an",
+        "desc": "Le rythme de déminage n'est que d'environ 64 kilomètres carrés par an, la majeure partie du travail étant effectuée par les services spéciaux des ministères de la défense et de l'intérieur de l'Ukraine, avec le soutien d'ONG internationales."
+      },
+      {
+        "title": "70 ans",
+        "desc": "Il faudra environ 70 ans pour déminer complètement les territoires. Un déminage aussi long peut coûter la vie à de nombreuses personnes, qu'il s'agisse de civils ou de membres des services spéciaux chargés du déminage."
+      }
+    ]
+  },
+  "socrat_questions_block": [
+    {
+      "title": "Comment fonctionne le déminage ?",
+      "desc": "La procédure standard de déminage est applicable là où des combats ont eu lieu, soit environ 30 % du territoire du pays. Pour cela, des unités spéciales doivent maintenir un personnel, des équipements et du matériel. La technologie Sokrat accélère le processus de nettoyage des terres contaminées de manière significative, réduisant considérablement le besoin d'engager du matériel."
+    },
+    {
+      "title": "Quelles sont les options pour le déminage ?",
+      "desc": "Le déminage de la zone peut être compliqué en fonction du type de sol, de la présence de forêts ou de zones marécageuses, de la présence de villages ou de villes, ainsi que de l'utilisation future de la zone. Un point important est la sensibilisation de la population des zones contaminées aux dangers et à la vigilance personnelle si vous êtes résident de ces zones. L'utilisation de la technologie de déminage à distance Sokrat permet de réduire considérablement cette complexité."
+    },
+    {
+      "title": "Comment s'organise le processus d'assainissement du territoire ?",
+      "desc": "Pour le déminage, il est nécessaire d'équiper une zone entière de travail pour l'unité : un lieu d'équipement, un poste médical, un espace de repos, un endroit pour évacuer la végétation, les déchets ou la ferraille, etc. Tout cela peut être évité grâce au déminage à distance."
+    },
+    {
+      "title": "Comment fonctionne l'équipe de sapeurs ?",
+      "desc": "Il vérifie d'abord la zone visuellement et à l'aide d'un détecteur de métaux. Dans tous les cas, cette procédure est longue et risquée pour le spécialiste. Il est impératif de ne pas se précipiter. Contrairement à Sokrat, cela permet de ne pas être dépendant des conditions extérieures (naturelles ou météorologiques, facteur humain ou état de l'équipement). La technologie de déminage à distance a été testée en conditions réelles."
+    },
+    {
+      "title": "Quelles sont les particularités qui peuvent survenir au cours du processus de nettoyage ?",
+      "desc": "Sur les zones de la zone de déminage qui présentent un haut niveau de contamination par des matériaux ferromagnétiques, un détecteur de métaux peut s'avérer inefficace. Effectuer la procédure dans de tels cas est dangereux pour le démineur. De plus, l'excavation du sol est effectuée manuellement, ce qui ajoute également du temps. Sokrat permet de détecter des objets de petite taille à partir de 10 cm avec une précision de plus de 86%. La numérisation peut être utilisée sur des terrains complexes tels que des étangs, des buissons, des champs, des pentes, des collines, des forêts, etc."
+    },
+    {
+      "title": "Qui sont les consommateurs de la méthodologie Socrat",
+      "desc": [
+        "Opérateurs de déminage",
+        "Les communautés et l'état de l'Ukraine",
+        "Exploitations agricoles et fermes",
+        "Les fabricants de matériel agricole, les compagnies d'assurance, les sociétés de leasing",
+        "Sociétés d'aménagement urbain qui défrichent des terrains pour la construction"
+      ]
+    }
+  ],
+  "activity_block": {
+    "title": "Activités de recherche",
+    "about": "Nous fournissons également des conseils utiles sur le choix d'un drone, son utilisation et les règles de sécurité. Notre équipe d'experts est toujours prête à vous consulter et à vous aider avec toutes les questions liées aux drones.",
+    "items": [
+      {
+        "title": "Innovations",
+        "desc": "L'équipe de la RDCP \"Géoréssource\" de l'Académie nationale des sciences d'Ukraine, en collaboration avec des experts de l'Académie nationale de la police, des services d'urgence, du service national de transport spécialisé et des forces de soutien des forces armées ukrainiennes, effectue des tests d'une nouvelle méthode de déminage à distance des territoires."
+      },
+      {
+        "title": "Méthodologie",
+        "desc": "Le développement consiste en ce que le quadricoptère, en survolant le sol, détermine l'emplacement des mines par méthode de sondage électromagnétique. La méthodologie détermine l'emplacement des objets explosifs métalliques et non métalliques, ainsi que leur profondeur dans le sol. Les travaux sont effectués sans l'intervention directe de l'homme sur la zone contaminée."
+      },
+      {
+        "title": "Éloignement",
+        "desc": "Il s'agit d'une approche totalement nouvelle qui permet de mener des recherches pour la localisation des mines de manière rapide en mode distant à l'aide de drones, puis de fournir une carte de leur emplacement après le traitement des données, avec une référence au système de coordonnées GPS."
+      },
+      {
+        "title": "Importance",
+        "desc": "Sur le territoire de l'Ukraine, il est nécessaire d'assurer le marquage et la création de cartes des territoires de l'Ukraine et des objets contaminés ou potentiellement contaminés par des objets explosifs pour la sécurité des Ukrainiens."
+      },
+      {
+        "title": "Pertinence",
+        "desc": "L'identification des lieux avec des coordonnées précises de munitions explosives facilitera grandement l'isolement des zones dangereuses et accélérera la possibilité d'un déminage humanitaire des territoires de l'Ukraine."
+      }
+    ]
+  },
+  "contacts_block": {
+    "main_page_title": "Si vous avez des questions, des remarques, des propositions veuillez remplir le formulaire de retour d'information.",
+    "contact_page_title": "Retour d'information",
+    "contact_page_desc": "Votre retour d'information et vos suggestions nous seront utiles."
+  },
+  "our_contacts": {
+    "title": "Contact",
+    "address_title": "Notre adresse",
+    "phone_title": "appelez-nous",
+    "email_title": "écrivez-nous",
+    "address": "55 B rue Olesya Gontchara 01601 Kyiv"
+  },
+  "our_rules": {
+    "privacy_policy": "Politique de confidentialité",
+    "using_site": "Conditions générales d'utilisation",
+    "publicity": "Rapports"
+  },
+  "developers": "Baza Trainee Ukraine 2023 ©",
+  "page_404": {
+    "item_text_1": "",
+    "item_text_2": ""
+  },
+  "donate_modal": {
+    "payment_amount": "",
+    "payment_method": "",
+    "another_amount": "",
+    "success_title": "",
+    "success_text": "!"
+  },
+  "about_us_carousel": [
+    {
+      "title": "domaines de travail 1",
+      "desc": ""
+    },
+    {
+      "title": "domaines de travail 2",
+      "desc": ""
+    },
+    {
+      "title": "domaines de travail 3",
+      "desc": ""
+    }
+  ],
+  "validation": {
+    "input_max_length": "",
+    "input_min_length": "",
+    "only_letter": "",
+    "required_name": "Le nom est un champ obligatoire",
+    "required_surname": "Ce champ est obligatoire",
+    "required_email": "E-mail est un champ obligatoire",
+    "required_phone": "Le téléphone est un champ obligatoire",
+    "required_field": "Ce champ est obligatoire",
+    "validation_error": "",
+    "message_max_length": "",
+    "message_mix_length": ""
   }
- },
- "advantages_block": {
-  "title": "Avantages du projet",
-  "about": "Le territoire peut être contaminé par des mines posées manuellement ou par des engins explosifs improvisés. Dans de tels cas, ils sont détectés et désamorcés manuellement. Nous proposons une méthode de déminage à distance sans intervention de démineur et adaptée à tout type de contamination.",
-  "items": [
-   {
-    "title": "Une technologie unique",
-    "desc": "L'Ukraine s'intéresse au développement de technologies pour sa survie, sa reconstruction et son développement. Actuellement, nous sommes en mesure de prendre la première place au monde en termes d'unicité des technologies testées sur le terrain."
-   },
-   {
-    "title": "Équipes de déminage",
-    "desc": "Plus de 500 équipes de démineurs risquent leur vie chaque jour pour déminer les territoires contaminés. Nous proposons un déminage sans intervention humaine - exclusivement à distance."
-   },
-   {
-    "title": "Objets explosifs",
-    "desc": "Notre méthodologie permet de détecter et de neutraliser les mines qui, avec le temps, se sont enfoncées dans le terre et sont invisibles à l'œil nu. Les rechercher manuellement est extrêmement dangereux."
-   }
-  ]
- },
- "our_news_block": {
-  "title": "Nos actualités",
-  "about": "Les scientifiques de l'Académie nationale des sciences d'Ukraine participent régulièrement à des conférences et à des forums dans le domaine des développements de haute technologie et des méthodes d'ingénierie les plus modernes."
- },
- "partners_block": {
-  "title": "Partenaires",
-  "about": "Les organisations avec lesquelles nous collaborons régulièrement"
- },
- "about_socrat_block": {
-  "title": "Projet Socrat",
-  "about": "Détection à distance d'objets explosifs",
-  "items": [
-   {
-    "title": "174 000 km²",
-    "desc": "Un tiers du territoire ukrainien est contaminé par des mines et doit faire l'objet d'une enquête approfondie sur les munitions et autres explosifs."
-   },
-   {
-    "title": "64 km² par an",
-    "desc": "Le rythme de déminage n'est que d'environ 64 kilomètres carrés par an, la majeure partie du travail étant effectuée par les services spéciaux des ministères de la défense et de l'intérieur de l'Ukraine, avec le soutien d'ONG internationales."
-   },
-   {
-    "title": "70 ans",
-    "desc": "Il faudra environ 70 ans pour déminer complètement les territoires. Un déminage aussi long peut coûter la vie à de nombreuses personnes, qu'il s'agisse de civils ou de membres des services spéciaux chargés du déminage."
-   }
-  ]
- },
- "socrat_questions_block": [
-  {
-   "title": "Comment fonctionne le déminage ?",
-   "desc": "La procédure standard de déminage est applicable là où des combats ont eu lieu, soit environ 30 % du territoire du pays. Pour cela, des unités spéciales doivent maintenir un personnel, des équipements et du matériel. La technologie Sokrat accélère le processus de nettoyage des terres contaminées de manière significative, réduisant considérablement le besoin d'engager du matériel."
-  },
-  {
-   "title": "Quelles sont les options pour le déminage ?",
-   "desc": "Le déminage de la zone peut être compliqué en fonction du type de sol, de la présence de forêts ou de zones marécageuses, de la présence de villages ou de villes, ainsi que de l'utilisation future de la zone. Un point important est la sensibilisation de la population des zones contaminées aux dangers et à la vigilance personnelle si vous êtes résident de ces zones. L'utilisation de la technologie de déminage à distance Sokrat permet de réduire considérablement cette complexité."
-  },
-  {
-   "title": "Comment s'organise le processus d'assainissement du territoire ?",
-   "desc": "Pour le déminage, il est nécessaire d'équiper une zone entière de travail pour l'unité : un lieu d'équipement, un poste médical, un espace de repos, un endroit pour évacuer la végétation, les déchets ou la ferraille, etc. Tout cela peut être évité grâce au déminage à distance."
-  },
-  {
-   "title": "Comment fonctionne l'équipe de sapeurs ?",
-   "desc": "Il vérifie d'abord la zone visuellement et à l'aide d'un détecteur de métaux. Dans tous les cas, cette procédure est longue et risquée pour le spécialiste. Il est impératif de ne pas se précipiter. Contrairement à Sokrat, cela permet de ne pas être dépendant des conditions extérieures (naturelles ou météorologiques, facteur humain ou état de l'équipement). La technologie de déminage à distance a été testée en conditions réelles."
-  },
-  {
-   "title": "Quelles sont les particularités qui peuvent survenir au cours du processus de nettoyage ?",
-   "desc": "Sur les zones de la zone de déminage qui présentent un haut niveau de contamination par des matériaux ferromagnétiques, un détecteur de métaux peut s'avérer inefficace. Effectuer la procédure dans de tels cas est dangereux pour le démineur. De plus, l'excavation du sol est effectuée manuellement, ce qui ajoute également du temps. Sokrat permet de détecter des objets de petite taille à partir de 10 cm avec une précision de plus de 86%. La numérisation peut être utilisée sur des terrains complexes tels que des étangs, des buissons, des champs, des pentes, des collines, des forêts, etc."
-  },
-  {
-   "title": "Qui sont les consommateurs de la méthodologie Socrat",
-   "desc": [
-    "Opérateurs de déminage",
-    "Les communautés et l'état de l'Ukraine",
-    "Exploitations agricoles et fermes",
-    "Les fabricants de matériel agricole, les compagnies d'assurance, les sociétés de leasing",
-    "Sociétés d'aménagement urbain qui défrichent des terrains pour la construction"
-   ]
-  }
- ],
- "activity_block": {
-  "title": "Activités de recherche",
-  "about": "Nous fournissons également des conseils utiles sur le choix d'un drone, son utilisation et les règles de sécurité. Notre équipe d'experts est toujours prête à vous consulter et à vous aider avec toutes les questions liées aux drones.",
-  "items": [
-   {
-    "title": "Innovations",
-    "desc": "L'équipe de la RDCP \"Géoréssource\" de l'Académie nationale des sciences d'Ukraine, en collaboration avec des experts de l'Académie nationale de la police, des services d'urgence, du service national de transport spécialisé et des forces de soutien des forces armées ukrainiennes, effectue des tests d'une nouvelle méthode de déminage à distance des territoires."
-   },
-   {
-    "title": "Méthodologie",
-    "desc": "Le développement consiste en ce que le quadricoptère, en survolant le sol, détermine l'emplacement des mines par méthode de sondage électromagnétique. La méthodologie détermine l'emplacement des objets explosifs métalliques et non métalliques, ainsi que leur profondeur dans le sol. Les travaux sont effectués sans l'intervention directe de l'homme sur la zone contaminée."
-   },
-   {
-    "title": "Éloignement",
-    "desc": "Il s'agit d'une approche totalement nouvelle qui permet de mener des recherches pour la localisation des mines de manière rapide en mode distant à l'aide de drones, puis de fournir une carte de leur emplacement après le traitement des données, avec une référence au système de coordonnées GPS."
-   },
-   {
-    "title": "Importance",
-    "desc": "Sur le territoire de l'Ukraine, il est nécessaire d'assurer le marquage et la création de cartes des territoires de l'Ukraine et des objets contaminés ou potentiellement contaminés par des objets explosifs pour la sécurité des Ukrainiens."
-   },
-   {
-    "title": "Pertinence",
-    "desc": "L'identification des lieux avec des coordonnées précises de munitions explosives facilitera grandement l'isolement des zones dangereuses et accélérera la possibilité d'un déminage humanitaire des territoires de l'Ukraine."
-   }
-  ]
- },
- "contacts_block": {
-  "main_page_title": "Si vous avez des questions, des remarques, des propositions veuillez remplir le formulaire de retour d'information.",
-  "contact_page_title": "Retour d'information",
-  "contact_page_desc": "Votre retour d'information et vos suggestions nous seront utiles."
- },
- "our_contacts": {
-  "title": "Contact",
-  "address_title": "Notre adresse",
-  "phone_title": "appelez-nous",
-  "email_title": "écrivez-nous",
-  "address": "55 B rue Olesya Gontchara 01601 Kyiv"
- },
- "our_rules": {
-  "privacy_policy": "Politique de confidentialité",
-  "using_site": "Conditions générales d'utilisation",
-  "publicity": "Rapports"
- },
- "developers": "Baza Trainee Ukraine 2023 ©",
- "page_404": {
-  "item_text_1": "",
-  "item_text_2": ""
- },
- "donate_modal": {
-  "payment_amount": "",
-  "payment_method": "",
-  "another_amount": "",
-  "success_title": "",
-  "success_text": "!"
- },
- "about_us_carousel": [
-  {
-   "title": "domaines de travail 1",
-   "desc": ""
-  },
-  {
-   "title": "domaines de travail 2",
-   "desc": ""
-  },
-  {
-   "title": "domaines de travail 3",
-   "desc": ""
-  }
- ],
- "validation": {
-  "input_max_length": "",
-  "input_min_length": "",
-  "only_letter": "",
-  "required_name": "Le nom est un champ obligatoire",
-  "required_surname": "Ce champ est obligatoire",
-  "required_email": "E-mail est un champ obligatoire",
-  "required_phone": "Le téléphone est un champ obligatoire",
-  "required_field": "Ce champ est obligatoire",
-  "validation_error": "",
-  "message_max_length": "",
-  "message_mix_length": ""
- }
 }

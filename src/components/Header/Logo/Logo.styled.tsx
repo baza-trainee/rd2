@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
-const TextLogo = styled.div`
+export const TextLogo = styled.div`
   color: #151515;
   max-width: 300px;
   & > h6 {
-   font-weight: 800;
+    font-weight: 800;
 
     & span {
       display: inline;
@@ -27,5 +27,3 @@ const TextLogo = styled.div`
     }
   }
 `;
-
-export {TextLogo};

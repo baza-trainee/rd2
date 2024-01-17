@@ -1,20 +1,14 @@
-import {AxiosResponse} from "axios";
+import { AxiosResponse } from "axios";
 
-import {addPrivatePolicy, addReport, addTermsUse} from "../../../api/reports";
+import { addPrivatePolicy, addReport, addTermsUse } from "api/requests/reports";
 
 type reportItem = {
   reportName: string;
   reportFunc: (data: File) => () => Promise<AxiosResponse<any, any>>;
-}
+};
 
 export const reportsList: reportItem[] = [
-  {reportName: "Політика конфіденційності",
-   reportFunc: addPrivatePolicy,
-  },
-  {reportName: "Правила користування сайтом",
-   reportFunc: addTermsUse,
-  },
-  {reportName: "Звітність організації",
-   reportFunc: addReport,
-  },
-]
+  { reportName: "Політика конфіденційності", reportFunc: addPrivatePolicy },
+  { reportName: "Правила користування сайтом", reportFunc: addTermsUse },
+  { reportName: "Звітність організації", reportFunc: addReport },
+];

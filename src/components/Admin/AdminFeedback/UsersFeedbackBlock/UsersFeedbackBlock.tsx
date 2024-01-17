@@ -1,37 +1,33 @@
 import { ChangeEvent, useState } from "react";
 
-import {Box} from "@mui/material";
-
+import { Box } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 
-import {UserFeedbackList} from "../UserFeedbackList/UserFeedbackList";
-
-import {IUserFeedback} from "../../../../api/feedBackUsers";
-
-import {getPageCount} from "../../../../helpers/admin/getPages";
+import { IUserFeedback } from "api/requests/feedBackUsers";
+import { getPageCount } from "helpers/admin/getPages";
+import { UserFeedbackList } from "components/Admin/AdminFeedback/UserFeedbackList/UserFeedbackList";
 
 type UsersFeedbackBlockProps = {
-    userList: IUserFeedback[]
-}
+  userList: IUserFeedback[];
+};
 
-const UsersFeedbackBlock = ({userList}:UsersFeedbackBlockProps) => {
-
+const UsersFeedbackBlock = ({ userList }: UsersFeedbackBlockProps) => {
   const totalUsers = userList.length;
-  const limit: number=8;
+  const limit: number = 8;
   const [page, setPage] = useState(1);
 
-  const [displayUsers, setDisplayUsers] = useState({start: 0, end: limit});
+  const [displayUsers, setDisplayUsers] = useState({ start: 0, end: limit });
   const totalPages = getPageCount(totalUsers, limit);
 
   const handleChange = (event: ChangeEvent<unknown>, page: number) => {
     setPage(page);
     setDisplayUsers({
-      start: (page-1)*limit,
-      end: page*limit,
+      start: (page - 1) * limit,
+      end: page * limit,
     });
   };
 
-  return  (
+  return (
     <>
       <UserFeedbackList
         startIndex={displayUsers.start}
@@ -54,4 +50,4 @@ const UsersFeedbackBlock = ({userList}:UsersFeedbackBlockProps) => {
   );
 };
 
-export {UsersFeedbackBlock};
+export { UsersFeedbackBlock };

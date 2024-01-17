@@ -1,12 +1,13 @@
+import { useState } from "react";
+
 import { Box, FilledInput, IconButton, InputAdornment, Typography } from "@mui/material";
 import { ErrorMessage, Field } from "formik";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 import {
   BoxStyles,
   InputStyles,
 } from "components/Admin/ChangePassword/PasswordField/PasswordField.classes";
-import { useState } from "react";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 interface Props {
   labelText: string;

@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 
-import { Container, SectionWrapper } from "./SectionContainer.styled";
+import {
+  Container,
+  SectionWrapper,
+} from "components/commonComponents/SectionContainer/SectionContainer.styled";
 
 interface Props {
   children: ReactNode;

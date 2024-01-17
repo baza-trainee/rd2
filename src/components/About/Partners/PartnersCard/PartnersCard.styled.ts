@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Card = styled.div`
-  //width: 213px;
   width: auto;
   height: 140px;
   & > img {
@@ -9,7 +8,7 @@ export const Card = styled.div`
     height: 100%;
   }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     width: 100%;
     display: flex;
     justify-content: center;

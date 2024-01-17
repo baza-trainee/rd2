@@ -1,7 +1,6 @@
-
 export type PaymentMethod = {
-    id: string,
-    imgSrcMain: string,
-    text?: string,
-    imgSrcSecond?: string
-}
+  id: string;
+  imgSrcMain: string;
+  text?: string;
+  imgSrcSecond?: string;
+};

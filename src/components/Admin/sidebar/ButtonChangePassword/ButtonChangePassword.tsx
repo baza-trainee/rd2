@@ -1,5 +1,6 @@
 import { Box, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+
 import { ROUTES_ENUM } from "types/enums/routes.enum";
 
 interface Props {
@@ -17,9 +18,7 @@ export const ButtonChangePassword = ({ icon, buttonText }: Props) => {
 
         <ListItemText sx={{ paddingLeft: "12px" }}>
           <Link to={ROUTES_ENUM.CHANGE_PASSWORD}>
-            <Typography variant="h6">
-              {buttonText}
-            </Typography>
+            <Typography variant="h6">{buttonText}</Typography>
           </Link>
         </ListItemText>
       </ListItemButton>

@@ -1,5 +1,4 @@
 import { Logo, Rules } from "types/typeFooter";
-
 import logo from "assets/images/footer/logo.png";
 
 export const logoImg: Logo = {
