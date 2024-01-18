@@ -1,8 +1,8 @@
-import { fetcher } from "api/fetcher";
+import {fetcherPublic} from "api/fetcherPublic";
 
 export interface CurrentPhoneNumber {
   phone: string;
 }
 
 export const getCurrentPhoneNumber = () =>
-  fetcher.get<CurrentPhoneNumber>("/api/contact/contacts/phones");
+    fetcherPublic.get<CurrentPhoneNumber>("/api/contact/contacts/phones");

@@ -1,5 +1,7 @@
 import { fetcher } from "api/fetcher";
 
+import {fetcherPublic} from "api/fetcherPublic";
+
 export const addReport = (data: File) => {
   return () =>
     fetcher.post(
@@ -47,7 +49,7 @@ export const addTermsUse = (data: File) => {
 
 export const getReportFile = (path: string) => {
   return () =>
-    fetcher.get(path, {
+      fetcherPublic.get(path, {
       responseType: "blob",
     });
 };
