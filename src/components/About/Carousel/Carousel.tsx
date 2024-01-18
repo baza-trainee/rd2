@@ -13,8 +13,6 @@ import "swiper/css/pagination";
 export const Carousel = () => {
   const { t } = useTranslation();
 
-  //allowSlideNext = {false}
-
   return (
     <CarouselWrap>
       <Swiper
@@ -24,12 +22,8 @@ export const Carousel = () => {
         navigation
         pagination={{ clickable: true }}
         allowSlidePrev={false}
-        onReachEnd={(swiper: SwiperClass) => {
-            swiper.allowSlideNext = false
-        }}
-        onReachBeginning={(swiper: SwiperClass) => {
-            swiper.allowSlidePrev = false;
-        }}
+        onReachEnd={(swiper: SwiperClass) => swiper.allowSlideNext = false}
+        onReachBeginning={(swiper: SwiperClass) => swiper.allowSlidePrev = false}
 
         onFromEdge={(swiper: SwiperClass) => {
             !swiper.allowSlideNext && (swiper.allowSlideNext = true);
