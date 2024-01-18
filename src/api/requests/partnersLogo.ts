@@ -2,7 +2,7 @@ import { ResponseLogos } from "types/typePartnersLogos";
 
 import { fetcher } from "api/fetcher";
 
-import {fetcherPublic} from "../fetcherPublic";
+import {fetcherPublic} from "api/fetcherPublic";
 
 export const addLogo = (data: File) => {
   return () =>
