@@ -3,8 +3,7 @@ import { Route, createBrowserRouter, createRoutesFromElements } from "react-rout
 import { PublicRoutes } from "routes/PublicRoutes/PublicRoutes";
 import { AuthRoutes } from "routes/AuthRoutes/AuthRoutes";
 import { AdminRoutes } from "routes/AdminRoutes/AdminRoutes";
-
-import { AdminLayout } from "./layouts/AdminLayout";
+import { AdminLayout } from "routes/layouts/AdminLayout";
 
 export const AppNavigation = createBrowserRouter(
   createRoutesFromElements(

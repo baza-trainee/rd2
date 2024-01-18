@@ -11,7 +11,7 @@ import { validationSchema } from "components/Auth/UpdatePassword/UpdatePasswordF
 import { ModalError } from "components/commonComponents/ModalError/ModalError";
 import { useIsOpenModal } from "hooks/useIsOpenModal";
 import { RequestFallback } from "components/commonComponents/RequestFallback/RequestFallback";
-import { updatePassword } from "api/updatePassword";
+import { updatePassword } from "api/requests/updatePassword";
 import { PasswordCredentials } from "types/restorePasswordCredentials";
 import { RefreshTokenService } from "services/RefreshTokenService";
 import { AccessTokenService } from "services/AccessTokenService";

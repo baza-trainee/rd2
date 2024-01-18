@@ -1,14 +1,11 @@
-import React from "react";
-
 import { useTranslation } from "react-i18next";
-
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
 import { contactsList } from "components/commonComponents/ContactItem/contactsList";
-
 import { ContactItem } from "components/commonComponents/ContactItem/ContactItem";
-
+import { FooterLogo } from "components/Footer/FooterLogo/FooterLogo";
+import { FooterReports } from "components/Footer/FooterReports/FooterReports";
 import {
   FooterSection,
   Content,
@@ -16,31 +13,23 @@ import {
   FooterNavigation,
   Address,
   Rights,
-} from "./Footer.styled";
+} from "components/Footer/Footer.styled";
 
-import { FooterLogo } from "./FooterLogo/FooterLogo";
-
-import {FooterReports} from "./FooterReports/FooterReports";
-
-export const Footer: React.FC = () => {
+export const Footer = () => {
   const { t } = useTranslation();
 
   const clickHandler = () => {
-    window.scrollTo({top: 0, behavior: "smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <FooterSection>
-
       <Container maxWidth="xl">
-
         <Content>
           <FooterLogo />
 
           <FooterNav>
-
             <Grid container spacing={2}>
-
               <Grid item xs={6} md={4}>
                 <FooterNavigation className="custom-nav-class" onClick={clickHandler} />
               </Grid>
@@ -52,20 +41,16 @@ export const Footer: React.FC = () => {
               <Grid item xs={12} md={4}>
                 <Address>
                   {contactsList.map((item) => (
-                      <ContactItem key={item.id} {...item} />
+                    <ContactItem key={item.id} {...item} />
                   ))}
                 </Address>
               </Grid>
-
             </Grid>
-
           </FooterNav>
         </Content>
 
         <Rights>{t("developers")}</Rights>
-
       </Container>
-
     </FooterSection>
   );
 };

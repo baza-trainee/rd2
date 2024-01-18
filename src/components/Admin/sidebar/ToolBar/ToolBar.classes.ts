@@ -1,6 +1,6 @@
 import { SxProps } from "@mui/material";
 
-const DrawerStyles: SxProps = {
+export const DrawerStyles: SxProps = {
   width: "322px",
   minHeight: "650px",
   flexShrink: 0,
@@ -10,5 +10,3 @@ const DrawerStyles: SxProps = {
     color: "#fff",
   },
 };
-
-export { DrawerStyles };

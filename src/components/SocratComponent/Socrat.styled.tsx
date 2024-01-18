@@ -31,8 +31,6 @@ const Container = styled.section`
     background-image: url(${bcTab});
   }
   @media (min-width: 1280px) {
-    /* padding-top: 120px;
-    padding-bottom: 110px; */
     background-image: url(${bcDesk});
   }
 `;
@@ -108,10 +106,10 @@ const SocratAboutItem = styled.div`
 `;
 const SocratAboutTitle = styled.h2`
   text-align: center;
-
   color: #151515;
   font-size: 32px;
   font-weight: 700;
+
   margin-bottom: 12px;
   @media (min-width: 768px) {
     font-size: 36px;

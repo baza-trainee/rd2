@@ -7,9 +7,7 @@ import { RefreshTokenService } from "services/RefreshTokenService";
 const { getAccessToken, setAccessToken } = new AccessTokenService();
 const { getRefreshToken } = new RefreshTokenService();
 
-export const BASE_URL =
-  process.env.REACT_APP_BASE_URL ||
-  "https://ec2-16-16-66-169.eu-north-1.compute.amazonaws.com";
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const fetcher = axios.create({
   baseURL: BASE_URL,
@@ -41,7 +39,6 @@ fetcher.interceptors.response.use(
 
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-
       const refreshToken = getRefreshToken();
 
       if (refreshToken) {
@@ -49,11 +46,8 @@ fetcher.interceptors.response.use(
           const newAccessTokenResponse = await fetcher.post("/api/auth/refresh", {
             refresh_token: refreshToken,
           });
-
           const newAccessToken = newAccessTokenResponse.data.access_token;
           setAccessToken(newAccessToken);
-
-          //api.defaults.headers.common["Authorization"] = `Bearer ${newAccessToken}`;
           fetcher.defaults.headers.common["Authorization"] = newAccessToken;
 
           return fetcher(originalRequest);

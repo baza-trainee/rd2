@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
-import {ButtonsBlock} from "../../AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
+import { ButtonsBlock } from "components/Admin/AdminPartnersLogo/ButtonsBlock/ButtonsBlock";
 
 const ButtonsBlockStyled = styled(ButtonsBlock)`
-    justify-content: start;
+  justify-content: start;
 `;
 
-export {ButtonsBlockStyled};
+export { ButtonsBlockStyled };

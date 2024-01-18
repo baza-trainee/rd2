@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
 
-import {theme} from "../../../theme/theme";
+import { theme } from "theme/theme";
 
-import {DonateButton} from "../../commonComponents/DonateButton/DonateButton";
-import {Nav} from "../../commonComponents/Nav/Nav";
-import {LanguageMenu} from "../LanguageMenu/LanguageMenu";
+import { DonateButton } from "components/commonComponents/DonateButton/DonateButton";
+import { Nav } from "components/commonComponents/Nav/Nav";
+import { LanguageMenu } from "components/Header/LanguageMenu/LanguageMenu";
 
 const deliverColor = theme.palette.grey[300];
 const closeButtonColor = theme.palette.grey[500];
 
 const TabletContainer = styled.div`
   display: flex;
-  
+
   @media (min-width: 1280px) {
     display: none;
   }
@@ -24,7 +24,7 @@ const TabletContainer = styled.div`
 `;
 
 const WrapBlock = styled.div`
-    width: 100%;
+  width: 100%;
 
   @media (min-width: 468px) {
     width: 360px;
@@ -34,7 +34,7 @@ const WrapBlock = styled.div`
     position: absolute;
     right: 8px;
     top: 8px;
-    
+
     color: ${closeButtonColor};
   }
 `;
@@ -45,18 +45,18 @@ const DonateButtonStyled = styled(DonateButton)`
 `;
 const NavStyled = styled(Nav)`
   display: block;
-  
+
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     width: 100%;
     height: 66px;
-    
+
     font-size: 1.125rem;
     color: #151515;
-    
+
     border-top: 1px solid ${deliverColor};
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
@@ -67,15 +67,15 @@ const NavStyled = styled(Nav)`
   a:first-of-type {
     border-top: 1px solid transparent;
   }
-  
+
   a:hover {
-  background-color: #C6DAFC;
-  border-top: 1px solid #C6DAFC;
-}
+    background-color: #c6dafc;
+    border-top: 1px solid #c6dafc;
+  }
 
   a.active {
-    background-color: #C6DAFC;
-    border-top: 1px solid #C6DAFC;
+    background-color: #c6dafc;
+    border-top: 1px solid #c6dafc;
 
     font-weight: 600;
   }
@@ -83,7 +83,7 @@ const NavStyled = styled(Nav)`
     border-top: 1px solid transparent;
   }
   a.active:last-of-type {
-    border-bottom: 1px solid #C6DAFC;
+    border-bottom: 1px solid #c6dafc;
   }
 `;
 
@@ -98,4 +98,4 @@ const LanguageMenuStyled = styled(LanguageMenu)`
   }
 `;
 
-export {WrapBlock, DonateButtonStyled, NavStyled, LanguageMenuStyled, TabletContainer};
+export { WrapBlock, DonateButtonStyled, NavStyled, LanguageMenuStyled, TabletContainer };

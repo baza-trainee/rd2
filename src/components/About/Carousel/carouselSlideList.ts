@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import slide1ImgRet from "assets/images/carousel/drone-background-1@2x.jpg";
 import slide2ImgRet from "assets/images/carousel/drone-background-2@2x.jpg";
 import slide3ImgRet from "assets/images/carousel/drone-background-3@2x.jpg";

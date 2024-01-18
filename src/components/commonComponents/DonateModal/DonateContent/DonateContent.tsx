@@ -1,10 +1,11 @@
-import React from "react";
-
 import { useTranslation } from "react-i18next";
-
 import Button from "@mui/material/Button";
 
-import { usePaymentForm } from "../../../../hooks/usePaymentForm";
+import { usePaymentForm } from "hooks/usePaymentForm";
+import {
+  PaymentAmountBtns,
+  PaymentInfoBtns,
+} from "components/commonComponents/DonateModal/DonateContent/PaymentButtons";
 
 import {
   BottomContainer,
@@ -13,15 +14,13 @@ import {
   InputStyled,
   RelativeBlock,
   TypographyStyled,
-} from "./DonateContent.styled";
-
-import { PaymentAmountBtns, PaymentInfoBtns } from "./PaymentButtons";
+} from "components/commonComponents/DonateModal/DonateContent/DonateContent.styled";
 
 type DonateContentProps = {
   onChangeSuccess: () => void;
 };
 
-const DonateContent = ({ onChangeSuccess }: DonateContentProps) => {
+export const DonateContent = ({ onChangeSuccess }: DonateContentProps) => {
   const { t } = useTranslation();
 
   const { payment, onClickPayment, inputValue, onClickSum, onChangeValue, onSubmitForm } =
@@ -64,5 +63,3 @@ const DonateContent = ({ onChangeSuccess }: DonateContentProps) => {
     </FormStyled>
   );
 };
-
-export { DonateContent };

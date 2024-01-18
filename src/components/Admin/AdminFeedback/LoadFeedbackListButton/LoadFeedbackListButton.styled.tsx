@@ -1,13 +1,10 @@
 import styled from "@emotion/styled";
-
 import DownloadIcon from "@mui/icons-material/Download";
+import { keyframes } from "@emotion/react";
 
-import {keyframes} from "@emotion/react";
-
-import {theme} from "../../../../theme/theme";
+import { theme } from "theme/theme";
 
 const buttonColor = theme.palette.primary.main;
-
 
 const flashing = keyframes`
 from {
@@ -23,4 +20,4 @@ const DownloadIconStyled = styled(DownloadIcon)`
   }
 `;
 
-export {DownloadIconStyled}
+export { DownloadIconStyled };

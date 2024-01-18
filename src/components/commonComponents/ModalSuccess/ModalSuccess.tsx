@@ -1,10 +1,11 @@
-import React from "react";
-
 import CloseIcon from "@mui/icons-material/Close";
 
 import { Box, IconButton, Modal, Typography } from "@mui/material";
 
-import { IconButtonStyles, ModalStyles } from "./ModalSuccess.classes";
+import {
+  IconButtonStyles,
+  ModalStyles,
+} from "components/commonComponents/ModalSuccess/ModalSuccess.classes";
 
 interface Props {
   children: string;

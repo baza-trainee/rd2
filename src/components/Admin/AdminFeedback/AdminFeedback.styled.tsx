@@ -6,4 +6,4 @@ const FeedbackListWrapper = styled.div`
   height: 100%;
 `;
 
-export {FeedbackListWrapper};
+export { FeedbackListWrapper };

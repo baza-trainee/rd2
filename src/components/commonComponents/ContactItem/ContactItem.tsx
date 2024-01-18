@@ -17,7 +17,7 @@ type ContactItemProps = {
   href?: string;
 };
 
-const ContactItem = (props: ContactItemProps) => {
+export const ContactItem = (props: ContactItemProps) => {
   const { t } = useTranslation();
   const { isError: isErrorPhoneNumber, data: phoneData } = useGetCurrentPhone();
   const { isError: isErrorEmail, data: emailData } = useGetCurrentEmail();
@@ -61,5 +61,3 @@ const ContactItem = (props: ContactItemProps) => {
       return <></>;
   }
 };
-
-export { ContactItem };

@@ -1,31 +1,27 @@
-import React from "react";
+import { KeyboardEvent, MouseEvent } from "react";
 
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import { NavigationLink } from "./Nav.styled";
+import { navNames } from "components/commonComponents/Nav/navlist";
 
-import {navNames} from "./navlist";
+import { NavigationLink } from "components/commonComponents/Nav/Nav.styled";
 
 interface NavProps {
- className?: string;
-    onClick?: (e:React.KeyboardEvent | React.MouseEvent) => void
-    onKeyDown?: (e:React.KeyboardEvent | React.MouseEvent) => void
+  className?: string;
+  onClick?: (e: KeyboardEvent | MouseEvent) => void;
+  onKeyDown?: (e: KeyboardEvent | MouseEvent) => void;
 }
 
-export const Nav: React.FC<NavProps> = ({ className,onClick, onKeyDown}) => {
-
+export const Nav: React.FC<NavProps> = ({ className, onClick, onKeyDown }) => {
   const { t } = useTranslation();
 
   return (
     <nav className={className} onClick={onClick}>
-
       {navNames.map((navItem) => (
-        <NavigationLink key={navItem.id} to={navItem.route}
-        >
+        <NavigationLink key={navItem.id} to={navItem.route}>
           {t(navItem.nameKey)}
         </NavigationLink>
       ))}
-
     </nav>
   );
 };

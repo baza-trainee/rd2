@@ -1,21 +1,15 @@
-import React from "react";
+/* eslint-disable max-len */
+import { FC } from "react";
 
 import { useFormik } from "formik";
-
-import {useMutation} from "react-query";
-
+import { useMutation } from "react-query";
 import { Button } from "@mui/material";
-
-import { contactValuesType } from "types/typeFeedbackUserDetails";
-
 import { useTranslation } from "react-i18next";
 
-import {sendFeedback} from "../../../../api/feedBackUsers";
-
-import {loadData} from "../../../../api/loadData";
-
-import { contactSchema } from "./updateValidationTranslation";
-
+import { contactValuesType } from "types/typeFeedbackUserDetails";
+import { sendFeedback } from "api/requests/feedBackUsers";
+import { loadData } from "api/requests/loadData";
+import { contactSchema } from "components/commonComponents/ContactFormSection/ContactForm/updateValidationTranslation";
 import {
   FormEl,
   FieldContainer,
@@ -23,7 +17,7 @@ import {
   Input,
   Textarea,
   FormError,
-} from "./Form.styled";
+} from "components/commonComponents/ContactFormSection/ContactForm/Form.styled";
 
 interface ContactFormProps {
   openModalSuccess: () => void;
@@ -38,21 +32,21 @@ const initialValues: contactValuesType = {
   message: "",
 };
 
-const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalError }) => {
+const ContactForm: FC<ContactFormProps> = ({ openModalSuccess, openModalError }) => {
   const { t } = useTranslation();
 
-    const mutation = useMutation(
-        (user: contactValuesType) => loadData(sendFeedback(user))(), {
-            onError: (error: Error) => {
-                openModalError(`Повідомлення не відправлено. ${error.message}`);
-                //openModalError(`${error instanceof Error && error.message}`);
-            },
-            onSuccess: () => {
-                openModalSuccess();
-                resetForm();
-            },
-        },
-    )
+  const mutation = useMutation(
+    (user: contactValuesType) => loadData(sendFeedback(user))(),
+    {
+      onError: (error: Error) => {
+        openModalError(`Повідомлення не відправлено. ${error.message}`);
+      },
+      onSuccess: () => {
+        openModalSuccess();
+        resetForm();
+      },
+    },
+  );
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm } =
     useFormik({
@@ -66,7 +60,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
           email,
           message,
         };
-        console.log(emailData);
         mutation.mutate(emailData);
       },
     });
@@ -85,6 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
         />
         {errors.name && touched.name && <FormError>{errors.name}</FormError>}
       </FieldContainer>
+
       <FieldContainer>
         <FieldLabel>{t("contact_form.surname")}</FieldLabel>
         <Input
@@ -97,6 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
         />
         {errors.surname && touched.surname && <FormError>{errors.surname}</FormError>}
       </FieldContainer>
+
       <FieldContainer>
         <FieldLabel>{t("contact_form.phone")}</FieldLabel>
         <Input
@@ -110,6 +105,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
         />
         {errors.phone && touched.phone && <FormError>{errors.phone}</FormError>}
       </FieldContainer>
+
       <FieldContainer>
         <FieldLabel>{t("contact_form.email")}</FieldLabel>
         <Input
@@ -122,6 +118,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
         />
         {errors.email && touched.email && <FormError>{errors.email}</FormError>}
       </FieldContainer>
+
       <FieldContainer>
         <FieldLabel>{t("contact_form.message")}</FieldLabel>
         <Textarea
@@ -133,10 +130,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ openModalSuccess, openModalEr
         />
         {errors.message && touched.message && <FormError>{errors.message}</FormError>}
       </FieldContainer>
+
       <Button fullWidth variant="contained" type="submit" style={{ marginTop: "32px" }}>
         {t("buttons.send")}
       </Button>
     </FormEl>
   );
 };
+
 export default ContactForm;

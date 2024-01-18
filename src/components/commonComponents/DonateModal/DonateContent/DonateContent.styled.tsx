@@ -1,12 +1,9 @@
 import styled from "@emotion/styled";
-
 import Button from "@mui/material/Button";
-
 import Typography from "@mui/material/Typography";
 
-import { theme } from "../../../../theme/theme";
-
-import { Input } from "../../ContactFormSection/ContactForm/Form.styled";
+import { theme } from "theme/theme";
+import { Input } from "components/commonComponents/ContactFormSection/ContactForm/Form.styled";
 
 const mainColor = theme.palette.primary.main;
 const mainHoverColor = theme.palette.primary.dark;

@@ -1,6 +1,9 @@
 import Typography from "@mui/material/Typography";
 
-import { ItemWrap, LinkStyled } from "./UserFeedbackItem.styled";
+import {
+  ItemWrap,
+  LinkStyled,
+} from "components/Admin/AdminFeedback/UserFeedbackItem/UserFeedbackItem.styled";
 
 type UserFeedbackItemProps = {
   name: string;
@@ -9,7 +12,6 @@ type UserFeedbackItemProps = {
 };
 
 const UserFeedbackItem = ({ name, surname, id }: UserFeedbackItemProps) => {
-
   return (
     <ItemWrap>
       <Typography variant="h6">
@@ -17,9 +19,7 @@ const UserFeedbackItem = ({ name, surname, id }: UserFeedbackItemProps) => {
         <span>{surname}</span>
       </Typography>
 
-      <LinkStyled to={`${id}`}>
-        Детальніше
-      </LinkStyled>
+      <LinkStyled to={`${id}`}>Детальніше</LinkStyled>
     </ItemWrap>
   );
 };

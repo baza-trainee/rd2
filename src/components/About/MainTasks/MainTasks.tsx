@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import { taskList } from "components/About/MainTasks/taskList";
+
 import {
   Container,
   SectionWrapper,
@@ -9,8 +11,6 @@ import {
   Task,
   TaskDesc,
 } from "components/About/MainTasks/MainTasks.styled";
-
-import { taskList } from "components/About/MainTasks/taskList";
 
 export const MainTasks = () => {
   const { t } = useTranslation();

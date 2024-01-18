@@ -1,5 +1,5 @@
 import { queryClient } from "App";
-import { EmailCredentials, setNewEmail } from "api/setNewEmail";
+import { EmailCredentials, setNewEmail } from "api/requests/setNewEmail";
 import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 

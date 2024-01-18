@@ -1,5 +1,8 @@
 import { queryClient } from "App";
-import { PhoneNumberCredentials, setNewPhoneNumber } from "api/setNewPhoneNumber";
+import {
+  PhoneNumberCredentials,
+  setNewPhoneNumber,
+} from "api/requests/setNewPhoneNumber";
 import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 

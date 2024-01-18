@@ -1,46 +1,43 @@
-import React, {useState} from "react";
+/* eslint-disable max-len */
+import { ChangeEvent, useState } from "react";
 
-import {useFormik} from "formik";
+import { useFormik } from "formik";
+import { useMutation } from "react-query";
+import { AxiosResponse } from "axios";
 
-import {useMutation} from "react-query";
-
-import {AxiosResponse} from "axios";
-
-import {LoadReportBlock} from "../LoadReportBlock/LoadReportBlock";
-
-import {loadData} from "../../../../api/loadData";
-
-import {Fallback} from "../../../commonComponents/Fallback/Fallback";
-
-import {validateReport} from "./loadReportValidation";
-
-import {ButtonsBlockStyled} from "./LoadreportForm.styled";
+import { loadData } from "api/requests/loadData";
+import { Fallback } from "components/commonComponents/Fallback/Fallback";
+import { LoadReportBlock } from "components/Admin/AdminReports/LoadReportBlock/LoadReportBlock";
+import { validateReport } from "components/Admin/AdminReports/LoadReportForm/loadReportValidation";
+import { ButtonsBlockStyled } from "components/Admin/AdminReports/LoadReportForm/LoadreportForm.styled";
 
 type FormValues = {
-    reportFile?: File;
-}
+  reportFile?: File;
+};
 
 type LoadReportFormProps = {
-    id: string;
-    loadFunc: (data: File) => () => Promise<AxiosResponse<any, any>>;
-    openModalSuccess: () => void;
-    openModalError: (errorText: string) => void;
-}
-const LoadReportForm =({id, openModalSuccess, openModalError, loadFunc}:LoadReportFormProps) => {
+  id: string;
+  loadFunc: (data: File) => () => Promise<AxiosResponse<any, any>>;
+  openModalSuccess: () => void;
+  openModalError: (errorText: string) => void;
+};
 
-    const mutation = useMutation(
-        (reportFile: File) => loadData(loadFunc(reportFile))(), {
-            onError: (error: Error) => {
-                openModalError(`Повідомлення не відправлено. ${error.message}`);
-                //openModalError(`${error instanceof Error && error.message}`);
-            },
-            onSuccess: () => {
-                openModalSuccess();
-                formik.resetForm({ values: {} });
-                setFileName(null);
-            },
-        },
-    )
+export const LoadReportForm = ({
+  id,
+  openModalSuccess,
+  openModalError,
+  loadFunc,
+}: LoadReportFormProps) => {
+  const mutation = useMutation((reportFile: File) => loadData(loadFunc(reportFile))(), {
+    onError: (error: Error) => {
+      openModalError(`Повідомлення не відправлено. ${error.message}`);
+    },
+    onSuccess: () => {
+      openModalSuccess();
+      formik.resetForm({ values: {} });
+      setFileName(null);
+    },
+  });
 
   const [fileName, setFileName] = useState<string | null>(null);
   const initialValues: FormValues = {};
@@ -50,18 +47,16 @@ const LoadReportForm =({id, openModalSuccess, openModalError, loadFunc}:LoadRepo
     initialValues: initialValues,
     validate,
     onSubmit: (values) => {
-      console.log(values.reportFile);
-        values.reportFile && mutation.mutate(values.reportFile);
+      values.reportFile && mutation.mutate(values.reportFile);
     },
   });
 
-  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.files) {
       const loadFile = e.currentTarget.files[0];
-      formik.setFieldValue("reportFile", loadFile, true)
-        .then(() => {
-          setFileName(loadFile.name);
-        });
+      formik.setFieldValue("reportFile", loadFile, true).then(() => {
+        setFileName(loadFile.name);
+      });
     }
   };
 
@@ -71,24 +66,19 @@ const LoadReportForm =({id, openModalSuccess, openModalError, loadFunc}:LoadRepo
   };
 
   return (
-      <>
-    <form  onSubmit={formik.handleSubmit} id={`${id}form`}> {/*onSubmit={formik.handleSubmit}*/}
+    <>
+      <form onSubmit={formik.handleSubmit} id={`${id}form`}>
+        {" "}
+        <LoadReportBlock
+          fileName={fileName}
+          onChange={onChangeInput}
+          errorMes={formik.errors.reportFile}
+          id={id}
+        />
+        <ButtonsBlockStyled onReset={onResetForm} />
+      </form>
 
-      <LoadReportBlock
-        fileName={fileName}
-        onChange={onChangeInput}
-        errorMes={formik.errors.reportFile}
-        id={id}
-      />
-
-      <ButtonsBlockStyled onReset={onResetForm}/>
-
-    </form>
-
-    {mutation.isLoading && <Fallback blockType={true}/>}
-
-      </>
+      {mutation.isLoading && <Fallback blockType={true} />}
+    </>
   );
 };
-
-export {LoadReportForm};

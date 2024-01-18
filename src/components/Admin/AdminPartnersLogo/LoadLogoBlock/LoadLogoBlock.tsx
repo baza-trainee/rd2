@@ -1,10 +1,10 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 
-import {Transition} from "react-transition-group";
-
+import { Transition } from "react-transition-group";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-import {ErrorBlockStyled,
+import {
+  ErrorBlockStyled,
   InputStyled,
   LabelStyled,
   LoadedImg,
@@ -12,20 +12,18 @@ import {ErrorBlockStyled,
 } from "components/Admin/AdminPartnersLogo/LoadLogoBlock/LoadLogoBlock.styled";
 
 type LoadLogoBlockProps = {
-    previewSrc: string | null;
-    errorMes?: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+  previewSrc: string | null;
+  errorMes?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 const LoadLogoBlock = (props: LoadLogoBlockProps) => {
-
-  const {previewSrc, errorMes, onChange} = props;
+  const { previewSrc, errorMes, onChange } = props;
 
   const labelRef = useRef(null);
   const imageRef = useRef(null);
 
   return (
     <LoadFieldWrapper>
-
       <Transition
         nodeRef={labelRef}
         in={Boolean(!previewSrc)}
@@ -33,15 +31,14 @@ const LoadLogoBlock = (props: LoadLogoBlockProps) => {
         mountOnEnter
         unmountOnExit
       >
-        {state => (
-
+        {(state) => (
           <LabelStyled
             htmlFor="logoImg"
-            className={`${state} ${errorMes ? "error" : "" }`}>
+            className={`${state} ${errorMes ? "error" : ""}`}
+          >
             <AddCircleIcon color="primary" />
             <span>Додати лого</span>
           </LabelStyled>
-
         )}
       </Transition>
 
@@ -52,11 +49,9 @@ const LoadLogoBlock = (props: LoadLogoBlockProps) => {
         mountOnEnter
         unmountOnExit
       >
-        {state => (
-
-
+        {(state) => (
           <LoadedImg
-            src={previewSrc ? previewSrc : "" }
+            src={previewSrc ? previewSrc : ""}
             alt="partnersLogo"
             className={state}
           />
@@ -72,13 +67,9 @@ const LoadLogoBlock = (props: LoadLogoBlockProps) => {
         onChange={onChange}
       />
 
-      {errorMes
-        ? <ErrorBlockStyled>{errorMes}</ErrorBlockStyled>
-        : null
-      }
-
+      {errorMes ? <ErrorBlockStyled>{errorMes}</ErrorBlockStyled> : null}
     </LoadFieldWrapper>
   );
 };
 
-export {LoadLogoBlock};
+export { LoadLogoBlock };

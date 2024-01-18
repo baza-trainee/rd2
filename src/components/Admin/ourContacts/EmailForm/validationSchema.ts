@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { object, string, ref } from "yup";
 
 const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;

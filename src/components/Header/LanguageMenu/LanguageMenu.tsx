@@ -1,50 +1,42 @@
-import React, {useEffect, useState} from "react";
+import { MouseEvent, useEffect, useState } from "react";
+
 import Button from "@mui/material/Button";
-import {Menu} from "@mui/material";
-
-import {changeLanguage} from "i18next";
-
-import {useTranslation} from "react-i18next";
-
+import { Menu } from "@mui/material";
+import { changeLanguage } from "i18next";
+import { useTranslation } from "react-i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import {LanguageMenuWrap} from "./LanguageMenu.styled";
-import {MenuItemsList} from "./MenuItemsList/MenuItemsList";
+import { LanguageMenuWrap } from "components/Header/LanguageMenu/LanguageMenu.styled";
+import { MenuItemsList } from "components/Header/LanguageMenu/MenuItemsList/MenuItemsList";
 
 interface LanguageMenuProps {
-    className?: string
+  className?: string;
 }
 
 export const LanguageMenu = ({ className }: LanguageMenuProps) => {
-
-  const {i18n} = useTranslation();
-
+  const { i18n } = useTranslation();
   const [menuLang, setMenuLang] = useState(i18n.language);
-
   const [menuButton, setMenuButton] = useState<null | HTMLElement>(null);
-
   const open = Boolean(menuButton);
-  const onClickMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+
+  const onClickMenu = (e: MouseEvent<HTMLButtonElement>) => {
     setMenuButton(e.currentTarget);
   };
 
   const onCloseMenu = () => {
     setMenuButton(null);
   };
-  const onClickMenuItem = (e: React.MouseEvent<HTMLElement>) => {
-
-    changeLanguage(e.currentTarget.id)
-      .then(() => onCloseMenu());
+  const onClickMenuItem = (e: MouseEvent<HTMLElement>) => {
+    changeLanguage(e.currentTarget.id).then(() => onCloseMenu());
   };
 
   useEffect(() => {
-    i18n.on("languageChanged",
-      ()=> setMenuLang(i18n.language));
+    i18n.on("languageChanged", () => setMenuLang(i18n.language));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <LanguageMenuWrap opened ={open} className={className}>
-
+    <LanguageMenuWrap opened={open} className={className}>
       <Button
         id="basic-button"
         aria-controls={open ? "lang-menu" : undefined}
@@ -73,10 +65,8 @@ export const LanguageMenu = ({ className }: LanguageMenuProps) => {
           },
         }}
       >
-        <MenuItemsList onClick={onClickMenuItem}/>
+        <MenuItemsList onClick={onClickMenuItem} />
       </Menu>
-
     </LanguageMenuWrap>
   );
 };
-

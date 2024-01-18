@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import {
   ListItemAvatar,
   ListItemButton,
@@ -24,9 +23,6 @@ const MenuButtonIcon = ({ icon }: IMenuButtonIconProps) => {
       return <SvgIcon>{icon.iconEl}</SvgIcon>;
 
     case "mui":
-      //const elem = icon.iconEl;
-      //console.log(elem);
-      //console.log(children);
       return <ChatIcon />;
   }
 };

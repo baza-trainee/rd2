@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
-const NavLinkStyled = styled(NavLink)`
+export const NavLinkStyled = styled(NavLink)`
   display: block;
   width: 100%;
-  
+
   color: white;
 
   svg {
@@ -21,5 +21,3 @@ const NavLinkStyled = styled(NavLink)`
     }
   }
 `;
-
-export { NavLinkStyled };

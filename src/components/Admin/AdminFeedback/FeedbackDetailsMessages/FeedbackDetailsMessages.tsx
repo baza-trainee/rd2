@@ -1,39 +1,32 @@
-import React from "react";
-
 import Typography from "@mui/material/Typography";
 
-import {UserMessage} from "../../../../types/typeFeedbackUserDetails";
-
-import {MessageBlock, MessageDateBlock} from "../UserFeedbackDetails/UserFeedbackDetales.styled";
-
-import {theme} from "../../../../theme/theme";
-
+import { UserMessage } from "types/typeFeedbackUserDetails";
+import { theme } from "theme/theme";
+import {
+  MessageBlock,
+  MessageDateBlock,
+} from "components/Admin/AdminFeedback/UserFeedbackDetails/UserFeedbackDetales.styled";
 
 type FeedbackDetailsMessagesProps = {
-    userMessages: UserMessage[]
-}
+  userMessages: UserMessage[];
+};
 
-const FeedbackDetailsMessages = ({userMessages}: FeedbackDetailsMessagesProps) => {
-
-  const userMessagesList = userMessages.map((mes: UserMessage, index:number) => (
+const FeedbackDetailsMessages = ({ userMessages }: FeedbackDetailsMessagesProps) => {
+  const userMessagesList = userMessages.map((mes: UserMessage, index: number) => (
     <MessageBlock key={index}>
       <MessageDateBlock>
         <span>дата звернення: </span>
         <span>{mes.date}</span>
       </MessageDateBlock>
       <Typography variant="h6" color={theme.palette.primary.dark}>
-                Текст звернення
+        Текст звернення
       </Typography>
 
       <Typography variant="h6">{mes.message}</Typography>
     </MessageBlock>
   ));
 
-  return (
-    <>
-      { userMessagesList }
-    </>
-  );
+  return <>{userMessagesList}</>;
 };
 
-export {FeedbackDetailsMessages};
+export { FeedbackDetailsMessages };

@@ -1,22 +1,20 @@
-import React, {useState} from "react";
+import { useState } from "react";
 
 import Typography from "@mui/material/Typography";
 
 import { AdminPartnersLogo } from "components/Admin/AdminPartnersLogo/AdminPartnersLogo";
-
-import {ModalSuccess} from "../../components/commonComponents/ModalSuccess/ModalSuccess";
-import {useIsOpenModal} from "../../hooks/useIsOpenModal";
-import {ModalError} from "../../components/commonComponents/ModalError/ModalError";
+import { ModalSuccess } from "components/commonComponents/ModalSuccess/ModalSuccess";
+import { useIsOpenModal } from "hooks/useIsOpenModal";
+import { ModalError } from "components/commonComponents/ModalError/ModalError";
 
 export const Partners = () => {
-
   const openSuccess = useIsOpenModal();
 
   const [openError, setOpenError] = useState(false);
   const [modalText, setModalText] = useState("");
 
-  const handleOpenModalError = (text:string) => {
-    setModalText(text)
+  const handleOpenModalError = (text: string) => {
+    setModalText(text);
     setOpenError(true);
   };
 
@@ -31,18 +29,19 @@ export const Partners = () => {
       </Typography>
 
       <AdminPartnersLogo
-          openModalError={handleOpenModalError}
-          openModalSuccess={openSuccess.handleIsOpenModal}
+        openModalError={handleOpenModalError}
+        openModalSuccess={openSuccess.handleIsOpenModal}
       />
 
-      <ModalError isOpenModal={openError} handleCloseModal={handleCloseModalError} >
-           {modalText}
+      <ModalError isOpenModal={openError} handleCloseModal={handleCloseModalError}>
+        {modalText}
       </ModalError>
 
-      <ModalSuccess isOpenModal={openSuccess.isOpenModal}
-                    handleCloseModal={openSuccess.handleIsOpenModal}
+      <ModalSuccess
+        isOpenModal={openSuccess.isOpenModal}
+        handleCloseModal={openSuccess.handleIsOpenModal}
       >
-          "Логотип успішно завантажено"
+        "Логотип успішно завантажено"
       </ModalSuccess>
     </>
   );
