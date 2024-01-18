@@ -1,5 +1,8 @@
 import { ResponseLogos } from "types/typePartnersLogos";
+
 import { fetcher } from "api/fetcher";
+
+import {fetcherPublic} from "api/fetcherPublic";
 
 export const addLogo = (data: File) => {
   return () =>
@@ -18,5 +21,5 @@ export const addLogo = (data: File) => {
 };
 
 export const fetchLogosList = () => {
-  return fetcher.get<ResponseLogos[]>("/api/logo/logos");
+  return fetcherPublic.get<ResponseLogos[]>("/api/logo/logos");
 };

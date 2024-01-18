@@ -1,8 +1,8 @@
-import { fetcher } from "api/fetcher";
+import {fetcherPublic} from "api/fetcherPublic";
 
 interface CurrentEmail {
   email: string;
 }
 
 export const getCurrentEmail = () =>
-  fetcher.get<CurrentEmail>("/api/contact/contacts/emails");
+    fetcherPublic.get<CurrentEmail>("/api/contact/contacts/emails");
