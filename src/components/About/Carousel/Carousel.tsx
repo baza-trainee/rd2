@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 
@@ -21,6 +21,14 @@ export const Carousel = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
+        allowSlidePrev={false}
+        onReachEnd={(swiper: SwiperClass) => swiper.allowSlideNext = false}
+        onReachBeginning={(swiper: SwiperClass) => swiper.allowSlidePrev = false}
+
+        onFromEdge={(swiper: SwiperClass) => {
+            !swiper.allowSlideNext && (swiper.allowSlideNext = true);
+            !swiper.allowSlidePrev && (swiper.allowSlidePrev = true);
+        }}
       >
         {carouselSlideList.map(
           ({ id, titleKey, descriptionKey, retinaImgSrc, imgSrc }) => (

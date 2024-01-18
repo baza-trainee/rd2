@@ -41,6 +41,7 @@ export function CreateContactSchema(data: any) {
       .max(12, "Максимум 12 символів")
       .required(data.requiredPhone),
     message: string()
+      .trim()
       .min(10, data.messageMinLength)
       .max(300, data.messageMaxLength)
       .required(data.requiredField),
