@@ -4,7 +4,7 @@ import { useGetCurrentPhone } from "api/query-hooks/useGetCurrentPhone";
 import { useGetCurrentEmail } from "api/query-hooks/useGetCurrentEmail";
 
 import {
-  AddressItem,
+  StyledText,
   StyledLink,
 } from "components/commonComponents/ContactItem/ContactItem.styled";
 
@@ -30,31 +30,29 @@ export const ContactItem = (props: ContactItemProps) => {
   switch (type) {
     case "email":
       return (
-        <StyledLink href={`mailto:${currentEmail}`} target="_blank">
-          <AddressItem>
+          <StyledText>
             <img src={icon} width={24} height={24} alt={alt} />
             <span>{currentEmail}</span>
-          </AddressItem>
-        </StyledLink>
+          </StyledText>
       );
 
     case "link":
       return (
-        <StyledLink href={href} target="_blank">
-          <AddressItem>
+        <StyledLink href={`tel:${currentPhoneNumber}`} target="_blank">
+          <StyledText>
             <img src={icon} width={24} height={24} alt={alt} />
             <span>{currentPhoneNumber}</span>
-          </AddressItem>
+          </StyledText>
         </StyledLink>
       );
 
     case "translatedLink":
       return (
         <StyledLink href={href} target="_blank">
-          <AddressItem>
+          <StyledText>
             <img src={icon} width={24} height={24} alt={alt} />
             <span>{t(descKey)}</span>
-          </AddressItem>
+          </StyledText>
         </StyledLink>
       );
     default:
