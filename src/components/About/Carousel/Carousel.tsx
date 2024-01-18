@@ -6,12 +6,6 @@ import { CarouselWrap } from "components/About/Carousel/Carousel.styled";
 import { SlideItem } from "components/About/Carousel/SlideItem/SlideItem";
 import { carouselSlideList } from "components/About/Carousel/carouselSlideList";
 
-//import Swiper from 'swiper';
-//import { SwiperClass };
-
-
-//import { SwiperOptions } from 'swiper/types';
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
