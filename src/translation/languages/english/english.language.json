@@ -164,7 +164,9 @@
     "another_amount": "Another payment amount",
 
     "success_title": "Thank you",
-    "success_text": "for your support"
+    "success_text": "for your support",
+    "not_working_title": "Thank you for desire to support us.",
+    "not_working_text": "Sorry, service not working."
   },
   "about_us_carousel": [
     {

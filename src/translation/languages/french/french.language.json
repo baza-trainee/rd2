@@ -163,7 +163,9 @@
     "payment_method": "",
     "another_amount": "",
     "success_title": "",
-    "success_text": "!"
+    "success_text": "!",
+    "not_working_title": "...",
+    "not_working_text": "..."
   },
   "about_us_carousel": [
     {
