@@ -5,7 +5,7 @@ import bgImageRetina from "assets/images/successModal/drone@2x.png";
 
 export const Wrapper = styled.div`
   height: 100%;
-  padding-top: 300px;
+  padding-top: 250px;
 
   background-position: center center;
   background-size: 100%;
@@ -27,6 +27,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1280px) {
+      padding-top: 300px;
     background-size: 80%;
   }
 

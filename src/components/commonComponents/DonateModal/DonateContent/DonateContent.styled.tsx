@@ -46,15 +46,22 @@ const ButtonStyled = styled(Button)`
   &.active {
     border-color: ${mainColor};
   }
-
+  
   &:hover {
-    border-color: ${mainHoverColor};
+    background-color: #ffffff;
   }
 
   & img {
     margin-right: 5px;
     height: 16px;
     width: auto;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 768px){
+    &:hover {
+      background-color: ${mainHoverColor};
+      border-color: ${mainHoverColor};
+    }
   }
 
   @media (min-width: 768px) {

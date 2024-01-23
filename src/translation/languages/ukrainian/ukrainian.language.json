@@ -163,7 +163,9 @@
     "payment_method": "Оберіть спосіб оплати",
     "another_amount": "Інша сумма",
     "success_title": "ДЯКУЄМО",
-    "success_text": "за вашу підтримку!"
+    "success_text": "за вашу підтримку!",
+    "not_working_title": "Дякуємо за бажання нас підтримати.",
+    "not_working_text": "Нажаль, сервіс тимчасово не працює."
   },
   "about_us_carousel": [
     {
