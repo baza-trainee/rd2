@@ -20,11 +20,11 @@ export const SlideContent = styled.div`
 
   @media (min-width: 768px) {
     margin-left: 8%;
+    width: 500px;
   }
 
   @media (min-width: 1280px) {
     padding-top: 20%;
-    width: 425px;
 
     h1 {
       width: auto;
