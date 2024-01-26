@@ -3,5 +3,7 @@ export interface CarouselSlide {
   titleKey: string;
   descriptionKey: string;
   imgSrc: string;
+  imgMobileSrc: string;
   retinaImgSrc: string;
+  retinaImgMobileSrc: string;
 }

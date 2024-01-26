@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 
 type SlideContainerProps = {
   imgSrc?: string;
+  imgMobileSrc?: string;
   retinaImgSrc?: string;
+  retinaImgMobileSrc?: string;
 };
 
 const SlideContainer = styled.div<SlideContainerProps>`
@@ -12,7 +14,7 @@ const SlideContainer = styled.div<SlideContainerProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(${(props) => props.imgSrc});
+  background-image: url(${(props) => props.imgMobileSrc});
   background-color: #8293a3;
 
   & .MuiButton-root {
@@ -23,12 +25,17 @@ const SlideContainer = styled.div<SlideContainerProps>`
   }
 
   @media (min-resolution: 2dppx) {
+    background-image: url(${(props) => props.retinaImgMobileSrc});
+  }
+
+  @media (min-resolution: 2dppx) and (min-width: 468px){
     background-image: url(${(props) => props.retinaImgSrc});
   }
 
   @media (min-width: 468px) {
     height: 450px;
     background-position: 30%;
+    background-image: url(${(props) => props.imgSrc});
 
     & .MuiButton-root {
       position: static;

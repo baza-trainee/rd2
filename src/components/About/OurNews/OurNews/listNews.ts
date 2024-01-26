@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import imageOne from "assets/images/ourNews/news-one-x1.png";
-import imageTwo from "assets/images/ourNews/news-two-x1.png";
-import imageThree from "assets/images/ourNews/news-three-x1.png";
-import retinaImageOne from "assets/images/ourNews/news-one-x2.png";
-import retinaImageTwo from "assets/images/ourNews/news-two-x2.png";
-import retinaImageThree from "assets/images/ourNews/news-three-x2.png";
+import imageOne from "assets/images/ourNews/news-one-x1.jpg";
+import imageTwo from "assets/images/ourNews/news-two-x1.jpg";
+import imageThree from "assets/images/ourNews/news-three-x1.jpg";
+import retinaImageOne from "assets/images/ourNews/news-one-x2.jpg";
+import retinaImageTwo from "assets/images/ourNews/news-two-x2.jpg";
+import retinaImageThree from "assets/images/ourNews/news-three-x2.jpg";
 
 export interface ListNews {
   id: number;

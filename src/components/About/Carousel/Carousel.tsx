@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export const Carousel = () => {
+
   const { t } = useTranslation();
 
   return (
@@ -21,6 +22,7 @@ export const Carousel = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
+
         allowSlidePrev={false}
         onReachEnd={(swiper: SwiperClass) => swiper.allowSlideNext = false}
         onReachBeginning={(swiper: SwiperClass) => swiper.allowSlidePrev = false}
@@ -30,17 +32,23 @@ export const Carousel = () => {
             !swiper.allowSlidePrev && (swiper.allowSlidePrev = true);
         }}
       >
-        {carouselSlideList.map(
-          ({ id, titleKey, descriptionKey, retinaImgSrc, imgSrc }) => (
-            <SwiperSlide key={id}>
-              <SlideItem
-                title={t(titleKey)}
-                desc={t(descriptionKey)}
-                imgSrc={imgSrc}
-                retinaImgSrc={retinaImgSrc}
-              />
+        {carouselSlideList.map(( slideItem, index ) => {
+          const {id, titleKey, descriptionKey,
+                 retinaImgSrc, imgSrc,
+                 imgMobileSrc, retinaImgMobileSrc} = slideItem;
+
+          return (
+            <SwiperSlide key={id} >
+                    <SlideItem
+                        title={t(titleKey)}
+                        desc={t(descriptionKey)}
+                        imgSrc={imgSrc}
+                        imgMobileSrc={imgMobileSrc}
+                        retinaImgSrc={retinaImgSrc}
+                        retinaImgMobileSrc={retinaImgMobileSrc}
+                    />
             </SwiperSlide>
-          ),
+          )},
         )}
       </Swiper>
     </CarouselWrap>

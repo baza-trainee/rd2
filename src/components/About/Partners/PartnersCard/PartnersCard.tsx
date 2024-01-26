@@ -7,7 +7,7 @@ interface Props {
 export const PartnersCard = ({ imageSrc }: Props) => {
   return (
     <Card>
-      <img src={imageSrc} alt={imageSrc} />
+      <img src={imageSrc} alt={"логотип нашого партнера"}  loading={"lazy"}/>
     </Card>
   );
 };

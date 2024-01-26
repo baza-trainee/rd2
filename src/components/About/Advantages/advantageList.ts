@@ -1,7 +1,7 @@
 import { Advantage } from "types/typeAdvantage";
-import firstAdvImg from "assets/images/advantages/unique-technologies.png";
-import secondAdvImg from "assets/images/advantages/demining-teams.png";
-import thirdAdvImg from "assets/images/advantages/explosive-objects.png";
+import firstAdvImg from "assets/images/advantages/unique-technologies.jpg";
+import secondAdvImg from "assets/images/advantages/demining-teams.jpg";
+import thirdAdvImg from "assets/images/advantages/explosive-objects.jpg";
 
 export const advantageList: Advantage[] = [
   {

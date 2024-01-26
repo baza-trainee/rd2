@@ -1,17 +1,17 @@
-import mobImg from "assets/images/introduce/mob-min.png";
-import mobImg2 from "assets/images/introduce/mob2-min.png";
-import mobImg2x from "assets/images/introduce/mob@2x-min.png";
-import mobImg2x2 from "assets/images/introduce/mob2@2x-min.png";
+import mobImg from "assets/images/introduce/mob-min.jpg";
+import mobImg2 from "assets/images/introduce/mob2-min.jpg";
+import mobImg2x from "assets/images/introduce/mob@2x-min.jpg";
+import mobImg2x2 from "assets/images/introduce/mob2@2x-min.jpg";
 
-import tabImg from "assets/images/introduce/tab-min.png";
-import tabImg2 from "assets/images/introduce/tab2-min.png";
-import tabImg2x from "assets/images/introduce/tab@2x-min.png";
-import tabImg2x2 from "assets/images/introduce/tab2@2x-min.png";
+import tabImg from "assets/images/introduce/tab-min.jpg";
+import tabImg2 from "assets/images/introduce/tab2-min.jpg";
+import tabImg2x from "assets/images/introduce/tab@2x-min.jpg";
+import tabImg2x2 from "assets/images/introduce/tab2@2x-min.jpg";
 
-import deskImg from "assets/images/introduce/desk-min.png";
-import deskImg2 from "assets/images/introduce/desk2-min.png";
-import deskImg2x from "assets/images/introduce/desk@2x-min.png";
-import deskImg2x2 from "assets/images/introduce/desk2@2x-min.png";
+import deskImg from "assets/images/introduce/desk-min.jpg";
+import deskImg2 from "assets/images/introduce/desk2-min.jpg";
+import deskImg2x from "assets/images/introduce/desk@2x-min.jpg";
+import deskImg2x2 from "assets/images/introduce/desk2@2x-min.jpg";
 
 interface IntroduceCard {
   id: number;

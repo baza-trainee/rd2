@@ -22,7 +22,7 @@ export const NewOfOurNews = ({
   return (
     <Card>
       <div>
-        <img src={imageSrc} srcSet={`${imageSrc}, ${retinaImageSrc} 2x`} alt={title} />
+       <img src={imageSrc} srcSet={`${imageSrc}, ${retinaImageSrc} 2x`} loading="lazy" alt={title}/>
       </div>
       <Content>
         <Typography variant="h4">{title}</Typography>
