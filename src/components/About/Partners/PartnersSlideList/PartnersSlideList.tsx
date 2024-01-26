@@ -37,7 +37,7 @@ export const PartnersSlideList = () => {
 
   if (isError) {
     slideList = partners.map((item) => (
-      <SwiperSlide key={item.id}>
+      <SwiperSlide key={item.id} lazy={true}>
         <PartnersCard imageSrc={item.src} />
       </SwiperSlide>
     ));

@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
 
-import bgMob from "assets/images/contactForm/bg-mob.jpg";
 import bgTab from "assets/images/contactForm/bg-desk.jpg";
 import bgDesk from "assets/images/contactForm/bg-desk.jpg";
 
 const Container = styled.section`
   position: relative;
   width: 100%;
-  background: #c8dbe1 url(${bgMob}) no-repeat;
+  background: #c8dbe1;
   background-position: 50% 50%;
   background-size: auto 100%;
   @media (min-width: 768px) {
