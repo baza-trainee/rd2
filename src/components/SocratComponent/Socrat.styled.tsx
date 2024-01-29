@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
-import bcMob from "assets/images/socrat/Rectangle_mob-min.png";
-import bcTab from "assets/images/socrat/Tab.png";
-import bcDesk from "assets/images/socrat/desk-min.png";
+import bcMob from "assets/images/socrat/Rectangle_mob-min.jpg";
+import bcTab from "assets/images/socrat/Tab.jpg";
+import bcDesk from "assets/images/socrat/desk-min.jpg";
 
 const Container = styled.section`
   text-align: center;

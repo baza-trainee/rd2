@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 import bgMob from "assets/images/tasks/task-bg-mob.jpg";
-import bgTab1 from "assets/images/tasks/task-bg-tab1.jpg";
-import bgDesk from "assets/images/tasks/task-bg-desk.png";
+import bgTab from "assets/images/tasks/task-bg-tab.jpg";
+import bgDesk from "assets/images/tasks/task-bg-desk.jpg";
 
 const Container = styled.section`
   position: relative;
@@ -11,7 +11,7 @@ const Container = styled.section`
   background-position: 50% 50%;
   background-size: auto 100%;
   @media (min-width: 768px) {
-    background: #6c7d8d url(${bgTab1}) no-repeat;
+    background: #6c7d8d url(${bgTab}) no-repeat;
     background-position: 50% 50%;
     background-size: cover;
   }
