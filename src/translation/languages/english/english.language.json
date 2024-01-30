@@ -10,7 +10,7 @@
     "more_info": "more info",
     "send": "send",
     "pay": "pay",
-    "return_to_home_page": "return to the home page"
+    "return_to_home_page": "return to the homepage"
   },
   "contact_form": {
     "name": "First name",
@@ -156,7 +156,7 @@
   "developers": "Develop by Baza Trainee Ukraine 2023 © All rights reserved",
   "page_404": {
     "item_text_1": "Page not found",
-    "item_text_2": ""
+    "item_text_2": "It may have been moved or deleted."
   },
   "donate_modal": {
     "payment_amount": "Choose a payment amount",
@@ -164,27 +164,27 @@
     "another_amount": "Another payment amount",
 
     "success_title": "Thank you",
-    "success_text": "for your support",
-    "not_working_title": "Thank you for desire to support us.",
-    "not_working_text": "Sorry, service not working."
+    "success_text": "for your support!",
+    "not_working_title": "Thank you for your willingness to support us.",
+    "not_working_text": "Sorry, service is temporarily not working."
   },
   "about_us_carousel": [
     {
-      "title": "State Enterprise’s areas of work 1",
-      "desc": "description1"
+      "title": "Socrat - a state project for remote demining",
+      "desc": "Unique development by the National Academy of Sciences of Ukraine for remote detection of explosive objects using artificial intelligence"
     },
     {
-      "title": "State Enterprise’s areas of work 2",
-      "desc": "description2"
+      "title": "Advanced technologies in field conditions",
+      "desc": "Technology that allows you to detect the smallest dangerous devices buried in the ground over time"
     },
     {
-      "title": "State Enterprise’s areas of work 3",
-      "desc": "description3"
+      "title": "A unique project that protects lives",
+      "desc": "Completely remote demining significantly reduces the necessary resources and protects the most valuable - human life"
     }
   ],
   "validation": {
-    "input_max_length": "!",
-    "input_min_length": "!",
+    "input_max_length": "Maximum  50 characters",
+    "input_min_length": "Minimum 2 characters",
 
     "only_letter": "Please, use only letters",
     "required_name": "First name is a required field",
@@ -193,7 +193,11 @@
     "required_phone": "Phone is a required field",
     "required_field": "The field is required",
     "validation_error": "Validation error",
-    "message_max_length": "!",
-    "message_mix_length": "!"
+    "message_max_length": "Maximum  300 characters",
+    "message_min_length": "Minimum 10 characters"
+  },
+  "message_modals": {
+    "success_text": "Message has been sent successfully.",
+    "error_text": "Message not sent. An error occurred."
   }
 }

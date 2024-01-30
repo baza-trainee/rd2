@@ -47,7 +47,7 @@ const ContactFormSection = () => {
         isOpenModal={openSuccess.isOpenModal}
         handleCloseModal={openSuccess.handleIsOpenModal}
       >
-        Повідомлення успішно відправлено
+          {t("message_modals.success_text")}
       </ModalSuccess>
     </Container>
   );
