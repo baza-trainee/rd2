@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { FC } from "react";
+import {FC, useState} from "react";
 
 import { useFormik } from "formik";
 import { useMutation } from "react-query";
@@ -19,6 +19,8 @@ import {
   FormError,
 } from "components/commonComponents/ContactFormSection/ContactForm/Form.styled";
 
+import {RequestFallback} from "../../RequestFallback/RequestFallback";
+
 interface ContactFormProps {
   openModalSuccess: () => void;
   openModalError: (errorText: string) => void;
@@ -35,13 +37,17 @@ const initialValues: contactValuesType = {
 const ContactForm: FC<ContactFormProps> = ({ openModalSuccess, openModalError }) => {
   const { t } = useTranslation();
 
+  const [showFallback, setShowFallback] = useState(false);
+
   const mutation = useMutation(
     (user: contactValuesType) => loadData(sendFeedback(user))(),
     {
       onError: (error: Error) => {
-        openModalError(`Повідомлення не відправлено. ${error.message}`);
+        setShowFallback(false);
+        openModalError(`${t("message_modals.error_text")} ${error.message}`);
       },
       onSuccess: () => {
+        setShowFallback(false);
         openModalSuccess();
         resetForm();
       },
@@ -61,10 +67,13 @@ const ContactForm: FC<ContactFormProps> = ({ openModalSuccess, openModalError })
           message,
         };
         mutation.mutate(emailData);
+        setShowFallback(true);
       },
     });
 
   return (
+      <>
+
     <FormEl onSubmit={handleSubmit}>
       <FieldContainer>
         <FieldLabel>{t("contact_form.name")}</FieldLabel>
@@ -131,10 +140,12 @@ const ContactForm: FC<ContactFormProps> = ({ openModalSuccess, openModalError })
         {errors.message && touched.message && <FormError>{errors.message}</FormError>}
       </FieldContainer>
 
-      <Button fullWidth variant="contained" type="submit" style={{ marginTop: "32px" }}>
-        {t("buttons.send")}
+      <Button fullWidth variant="contained" type="submit" style={{ marginTop: "32px", height: "55px" }}>
+        {!showFallback ? t("buttons.send") : <RequestFallback />}
       </Button>
     </FormEl>
+
+    </>
   );
 };
 
