@@ -13,6 +13,7 @@ import {
   ModalContainer,
   ModalContent,
 } from "components/Footer/FooterModal/FooterModal.styled";
+import {useTranslation} from "react-i18next";
 
 interface FooterModalProps {
   filePath: string;
@@ -21,6 +22,8 @@ interface FooterModalProps {
 }
 
 export function FooterModal(props: FooterModalProps) {
+  const { t } = useTranslation();
+
   const { onCloseModal, open, filePath } = props;
 
   const { isLoading, isError, isSuccess } = useQuery({
@@ -41,7 +44,7 @@ export function FooterModal(props: FooterModalProps) {
 
           {isError && (
             <ErrorBlockStyled blockType={true}>
-              При завантаженні документу виникла помилка
+              {t("message_modals.error_loading")}
             </ErrorBlockStyled>
           )}
 

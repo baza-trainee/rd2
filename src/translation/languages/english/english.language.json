@@ -198,6 +198,7 @@
   },
   "message_modals": {
     "success_text": "Message has been sent successfully.",
-    "error_text": "Message not sent. An error occurred."
+    "error_text": "Message not sent. An error occurred.",
+    "error_loading": "The file is not loaded. An error occurred."
   }
 }
