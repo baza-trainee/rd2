@@ -197,6 +197,7 @@
   },
   "message_modals": {
     "success_text": "Le message a été envoyé avec succès.",
-    "error_text": "Le message a été envoyé. Une erreur est survenue."
+    "error_text": "Le message a été envoyé. Une erreur est survenue.",
+    "error_loading": "Le fichier ne se charge pas. Une erreur est survenue."
   }
 }
