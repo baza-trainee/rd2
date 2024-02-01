@@ -2,7 +2,7 @@ import { contactValuesType, ResponseUserDetails } from "types/typeFeedbackUserDe
 
 import { fetcher } from "api/fetcher";
 
-import {fetcherPublic} from "api/fetcherPublic";
+import { fetcherPublic } from "api/fetcherPublic";
 
 export interface IUserFeedback {
   name: string;
@@ -13,7 +13,7 @@ export interface IUserFeedback {
 export const sendFeedback = (user: contactValuesType) => {
   const msgDate = new Date();
   return () =>
-      fetcherPublic.post<ResponseUserDetails>(
+    fetcherPublic.post<ResponseUserDetails>(
       "api/user/create-user",
       {
         obj_in: {
