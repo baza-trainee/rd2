@@ -5,4 +5,3 @@ const BASE_URL = process.env.REACT_APP_BASE_URL; //"http://ec2-13-53-205-68.eu-n
 export const fetcherPublic = axios.create({
   baseURL: BASE_URL,
 });
-

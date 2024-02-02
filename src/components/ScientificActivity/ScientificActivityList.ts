@@ -5,9 +5,9 @@ import img_2 from "assets/images/activity/Img_2-min.png";
 import img_3 from "assets/images/activity/Img_3-min.png";
 import img_4 from "assets/images/activity/Img_4-min.png";
 import img_5 from "assets/images/activity/Img_5-min.png";
-import img_1_2x from "assets/images/activity/Img_1-min2х.png";
-import img_2_2x from "assets/images/activity/Img_2-min2х.png";
-import img_3_2x from "assets/images/activity/Img_3-min2х.png";
+import img_1_2x from "assets/images/activity/Img_1-min2x.png";
+import img_2_2x from "assets/images/activity/Img_2-min2x.png";
+import img_3_2x from "assets/images/activity/Img_3-min2x.png";
 import img_4_2x from "assets/images/activity/Img_4-min2x.png";
 import img_5_2x from "assets/images/activity/Img_5-min2x.png";
 

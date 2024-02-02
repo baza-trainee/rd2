@@ -60,7 +60,7 @@ export const PartnersSlideList = () => {
           spaceBetween: 32,
         },
       }}
-      slidesPerView={numToDisplay as number}
+      slidesPerView={numToDisplay}
       navigation={{
         prevEl: ".prev",
         nextEl: ".next",

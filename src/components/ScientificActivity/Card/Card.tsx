@@ -49,6 +49,16 @@ export const Card = ({
           <ActivityImg srcSet={`${retinaImageSrc} 2x`} src={imageSrc} alt={t(titleKey)} />
         </>
       )}
+
+      {!isAboveMd && isEven && (
+          <>
+            <ActivityImg srcSet={`${retinaImageSrc} 2x`} src={imageSrc} alt={t(titleKey)} />
+            <CardTextWrap>
+              <CardTitle> {t(titleKey)} </CardTitle>
+              <CardText> {t(textKey)} </CardText>
+            </CardTextWrap>
+          </>
+      )}
     </Cards>
   );
 };
