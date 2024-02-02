@@ -10,7 +10,7 @@ export const contactsList: Contacts[] = [
     id: "email",
     icon: emailIcon,
     alt: "Іконка листа",
-    desc: "2021snp@ukr.net",
+    desc: "info@demining-georesource.tech",
   },
   {
     type: "link",

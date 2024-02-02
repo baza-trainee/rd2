@@ -23,7 +23,7 @@ interface Props {
 export const PhoneForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
   const phone = useSetPhone(handleOpenModal, handleIsOpenModal);
-  const { data, isLoading, isError } = useGetCurrentPhone();
+  const { data, isLoading, isError } = useGetCurrentPhone(true);
 
   const handleSubmit = (
     credentials: FormNumber,

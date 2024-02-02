@@ -22,7 +22,7 @@ interface Props {
 
 export const EmailForm = ({ handleOpenModal }: Props) => {
   const { isOpenModal, handleIsOpenModal } = useIsOpenModal();
-  const { data, isError, isLoading } = useGetCurrentEmail();
+  const { data, isError, isLoading } = useGetCurrentEmail(true);
   const email = useSetEmail(handleOpenModal, handleIsOpenModal);
 
   const handleSubmit = (

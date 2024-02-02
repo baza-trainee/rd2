@@ -7,7 +7,9 @@ import { RefreshTokenService } from "services/RefreshTokenService";
 const { getAccessToken, setAccessToken } = new AccessTokenService();
 const { getRefreshToken } = new RefreshTokenService();
 
-export const BASE_URL = process.env.REACT_APP_BASE_URL; //"http://ec2-13-53-205-68.eu-north-1.compute.amazonaws.com";
+export const BASE_URL = "http://"
+//process.env.REACT_APP_BASE_URL;
+//"http://ec2-13-53-205-68.eu-north-1.compute.amazonaws.com";
 
 export const fetcher = axios.create({
   baseURL: BASE_URL,
