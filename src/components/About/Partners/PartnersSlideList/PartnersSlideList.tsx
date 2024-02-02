@@ -1,3 +1,4 @@
+import {useContext, useEffect} from "react";
 import { useQuery } from "react-query";
 import { useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +15,12 @@ import { PartnersCard } from "components/About/Partners/PartnersCard/PartnersCar
 
 import "swiper/css";
 
+import {CacheContext} from "../../../../App";
+
 export const PartnersSlideList = () => {
+
+  const isCache = useContext(CacheContext);
+
   const { isError, isSuccess, data } = useQuery({
     queryKey: ["logosList"],
     queryFn: async () => {
@@ -26,6 +32,7 @@ export const PartnersSlideList = () => {
       }
     },
     placeholderData: partners,
+    enabled: !isCache.cache.logosIsLoaded,
   });
 
   const isAboveLg = useMediaQuery(theme.breakpoints.up("lg"));
@@ -37,7 +44,7 @@ export const PartnersSlideList = () => {
 
   if (isError) {
     slideList = partners.map((item) => (
-      <SwiperSlide key={item.id} lazy={true}>
+      <SwiperSlide key={item.id}>
         <PartnersCard imageSrc={item.src} />
       </SwiperSlide>
     ));
@@ -50,6 +57,13 @@ export const PartnersSlideList = () => {
       </SwiperSlide>
     ));
   }
+
+  useEffect(() => {
+
+    if ( !isCache.cache.logosIsLoaded ) {
+      isCache.setCache({...isCache.cache, logosIsLoaded: true})
+    }
+  }, []);
 
   return (
     <Swiper
